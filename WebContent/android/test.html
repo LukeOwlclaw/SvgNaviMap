@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <meta name="viewport" content="minimum-scale=0.1 maximum-scale=10 initial-scale=1 width=640">
+
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../obj_idset.js"></script>
+<script type="text/javascript" src="../global.js"></script>
+<script type="text/javascript" src="../map_zoom_pan_effects.js"></script>
+<script type="text/javascript" src="../client-menu_position.js"></script>
+<script type="text/javascript" src="../client-menu_routing.js"></script>
+<script type="text/javascript" src="../obj_positionpoint.js"></script>
+<script type="text/javascript" src="../obj_borderline.js"></script>
+<script type="text/javascript" src="../obj_borderpoint.js"></script>
+<script type="text/javascript" src="../obj_edge.js"></script>
+<script type="text/javascript" src="../obj_polygon.js"></script>
+<script type="text/javascript" src="../obj_stepmarker.js"></script>
+<script type="text/javascript" src="../obj_vertex.js"></script>
+<script type="text/javascript" src="../menu_import.js"></script>
+<script type="text/javascript" src="../routing.js"></script>
+<script type="text/javascript" src="../affiliation_match.js"></script>
+<script type="text/javascript" src="android.js"></script>
+<script type="text/javascript" src="interface.js"></script>
+<script type="text/javascript" src="demowalk.js"></script>
+<script>
+function test() {
+	console.log('test');
+	console.log(document.body.scrollTop + ' document.body.scrollTop');
+	console.log(window.pageYOffset + ' window.pageYOffset' );
+	console.log(document.documentElement.clientHeight + ' document.documentElement.clientHeight');
+	console.log(document.body.clientHeight + ' document.body.clientHeight');
+	console.log(document.height + ' document.height');
+	
+	
+};
+function myscroll() {
+	console.log('myscroll');
+	window.scrollTo(0,50)
+};
+ $("embed").ready(function(){
+    //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
+    console.log('version 29');
+    G.init(android_init);
+}); 
+</script>
+
+<style type="text/css">
+
+/* CHANGING THE VIEWPORT */
+      @-o-viewport    { width: device-width; }  /* Opera */
+      @-webkit-viewport { width: device-width; }  /* Chrome, iOS, Safari */
+      @-moz-viewport    { width: device-width; }  /* Firefox */
+      @-ms-viewport   { width: device-width; }  /* Explorer */
+      @viewport     { width: device-width; }
+
+
+embed {
+  border: black solid 3px;
+  
+}
+embed_disabled {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+</head>
+<body>
+	<h1 id="noscript">Please enable javascript!</h1>
+	<embed id="map0" class="svg_container" src="../airport_level1_fullsvg_big.svg"
+		type="image/svg+xml" />
+	<!-- <embed id="map1" class="svg_container" src="../airport_level0_fullsvg_big.svg"
+		type="image/svg+xml" /> -->
+    <P><INPUT TYPE="BUTTON" NAME="white" VALUE="White" ONCLICK='document.bgColor="white"'></P>
+    <P><INPUT TYPE="BUTTON" NAME="blue" VALUE="Blue" ONCLICK='document.bgColor="blue"'></P>
+    <P><INPUT TYPE="BUTTON" NAME="blue" VALUE="Blue" ONCLICK='test()'></P>
+
+</body>
+</html>

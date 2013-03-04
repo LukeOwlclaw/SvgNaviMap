@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>Google Map Longitude Latitude Picker</title>
+		<script src="android_pickLocation.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="libs/jquery.js"></script>
+    <script type="text/javascript" src="obj_idset.js"></script>
+    <script type="text/javascript" src="global.js"></script>
+    <script type="text/javascript" src="map_zoom_pan_effects.js"></script>
+    <script type="text/javascript" src="client-menu_position.js"></script>
+    <script type="text/javascript" src="client-menu_routing.js"></script>
+    <script type="text/javascript" src="obj_positionpoint.js"></script>
+    <script type="text/javascript" src="obj_borderline.js"></script>
+    <script type="text/javascript" src="obj_borderpoint.js"></script>
+    <script type="text/javascript" src="obj_edge.js"></script>
+    <script type="text/javascript" src="obj_polygon.js"></script>
+    <script type="text/javascript" src="obj_stepmarker.js"></script>
+    <script type="text/javascript" src="obj_vertex.js"></script>
+    <script type="text/javascript" src="obj_category.js"></script>
+    <script type="text/javascript" src="obj_gpsmarker.js"></script>
+    <script type="text/javascript" src="menu_import.js"></script>
+    <script type="text/javascript" src="menu_gpsmarker.js"></script>
+    <script type="text/javascript" src="routing.js"></script>
+    <script type="text/javascript" src="affiliation_match.js"></script>
+    <script type="text/javascript" src="android/android.js"></script>
+    <script type="text/javascript" src="android/interface.js"></script>
+    <script type="text/javascript" src="android/demowalk.js"></script>
+    <script type="text/javascript" src="convertCoordinates.js"></script>
+    <script>
+     $("embed").ready(function(){
+        //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
+        console.log('version 24');
+        G.init(android_init);
+    });
+    function showgpsmarkers()
+    {
+      var gpsmarkerarray = Gpsmarker_container.getAll();
+      for ( var i = 0, g = gpsmarkerarray[i]; i < gpsmarkerarray.length; g = gpsmarkerarray[++i]) {
+        // only check in level
+        var level = 0;
+        if (g.getSvgid() != level)
+          continue;
+          
+        g.getShape().setAttribute('visibility', 'visible');
+
+        // ignore gpsmarker itselfe
+        if (Gpsmarker_current != null && g.getId() == Gpsmarker_current.getId())
+          continue;
+          
+        var curpoint = new google.maps.LatLng(g.getLatitude(), g.getLongitude());
+        
+        var gmapmarker = new google.maps.Marker({
+          map : gmapdata,
+          position : curpoint,
+          icon: "http://maps.google.com/mapfiles/ms/micons/blue.png"
+        });
+        
+        //create new context so that gmapmarker and g can be accessed in callback function.
+        (function (gmapmarker, gpsmarker) {
+
+          google.maps.event.addListener(gmapmarker, 'click', function(a) {
+            // deselect all gpsmarkers
+            var gpsmarkerarray = Gpsmarker_container.getAll();
+            for ( var i = 0, g = gpsmarkerarray[i]; i < gpsmarkerarray.length; g = gpsmarkerarray[++i]) {
+              g.paint();
+            }
+            // select the selected one
+            gpsmarker.paint_active();
+            
+            document.getElementById("gpsmarker_longitude").value = gpsmarker.getLongitude();
+            document.getElementById("gpsmarker_latitude").value = gpsmarker.getLatitude();
+          });
+          
+          
+        })(gmapmarker, g); //call anonymous function to create new context.
+        
+        
+      }
+      
+    }
+    </script>
+	</head>
+	<body bgcolor="#FFFFEF" onload="if_gmap_init();">
+    <h1 id="noscript">Please enable javascript!</h1>
+	  <b>Please pick location</b><br>
+    <input size=10 type=text value="14.593999" id="gpsmarker_latitude"><input size=10 type=text value="120.994260" id="gpsmarker_longitude">
+    <input size=10 type=button value="Show GPS Markers" onClick="showgpsmarkers()">
+		<span id="debug" style="color:red;"></span><br>
+    <div id="mapitems" style="position: absolute;left: 0;width: 49%;top: 70px;bottom: 0;"></div>
+    <div id="two" style="width: 49%;top: 70px;bottom: 0;">
+      <div id="location"></div>
+      <embed id="map0" class="svg_container" src="airport_level1_fullsvg_big.svg"
+      type="image/svg+xml" width="200px" height="200px"/>
+    <embed id="map1" class="svg_container" src="airport_level0_fullsvg_big.svg"
+      type="image/svg+xml" width="200px" height="200px"/>
+    </div>
+	</body>
+</html>

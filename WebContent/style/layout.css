@@ -1,0 +1,170 @@
+@CHARSET "ISO-8859-1";
+
+/* Do not change! Generated using http://csslayoutgenerator.com/
+-----------------------------------------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+header, nav, section, article, aside, footer {
+	display: block;
+}
+body {
+	font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
+	height: 100%;
+}
+a {
+	color: blue;
+	outline: none;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	margin: 0 0 18px
+}
+img {
+	border: none;
+}
+input {
+	vertical-align: middle;
+}
+#wrapper {
+	width: 100%;
+	min-width: 800px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	height: 150px;
+	background: #FFE680;
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+	width: 100%;
+	padding: 0 0 100px;
+	height: 1%;
+	position: relative;
+}
+#middle:after {
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+#container {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+#content {
+	padding: 0 270px 0 270px;
+}
+
+
+/* Sidebar Left
+-----------------------------------------------------------------------------*/
+#sideLeft {
+	float: left;
+	width: 250px;
+	/*margin-left: -100%;*/
+	/*position: relative;*/
+	position: fixed;
+	background: #B5E3FF;
+}
+
+
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+#sideRight {
+	float: left;
+	margin-right: -3px;
+	width: 250px;
+	margin-left: -250px;
+	position: relative;
+	background: #FFACAA;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+	/*margin: -100px auto 0;*/
+	margin: -40px auto 0;
+	min-width: 800px;
+	/*height: 100px;*/
+	height: 50px;
+	background: #BFF08E;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+/* Customize here!
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+.sidebar div {
+	border-style: solid;
+	margin: 2px;
+	border-width: thin;
+	padding: 5px;
+}
+
+/* Body
+-----------------------------------------------------------------------------*/
+body {
+	background-color: AliceBlue
+}
+
+
+/* SVG Map
+-----------------------------------------------------------------------------*/
+embed {
+	width: 95%;
+	height: 7000%; /*Do not ask why, but this makes #map use full height.*/
+		
+	/*       position: absolute; */
+	/*       left: 50px; */
+	/*       top: 30px; */
+	
+	border-style: dashed;
+	margin-top: 20px;
+	border-width: 4px;
+	border-color: #95C3FF;
+}
+
+/* Content - override right padding because no right sidebar is used.
+-----------------------------------------------------------------------------*/
+#content {
+	padding-right: 0;
+}
+#header {
+	height: 100px;	
+}
+#header h1{
+	padding: 1em;
+	padding-bottom: 0;	
+}
+

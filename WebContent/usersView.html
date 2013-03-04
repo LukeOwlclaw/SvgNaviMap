@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" manifest="offline.manifest"> -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+<title>Users View</title>
+
+<script type="text/javascript" src="obj_idset.js"></script>
+<script type="text/javascript" src="obj_stepmarker.js"></script>
+<script type="text/javascript" src="global.js"></script>
+<script type="text/javascript" src="client-menu.js"></script>
+<script type="text/javascript" src="client-menu_position.js"></script>
+<script type="text/javascript" src="client-menu_routing.js"></script>
+<script type="text/javascript" src="menu_import.js"></script>
+<script type="text/javascript" src="obj_positionpoint.js"></script>
+<script type="text/javascript" src="obj_vertex.js"></script>
+<script type="text/javascript" src="obj_edge.js"></script>
+<script type="text/javascript" src="obj_polygon.js"></script>
+<script type="text/javascript" src="obj_borderpoint.js"></script>
+<script type="text/javascript" src="obj_borderline.js"></script>
+<script type="text/javascript" src="obj_category.js"></script>
+<script type="text/javascript" src="obj_gpsmarker.js"></script>
+<script type="text/javascript" src="map_zoom_pan_effects.js"></script>
+<script type="text/javascript" src="affiliation_match.js"></script>
+<script type="text/javascript" src="routing.js"></script>
+<script type="text/javascript" src="libs/jquery.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="style/layout.css">
+<script>
+ $("embed").ready(function(){
+    //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollst�ndig aufgebaut wurde.
+    console.log('version 19');
+    G.init(client_init);
+}); 
+
+   
+</script>
+</head>
+<body id="body">
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="noscript">Please enable javascript!</h1>
+      <h1>Users View</h1>
+    </div>
+    <!-- header -->
+
+    <div id="middle">
+
+      <div id="container">
+        <div id="content">
+          <div id="map_container">
+            <embed id="map0" class="svg_container" src="airport_level1_fullsvg_big.svg" type="image/svg+xml" />
+            <button id="map0_rescale" onclick="MZP.rescale(0);" >Rescale</button>
+            
+            <embed id="map1" class="svg_container" src="airport_level0_fullsvg_big.svg" type="image/svg+xml" />
+			<button id="map1_rescale" onclick="MZP.rescale(1);" >Rescale</button>
+          </div>
+        </div>
+      </div>
+      <!--  container -->
+
+      <div class="sidebar" id="sideLeft">
+      
+      	<div id="svgselection">
+			<input type="radio" name="svgid" value="0" onchange="client_selectsvg(0)" checked="checked"> Level 1<br>
+    		<input type="radio" name="svgid" value="1" onchange="client_selectsvg(1)"> Level 0<br>  	
+      	</div>
+
+        <div id="mainmenu">
+          <p>Select a menu</p>
+          <!-- <button onclick="menu('top');">top</button> -->
+          <button onclick="menu('routing');">Routing</button>
+          <button onclick="menu('import');">import</button>
+        </div>
+
+
+        <div id="routing" style="display: none;">
+          <p id="routing_default"></p>
+          
+          Disabled adapted route <input id="routing_disabledAdapted" type="checkbox" onchange="routing_refresh();">
+          
+          <div id="routing_current" style="display: none;">
+          	<button onclick="routing_purge();">Delete current routing</button>
+          </div>
+          
+          <button onclick="routing_close();">Close routing menu</button>
+        </div>
+        
+        
+        <div id="import" style="display: none;">
+          <input type="file" id="files" name="files[]" multiple /> <br> <br>
+          <button onclick="load_from_server_xml(null);">load from server</button>
+          <br><br>
+          <button onclick="import_close(); refresh_location();">Close import</button>
+        </div>
+        <!-- import -->
+        
+        
+        <br><br>
+        
+        <div id="position_NOTexists">
+          <p>Click into the image to set your position.</p>
+          <button id="position_set_add" onclick="position_menuRefresh();">Set position</button>
+        </div>
+        <div id="position_exists" style="display: none;">
+          <p>Click into the image to reset your position. <br> <br>
+          Or delete your actual position.</p>
+          <button onclick="position_delete();">Delete position</button>
+          <br>
+          <button id="position_set_reset" onclick="position_menuRefresh();">Set position</button>
+        </div>
+        
+        
+      <div id="debug" >Debug information</div>
+      
+      <div id="location">
+      
+      
+      </div>
+
+      </div>
+      <!-- sideLeft -->
+
+
+      <div class="sidebar" id="sideRight"></div>
+
+    </div>
+    <!-- middle -->
+
+  </div>
+  <!-- wrapper -->
+  <div id="footer"></div>
+</body>
+</html>

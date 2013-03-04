@@ -1,0 +1,51 @@
+<html manifest="offline.manifest">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Insert title here</title>
+
+<script type="text/javascript" src="libs/jquery.js"></script>
+<script type="text/javascript" src="obj_idset.js"></script>
+<script type="text/javascript" src="global.js"></script>
+<script type="text/javascript" src="map_zoom_pan_effects.js"></script>
+<script type="text/javascript" src="client-menu_position.js"></script>
+<script type="text/javascript" src="client-menu_routing.js"></script>
+<script type="text/javascript" src="obj_positionpoint.js"></script>
+<script type="text/javascript" src="obj_borderline.js"></script>
+<script type="text/javascript" src="obj_borderpoint.js"></script>
+<script type="text/javascript" src="obj_edge.js"></script>
+<script type="text/javascript" src="obj_polygon.js"></script>
+<script type="text/javascript" src="obj_stepmarker.js"></script>
+<script type="text/javascript" src="obj_vertex.js"></script>
+<script type="text/javascript" src="obj_category.js"></script>
+<script type="text/javascript" src="obj_gpsmarker.js"></script>
+<script type="text/javascript" src="menu_import.js"></script>
+<script type="text/javascript" src="routing.js"></script>
+<script type="text/javascript" src="affiliation_match.js"></script>
+<script type="text/javascript" src="android/android.js"></script>
+<script type="text/javascript" src="android/interface.js"></script>
+<script type="text/javascript" src="android/demowalk.js"></script>
+<script type="text/javascript" src="convertCoordinates.js"></script>
+<script>
+	$("embed").ready(function() {
+		//Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
+		console.log('version 24');
+		G.init(android_init);
+	});
+</script>
+</head>
+<body>
+	<h1 id="noscript">Please enable javascript!</h1>
+	<div id="location"></div>
+	<embed id="map0" class="svg_container"
+		src="airport_level1_fullsvg_big.svg" type="image/svg+xml"
+		width="200px" height="200px" />
+	<embed id="map1" class="svg_container"
+		src="airport_level0_fullsvg_big.svg" type="image/svg+xml"
+		width="200px" height="200px" />
+	<!-- On some devices a single SVG in a HTML page looks blurry.
+    		Adding at least one character solves this issue.
+    http://stackoverflow.com/questions/14623209/zooming-webview-with-svg-inside-svg-is-pixelized-if-zoomed  -->
+	<font color="white">.</font>
+</body>
+</html>
