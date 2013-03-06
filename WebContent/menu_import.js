@@ -50,15 +50,13 @@ function load_from_client_xml(evt) {
 
 function load_from_server_xml(callback) {
 	"use strict";
-	// relativer Verzeichnispfad zu Dateien
-	var dir = "data/";
 	// zu ladene Dateien
-	var file = "svgmap-data.xml";
+	var filepath = G.getXmlPath();
 
 	// G.log("load_from_server_xml(callback)");
 
 	var asyncXMLRequest = new XMLHttpRequest();
-	asyncXMLRequest.open('GET', dir + file);
+	asyncXMLRequest.open('GET', filepath);
 	asyncXMLRequest.onreadystatechange = function() {
 		if (this.readyState == 4) {
 			if (this.responseXML != null)

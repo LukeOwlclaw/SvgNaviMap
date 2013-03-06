@@ -30,6 +30,7 @@
 	$("embed").ready(function() {
 		//Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
 		console.log('version 24');
+    G.loadMaps(false);
 		G.init(android_init);
 	});
 </script>
@@ -37,12 +38,7 @@
 <body>
 	<h1 id="noscript">Please enable javascript!</h1>
 	<div id="location"></div>
-	<embed id="map0" class="svg_container"
-		src="airport_level1_fullsvg_big.svg" type="image/svg+xml"
-		width="200px" height="200px" />
-	<embed id="map1" class="svg_container"
-		src="airport_level0_fullsvg_big.svg" type="image/svg+xml"
-		width="200px" height="200px" />
+  <div id="map_container"></div>
 	<!-- On some devices a single SVG in a HTML page looks blurry.
     		Adding at least one character solves this issue.
     http://stackoverflow.com/questions/14623209/zooming-webview-with-svg-inside-svg-is-pixelized-if-zoomed  -->

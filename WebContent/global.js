@@ -1,5 +1,6 @@
 "use strict";
 
+
 // Global is a first-class function (like a static class) that holds all global
 // variables.
 function G() {
@@ -8,6 +9,89 @@ function G() {
 	// this.publicVariable = 1;
 }
 G.global = 'This is a global variable accessible from everywhere via G.global';
+
+G.getLevelCount = function() {
+  return 3;
+}
+
+G.getMapPath = function(level) {
+  if(level == 0)
+    return G.getDataDir() + "minimal0.svg";
+  else if(level == 1)
+    return G.getDataDir() + "minimal1.svg";
+  else if(level == 2)
+    return G.getDataDir() + "minimal2.svg";
+  else
+    return null
+}
+
+G.getXmlFilename = function() {
+  return "minimal-data.xml";
+}
+
+G.getXmlPath = function() {
+  return G.getDataDir() + G.getXmlFilename();
+}
+
+//internally used only
+G.getDataDir = function() {
+  return "data/";
+}
+
+/*
+Appends for each map defined by G.getLevelCount() and G.getMapPath() an embedded element to div#map_container
+*/
+G.loadMaps = function(createScaleButton) {
+  for (var i=0;i<G.getLevelCount();i++)
+  {
+    var newmap = document.createElement("embed");
+    newmap.setAttribute("src",G.getMapPath(i));
+    newmap.setAttribute("id","map"+i);
+    newmap.setAttribute("type","image/svg+xml");
+    newmap.setAttribute("class","svg_container");
+    newmap.style.width = "45%";
+    newmap.style.height= "auto";
+    
+    
+    document.getElementById("map_container").appendChild(newmap);
+    
+    if(createScaleButton)
+    {
+      var scalebutton = document.createElement("button");
+      scalebutton.setAttribute("id","map"+i+"_rescale");
+      scalebutton.setAttribute("onclick","MZP.rescale("+i+");");
+      var content = document.createTextNode("Rescale");
+      scalebutton.appendChild(content);
+      document.getElementById("map_container").appendChild(scalebutton);
+    }
+  }
+}
+
+/*
+Appends for each map defined by G.getLevelCount() and G.getMapPath() an input radio element to div#svgselection for selecting the according SVG
+*/
+G.loadMapSelectors = function() {
+  for (var i=0;i<G.getLevelCount();i++)
+  {
+    var selector = document.createElement("input");
+    selector.setAttribute("type","radio");
+    selector.setAttribute("src",G.getMapPath(i));
+    selector.setAttribute("id","select_map"+i);
+    selector.setAttribute("name","svgid");
+    selector.setAttribute("value",i);
+    selector.setAttribute("onchange","client_selectsvg(" + i + ")");
+    if(i==0)
+      selector.setAttribute("checked","checked");
+      
+    document.getElementById("svgselection").appendChild(selector);
+    
+    var content = document.createTextNode("Level " + i);
+    selector.parentNode.appendChild(content);
+    var br = document.createElement("br");
+    selector.parentNode.appendChild(br);
+    
+   }
+}
 
 G.init = function(func) {
 	"use strict";
@@ -37,18 +121,20 @@ G.init = function(func) {
 	G.svg_unit_affiliation_area = new Array();
 	G.svg_unit_gpsmarker = new Array();
 
-	var embed = document.getElementsByTagName('embed');
+   var embed = document.getElementsByTagName('embed');
 
 	for ( var i = 0; i < embed.length; i++) {
 		G.install_init_hook(embed[i], i, embed.length, func);
 	}
+
+   
 };
 
 // Installiert Event Listener, der init_svg() aufruft, sobald SVG element
 // geladen ist.
 G.install_init_hook = function(element, id, count, func) {
 	G.svg_init[id] = false;
-	element
+  element
 			.addEventListener(
 					'load',
 					function(evt) {
@@ -99,7 +185,7 @@ G.install_init_hook = function(element, id, count, func) {
 
 G.init_svg = function(element, id) {
 	"use strict";
-	// G.log('init ' + id);
+//	 G.log('init_svg ' + id);
 
 	// required for SVG embedded using <embed>
 	// e.g. <embed id="map0" src="office_simple.svg" type="image/svg+xml"
@@ -107,12 +193,12 @@ G.init_svg = function(element, id) {
 	G.svg_parent[id] = element;
 	G.svg_document[id] = G.svg_parent[id].getSVGDocument();
 	if (G.svg_document[id] == null) {
-		G.log("G.init_svg() failed. SVG not loaded yet.");
+		G.log("G.init_svg() failed. SVG not loaded yet.1");
 		return;
 	}
 	G.svg_element[id] = G.svg_document[id].getElementsByTagName('svg')[0];
 	if (G.svg_element[id] == null) {
-		G.log("G.init_svg() failed. SVG not loaded yet.");
+		G.log("G.init_svg() failed. SVG not loaded yet.2");
 		return;
 	}
 

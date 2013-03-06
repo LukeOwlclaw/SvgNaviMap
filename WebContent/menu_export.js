@@ -23,7 +23,7 @@ function export_xml() {
 
 	var file_content = "";
 
-	file_content = file_content.concat('<!-- svgmap-data.xml -->\n');
+	file_content = file_content.concat('<!-- '+G.getXmlFilename()+' -->\n');
 	file_content = file_content.concat('<svgmap-data>\n');
 
 	// test for min 2 gps marker per level
@@ -221,7 +221,7 @@ function export_xml() {
 
 	var a_vertex = document.getElementById('export_xml_link');
 	a_vertex.href = window.URL.createObjectURL(blob);
-	a_vertex.download = 'svgmap-data.xml';
+	a_vertex.download = G.getXmlFilename();
 
 }
 

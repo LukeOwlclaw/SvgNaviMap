@@ -31,6 +31,8 @@
  $("embed").ready(function(){
     //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollst�ndig aufgebaut wurde.
     console.log('version 19');
+    G.loadMaps(true);
+    G.loadMapSelectors();
     G.init(client_init);
 }); 
 
@@ -49,23 +51,14 @@
 
       <div id="container">
         <div id="content">
-          <div id="map_container">
-            <embed id="map0" class="svg_container" src="airport_level1_fullsvg_big.svg" type="image/svg+xml" />
-            <button id="map0_rescale" onclick="MZP.rescale(0);" >Rescale</button>
-            
-            <embed id="map1" class="svg_container" src="airport_level0_fullsvg_big.svg" type="image/svg+xml" />
-			<button id="map1_rescale" onclick="MZP.rescale(1);" >Rescale</button>
-          </div>
+          <div id="map_container"></div>
         </div>
       </div>
       <!--  container -->
 
       <div class="sidebar" id="sideLeft">
       
-      	<div id="svgselection">
-			<input type="radio" name="svgid" value="0" onchange="client_selectsvg(0)" checked="checked"> Level 1<br>
-    		<input type="radio" name="svgid" value="1" onchange="client_selectsvg(1)"> Level 0<br>  	
-      	</div>
+      	<div id="svgselection"></div>
 
         <div id="mainmenu">
           <p>Select a menu</p>

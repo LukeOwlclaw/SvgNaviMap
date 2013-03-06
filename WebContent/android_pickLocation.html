@@ -30,6 +30,7 @@
      $("embed").ready(function(){
         //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
         console.log('version 24');
+        G.loadMaps(true);
         G.init(android_init);
     });
     function showgpsmarkers()
@@ -89,10 +90,7 @@
     <div id="mapitems" style="position: absolute;left: 0;width: 49%;top: 70px;bottom: 0;"></div>
     <div id="two" style="width: 49%;top: 70px;bottom: 0;">
       <div id="location"></div>
-      <embed id="map0" class="svg_container" src="airport_level1_fullsvg_big.svg"
-      type="image/svg+xml" width="200px" height="200px"/>
-    <embed id="map1" class="svg_container" src="airport_level0_fullsvg_big.svg"
-      type="image/svg+xml" width="200px" height="200px"/>
+      <div id="map_container"></div>
     </div>
 	</body>
 </html>
