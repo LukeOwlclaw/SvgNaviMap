@@ -211,15 +211,17 @@ function edge_save() {
 function edge_deselect() {
 	"use strict";
 	if (Stepmarker_backup1_x != null && Stepmarker_backup1_y != null) {
-		Edge_current.getVertex1_stepmarker().setPosition(Stepmarker_backup1_x,
-				Stepmarker_backup1_y);
+    if(Edge_current != null)
+      Edge_current.getVertex1_stepmarker().setPosition(Stepmarker_backup1_x,
+          Stepmarker_backup1_y);
 		Stepmarker_backup1_x = null;
 		Stepmarker_backup1_y = null;
 
 	}
 	if (Stepmarker_backup2_x != null && Stepmarker_backup2_y != null) {
-		Edge_current.getVertex2_stepmarker().setPosition(Stepmarker_backup2_x,
-				Stepmarker_backup2_y);
+    if(Edge_current != null)
+      Edge_current.getVertex2_stepmarker().setPosition(Stepmarker_backup2_x,
+          Stepmarker_backup2_y);
 		Stepmarker_backup2_x = null;
 		Stepmarker_backup2_y = null;
 	}

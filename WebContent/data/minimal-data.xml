@@ -378,22 +378,6 @@
 			</vertex2-stepmarker>
 			<disabledAdapted>true</disabledAdapted>
 		</edge>
-		<edge>
-			<id>6</id>
-			<vertex1>1</vertex1>
-			<vertex1-reachable>true</vertex1-reachable>
-			<vertex1-stepmarker>
-				<x-pos>366</x-pos>
-				<y-pos>80</y-pos>
-			</vertex1-stepmarker>
-			<vertex2>6</vertex2>
-			<vertex2-reachable>true</vertex2-reachable>
-			<vertex2-stepmarker>
-				<x-pos>177</x-pos>
-				<y-pos>76</y-pos>
-			</vertex2-stepmarker>
-			<disabledAdapted>true</disabledAdapted>
-		</edge>
 	</edges>
 </svgmap-data>
 <!-- EOF -->
