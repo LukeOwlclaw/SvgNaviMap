@@ -162,17 +162,19 @@
 							to close the polygon
 						</p>
 						<button onclick="affiliation_resetAdd();">Abort add
-							affiliation area</button>
+							affiliation area (ESC)</button>
+            <button onclick="affiliation_renew();">Start over drawing
+							affiliation area (DEL)</button>
 					</div>
 
 					<div id="affiliation_details_add" style="display: none;">
-						<button onclick="affiliation_add();">Add affiliation area</button>
-						<button onclick="affiliation_deselect();">Deselect point</button>
+						<button onclick="affiliation_add();">Add affiliation area (ENTER)</button>
+						<button onclick="affiliation_deselect();">Deselect point (ESC)</button>
 					</div>
 					<div id="affiliation_details_renew" style="display: none;">
 						<button onclick="affiliation_renew();">Renew affiliation
-							area</button>
-						<button onclick="affiliation_deselect();">Deselect point</button>
+							area (DEL)</button>
+						<button onclick="affiliation_deselect();">Deselect point (ENTER)</button>
 					</div>
 					<!-- affiliation_details -->
 

@@ -10,9 +10,9 @@ function vertex_open() {
 		// handle clicking
 		G.svg_element[i].addEventListener('click', vertex_click, false);
     // handle keys
-		addEventListener('keydown', vertex_keypress, false);
-    G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
+		G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
 	}
+  addEventListener('keydown', vertex_keypress, false);
 }
 
 function vertex_keypress(event) {

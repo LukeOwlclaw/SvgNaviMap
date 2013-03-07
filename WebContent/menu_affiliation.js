@@ -7,7 +7,51 @@ function affiliation_open() {
 	// handle clicking
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_element[i].addEventListener('click', affiliation_click, false);
-	}
+    // handle keys
+    G.svg_element[i].addEventListener('keydown', affiliation_keypress, false);
+  }
+  addEventListener('keydown', affiliation_keypress, false);
+}
+
+function affiliation_keypress(event) {
+  
+  switch(event.keyCode)
+  {
+    case KeyEvent.DOM_VK_RETURN : 
+              if(Affiliation_currentPolygon == null && Vertex_current != null)
+                affiliation_add();
+              else if(Affiliation_currentPolygon != null && Vertex_current != null)
+                affiliation_deselect();
+              break;
+    case KeyEvent.DOM_VK_ESCAPE :
+              if(Vertex_current != null && Affiliation_currentPolygon == null)
+              {
+                if(document.getElementById('affiliation_details_add').style.display == 'none' && 
+                  document.getElementById('affiliation_details_renew').style.display == 'none' )
+                {
+                  //if affiliation areas is being added, abort:
+                  affiliation_resetAdd();                  
+                }
+                else
+                  affiliation_deselect();
+              }  
+              else if(Vertex_current != null && Affiliation_currentPolygon != null && !Affiliation_currentPolygon.isClosed())
+                //affiliation_renew();//
+                affiliation_resetAdd();
+              else if(Affiliation_currentPolygon != null && !Affiliation_currentPolygon.isClosed())
+              {}
+              else
+                affiliation_close();
+              break;
+    case KeyEvent.DOM_VK_DELETE :
+              if(Vertex_current != null && Affiliation_currentPolygon != null)
+                affiliation_renew();
+              else
+                affiliation_delete();
+              break;
+    default:
+              break;
+  }
 }
 
 function affiliation_click(evt) {
@@ -45,6 +89,14 @@ function affiliation_select(id) {
 
 function affiliation_deselect() {
 	"use strict";
+  
+  if(document.getElementById('affiliation_details_add').style.display == 'none' && 
+    document.getElementById('affiliation_details_renew').style.display == 'none' )
+  {
+    //do not allow deselect if deselect not visible.
+    return;
+  }
+  
 	if (Vertex_current != null) {
 		Vertex_current.paint();
 		if (Affiliation_currentPolygon != null) {
@@ -61,6 +113,8 @@ function affiliation_deselect() {
 
 function affiliation_delete() {
 	"use strict";
+  if(Vertex_current == null || Vertex_current.getPolygon() == null) 
+    return;
 	Vertex_current.getPolygon().remove();
 	Vertex_current.setPolygon(null);
 }
@@ -73,7 +127,9 @@ function affiliation_close() {
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_element[i].removeEventListener('click', affiliation_click, false);
-	}
+    G.svg_element[i].removeEventListener('keydown', affiliation_keypress, false);
+  }
+  removeEventListener('keydown', affiliation_keypress, false);
 
 	document.getElementById('affiliation_default').style.display = 'none';
 	document.getElementById('affiliation').style.display = 'none';
