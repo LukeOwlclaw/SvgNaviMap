@@ -10,7 +10,8 @@ function vertex_open() {
 		// handle clicking
 		G.svg_element[i].addEventListener('click', vertex_click, false);
     // handle keys
-		G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
+		addEventListener('keydown', vertex_keypress, false);
+    G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
 	}
 }
 
@@ -21,14 +22,21 @@ function vertex_keypress(event) {
     case KeyEvent.DOM_VK_RETURN : 
               vertex_save();
               break;
-    case KeyEvent.DOM_VK_ESCAPE : 
-              vertex_deselect();
+    case KeyEvent.DOM_VK_ESCAPE :
+              if(Vertex_current != null)
+                vertex_deselect();
+              else
+                vertex_close();
               break;
     case KeyEvent.DOM_VK_M : 
               if(document.getElementById('vertex_move_on').style.display == 'none')
                 vertex_move_off();
               else
                 vertex_move_on();
+              break;
+    case KeyEvent.DOM_VK_P : 
+              document.getElementById('vertex_poi').checked = !document.getElementById('vertex_poi').checked;
+              vertex_color();
               break;
     case KeyEvent.DOM_VK_DELETE :
               vertex_delete();
@@ -211,6 +219,7 @@ function vertex_close() {
 		G.svg_element[i].removeEventListener('mousemove', vertex_mousemove,
 				false);
 		G.svg_element[i].removeEventListener('click', vertex_click, false);
+    removeEventListener('keydown', vertex_keypress, false);
     G.svg_element[i].removeEventListener('keydown', vertex_keypress, false);
 	}
 

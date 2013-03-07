@@ -87,7 +87,7 @@
 
 				<div id="vertex" style="display: none;">
 					<div id="vertex_default" style="display: none;">
-						<p>Click into image to add a vertex or select one to edit it.</p>
+						<p>Click into image to add a POI vertex (CTRL for no POI) or select one to edit it.</p>
 					</div>
 
 					<div id="vertex_details" style="display: none;">
@@ -104,17 +104,17 @@
 						<p id="vertex_new_category"></p>
 
 						<button onclick="vertex_move_on();" id="vertex_move_on">Move
-							vertex</button>
+							vertex (m)</button>
 						<button onclick="vertex_move_off();" id="vertex_move_off"
-							style="display: none;">Fix vertex</button>
+							style="display: none;">Fix vertex (m)</button>
 
-						<button onclick="vertex_save();">Save vertex</button>
-						<button onclick="vertex_deselect();">Deselect vertex</button>
-						<button onclick="vertex_delete();">Delete vertex</button>
+						<button onclick="vertex_save();">Save vertex (ENTER)</button>
+						<button onclick="vertex_deselect();">Deselect vertex (ESC)</button>
+						<button onclick="vertex_delete();">Delete vertex (DEL)</button>
 					</div>
 					<!-- vertex_details -->
 					<br>
-					<button onclick="vertex_close();">Close vertex menu</button>
+					<button onclick="vertex_close();">Close vertex menu (ESC)</button>
 				</div>
 				<!-- vertex -->
 
