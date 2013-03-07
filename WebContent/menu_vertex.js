@@ -9,8 +9,35 @@ function vertex_open() {
 		G.svg_element[i].addEventListener('mousemove', vertex_mousemove, false);
 		// handle clicking
 		G.svg_element[i].addEventListener('click', vertex_click, false);
+    // handle keys
+		G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
 	}
 }
+
+function vertex_keypress(event) {
+  
+  switch(event.keyCode)
+  {
+    case KeyEvent.DOM_VK_RETURN : 
+              vertex_save();
+              break;
+    case KeyEvent.DOM_VK_ESCAPE : 
+              vertex_deselect();
+              break;
+    case KeyEvent.DOM_VK_M : 
+              if(document.getElementById('vertex_move_on').style.display == 'none')
+                vertex_move_off();
+              else
+                vertex_move_on();
+              break;
+    case KeyEvent.DOM_VK_DELETE :
+              vertex_delete();
+              break;
+    default:
+              break;
+  }
+}
+
 
 function vertex_mousemove(evt) {
 	"use strict";
@@ -106,6 +133,8 @@ function vertex_click(evt) {
 
 function vertex_save() {
 	"use strict";
+  if(Vertex_current == null)
+    return;
 	Vertex_current.setShortDesc(document.getElementById('vertex_sdesc').value);
 	Vertex_current.setLongDesc(document.getElementById('vertex_ldesc').value);
 	Vertex_current.setPoi(document.getElementById('vertex_poi').checked);
@@ -165,6 +194,8 @@ function vertex_deselect() {
 
 function vertex_delete() {
 	"use strict";
+  if(Vertex_current == null)
+    return;
 	Vertex_current.remove();
 	Vertex_current = null;
 	vertex_deselect();
@@ -174,11 +205,13 @@ function vertex_close() {
 	"use strict";
 	vertex_deselect();
 	G.menu_current = null;
+  Vertex_current = null;
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_element[i].removeEventListener('mousemove', vertex_mousemove,
 				false);
 		G.svg_element[i].removeEventListener('click', vertex_click, false);
+    G.svg_element[i].removeEventListener('keydown', vertex_keypress, false);
 	}
 
 	document.getElementById('vertex_default').style.display = 'none';
@@ -200,13 +233,13 @@ function vertex_move_on() {
 	"use strict";
 	Vertex_move_enabled = true;
 	document.getElementById('vertex_move_on').style.display = 'none';
-	document.getElementById('vertex_move_off').style.display = 'block';
+	document.getElementById('vertex_move_off').style.display = '';
 }
 
 function vertex_move_off() {
 	"use strict";
 	Vertex_move_enabled = false;
-	document.getElementById('vertex_move_on').style.display = 'block';
+	document.getElementById('vertex_move_on').style.display = '';
 	document.getElementById('vertex_move_off').style.display = 'none';
 }
 
