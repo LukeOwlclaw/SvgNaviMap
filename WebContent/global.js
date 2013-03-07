@@ -10,23 +10,20 @@ function G() {
 }
 G.global = 'This is a global variable accessible from everywhere via G.global';
 
+var levels = ["minimal0.svg","minimal1.svg","minimal2.svg", "minimal-data.xml"];
+levels = ["airport_level0_fullsvg_big.svg","airport_level1_fullsvg_big.svg","airport-data.xml"];
+levels = ["big0.svg", "big1.svg", "big2.svg", "big3.svg", "big4.svg", "big-data.xml"];
+
 G.getLevelCount = function() {
-  return 3;
+  return levels.length - 1;
 }
 
 G.getMapPath = function(level) {
-  if(level == 0)
-    return G.getDataDir() + "minimal0.svg";
-  else if(level == 1)
-    return G.getDataDir() + "minimal1.svg";
-  else if(level == 2)
-    return G.getDataDir() + "minimal2.svg";
-  else
-    return null
+  return G.getDataDir() + levels[level];
 }
 
 G.getXmlFilename = function() {
-  return "minimal-data.xml";
+  return levels[levels.length - 1];
 }
 
 G.getXmlPath = function() {
