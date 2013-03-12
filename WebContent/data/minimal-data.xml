@@ -1,507 +1,510 @@
 <!-- minimal-data.xml -->
 <svgmap-data>
-<levelaltitudes>
-<levelaltitude>
-<id>0</id>
-<min>0</min>
-<max>5</max>
-</levelaltitude>
-<levelaltitude>
-<id>1</id>
-<min>5</min>
-<max>10</max>
-</levelaltitude>
-<levelaltitude>
-<id>2</id>
-<min>10</min>
-<max>15</max>
-</levelaltitude>
-</levelaltitudes>
-<gpsmarkers>
-        <gpsmarker>
-                <id>0</id>
-                <svgid>0</svgid>
-                <x-pos>7.6407412424379455</x-pos>
-                <y-pos>8.186508490114795</y-pos>
-                <latitude>53.629409</latitude>
-                <longitude>10.006764</longitude>
-        </gpsmarker>
-        <gpsmarker>
-                <id>1</id>
-                <svgid>0</svgid>
-                <x-pos>7.094974009763626</x-pos>
-                <y-pos>159.90979917357566</y-pos>
-                <latitude>53.629088</latitude>
-                <longitude>10.006426</longitude>
-        </gpsmarker>
-        <gpsmarker>
-                <id>2</id>
-                <svgid>0</svgid>
-                <x-pos>395.68124367387924</x-pos>
-                <y-pos>161.0013336389243</y-pos>
-                <latitude>53.628659</latitude>
-                <longitude>10.007595</longitude>
-        </gpsmarker>
-        <gpsmarker>
-                <id>3</id>
-                <svgid>0</svgid>
-                <x-pos>394.0439419758563</x-pos>
-                <y-pos>4.366137861394558</y-pos>
-                <latitude>53.628974</latitude>
-                <longitude>10.007907</longitude>
-        </gpsmarker>
-        <gpsmarker>
-                <id>4</id>
-                  <svgid>1</svgid>
-                                           <x-pos>7.6407412424379455</x-pos>
-                       <y-pos>8.186508490114795</y-pos>
-                       <latitude>53.629409</latitude>
-                       <longitude>10.006764</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>5</id>
-                       <svgid>1</svgid>
-                       <x-pos>7.094974009763626</x-pos>
-                       <y-pos>159.90979917357566</y-pos>
-                       <latitude>53.629088</latitude>
-                       <longitude>10.006426</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>6</id>
-                       <svgid>1</svgid>
-                       <x-pos>395.68124367387924</x-pos>
-                       <y-pos>161.0013336389243</y-pos>
-                       <latitude>53.628659</latitude>
-                       <longitude>10.007595</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>7</id>
-                       <svgid>1</svgid>
-                       <x-pos>394.0439419758563</x-pos>
-                       <y-pos>4.366137861394558</y-pos>
-                       <latitude>53.628974</latitude>
-                       <longitude>10.007907</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>8</id>
-                       <svgid>2</svgid>
-                       <x-pos>7.6407412424379455</x-pos>
-                       <y-pos>8.186508490114795</y-pos>
-                       <latitude>53.629409</latitude>
-                       <longitude>10.006764</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>9</id>
-                       <svgid>2</svgid>
-                       <x-pos>7.094974009763626</x-pos>
-                       <y-pos>159.90979917357566</y-pos>
-                       <latitude>53.629088</latitude>
-                       <longitude>10.006426</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>10</id>
-                       <svgid>2</svgid>
-                       <x-pos>395.68124367387924</x-pos>
-                       <y-pos>161.0013336389243</y-pos>
-                       <latitude>53.628659</latitude>
-                       <longitude>10.007595</longitude>
-               </gpsmarker>
-               <gpsmarker>
-                       <id>11</id>
-                       <svgid>2</svgid>
-                       <x-pos>394.0439419758563</x-pos>
-                       <y-pos>4.366137861394558</y-pos>
-                       <latitude>53.628974</latitude>
-                        <longitude>10.007907</longitude>
-                                   </gpsmarker>
-   </gpsmarkers>
-<categories>
-<category>
-<id>0</id>
-<name>Stairs</name>
-</category>
-<category>
-<id>1</id>
-<name>Shoes</name>
-</category>
-<category>
-<id>2</id>
-<name>Cars</name>
-</category>
-</categories>
-<vertexes>
-<vertex>
-<id>0</id>
-<svgid>0</svgid>
-<x-pos>73.67857641103316</x-pos>
-<y-pos>68.76667131696428</y-pos>
-<poi>true</poi>
-<shortDescription>Stairs%200</shortDescription>
-<longDescription>Stairs%20Level%200</longDescription>
-<borderpoint>
-<id>0</id>
-<x-pos>21.284922074298468</x-pos>
-<y-pos>110.24498100021258</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>21.284922074298468</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>158.81826470822702</x-pos>
-<y-pos>110.7907482328869</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>1</id>
-<svgid>1</svgid>
-<x-pos>75.1875</x-pos>
-<y-pos>94.25679347826087</y-pos>
-<poi>true</poi>
-<shortDescription>Stairs%201</shortDescription>
-<longDescription>Stairs%20Level%201</longDescription>
-<borderpoint>
-<id>13</id>
-<x-pos>35.95923913043478</x-pos>
-<y-pos>52.30434782608695</y-pos>
-</borderpoint>
-<borderpoint>
-<id>14</id>
-<x-pos>40.317934782608695</x-pos>
-<y-pos>107.33288043478261</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>161.27173913043478</x-pos>
-<y-pos>110.60190217391305</y-pos>
-</borderpoint>
-<borderpoint>
-<id>16</id>
-<x-pos>160.72690217391303</x-pos>
-<y-pos>50.125</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>2</id>
-<svgid>0</svgid>
-<x-pos>284.8904954559949</x-pos>
-<y-pos>82.41085213382227</y-pos>
-<poi>true</poi>
-<shortDescription>VW</shortDescription>
-<longDescription>Volkswagen</longDescription>
-<borderpoint>
-<id>5</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>158.81826470822702</x-pos>
-<y-pos>110.7907482328869</y-pos>
-</borderpoint>
-<borderpoint>
-<id>8</id>
-<x-pos>383.1285973373724</x-pos>
-<y-pos>111.882282683233</y-pos>
-</borderpoint>
-<borderpoint>
-<id>9</id>
-<x-pos>383.1285973373724</x-pos>
-<y-pos>7.6407412424379455</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>239.04604791135202</x-pos>
-<y-pos>9.278042940460905</y-pos>
-</borderpoint>
-<borderpoint>
-<id>11</id>
-<x-pos>236.86297898065473</x-pos>
-<y-pos>52.93942155440648</y-pos>
-</borderpoint>
-<category>2</category>
-</vertex>
-<vertex>
-<id>3</id>
-<svgid>1</svgid>
-<x-pos>235.3695652173913</x-pos>
-<y-pos>122.04347826086956</y-pos>
-<poi>true</poi>
-<shortDescription>Shoes</shortDescription>
-<longDescription>Shoes</longDescription>
-<borderpoint>
-<id>16</id>
-<x-pos>160.72690217391303</x-pos>
-<y-pos>50.125</y-pos>
-</borderpoint>
-<borderpoint>
-<id>19</id>
-<x-pos>209.2173913043478</x-pos>
-<y-pos>51.214673954507575</y-pos>
-</borderpoint>
-<borderpoint>
-<id>20</id>
-<x-pos>211.39673913043478</x-pos>
-<y-pos>82.81521743276845</y-pos>
-</borderpoint>
-<borderpoint>
-<id>21</id>
-<x-pos>390.1032608695652</x-pos>
-<y-pos>84.9945652588554</y-pos>
-</borderpoint>
-<borderpoint>
-<id>22</id>
-<x-pos>392.8274456521739</x-pos>
-<y-pos>110.60190221537714</y-pos>
-</borderpoint>
-<borderpoint>
-<id>23</id>
-<x-pos>311.64673913043475</x-pos>
-<y-pos>110.0570652588554</y-pos>
-</borderpoint>
-<borderpoint>
-<id>24</id>
-<x-pos>311.64673913043475</x-pos>
-<y-pos>158.00271743276843</y-pos>
-</borderpoint>
-<borderpoint>
-<id>18</id>
-<x-pos>162.36141304347825</x-pos>
-<y-pos>156.36820656320322</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>161.27173913043478</x-pos>
-<y-pos>110.60190217391305</y-pos>
-</borderpoint>
-<category>1</category>
-</vertex>
-<vertex>
-<id>4</id>
-<svgid>0</svgid>
-<x-pos>71.49550748033587</x-pos>
-<y-pos>27.834128866390305</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>4</id>
-<x-pos>21.284922074298468</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-<borderpoint>
-<id>6</id>
-<x-pos>20.73915484162415</x-pos>
-<y-pos>8.186508490114795</y-pos>
-</borderpoint>
-<borderpoint>
-<id>7</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>9.278042940460905</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>5</id>
-<svgid>0</svgid>
-<x-pos>177.3743506191539</x-pos>
-<y-pos>28.379896099064624</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>7</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>9.278042940460905</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>239.04604791135202</x-pos>
-<y-pos>9.278042940460905</y-pos>
-</borderpoint>
-<borderpoint>
-<id>11</id>
-<x-pos>236.86297898065473</x-pos>
-<y-pos>52.93942155440648</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>158.2724974755527</x-pos>
-<y-pos>54.03095603475765</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>6</id>
-<svgid>0</svgid>
-<x-pos>72.0412747130102</x-pos>
-<y-pos>145.17408389136904</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>0</id>
-<x-pos>21.284922074298468</x-pos>
-<y-pos>110.24498100021258</y-pos>
-</borderpoint>
-<borderpoint>
-<id>1</id>
-<x-pos>19.64762037627551</x-pos>
-<y-pos>159.90979917357566</y-pos>
-</borderpoint>
-<borderpoint>
-<id>2</id>
-<x-pos>160.45556640625</x-pos>
-<y-pos>159.36403194090136</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>158.81826470822702</x-pos>
-<y-pos>110.7907482328869</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>7</id>
-<svgid>0</svgid>
-<x-pos>284.34472822332054</x-pos>
-<y-pos>147.90292005474063</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>3</id>
-<x-pos>158.81826470822702</x-pos>
-<y-pos>110.7907482328869</y-pos>
-</borderpoint>
-<borderpoint>
-<id>8</id>
-<x-pos>383.1285973373724</x-pos>
-<y-pos>111.882282683233</y-pos>
-</borderpoint>
-<borderpoint>
-<id>12</id>
-<x-pos>384.76589903539536</x-pos>
-<y-pos>155.54366129717857</y-pos>
-</borderpoint>
-<borderpoint>
-<id>2</id>
-<x-pos>160.45556640625</x-pos>
-<y-pos>159.36403194090136</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>8</id>
-<svgid>1</svgid>
-<x-pos>74.64266304347827</x-pos>
-<y-pos>124.22282608695652</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>14</id>
-<x-pos>40.317934782608695</x-pos>
-<y-pos>107.33288043478261</y-pos>
-</borderpoint>
-<borderpoint>
-<id>17</id>
-<x-pos>38.13858695652174</x-pos>
-<y-pos>155.27853260869566</y-pos>
-</borderpoint>
-<borderpoint>
-<id>18</id>
-<x-pos>162.36141304347825</x-pos>
-<y-pos>156.36820656320322</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>161.27173913043478</x-pos>
-<y-pos>110.60190217391305</y-pos>
-</borderpoint>
-</vertex>
-</vertexes>
-<edges>
-<edge>
-<id>0</id>
-<vertex1>0</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>4</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>1</id>
-<vertex1>4</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>5</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>2</id>
-<vertex1>5</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>2</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>3</id>
-<vertex1>2</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>7</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>4</id>
-<vertex1>7</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>6</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>5</id>
-<vertex1>6</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>0</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>6</id>
-<vertex1>1</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>8</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>7</id>
-<vertex1>8</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>3</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>8</id>
-<vertex1>0</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex1-stepmarker>
-<x-pos>146</x-pos>
-<y-pos>69</y-pos>
-</vertex1-stepmarker>
-<vertex2>1</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<vertex2-stepmarker>
-<x-pos>148</x-pos>
-<y-pos>93</y-pos>
-</vertex2-stepmarker>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-</edges>
+	<levels>
+		<level>
+			<id>0</id>
+			<svgpath>minimal0.svg</svgpath>
+			<min_altitude>0</min_altitude>
+			<max_altitude>5</max_altitude>
+		</level>
+		<level>
+			<id>1</id>
+			<svgpath>minimal1.svg</svgpath>
+			<min_altitude>5</min_altitude>
+			<max_altitude>10</max_altitude>
+		</level>
+		<level>
+			<id>2</id>
+			<svgpath>minimal2.svg</svgpath>
+			<min_altitude>10</min_altitude>
+			<max_altitude>15</max_altitude>
+		</level>
+	</levels>
+	<gpsmarkers>
+		<gpsmarker>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>7.6407412424379455</x-pos>
+			<y-pos>8.186508490114795</y-pos>
+			<latitude>53.629409</latitude>
+			<longitude>10.006764</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>1</id>
+			<svgid>0</svgid>
+			<x-pos>7.094974009763626</x-pos>
+			<y-pos>159.90979917357566</y-pos>
+			<latitude>53.629088</latitude>
+			<longitude>10.006426</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>2</id>
+			<svgid>0</svgid>
+			<x-pos>395.68124367387924</x-pos>
+			<y-pos>161.0013336389243</y-pos>
+			<latitude>53.628659</latitude>
+			<longitude>10.007595</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>3</id>
+			<svgid>0</svgid>
+			<x-pos>394.0439419758563</x-pos>
+			<y-pos>4.366137861394558</y-pos>
+			<latitude>53.628974</latitude>
+			<longitude>10.007907</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>4</id>
+			<svgid>1</svgid>
+			<x-pos>7.6407412424379455</x-pos>
+			<y-pos>8.186508490114795</y-pos>
+			<latitude>53.629409</latitude>
+			<longitude>10.006764</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>5</id>
+			<svgid>1</svgid>
+			<x-pos>7.094974009763626</x-pos>
+			<y-pos>159.90979917357566</y-pos>
+			<latitude>53.629088</latitude>
+			<longitude>10.006426</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>6</id>
+			<svgid>1</svgid>
+			<x-pos>395.68124367387924</x-pos>
+			<y-pos>161.0013336389243</y-pos>
+			<latitude>53.628659</latitude>
+			<longitude>10.007595</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>7</id>
+			<svgid>1</svgid>
+			<x-pos>394.0439419758563</x-pos>
+			<y-pos>4.366137861394558</y-pos>
+			<latitude>53.628974</latitude>
+			<longitude>10.007907</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>8</id>
+			<svgid>2</svgid>
+			<x-pos>7.6407412424379455</x-pos>
+			<y-pos>8.186508490114795</y-pos>
+			<latitude>53.629409</latitude>
+			<longitude>10.006764</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>9</id>
+			<svgid>2</svgid>
+			<x-pos>7.094974009763626</x-pos>
+			<y-pos>159.90979917357566</y-pos>
+			<latitude>53.629088</latitude>
+			<longitude>10.006426</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>10</id>
+			<svgid>2</svgid>
+			<x-pos>395.68124367387924</x-pos>
+			<y-pos>161.0013336389243</y-pos>
+			<latitude>53.628659</latitude>
+			<longitude>10.007595</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>11</id>
+			<svgid>2</svgid>
+			<x-pos>394.0439419758563</x-pos>
+			<y-pos>4.366137861394558</y-pos>
+			<latitude>53.628974</latitude>
+			<longitude>10.007907</longitude>
+		</gpsmarker>
+	</gpsmarkers>
+	<categories>
+		<category>
+			<id>0</id>
+			<name>Stairs</name>
+		</category>
+		<category>
+			<id>1</id>
+			<name>Shoes</name>
+		</category>
+		<category>
+			<id>2</id>
+			<name>Cars</name>
+		</category>
+	</categories>
+	<vertexes>
+		<vertex>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>73.67857641103316</x-pos>
+			<y-pos>68.76667131696428</y-pos>
+			<poi>true</poi>
+			<shortDescription>Stairs%200</shortDescription>
+			<longDescription>Stairs%20Level%200</longDescription>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>21.284922074298468</x-pos>
+				<y-pos>110.24498100021258</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>21.284922074298468</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>158.81826470822702</x-pos>
+				<y-pos>110.7907482328869</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>1</id>
+			<svgid>1</svgid>
+			<x-pos>75.1875</x-pos>
+			<y-pos>94.25679347826087</y-pos>
+			<poi>true</poi>
+			<shortDescription>Stairs%201</shortDescription>
+			<longDescription>Stairs%20Level%201</longDescription>
+			<borderpoint>
+				<id>13</id>
+				<x-pos>35.95923913043478</x-pos>
+				<y-pos>52.30434782608695</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>14</id>
+				<x-pos>40.317934782608695</x-pos>
+				<y-pos>107.33288043478261</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>161.27173913043478</x-pos>
+				<y-pos>110.60190217391305</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>16</id>
+				<x-pos>160.72690217391303</x-pos>
+				<y-pos>50.125</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>2</id>
+			<svgid>0</svgid>
+			<x-pos>284.8904954559949</x-pos>
+			<y-pos>82.41085213382227</y-pos>
+			<poi>true</poi>
+			<shortDescription>VW</shortDescription>
+			<longDescription>Volkswagen</longDescription>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>158.81826470822702</x-pos>
+				<y-pos>110.7907482328869</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>383.1285973373724</x-pos>
+				<y-pos>111.882282683233</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>383.1285973373724</x-pos>
+				<y-pos>7.6407412424379455</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>239.04604791135202</x-pos>
+				<y-pos>9.278042940460905</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>11</id>
+				<x-pos>236.86297898065473</x-pos>
+				<y-pos>52.93942155440648</y-pos>
+			</borderpoint>
+			<category>2</category>
+		</vertex>
+		<vertex>
+			<id>3</id>
+			<svgid>1</svgid>
+			<x-pos>235.3695652173913</x-pos>
+			<y-pos>122.04347826086956</y-pos>
+			<poi>true</poi>
+			<shortDescription>Shoes</shortDescription>
+			<longDescription>Shoes</longDescription>
+			<borderpoint>
+				<id>16</id>
+				<x-pos>160.72690217391303</x-pos>
+				<y-pos>50.125</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>19</id>
+				<x-pos>209.2173913043478</x-pos>
+				<y-pos>51.214673954507575</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>20</id>
+				<x-pos>211.39673913043478</x-pos>
+				<y-pos>82.81521743276845</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>21</id>
+				<x-pos>390.1032608695652</x-pos>
+				<y-pos>84.9945652588554</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>22</id>
+				<x-pos>392.8274456521739</x-pos>
+				<y-pos>110.60190221537714</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>23</id>
+				<x-pos>311.64673913043475</x-pos>
+				<y-pos>110.0570652588554</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>24</id>
+				<x-pos>311.64673913043475</x-pos>
+				<y-pos>158.00271743276843</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>18</id>
+				<x-pos>162.36141304347825</x-pos>
+				<y-pos>156.36820656320322</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>161.27173913043478</x-pos>
+				<y-pos>110.60190217391305</y-pos>
+			</borderpoint>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>4</id>
+			<svgid>0</svgid>
+			<x-pos>71.49550748033587</x-pos>
+			<y-pos>27.834128866390305</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>21.284922074298468</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>6</id>
+				<x-pos>20.73915484162415</x-pos>
+				<y-pos>8.186508490114795</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>7</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>9.278042940460905</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>5</id>
+			<svgid>0</svgid>
+			<x-pos>177.3743506191539</x-pos>
+			<y-pos>28.379896099064624</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>7</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>9.278042940460905</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>239.04604791135202</x-pos>
+				<y-pos>9.278042940460905</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>11</id>
+				<x-pos>236.86297898065473</x-pos>
+				<y-pos>52.93942155440648</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>158.2724974755527</x-pos>
+				<y-pos>54.03095603475765</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>6</id>
+			<svgid>0</svgid>
+			<x-pos>72.0412747130102</x-pos>
+			<y-pos>145.17408389136904</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>21.284922074298468</x-pos>
+				<y-pos>110.24498100021258</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>19.64762037627551</x-pos>
+				<y-pos>159.90979917357566</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>160.45556640625</x-pos>
+				<y-pos>159.36403194090136</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>158.81826470822702</x-pos>
+				<y-pos>110.7907482328869</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>7</id>
+			<svgid>0</svgid>
+			<x-pos>284.34472822332054</x-pos>
+			<y-pos>147.90292005474063</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>158.81826470822702</x-pos>
+				<y-pos>110.7907482328869</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>383.1285973373724</x-pos>
+				<y-pos>111.882282683233</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>12</id>
+				<x-pos>384.76589903539536</x-pos>
+				<y-pos>155.54366129717857</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>160.45556640625</x-pos>
+				<y-pos>159.36403194090136</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>8</id>
+			<svgid>1</svgid>
+			<x-pos>74.64266304347827</x-pos>
+			<y-pos>124.22282608695652</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>14</id>
+				<x-pos>40.317934782608695</x-pos>
+				<y-pos>107.33288043478261</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>17</id>
+				<x-pos>38.13858695652174</x-pos>
+				<y-pos>155.27853260869566</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>18</id>
+				<x-pos>162.36141304347825</x-pos>
+				<y-pos>156.36820656320322</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>161.27173913043478</x-pos>
+				<y-pos>110.60190217391305</y-pos>
+			</borderpoint>
+		</vertex>
+	</vertexes>
+	<edges>
+		<edge>
+			<id>0</id>
+			<vertex1>0</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>4</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>1</id>
+			<vertex1>4</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>5</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>2</id>
+			<vertex1>5</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>2</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>3</id>
+			<vertex1>2</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>7</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>4</id>
+			<vertex1>7</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>6</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>5</id>
+			<vertex1>6</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>0</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>6</id>
+			<vertex1>1</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>8</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>7</id>
+			<vertex1>8</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>3</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>8</id>
+			<vertex1>0</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>146</x-pos>
+				<y-pos>69</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>1</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>148</x-pos>
+				<y-pos>93</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+	</edges>
 </svgmap-data>
 <!-- EOF -->

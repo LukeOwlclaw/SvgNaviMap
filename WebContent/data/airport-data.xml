@@ -1,3736 +1,3740 @@
 <!-- svgmap-data.xml -->
 <svgmap-data>
-<levelaltitudes>
-<levelaltitude>
-<id>0</id>
-<min>0</min>
-<max>5</max>
-</levelaltitude>
-<levelaltitude>
-<id>1</id>
-<min>5</min>
-<max>10</max>
-</levelaltitude>
-</levelaltitudes>
-<gpsmarkers>
-<gpsmarker>
-<id>0</id>
-<svgid>0</svgid>
-<x-pos>77.62238190267871</x-pos>
-<y-pos>283.2334011527971</y-pos>
-<latitude>53.62841</latitude>
-<longitude>10.002896</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>1</id>
-<svgid>0</svgid>
-<x-pos>1388.258022561679</x-pos>
-<y-pos>36.30701602466024</y-pos>
-<latitude>53.634957</latitude>
-<longitude>10.003797</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>2</id>
-<svgid>1</svgid>
-<x-pos>56.28772682504555</x-pos>
-<y-pos>271.45210374261916</y-pos>
-<latitude>53.62841</latitude>
-<longitude>10.002923</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>3</id>
-<svgid>1</svgid>
-<x-pos>1377.2335877565993</x-pos>
-<y-pos>19.9730626529025</y-pos>
-<latitude>53.634957</latitude>
-<longitude>10.003814</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>4</id>
-<svgid>0</svgid>
-<x-pos>701.7763866935809</x-pos>
-<y-pos>486.3604762283797</y-pos>
-<latitude>53.630602</latitude>
-<longitude>10.006437</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>5</id>
-<svgid>0</svgid>
-<x-pos>1260.110786673949</x-pos>
-<y-pos>310.08417676158786</y-pos>
-<latitude>53.633513</latitude>
-<longitude>10.006077</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>6</id>
-<svgid>0</svgid>
-<x-pos>34.186148220730814</x-pos>
-<y-pos>318.2180853971501</y-pos>
-<latitude>53.628175</latitude>
-<longitude>10.003084</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>7</id>
-<svgid>0</svgid>
-<x-pos>557.6470095054391</x-pos>
-<y-pos>411.16780636974215</y-pos>
-<latitude>53.630061</latitude>
-<longitude>10.005155</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>8</id>
-<svgid>0</svgid>
-<x-pos>621.2182782753227</x-pos>
-<y-pos>393.830189577083</y-pos>
-<latitude>53.630564</latitude>
-<longitude>10.005203</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>10</id>
-<svgid>0</svgid>
-<x-pos>692.6702867488272</x-pos>
-<y-pos>296.10905712167016</y-pos>
-<latitude>53.631143</latitude>
-<longitude>10.004672</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>11</id>
-<svgid>0</svgid>
-<x-pos>965.9993512655042</x-pos>
-<y-pos>404.477460251641</y-pos>
-<latitude>53.631941</latitude>
-<longitude>10.006287</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>13</id>
-<svgid>0</svgid>
-<x-pos>1049.8252487575885</x-pos>
-<y-pos>181.2279766908626</y-pos>
-<latitude>53.633017</latitude>
-<longitude>10.004457</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>14</id>
-<svgid>0</svgid>
-<x-pos>1209.3313453910278</x-pos>
-<y-pos>130.16080864188598</y-pos>
-<latitude>53.633859</latitude>
-<longitude>10.00435</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>15</id>
-<svgid>0</svgid>
-<x-pos>1337.314504210482</x-pos>
-<y-pos>21.091417135651568</y-pos>
-<latitude>53.634737</latitude>
-<longitude>10.003626</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>16</id>
-<svgid>0</svgid>
-<x-pos>166.55270072973173</x-pos>
-<y-pos>295.22757912586087</y-pos>
-<latitude>53.628706</latitude>
-<longitude>10.003197</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>17</id>
-<svgid>0</svgid>
-<x-pos>264.91096903965183</x-pos>
-<y-pos>312.31085720936085</y-pos>
-<latitude>53.629113</latitude>
-<longitude>10.003636</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>18</id>
-<svgid>0</svgid>
-<x-pos>364.3046054448373</x-pos>
-<y-pos>328.35878185977305</y-pos>
-<latitude>53.629511</latitude>
-<longitude>10.004044</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>19</id>
-<svgid>0</svgid>
-<x-pos>544.9732083144346</x-pos>
-<y-pos>345.4420698265329</y-pos>
-<latitude>53.630357</latitude>
-<longitude>10.004768</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>20</id>
-<svgid>0</svgid>
-<x-pos>615.8947130055601</x-pos>
-<y-pos>322.6643708094978</y-pos>
-<latitude>53.630764</latitude>
-<longitude>10.004704</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>21</id>
-<svgid>0</svgid>
-<x-pos>805.1122142918302</x-pos>
-<y-pos>261.9767686744437</y-pos>
-<latitude>53.631738</latitude>
-<longitude>10.004602</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>22</id>
-<svgid>0</svgid>
-<x-pos>881.521058430604</x-pos>
-<y-pos>239.61320271424208</y-pos>
-<latitude>53.632126</latitude>
-<longitude>10.004548</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>23</id>
-<svgid>0</svgid>
-<x-pos>954.2026494464603</x-pos>
-<y-pos>214.7647955293339</y-pos>
-<latitude>53.632485</latitude>
-<longitude>10.0045</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>24</id>
-<svgid>0</svgid>
-<x-pos>768.3728498281891</x-pos>
-<y-pos>340.92566285674104</y-pos>
-<latitude>53.631366</latitude>
-<longitude>10.005117</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>25</id>
-<svgid>0</svgid>
-<x-pos>743.3639139232666</x-pos>
-<y-pos>405.3163137812562</y-pos>
-<latitude>53.631025</latitude>
-<longitude>10.005777</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>26</id>
-<svgid>0</svgid>
-<x-pos>1080.2700330596608</x-pos>
-<y-pos>365.0737768743456</y-pos>
-<latitude>53.632454</latitude>
-<longitude>10.00619</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>27</id>
-<svgid>0</svgid>
-<x-pos>1007.253995151128</x-pos>
-<y-pos>270.3894541470737</y-pos>
-<latitude>53.6324</latitude>
-<longitude>10.004994</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>28</id>
-<svgid>0</svgid>
-<x-pos>1129.5081569195547</x-pos>
-<y-pos>287.53485488288965</y-pos>
-<latitude>53.632975</latitude>
-<longitude>10.005552</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>29</id>
-<svgid>0</svgid>
-<x-pos>926.1578683754833</x-pos>
-<y-pos>340.5559398218528</y-pos>
-<latitude>53.631907</latitude>
-<longitude>10.005713</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>30</id>
-<svgid>0</svgid>
-<x-pos>899.4509082282941</x-pos>
-<y-pos>302.0278834706729</y-pos>
-<latitude>53.631913</latitude>
-<longitude>10.005059</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>31</id>
-<svgid>0</svgid>
-<x-pos>1090.7446213853302</x-pos>
-<y-pos>248.02589324902962</y-pos>
-<latitude>53.632957</latitude>
-<longitude>10.004941</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>32</id>
-<svgid>0</svgid>
-<x-pos>1165.2898557641872</x-pos>
-<y-pos>341.20741329825887</y-pos>
-<latitude>53.633011</latitude>
-<longitude>10.006126</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>33</id>
-<svgid>1</svgid>
-<x-pos>1218.3569386275772</x-pos>
-<y-pos>245.12397113288796</y-pos>
-<latitude>53.6335</latitude>
-<longitude>10.005434</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>34</id>
-<svgid>1</svgid>
-<x-pos>1266.4738666495095</x-pos>
-<y-pos>307.76676421804524</y-pos>
-<latitude>53.633523</latitude>
-<longitude>10.006089</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>35</id>
-<svgid>1</svgid>
-<x-pos>576.4952761463283</x-pos>
-<y-pos>458.47261424900324</y-pos>
-<latitude>53.630593</latitude>
-<longitude>10.005842</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>36</id>
-<svgid>1</svgid>
-<x-pos>623.704330857267</x-pos>
-<y-pos>512.9446104187326</y-pos>
-<latitude>53.630603</latitude>
-<longitude>10.006459</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>39</id>
-<svgid>0</svgid>
-<x-pos>1128.7775201541365</x-pos>
-<y-pos>159.26657194887858</y-pos>
-<latitude>53.633456</latitude>
-<longitude>10.004414</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>40</id>
-<svgid>0</svgid>
-<x-pos>1293.139382119804</x-pos>
-<y-pos>77.3013391750872</y-pos>
-<latitude>53.634384</latitude>
-<longitude>10.004017</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>41</id>
-<svgid>0</svgid>
-<x-pos>782.3587692300069</x-pos>
-<y-pos>463.45407645235355</y-pos>
-<latitude>53.631028</latitude>
-<longitude>10.006372</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>42</id>
-<svgid>0</svgid>
-<x-pos>848.6396530583962</x-pos>
-<y-pos>441.5631423438947</y-pos>
-<latitude>53.631417</latitude>
-<longitude>10.006362</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>45</id>
-<svgid>0</svgid>
-<x-pos>1185.7843709729382</x-pos>
-<y-pos>207.45904367977812</y-pos>
-<latitude>53.6335</latitude>
-<longitude>10.00487</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>47</id>
-<svgid>0</svgid>
-<x-pos>1037.7059280159547</x-pos>
-<y-pos>318.68530517263514</y-pos>
-<latitude>53.632425</latitude>
-<longitude>10.005616</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>48</id>
-<svgid>0</svgid>
-<x-pos>800.7584774764542</x-pos>
-<y-pos>385.4088649553122</y-pos>
-<latitude>53.631394</latitude>
-<longitude>10.005755</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>49</id>
-<svgid>0</svgid>
-<x-pos>659.4305591779886</x-pos>
-<y-pos>439.52326009691376</y-pos>
-<latitude>53.630599</latitude>
-<longitude>10.005873</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>50</id>
-<svgid>0</svgid>
-<x-pos>695.156562765849</x-pos>
-<y-pos>361.24128164704314</y-pos>
-<latitude>53.630971</latitude>
-<longitude>10.005155</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>51</id>
-<svgid>0</svgid>
-<x-pos>1223.737542535841</x-pos>
-<y-pos>254.94108211871273</y-pos>
-<latitude>53.6335</latitude>
-<longitude>10.005476</longitude>
-</gpsmarker>
-</gpsmarkers>
-<categories>
-<category>
-<id>0</id>
-<name>Gates</name>
-</category>
-<category>
-<id>1</id>
-<name>Security%20Check</name>
-</category>
-<category>
-<id>2</id>
-<name>Stairs</name>
-</category>
-<category>
-<id>3</id>
-<name>Eingang</name>
-</category>
-<category>
-<id>4</id>
-<name>Checkin</name>
-</category>
-<category>
-<id>5</id>
-<name>Treffpunkte</name>
-</category>
-<category>
-<id>6</id>
-<name>Dienstleistungen</name>
-</category>
-<category>
-<id>7</id>
-<name>Restaurants</name>
-</category>
-</categories>
-<vertexes>
-<vertex>
-<id>0</id>
-<svgid>0</svgid>
-<x-pos>725.6700150991223</x-pos>
-<y-pos>416.44033036772737</y-pos>
-<poi>true</poi>
-<shortDescription>Checkin2</shortDescription>
-<longDescription>Flightline%20Counter</longDescription>
-<borderpoint>
-<id>39</id>
-<x-pos>716.82326568531</x-pos>
-<y-pos>407.068579438365</y-pos>
-</borderpoint>
-<borderpoint>
-<id>40</id>
-<x-pos>710.522404694856</x-pos>
-<y-pos>399.867595449276</y-pos>
-</borderpoint>
-<borderpoint>
-<id>35</id>
-<x-pos>701.593198245084</x-pos>
-<y-pos>402.46289142174</y-pos>
-</borderpoint>
-<borderpoint>
-<id>34</id>
-<x-pos>692.519959027254</x-pos>
-<y-pos>405.573716296425</y-pos>
-</borderpoint>
-<borderpoint>
-<id>33</id>
-<x-pos>701.333962838859</x-pos>
-<y-pos>417.75778038894</y-pos>
-</borderpoint>
-<borderpoint>
-<id>62</id>
-<x-pos>719.523634681218</x-pos>
-<y-pos>440.553136807452</y-pos>
-</borderpoint>
-<borderpoint>
-<id>45</id>
-<x-pos>732.485437785522</x-pos>
-<y-pos>425.071048446846</y-pos>
-</borderpoint>
-<borderpoint>
-<id>49</id>
-<x-pos>742.566815370243</x-pos>
-<y-pos>420.570433453668</y-pos>
-</borderpoint>
-<borderpoint>
-<id>38</id>
-<x-pos>736.986020854755</x-pos>
-<y-pos>396.627152654187</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>1</id>
-<svgid>0</svgid>
-<x-pos>41.7380054630808</x-pos>
-<y-pos>309.287813259075</y-pos>
-<poi>true</poi>
-<shortDescription>A40</shortDescription>
-<longDescription>Gate%20A/B40</longDescription>
-<borderpoint>
-<id>6</id>
-<x-pos>41.7806839897662</x-pos>
-<y-pos>294.783794656584</y-pos>
-</borderpoint>
-<borderpoint>
-<id>7</id>
-<x-pos>28.1708251630204</x-pos>
-<y-pos>317.682922206345</y-pos>
-</borderpoint>
-<borderpoint>
-<id>8</id>
-<x-pos>65.1118705499019</x-pos>
-<y-pos>323.947789916508</y-pos>
-</borderpoint>
-<borderpoint>
-<id>9</id>
-<x-pos>70.2965786743767</x-pos>
-<y-pos>300.616603356372</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>2</id>
-<svgid>0</svgid>
-<x-pos>64.1861164298238</x-pos>
-<y-pos>290.710066252117</y-pos>
-<poi>true</poi>
-<shortDescription>A39</shortDescription>
-<longDescription>Gate%20A/B39</longDescription>
-<borderpoint>
-<id>9</id>
-<x-pos>70.2965786743767</x-pos>
-<y-pos>300.616603356372</y-pos>
-</borderpoint>
-<borderpoint>
-<id>12</id>
-<x-pos>75.9133458092241</x-pos>
-<y-pos>281.606006899966</y-pos>
-</borderpoint>
-<borderpoint>
-<id>13</id>
-<x-pos>73.9690802625462</x-pos>
-<y-pos>272.532767682136</y-pos>
-</borderpoint>
-<borderpoint>
-<id>6</id>
-<x-pos>41.7806839897662</x-pos>
-<y-pos>294.783794656584</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>3</id>
-<svgid>0</svgid>
-<x-pos>90.5045913563499</x-pos>
-<y-pos>280.64711995668</y-pos>
-<poi>true</poi>
-<shortDescription>A38</shortDescription>
-<longDescription>Gate%20A/B38</longDescription>
-<borderpoint>
-<id>13</id>
-<x-pos>73.9690802625462</x-pos>
-<y-pos>272.532767682136</y-pos>
-</borderpoint>
-<borderpoint>
-<id>14</id>
-<x-pos>117.174981299835</x-pos>
-<y-pos>276.205269270305</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>112.206302680547</x-pos>
-<y-pos>295.647924737085</y-pos>
-</borderpoint>
-<borderpoint>
-<id>12</id>
-<x-pos>75.9133458092241</x-pos>
-<y-pos>281.606006899966</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>4</id>
-<svgid>0</svgid>
-<x-pos>167.137797760058</x-pos>
-<y-pos>294.5804302119</y-pos>
-<poi>true</poi>
-<shortDescription>A37</shortDescription>
-<longDescription>Gate%20A/B37</longDescription>
-<borderpoint>
-<id>16</id>
-<x-pos>164.053383667258</x-pos>
-<y-pos>284.198360962204</y-pos>
-</borderpoint>
-<borderpoint>
-<id>17</id>
-<x-pos>161.028970594647</x-pos>
-<y-pos>312.28219663644</y-pos>
-</borderpoint>
-<borderpoint>
-<id>20</id>
-<x-pos>160.164853904821</x-pos>
-<y-pos>318.114989872218</y-pos>
-</borderpoint>
-<borderpoint>
-<id>21</id>
-<x-pos>180.471627392346</x-pos>
-<y-pos>321.787491460389</y-pos>
-</borderpoint>
-<borderpoint>
-<id>23</id>
-<x-pos>212.549946594842</x-pos>
-<y-pos>326.908303408683</y-pos>
-</borderpoint>
-<borderpoint>
-<id>24</id>
-<x-pos>210.883052189139</x-pos>
-<y-pos>291.90352088892</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>5</id>
-<svgid>0</svgid>
-<x-pos>265.445042338552</x-pos>
-<y-pos>310.835958842988</y-pos>
-<poi>true</poi>
-<shortDescription>B32</shortDescription>
-<longDescription>Gate%20B32</longDescription>
-<borderpoint>
-<id>25</id>
-<x-pos>259.230645662621</x-pos>
-<y-pos>300.044205122355</y-pos>
-</borderpoint>
-<borderpoint>
-<id>26</id>
-<x-pos>251.45358347591</x-pos>
-<y-pos>333.312748921068</y-pos>
-</borderpoint>
-<borderpoint>
-<id>29</id>
-<x-pos>270.95809355265</x-pos>
-<y-pos>336.512107707276</y-pos>
-</borderpoint>
-<borderpoint>
-<id>30</id>
-<x-pos>277.625671175462</x-pos>
-<y-pos>302.861676892146</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>6</id>
-<svgid>0</svgid>
-<x-pos>364.526359709001</x-pos>
-<y-pos>328.639633057992</y-pos>
-<poi>true</poi>
-<shortDescription>B31</shortDescription>
-<longDescription>Gate%20B31</longDescription>
-<borderpoint>
-<id>97</id>
-<x-pos>399.794638782381</x-pos>
-<y-pos>354.341034246576</y-pos>
-</borderpoint>
-<borderpoint>
-<id>86</id>
-<x-pos>346.989689577681</x-pos>
-<y-pos>348.997676291337</y-pos>
-</borderpoint>
-<borderpoint>
-<id>99</id>
-<x-pos>335.98865849337</x-pos>
-<y-pos>313.480061647701</y-pos>
-</borderpoint>
-<borderpoint>
-<id>100</id>
-<x-pos>400.737584303892</x-pos>
-<y-pos>322.909516862826</y-pos>
-</borderpoint>
-<borderpoint>
-<id>98</id>
-<x-pos>401.051899477731</x-pos>
-<y-pos>334.853493468651</y-pos>
-</borderpoint>
-<category>0</category>
-</vertex>
-<vertex>
-<id>7</id>
-<svgid>0</svgid>
-<x-pos>92.8268097322197</x-pos>
-<y-pos>310.835958842988</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>9</id>
-<x-pos>70.2965786743767</x-pos>
-<y-pos>300.616603356372</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>123.655866455428</x-pos>
-<y-pos>307.745577027525</y-pos>
-</borderpoint>
-<borderpoint>
-<id>11</id>
-<x-pos>118.903217341326</x-pos>
-<y-pos>333.021029134338</y-pos>
-</borderpoint>
-<borderpoint>
-<id>8</id>
-<x-pos>65.1118705499019</x-pos>
-<y-pos>323.947789916508</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>8</id>
-<svgid>0</svgid>
-<x-pos>260.800606474092</x-pos>
-<y-pos>337.965739153608</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>26</id>
-<x-pos>251.45358347591</x-pos>
-<y-pos>333.312748921068</y-pos>
-</borderpoint>
-<borderpoint>
-<id>29</id>
-<x-pos>270.95809355265</x-pos>
-<y-pos>336.512107707276</y-pos>
-</borderpoint>
-<borderpoint>
-<id>85</id>
-<x-pos>287.584129068205</x-pos>
-<y-pos>360.313017938919</y-pos>
-</borderpoint>
-<borderpoint>
-<id>84</id>
-<x-pos>227.864246039082</x-pos>
-<y-pos>350.883562723794</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>9</id>
-<svgid>0</svgid>
-<x-pos>261.173905469194</x-pos>
-<y-pos>326.020171310328</y-pos>
-<poi>false</poi>
-</vertex>
-<vertex>
-<id>10</id>
-<svgid>0</svgid>
-<x-pos>248.481739635709</x-pos>
-<y-pos>313.701304471944</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>24</id>
-<x-pos>210.883052189139</x-pos>
-<y-pos>291.90352088892</y-pos>
-</borderpoint>
-<borderpoint>
-<id>25</id>
-<x-pos>259.230645662621</x-pos>
-<y-pos>300.044205122355</y-pos>
-</borderpoint>
-<borderpoint>
-<id>26</id>
-<x-pos>251.45358347591</x-pos>
-<y-pos>333.312748921068</y-pos>
-</borderpoint>
-<borderpoint>
-<id>23</id>
-<x-pos>212.549946594842</x-pos>
-<y-pos>326.908303408683</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>11</id>
-<svgid>0</svgid>
-<x-pos>436.997732162475</x-pos>
-<y-pos>365.963163786294</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>88</id>
-<x-pos>413.310191257392</x-pos>
-<y-pos>359.684392201812</y-pos>
-</borderpoint>
-<borderpoint>
-<id>90</id>
-<x-pos>431.226156166131</x-pos>
-<y-pos>359.055761854137</y-pos>
-</borderpoint>
-<borderpoint>
-<id>91</id>
-<x-pos>443.170132771956</x-pos>
-<y-pos>360.627337723326</y-pos>
-</borderpoint>
-<borderpoint>
-<id>92</id>
-<x-pos>461.714728028367</x-pos>
-<y-pos>364.084804635537</y-pos>
-</borderpoint>
-<borderpoint>
-<id>93</id>
-<x-pos>454.171163856267</x-pos>
-<y-pos>387.972757847187</y-pos>
-</borderpoint>
-<borderpoint>
-<id>89</id>
-<x-pos>410.481354692856</x-pos>
-<y-pos>380.743508848926</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>12</id>
-<svgid>0</svgid>
-<x-pos>438.117629147781</x-pos>
-<y-pos>352.151100967503</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>94</id>
-<x-pos>420.225125081817</x-pos>
-<y-pos>357.169870811112</y-pos>
-</borderpoint>
-<borderpoint>
-<id>95</id>
-<x-pos>435.312253426017</x-pos>
-<y-pos>340.19685142389</y-pos>
-</borderpoint>
-<borderpoint>
-<id>96</id>
-<x-pos>459.200206637667</x-pos>
-<y-pos>344.597263857615</y-pos>
-</borderpoint>
-<borderpoint>
-<id>91</id>
-<x-pos>443.170132771956</x-pos>
-<y-pos>360.627337723326</y-pos>
-</borderpoint>
-<borderpoint>
-<id>90</id>
-<x-pos>431.226156166131</x-pos>
-<y-pos>359.055761854137</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>13</id>
-<svgid>0</svgid>
-<x-pos>421.31917436817</x-pos>
-<y-pos>341.698729104633</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>94</id>
-<x-pos>420.225125081817</x-pos>
-<y-pos>357.169870811112</y-pos>
-</borderpoint>
-<borderpoint>
-<id>97</id>
-<x-pos>399.794638782381</x-pos>
-<y-pos>354.341034246576</y-pos>
-</borderpoint>
-<borderpoint>
-<id>98</id>
-<x-pos>401.051899477731</x-pos>
-<y-pos>334.853493468651</y-pos>
-</borderpoint>
-<borderpoint>
-<id>95</id>
-<x-pos>435.312253426017</x-pos>
-<y-pos>340.19685142389</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>14</id>
-<svgid>1</svgid>
-<x-pos>995.0217568309037</x-pos>
-<y-pos>368.5938259793311</y-pos>
-<poi>false</poi>
-<shortDescription>shortPoiDesc</shortDescription>
-<longDescription>This%20is%20the%20long%20POI%20description.</longDescription>
-<borderpoint>
-<id>123</id>
-<x-pos>930.4442588570191</x-pos>
-<y-pos>332.44211232293515</y-pos>
-</borderpoint>
-<borderpoint>
-<id>125</id>
-<x-pos>1033.3323012676435</x-pos>
-<y-pos>300.4811459570816</y-pos>
-</borderpoint>
-<borderpoint>
-<id>126</id>
-<x-pos>1091.5625550574864</x-pos>
-<y-pos>365.7165430599881</y-pos>
-</borderpoint>
-<borderpoint>
-<id>134</id>
-<x-pos>1067.4823749188295</x-pos>
-<y-pos>373.5973292871849</y-pos>
-</borderpoint>
-<borderpoint>
-<id>135</id>
-<x-pos>1039.8996231236408</x-pos>
-<y-pos>344.7011131207968</y-pos>
-</borderpoint>
-<borderpoint>
-<id>138</id>
-<x-pos>1011.0034069572528</x-pos>
-<y-pos>353.4575422621265</y-pos>
-</borderpoint>
-<borderpoint>
-<id>165</id>
-<x-pos>1017.5707288132501</x-pos>
-<y-pos>388.92108028451196</y-pos>
-</borderpoint>
-<borderpoint>
-<id>166</id>
-<x-pos>977.2911547631332</x-pos>
-<y-pos>402.493545453573</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>15</id>
-<svgid>0</svgid>
-<x-pos>535.921958802621</x-pos>
-<y-pos>380.521838031237</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>128</id>
-<x-pos>567.6365767803388</x-pos>
-<y-pos>390.9470004445499</y-pos>
-</borderpoint>
-<borderpoint>
-<id>129</id>
-<x-pos>508.3486301186158</x-pos>
-<y-pos>392.46720127223693</y-pos>
-</borderpoint>
-<borderpoint>
-<id>130</id>
-<x-pos>509.8688338958111</x-pos>
-<y-pos>372.4511848724994</y-pos>
-</borderpoint>
-<borderpoint>
-<id>127</id>
-<x-pos>557.2485176361713</x-pos>
-<y-pos>366.87710730562503</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>16</id>
-<svgid>1</svgid>
-<x-pos>776.225914316079</x-pos>
-<y-pos>439.40741816255235</y-pos>
-<poi>false</poi>
-<shortDescription>shortPoiDesc</shortDescription>
-<longDescription>This%20is%20the%20long%20POI%20description.</longDescription>
-<borderpoint>
-<id>18</id>
-<x-pos>768.8881640876691</x-pos>
-<y-pos>467.7289608827571</y-pos>
-</borderpoint>
-<borderpoint>
-<id>41</id>
-<x-pos>797.3465587969908</x-pos>
-<y-pos>458.97253174142736</y-pos>
-</borderpoint>
-<borderpoint>
-<id>42</id>
-<x-pos>799.0978446252568</x-pos>
-<y-pos>436.20581597397006</y-pos>
-</borderpoint>
-<borderpoint>
-<id>43</id>
-<x-pos>829.3075251628443</x-pos>
-<y-pos>448.4648167718317</y-pos>
-</borderpoint>
-<borderpoint>
-<id>44</id>
-<x-pos>856.0146340439001</x-pos>
-<y-pos>440.58403054463497</y-pos>
-</borderpoint>
-<borderpoint>
-<id>119</id>
-<x-pos>813.9837741655173</x-pos>
-<y-pos>369.65695449986407</y-pos>
-</borderpoint>
-<borderpoint>
-<id>19</id>
-<x-pos>746.1214483202118</x-pos>
-<y-pos>391.54802735318844</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>17</id>
-<svgid>0</svgid>
-<x-pos>664.2171998957997</x-pos>
-<y-pos>343.961084582142</y-pos>
-<poi>true</poi>
-<shortDescription>Pizza</shortDescription>
-<longDescription>Hier%20gibt%20es%20leckere%20Pizza</longDescription>
-<borderpoint>
-<id>112</id>
-<x-pos>611.6789424935566</x-pos>
-<y-pos>335.20470971176303</y-pos>
-</borderpoint>
-<borderpoint>
-<id>117</id>
-<x-pos>634.4455151115496</x-pos>
-<y-pos>372.85711827228977</y-pos>
-</borderpoint>
-<borderpoint>
-<id>118</id>
-<x-pos>756.5969335811653</x-pos>
-<y-pos>325.57269821953525</y-pos>
-</borderpoint>
-<borderpoint>
-<id>113</id>
-<x-pos>736.4572731883255</x-pos>
-<y-pos>298.42793855962066</y-pos>
-</borderpoint>
-<category>7</category>
-</vertex>
-<vertex>
-<id>18</id>
-<svgid>1</svgid>
-<x-pos>1119.3994764347665</x-pos>
-<y-pos>322.2926310903018</y-pos>
-<poi>true</poi>
-<shortDescription>TP2</shortDescription>
-<longDescription>Treffpunkt%20Terminal%201</longDescription>
-<borderpoint>
-<id>125</id>
-<x-pos>1033.3323012676435</x-pos>
-<y-pos>300.4811459570816</y-pos>
-</borderpoint>
-<borderpoint>
-<id>167</id>
-<x-pos>1155.046695984516</x-pos>
-<y-pos>262.3906789563366</y-pos>
-</borderpoint>
-<borderpoint>
-<id>168</id>
-<x-pos>1175.1864830095744</x-pos>
-<y-pos>339.0094339429718</y-pos>
-</borderpoint>
-<borderpoint>
-<id>126</id>
-<x-pos>1091.5625550574864</x-pos>
-<y-pos>365.7165430599881</y-pos>
-</borderpoint>
-<category>5</category>
-</vertex>
-<vertex>
-<id>19</id>
-<svgid>0</svgid>
-<x-pos>706.2477825990657</x-pos>
-<y-pos>364.10074418844636</y-pos>
-<poi>true</poi>
-<shortDescription>Stairs03</shortDescription>
-<longDescription>Treppe%20zum%20Essen</longDescription>
-<borderpoint>
-<id>117</id>
-<x-pos>634.4455151115496</x-pos>
-<y-pos>372.85711827228977</y-pos>
-</borderpoint>
-<borderpoint>
-<id>31</id>
-<x-pos>661.152474874182</x-pos>
-<y-pos>395.46353929254</y-pos>
-</borderpoint>
-<borderpoint>
-<id>36</id>
-<x-pos>689.927604965016</x-pos>
-<y-pos>383.538706767408</y-pos>
-</borderpoint>
-<borderpoint>
-<id>37</id>
-<x-pos>724.024249674396</x-pos>
-<y-pos>377.904594282558</y-pos>
-</borderpoint>
-<borderpoint>
-<id>73</id>
-<x-pos>743.64695789844</x-pos>
-<y-pos>371.06364944313</y-pos>
-</borderpoint>
-<borderpoint>
-<id>74</id>
-<x-pos>779.111804044698</x-pos>
-<y-pos>358.641952061952</y-pos>
-</borderpoint>
-<borderpoint>
-<id>118</id>
-<x-pos>756.5969335811653</x-pos>
-<y-pos>325.57269821953525</y-pos>
-</borderpoint>
-<category>2</category>
-</vertex>
-<vertex>
-<id>20</id>
-<svgid>0</svgid>
-<x-pos>897.6487069311</x-pos>
-<y-pos>305.48872712292</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>107</id>
-<x-pos>846.0872536098834</x-pos>
-<y-pos>300.24149308745393</y-pos>
-</borderpoint>
-<borderpoint>
-<id>108</id>
-<x-pos>876.9980637461869</x-pos>
-<y-pos>337.7398529249368</y-pos>
-</borderpoint>
-<borderpoint>
-<id>109</id>
-<x-pos>951.9947834211526</x-pos>
-<y-pos>309.10934845442625</y-pos>
-</borderpoint>
-<borderpoint>
-<id>110</id>
-<x-pos>915.0031581760682</x-pos>
-<y-pos>275.6648653561307</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>21</id>
-<svgid>0</svgid>
-<x-pos>919.300048647045</x-pos>
-<y-pos>352.151101510734</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>79</id>
-<x-pos>884.246153046813</x-pos>
-<y-pos>386.005709110935</y-pos>
-</borderpoint>
-<borderpoint>
-<id>55</id>
-<x-pos>892.1844886307864</x-pos>
-<y-pos>393.5575860406935</y-pos>
-</borderpoint>
-<borderpoint>
-<id>56</id>
-<x-pos>1052.0053246881544</x-pos>
-<y-pos>343.1186994179008</y-pos>
-</borderpoint>
-<borderpoint>
-<id>57</id>
-<x-pos>1017.7821729994312</x-pos>
-<y-pos>284.47457299773225</y-pos>
-</borderpoint>
-<borderpoint>
-<id>58</id>
-<x-pos>844.782985392305</x-pos>
-<y-pos>350.75545682612153</y-pos>
-</borderpoint>
-<category>1</category>
-</vertex>
-<vertex>
-<id>22</id>
-<svgid>0</svgid>
-<x-pos>880.476953156385</x-pos>
-<y-pos>397.693578913242</y-pos>
-<poi>true</poi>
-<shortDescription>Sec01</shortDescription>
-<longDescription>Security%20Terminal%202</longDescription>
-<borderpoint>
-<id>79</id>
-<x-pos>884.246153046813</x-pos>
-<y-pos>386.005709110935</y-pos>
-</borderpoint>
-<borderpoint>
-<id>80</id>
-<x-pos>856.162315489368</x-pos>
-<y-pos>394.286840698386</y-pos>
-</borderpoint>
-<borderpoint>
-<id>81</id>
-<x-pos>862.283151880095</x-pos>
-<y-pos>413.189423669742</y-pos>
-</borderpoint>
-<borderpoint>
-<id>82</id>
-<x-pos>899.008170224442</x-pos>
-<y-pos>407.968710277653</y-pos>
-</borderpoint>
-<borderpoint>
-<id>83</id>
-<x-pos>899.008170224442</x-pos>
-<y-pos>400.587701688837</y-pos>
-</borderpoint>
-<category>1</category>
-</vertex>
-<vertex>
-<id>23</id>
-<svgid>0</svgid>
-<x-pos>928.259224529505</x-pos>
-<y-pos>388.734403030779</y-pos>
-<poi>true</poi>
-<shortDescription>Sec02</shortDescription>
-<longDescription>Security%20Mitte%201</longDescription>
-<borderpoint>
-<id>82</id>
-<x-pos>899.008170224442</x-pos>
-<y-pos>407.968710277653</y-pos>
-</borderpoint>
-<borderpoint>
-<id>83</id>
-<x-pos>899.008170224442</x-pos>
-<y-pos>400.587701688837</y-pos>
-</borderpoint>
-<borderpoint>
-<id>55</id>
-<x-pos>892.1844886307864</x-pos>
-<y-pos>393.5575860406935</y-pos>
-</borderpoint>
-<borderpoint>
-<id>59</id>
-<x-pos>942.5433004320282</x-pos>
-<y-pos>377.5250999607991</y-pos>
-</borderpoint>
-<borderpoint>
-<id>60</id>
-<x-pos>958.834922318606</x-pos>
-<y-pos>397.8896273190213</y-pos>
-</borderpoint>
-<borderpoint>
-<id>67</id>
-<x-pos>949.7034439794796</x-pos>
-<y-pos>426.28706760996397</y-pos>
-</borderpoint>
-<category>1</category>
-</vertex>
-<vertex>
-<id>24</id>
-<svgid>0</svgid>
-<x-pos>964.095928059348</x-pos>
-<y-pos>377.162134182603</y-pos>
-<poi>true</poi>
-<shortDescription>Sec03</shortDescription>
-<longDescription>Security%20Mitte%202</longDescription>
-<borderpoint>
-<id>106</id>
-<x-pos>942.66546257255</x-pos>
-<y-pos>377.60768876616487</y-pos>
-</borderpoint>
-<borderpoint>
-<id>101</id>
-<x-pos>949.1169447358121</x-pos>
-<y-pos>386.2585398487209</y-pos>
-</borderpoint>
-<borderpoint>
-<id>105</id>
-<x-pos>976.3891193350565</x-pos>
-<y-pos>382.29967579399187</y-pos>
-</borderpoint>
-<borderpoint>
-<id>104</id>
-<x-pos>1020.3764977209347</x-pos>
-<y-pos>352.8281322754535</y-pos>
-</borderpoint>
-<category>1</category>
-</vertex>
-<vertex>
-<id>25</id>
-<svgid>0</svgid>
-<x-pos>1054.43423033364</x-pos>
-<y-pos>341.325436338591</y-pos>
-<poi>true</poi>
-<shortDescription>Sec04</shortDescription>
-<longDescription>Security%20Terminal%201</longDescription>
-<category>1</category>
-</vertex>
-<vertex>
-<id>26</id>
-<svgid>0</svgid>
-<x-pos>757.339039392108</x-pos>
-<y-pos>401.321451259563</y-pos>
-<poi>true</poi>
-<shortDescription>Check01</shortDescription>
-<longDescription>Checkin%20Lufthansa</longDescription>
-<borderpoint>
-<id>50</id>
-<x-pos>755.168537351148</x-pos>
-<y-pos>393.206694295134</y-pos>
-</borderpoint>
-<borderpoint>
-<id>51</id>
-<x-pos>746.887405763697</x-pos>
-<y-pos>396.987210889404</y-pos>
-</borderpoint>
-<borderpoint>
-<id>52</id>
-<x-pos>755.168537351148</x-pos>
-<y-pos>408.868834471398</y-pos>
-</borderpoint>
-<borderpoint>
-<id>53</id>
-<x-pos>763.269644338872</x-pos>
-<y-pos>404.36821947822</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>27</id>
-<svgid>0</svgid>
-<x-pos>738.52476973473</x-pos>
-<y-pos>433.126526156556</y-pos>
-<poi>true</poi>
-<shortDescription>Check03</shortDescription>
-<longDescription>Air%20Berlin%20Checkin</longDescription>
-<borderpoint>
-<id>49</id>
-<x-pos>742.566815370243</x-pos>
-<y-pos>420.570433453668</y-pos>
-</borderpoint>
-<borderpoint>
-<id>45</id>
-<x-pos>732.485437785522</x-pos>
-<y-pos>425.071048446846</y-pos>
-</borderpoint>
-<borderpoint>
-<id>62</id>
-<x-pos>719.523634681218</x-pos>
-<y-pos>440.553136807452</y-pos>
-</borderpoint>
-<borderpoint>
-<id>46</id>
-<x-pos>735.18580678143</x-pos>
-<y-pos>434.072278433208</y-pos>
-</borderpoint>
-<borderpoint>
-<id>47</id>
-<x-pos>741.666692371608</x-pos>
-<y-pos>436.772647429116</y-pos>
-</borderpoint>
-<borderpoint>
-<id>48</id>
-<x-pos>749.947823959059</x-pos>
-<y-pos>431.731958636754</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>28</id>
-<svgid>0</svgid>
-<x-pos>781.976773467243</x-pos>
-<y-pos>436.26223776612</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>68</id>
-<x-pos>767.050150448763</x-pos>
-<y-pos>440.193104556843</y-pos>
-</borderpoint>
-<borderpoint>
-<id>69</id>
-<x-pos>768.490347246579</x-pos>
-<y-pos>417.510004991217</y-pos>
-</borderpoint>
-<borderpoint>
-<id>70</id>
-<x-pos>806.295513189291</x-pos>
-<y-pos>426.511244013339</y-pos>
-</borderpoint>
-<borderpoint>
-<id>71</id>
-<x-pos>812.956423379196</x-pos>
-<y-pos>438.212842995606</y-pos>
-</borderpoint>
-<borderpoint>
-<id>72</id>
-<x-pos>797.834357002113</x-pos>
-<y-pos>447.574122181419</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>29</id>
-<svgid>0</svgid>
-<x-pos>826.324694802489</x-pos>
-<y-pos>419.239803314208</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>80</id>
-<x-pos>856.162315489368</x-pos>
-<y-pos>394.286840698386</y-pos>
-</borderpoint>
-<borderpoint>
-<id>75</id>
-<x-pos>804.315248006505</x-pos>
-<y-pos>391.046380012848</y-pos>
-</borderpoint>
-<borderpoint>
-<id>54</id>
-<x-pos>806.6074185912142</x-pos>
-<y-pos>426.74411687162734</y-pos>
-</borderpoint>
-<borderpoint>
-<id>71</id>
-<x-pos>812.956423379196</x-pos>
-<y-pos>438.212842995606</y-pos>
-</borderpoint>
-<borderpoint>
-<id>81</id>
-<x-pos>862.283151880095</x-pos>
-<y-pos>413.189423669742</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>30</id>
-<svgid>0</svgid>
-<x-pos>740.764563741561</x-pos>
-<y-pos>384.746975609016</y-pos>
-<poi>false</poi>
-</vertex>
-<vertex>
-<id>31</id>
-<svgid>0</svgid>
-<x-pos>776.153309049483</x-pos>
-<y-pos>377.131675985793</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>73</id>
-<x-pos>743.64695789844</x-pos>
-<y-pos>371.06364944313</y-pos>
-</borderpoint>
-<borderpoint>
-<id>74</id>
-<x-pos>779.111804044698</x-pos>
-<y-pos>358.641952061952</y-pos>
-</borderpoint>
-<borderpoint>
-<id>75</id>
-<x-pos>804.315248006505</x-pos>
-<y-pos>391.046380012848</y-pos>
-</borderpoint>
-<borderpoint>
-<id>76</id>
-<x-pos>785.95273883433</x-pos>
-<y-pos>409.408889185023</y-pos>
-</borderpoint>
-<borderpoint>
-<id>77</id>
-<x-pos>764.529811466796</x-pos>
-<y-pos>385.645642021032</y-pos>
-</borderpoint>
-<borderpoint>
-<id>78</id>
-<x-pos>754.628458481799</x-pos>
-<y-pos>388.165986417213</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>32</id>
-<svgid>0</svgid>
-<x-pos>518.318075298034</x-pos>
-<y-pos>359.29382723385527</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>96</id>
-<x-pos>459.200206637667</x-pos>
-<y-pos>344.597263857615</y-pos>
-</borderpoint>
-<borderpoint>
-<id>131</id>
-<x-pos>520.7825444408298</x-pos>
-<y-pos>351.4322269479024</y-pos>
-</borderpoint>
-<borderpoint>
-<id>132</id>
-<x-pos>593.0684695882895</x-pos>
-<y-pos>328.9986639711046</y-pos>
-</borderpoint>
-<borderpoint>
-<id>133</id>
-<x-pos>605.971452064121</x-pos>
-<y-pos>350.2592301909457</y-pos>
-</borderpoint>
-<borderpoint>
-<id>127</id>
-<x-pos>557.2485176361713</x-pos>
-<y-pos>366.87710730562503</y-pos>
-</borderpoint>
-<borderpoint>
-<id>130</id>
-<x-pos>509.8688338958111</x-pos>
-<y-pos>372.4511848724994</y-pos>
-</borderpoint>
-<borderpoint>
-<id>91</id>
-<x-pos>443.170132771956</x-pos>
-<y-pos>360.627337723326</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>33</id>
-<svgid>0</svgid>
-<x-pos>1071.8061221159</x-pos>
-<y-pos>316.209296347218</y-pos>
-<poi>true</poi>
-<shortDescription>Check06</shortDescription>
-<longDescription>American%20Airline%20Counter</longDescription>
-<borderpoint>
-<id>149</id>
-<x-pos>1101.2351852888914</x-pos>
-<y-pos>314.11984732716354</y-pos>
-</borderpoint>
-<borderpoint>
-<id>152</id>
-<x-pos>1062.1971698249738</x-pos>
-<y-pos>290.5154658838646</y-pos>
-</borderpoint>
-<borderpoint>
-<id>153</id>
-<x-pos>1029.514180134252</x-pos>
-<y-pos>304.13337825499855</y-pos>
-</borderpoint>
-<borderpoint>
-<id>154</id>
-<x-pos>1044.0399533301284</x-pos>
-<y-pos>330.4613421725243</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>34</id>
-<svgid>0</svgid>
-<x-pos>1165.87747040278</x-pos>
-<y-pos>295.155232683013</y-pos>
-<poi>true</poi>
-<shortDescription>Check04</shortDescription>
-<longDescription>British%20Airline%20Counter</longDescription>
-<borderpoint>
-<id>0</id>
-<x-pos>1172.23049531566</x-pos>
-<y-pos>274.799538353936</y-pos>
-</borderpoint>
-<borderpoint>
-<id>1</id>
-<x-pos>1151.17137866855</x-pos>
-<y-pos>292.401188088836</y-pos>
-</borderpoint>
-<borderpoint>
-<id>2</id>
-<x-pos>1164.37261596972</x-pos>
-<y-pos>314.08893508362</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>1190.1464602244</x-pos>
-<y-pos>299.31612191326</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>35</id>
-<svgid>0</svgid>
-<x-pos>1148.4070771495</x-pos>
-<y-pos>273.653210217439</y-pos>
-<poi>true</poi>
-<shortDescription>Check05</shortDescription>
-<longDescription>German%20Wings%20Counter</longDescription>
-<borderpoint>
-<id>1</id>
-<x-pos>1151.17137866855</x-pos>
-<y-pos>292.401188088836</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>1125.39753441387</x-pos>
-<y-pos>262.541246574274</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>1153.37158488541</x-pos>
-<y-pos>250.597269968449</y-pos>
-</borderpoint>
-<borderpoint>
-<id>0</id>
-<x-pos>1172.23049531566</x-pos>
-<y-pos>274.799538353936</y-pos>
-</borderpoint>
-<category>4</category>
-</vertex>
-<vertex>
-<id>36</id>
-<svgid>0</svgid>
-<x-pos>1143.47953033447</x-pos>
-<y-pos>315.761337545853</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>149</id>
-<x-pos>1101.2351852888914</x-pos>
-<y-pos>314.11984732716354</y-pos>
-</borderpoint>
-<borderpoint>
-<id>1</id>
-<x-pos>1151.17137866855</x-pos>
-<y-pos>292.401188088836</y-pos>
-</borderpoint>
-<borderpoint>
-<id>2</id>
-<x-pos>1164.37261596972</x-pos>
-<y-pos>314.08893508362</y-pos>
-</borderpoint>
-<borderpoint>
-<id>155</id>
-<x-pos>1178.857271450082</x-pos>
-<y-pos>336.95797576117764</y-pos>
-</borderpoint>
-<borderpoint>
-<id>150</id>
-<x-pos>1125.7474275569325</x-pos>
-<y-pos>354.97358444056556</y-pos>
-</borderpoint>
-<category>2</category>
-</vertex>
-<vertex>
-<id>37</id>
-<svgid>0</svgid>
-<x-pos>1093.6084406941206</x-pos>
-<y-pos>331.5198091133353</y-pos>
-<poi>true</poi>
-<shortDescription>Info1</shortDescription>
-<longDescription>Information%20Terminal%201</longDescription>
-<borderpoint>
-<id>148</id>
-<x-pos>1044.9478141548707</x-pos>
-<y-pos>330.4613421725243</y-pos>
-</borderpoint>
-<borderpoint>
-<id>149</id>
-<x-pos>1101.2351852888914</x-pos>
-<y-pos>314.11984732716354</y-pos>
-</borderpoint>
-<borderpoint>
-<id>150</id>
-<x-pos>1125.7474275569325</x-pos>
-<y-pos>354.97358444056556</y-pos>
-</borderpoint>
-<borderpoint>
-<id>151</id>
-<x-pos>1034.0534842579636</x-pos>
-<y-pos>383.1172700075759</y-pos>
-</borderpoint>
-<borderpoint>
-<id>104</id>
-<x-pos>1020.3764977209347</x-pos>
-<y-pos>352.8281322754535</y-pos>
-</borderpoint>
-<borderpoint>
-<id>56</id>
-<x-pos>1052.0053246881544</x-pos>
-<y-pos>343.1186994179008</y-pos>
-</borderpoint>
-<category>6</category>
-</vertex>
-<vertex>
-<id>38</id>
-<svgid>0</svgid>
-<x-pos>144.610891333109</x-pos>
-<y-pos>297.805573378937</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>14</id>
-<x-pos>117.174981299835</x-pos>
-<y-pos>276.205269270305</y-pos>
-</borderpoint>
-<borderpoint>
-<id>16</id>
-<x-pos>164.053383667258</x-pos>
-<y-pos>284.198360962204</y-pos>
-</borderpoint>
-<borderpoint>
-<id>17</id>
-<x-pos>161.028970594647</x-pos>
-<y-pos>312.28219663644</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>123.655866455428</x-pos>
-<y-pos>307.745577027525</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>112.206302680547</x-pos>
-<y-pos>295.647924737085</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>39</id>
-<svgid>0</svgid>
-<x-pos>83.0165559460845</x-pos>
-<y-pos>289.717428328116</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>12</id>
-<x-pos>75.9133458092241</x-pos>
-<y-pos>281.606006899966</y-pos>
-</borderpoint>
-<borderpoint>
-<id>9</id>
-<x-pos>70.2965786743767</x-pos>
-<y-pos>300.616603356372</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>123.655866455428</x-pos>
-<y-pos>307.745577027525</y-pos>
-</borderpoint>
-<borderpoint>
-<id>15</id>
-<x-pos>112.206302680547</x-pos>
-<y-pos>295.647924737085</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>40</id>
-<svgid>0</svgid>
-<x-pos>148.343881356565</x-pos>
-<y-pos>320.203513519671</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>17</id>
-<x-pos>161.028970594647</x-pos>
-<y-pos>312.28219663644</y-pos>
-</borderpoint>
-<borderpoint>
-<id>20</id>
-<x-pos>160.164853904821</x-pos>
-<y-pos>318.114989872218</y-pos>
-</borderpoint>
-<borderpoint>
-<id>21</id>
-<x-pos>180.471627392346</x-pos>
-<y-pos>321.787491460389</y-pos>
-</borderpoint>
-<borderpoint>
-<id>22</id>
-<x-pos>177.447214319736</x-pos>
-<y-pos>342.526323958287</y-pos>
-</borderpoint>
-<borderpoint>
-<id>11</id>
-<x-pos>118.903217341326</x-pos>
-<y-pos>333.021029134338</y-pos>
-</borderpoint>
-<borderpoint>
-<id>10</id>
-<x-pos>123.655866455428</x-pos>
-<y-pos>307.745577027525</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>41</id>
-<svgid>0</svgid>
-<x-pos>205.27197921427</x-pos>
-<y-pos>329.224906076358</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>21</id>
-<x-pos>180.471627392346</x-pos>
-<y-pos>321.787491460389</y-pos>
-</borderpoint>
-<borderpoint>
-<id>23</id>
-<x-pos>212.549946594842</x-pos>
-<y-pos>326.908303408683</y-pos>
-</borderpoint>
-<borderpoint>
-<id>26</id>
-<x-pos>251.45358347591</x-pos>
-<y-pos>333.312748921068</y-pos>
-</borderpoint>
-<borderpoint>
-<id>84</id>
-<x-pos>227.864246039082</x-pos>
-<y-pos>350.883562723794</y-pos>
-</borderpoint>
-<borderpoint>
-<id>22</id>
-<x-pos>177.447214319736</x-pos>
-<y-pos>342.526323958287</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>42</id>
-<svgid>0</svgid>
-<x-pos>314.773020490815</x-pos>
-<y-pos>347.578763116764</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>29</id>
-<x-pos>270.95809355265</x-pos>
-<y-pos>336.512107707276</y-pos>
-</borderpoint>
-<borderpoint>
-<id>86</id>
-<x-pos>346.989689577681</x-pos>
-<y-pos>348.997676291337</y-pos>
-</borderpoint>
-<borderpoint>
-<id>87</id>
-<x-pos>343.217907491631</x-pos>
-<y-pos>370.056792938451</y-pos>
-</borderpoint>
-<borderpoint>
-<id>85</id>
-<x-pos>287.584129068205</x-pos>
-<y-pos>360.313017938919</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>43</id>
-<svgid>0</svgid>
-<x-pos>375.434108371974</x-pos>
-<y-pos>357.844485681267</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>87</id>
-<x-pos>343.217907491631</x-pos>
-<y-pos>370.056792938451</y-pos>
-</borderpoint>
-<borderpoint>
-<id>86</id>
-<x-pos>346.989689577681</x-pos>
-<y-pos>348.997676291337</y-pos>
-</borderpoint>
-<borderpoint>
-<id>88</id>
-<x-pos>413.310191257392</x-pos>
-<y-pos>359.684392201812</y-pos>
-</borderpoint>
-<borderpoint>
-<id>89</id>
-<x-pos>410.481354692856</x-pos>
-<y-pos>380.743508848926</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>44</id>
-<svgid>0</svgid>
-<x-pos>481.513232194923</x-pos>
-<y-pos>375.887282093868</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>129</id>
-<x-pos>508.3486301186158</x-pos>
-<y-pos>392.46720127223693</y-pos>
-</borderpoint>
-<borderpoint>
-<id>93</id>
-<x-pos>454.171163856267</x-pos>
-<y-pos>387.972757847187</y-pos>
-</borderpoint>
-<borderpoint>
-<id>92</id>
-<x-pos>461.714728028367</x-pos>
-<y-pos>364.084804635537</y-pos>
-</borderpoint>
-<borderpoint>
-<id>130</id>
-<x-pos>509.8688338958111</x-pos>
-<y-pos>372.4511848724994</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>45</id>
-<svgid>0</svgid>
-<x-pos>626.1269597318983</x-pos>
-<y-pos>322.0701485859979</y-pos>
-<poi>true</poi>
-<shortDescription>Aussicht</shortDescription>
-<longDescription>Hier%20k%F6nnen%20Sie%20Flugzeuge%20bestaunen</longDescription>
-<borderpoint>
-<id>111</id>
-<x-pos>599.4200187761759</x-pos>
-<y-pos>318.1297802482684</y-pos>
-</borderpoint>
-<borderpoint>
-<id>112</id>
-<x-pos>611.6789424935566</x-pos>
-<y-pos>335.20470971176303</y-pos>
-</borderpoint>
-<borderpoint>
-<id>113</id>
-<x-pos>736.4572731883255</x-pos>
-<y-pos>298.42793855962066</y-pos>
-</borderpoint>
-<borderpoint>
-<id>114</id>
-<x-pos>718.5067063164465</x-pos>
-<y-pos>280.03955298354947</y-pos>
-</borderpoint>
-<borderpoint>
-<id>115</id>
-<x-pos>681.7299351643042</x-pos>
-<y-pos>254.6460681404035</y-pos>
-</borderpoint>
-<borderpoint>
-<id>116</id>
-<x-pos>584.0963641294499</x-pos>
-<y-pos>287.04465225062415</y-pos>
-</borderpoint>
-<category>6</category>
-</vertex>
-<vertex>
-<id>46</id>
-<svgid>0</svgid>
-<x-pos>627.878234548667</x-pos>
-<y-pos>339.58289675368474</y-pos>
-<poi>false</poi>
-</vertex>
-<vertex>
-<id>47</id>
-<svgid>1</svgid>
-<x-pos>1029.391929941079</x-pos>
-<y-pos>393.29930736109156</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>124</id>
-<x-pos>1004.4360851012555</x-pos>
-<y-pos>444.52440533195573</y-pos>
-</borderpoint>
-<borderpoint>
-<id>166</id>
-<x-pos>977.2911547631332</x-pos>
-<y-pos>402.493545453573</y-pos>
-</borderpoint>
-<borderpoint>
-<id>165</id>
-<x-pos>1017.5707288132501</x-pos>
-<y-pos>388.92108028451196</y-pos>
-</borderpoint>
-<borderpoint>
-<id>134</id>
-<x-pos>1067.4823749188295</x-pos>
-<y-pos>373.5973292871849</y-pos>
-</borderpoint>
-<borderpoint>
-<id>126</id>
-<x-pos>1091.5625550574864</x-pos>
-<y-pos>365.7165430599881</y-pos>
-</borderpoint>
-<borderpoint>
-<id>176</id>
-<x-pos>1121.3344437903966</x-pos>
-<y-pos>411.24997640393445</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>49</id>
-<svgid>0</svgid>
-<x-pos>544.4629268056339</x-pos>
-<y-pos>346.9497333015363</y-pos>
-<poi>true</poi>
-<shortDescription>B20</shortDescription>
-<longDescription>Gate%20B20</longDescription>
-</vertex>
-<vertex>
-<id>52</id>
-<svgid>0</svgid>
-<x-pos>717.624879861177</x-pos>
-<y-pos>392.06356755993</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>35</id>
-<x-pos>701.593198245084</x-pos>
-<y-pos>402.46289142174</y-pos>
-</borderpoint>
-<borderpoint>
-<id>36</id>
-<x-pos>689.927604965016</x-pos>
-<y-pos>383.538706767408</y-pos>
-</borderpoint>
-<borderpoint>
-<id>37</id>
-<x-pos>724.024249674396</x-pos>
-<y-pos>377.904594282558</y-pos>
-</borderpoint>
-<borderpoint>
-<id>38</id>
-<x-pos>736.986020854755</x-pos>
-<y-pos>396.627152654187</y-pos>
-</borderpoint>
-<borderpoint>
-<id>39</id>
-<x-pos>716.82326568531</x-pos>
-<y-pos>407.068579438365</y-pos>
-</borderpoint>
-<borderpoint>
-<id>40</id>
-<x-pos>710.522404694856</x-pos>
-<y-pos>399.867595449276</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>53</id>
-<svgid>0</svgid>
-<x-pos>680.294979626619</x-pos>
-<y-pos>407.928775159617</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>31</id>
-<x-pos>661.152474874182</x-pos>
-<y-pos>395.46353929254</y-pos>
-</borderpoint>
-<borderpoint>
-<id>32</id>
-<x-pos>685.002132246765</x-pos>
-<y-pos>423.20172775848</y-pos>
-</borderpoint>
-<borderpoint>
-<id>33</id>
-<x-pos>701.333962838859</x-pos>
-<y-pos>417.75778038894</y-pos>
-</borderpoint>
-<borderpoint>
-<id>34</id>
-<x-pos>692.519959027254</x-pos>
-<y-pos>405.573716296425</y-pos>
-</borderpoint>
-<borderpoint>
-<id>35</id>
-<x-pos>701.593198245084</x-pos>
-<y-pos>402.46289142174</y-pos>
-</borderpoint>
-<borderpoint>
-<id>36</id>
-<x-pos>689.927604965016</x-pos>
-<y-pos>383.538706767408</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>54</id>
-<svgid>0</svgid>
-<x-pos>701.137507257582</x-pos>
-<y-pos>434.05970532381</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>32</id>
-<x-pos>685.002132246765</x-pos>
-<y-pos>423.20172775848</y-pos>
-</borderpoint>
-<borderpoint>
-<id>61</id>
-<x-pos>704.761617503586</x-pos>
-<y-pos>448.834268394903</y-pos>
-</borderpoint>
-<borderpoint>
-<id>62</id>
-<x-pos>719.523634681218</x-pos>
-<y-pos>440.553136807452</y-pos>
-</borderpoint>
-<borderpoint>
-<id>33</id>
-<x-pos>701.333962838859</x-pos>
-<y-pos>417.75778038894</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>55</id>
-<svgid>0</svgid>
-<x-pos>729.519663938542</x-pos>
-<y-pos>451.36256001659274</y-pos>
-<poi>true</poi>
-<shortDescription>Info2</shortDescription>
-<longDescription>Information%20Terminal%202</longDescription>
-<borderpoint>
-<id>61</id>
-<x-pos>704.761617503586</x-pos>
-<y-pos>448.834268394903</y-pos>
-</borderpoint>
-<borderpoint>
-<id>63</id>
-<x-pos>723.664200474942</x-pos>
-<y-pos>472.23746635944</y-pos>
-</borderpoint>
-<borderpoint>
-<id>64</id>
-<x-pos>743.286881845206</x-pos>
-<y-pos>475.657933754256</y-pos>
-</borderpoint>
-<borderpoint>
-<id>65</id>
-<x-pos>758.228923622565</x-pos>
-<y-pos>470.977294161348</y-pos>
-</borderpoint>
-<borderpoint>
-<id>66</id>
-<x-pos>740.946562048755</x-pos>
-<y-pos>442.713432004179</y-pos>
-</borderpoint>
-<borderpoint>
-<id>62</id>
-<x-pos>719.523634681218</x-pos>
-<y-pos>440.553136807452</y-pos>
-</borderpoint>
-<category>6</category>
-</vertex>
-<vertex>
-<id>56</id>
-<svgid>0</svgid>
-<x-pos>755.888027601603</x-pos>
-<y-pos>437.170530343356</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>69</id>
-<x-pos>768.490347246579</x-pos>
-<y-pos>417.510004991217</y-pos>
-</borderpoint>
-<borderpoint>
-<id>48</id>
-<x-pos>749.947823959059</x-pos>
-<y-pos>431.731958636754</y-pos>
-</borderpoint>
-<borderpoint>
-<id>47</id>
-<x-pos>741.666692371608</x-pos>
-<y-pos>436.772647429116</y-pos>
-</borderpoint>
-<borderpoint>
-<id>46</id>
-<x-pos>735.18580678143</x-pos>
-<y-pos>434.072278433208</y-pos>
-</borderpoint>
-<borderpoint>
-<id>62</id>
-<x-pos>719.523634681218</x-pos>
-<y-pos>440.553136807452</y-pos>
-</borderpoint>
-<borderpoint>
-<id>66</id>
-<x-pos>740.946562048755</x-pos>
-<y-pos>442.713432004179</y-pos>
-</borderpoint>
-<borderpoint>
-<id>65</id>
-<x-pos>758.228923622565</x-pos>
-<y-pos>470.977294161348</y-pos>
-</borderpoint>
-<borderpoint>
-<id>72</id>
-<x-pos>797.834357002113</x-pos>
-<y-pos>447.574122181419</y-pos>
-</borderpoint>
-<borderpoint>
-<id>68</id>
-<x-pos>767.050150448763</x-pos>
-<y-pos>440.193104556843</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>57</id>
-<svgid>0</svgid>
-<x-pos>744.377975029281</x-pos>
-<y-pos>406.373362649844</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>38</id>
-<x-pos>736.986020854755</x-pos>
-<y-pos>396.627152654187</y-pos>
-</borderpoint>
-<borderpoint>
-<id>37</id>
-<x-pos>724.024249674396</x-pos>
-<y-pos>377.904594282558</y-pos>
-</borderpoint>
-<borderpoint>
-<id>73</id>
-<x-pos>743.64695789844</x-pos>
-<y-pos>371.06364944313</y-pos>
-</borderpoint>
-<borderpoint>
-<id>78</id>
-<x-pos>754.628458481799</x-pos>
-<y-pos>388.165986417213</y-pos>
-</borderpoint>
-<borderpoint>
-<id>51</id>
-<x-pos>746.887405763697</x-pos>
-<y-pos>396.987210889404</y-pos>
-</borderpoint>
-<borderpoint>
-<id>52</id>
-<x-pos>755.168537351148</x-pos>
-<y-pos>408.868834471398</y-pos>
-</borderpoint>
-<borderpoint>
-<id>69</id>
-<x-pos>768.490347246579</x-pos>
-<y-pos>417.510004991217</y-pos>
-</borderpoint>
-<borderpoint>
-<id>48</id>
-<x-pos>749.947823959059</x-pos>
-<y-pos>431.731958636754</y-pos>
-</borderpoint>
-<borderpoint>
-<id>49</id>
-<x-pos>742.566815370243</x-pos>
-<y-pos>420.570433453668</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>58</id>
-<svgid>0</svgid>
-<x-pos>797.114246778849</x-pos>
-<y-pos>401.847873886929</y-pos>
-<poi>true</poi>
-<shortDescription>shortPoiDesc</shortDescription>
-<longDescription>This%20is%20the%20long%20POI%20description.</longDescription>
-<borderpoint>
-<id>75</id>
-<x-pos>804.315248006505</x-pos>
-<y-pos>391.046380012848</y-pos>
-</borderpoint>
-<borderpoint>
-<id>76</id>
-<x-pos>785.95273883433</x-pos>
-<y-pos>409.408889185023</y-pos>
-</borderpoint>
-<borderpoint>
-<id>77</id>
-<x-pos>764.529811466796</x-pos>
-<y-pos>385.645642021032</y-pos>
-</borderpoint>
-<borderpoint>
-<id>78</id>
-<x-pos>754.628458481799</x-pos>
-<y-pos>388.165986417213</y-pos>
-</borderpoint>
-<borderpoint>
-<id>51</id>
-<x-pos>746.887405763697</x-pos>
-<y-pos>396.987210889404</y-pos>
-</borderpoint>
-<borderpoint>
-<id>50</id>
-<x-pos>755.168537351148</x-pos>
-<y-pos>393.206694295134</y-pos>
-</borderpoint>
-<borderpoint>
-<id>53</id>
-<x-pos>763.269644338872</x-pos>
-<y-pos>404.36821947822</y-pos>
-</borderpoint>
-<borderpoint>
-<id>52</id>
-<x-pos>755.168537351148</x-pos>
-<y-pos>408.868834471398</y-pos>
-</borderpoint>
-<borderpoint>
-<id>69</id>
-<x-pos>768.490347246579</x-pos>
-<y-pos>417.510004991217</y-pos>
-</borderpoint>
-<borderpoint>
-<id>70</id>
-<x-pos>806.295513189291</x-pos>
-<y-pos>426.511244013339</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>59</id>
-<svgid>0</svgid>
-<x-pos>311.786390107884</x-pos>
-<y-pos>324.48108448056</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>99</id>
-<x-pos>335.98865849337</x-pos>
-<y-pos>313.480061647701</y-pos>
-</borderpoint>
-<borderpoint>
-<id>86</id>
-<x-pos>346.989689577681</x-pos>
-<y-pos>348.997676291337</y-pos>
-</borderpoint>
-<borderpoint>
-<id>29</id>
-<x-pos>270.95809355265</x-pos>
-<y-pos>336.512107707276</y-pos>
-</borderpoint>
-<borderpoint>
-<id>30</id>
-<x-pos>277.625671175462</x-pos>
-<y-pos>302.861676892146</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>64</id>
-<svgid>0</svgid>
-<x-pos>1322.7532244810125</x-pos>
-<y-pos>88.06250094384262</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>136</id>
-<x-pos>1252.8479409758577</x-pos>
-<y-pos>108.94329991291477</y-pos>
-</borderpoint>
-<borderpoint>
-<id>140</id>
-<x-pos>1342.7261560184438</x-pos>
-<y-pos>9.986470016007573</y-pos>
-</borderpoint>
-<borderpoint>
-<id>141</id>
-<x-pos>1397.19780550298</x-pos>
-<y-pos>32.68299063456426</y-pos>
-</borderpoint>
-<borderpoint>
-<id>142</id>
-<x-pos>1353.620485915351</x-pos>
-<y-pos>101.6804143374728</y-pos>
-</borderpoint>
-<borderpoint>
-<id>137</id>
-<x-pos>1295.5173997387444</x-pos>
-<y-pos>140.71842877889415</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>67</id>
-<svgid>0</svgid>
-<x-pos>1093.0644358212185</x-pos>
-<y-pos>299.59407310879106</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>149</id>
-<x-pos>1101.2351852888914</x-pos>
-<y-pos>314.11984732716354</y-pos>
-</borderpoint>
-<borderpoint>
-<id>1</id>
-<x-pos>1151.17137866855</x-pos>
-<y-pos>292.401188088836</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>1125.39753441387</x-pos>
-<y-pos>262.541246574274</y-pos>
-</borderpoint>
-<borderpoint>
-<id>145</id>
-<x-pos>1110.3137848844233</x-pos>
-<y-pos>272.3582493890192</y-pos>
-</borderpoint>
-<borderpoint>
-<id>152</id>
-<x-pos>1062.1971698249738</x-pos>
-<y-pos>290.5154658838646</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>68</id>
-<svgid>0</svgid>
-<x-pos>1035.8692038624558</x-pos>
-<y-pos>281.4368566139457</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>57</id>
-<x-pos>1017.7821729994312</x-pos>
-<y-pos>284.47457299773225</y-pos>
-</borderpoint>
-<borderpoint>
-<id>143</id>
-<x-pos>998.6469034411243</x-pos>
-<y-pos>266.00322361582334</y-pos>
-</borderpoint>
-<borderpoint>
-<id>144</id>
-<x-pos>1087.6172642658667</x-pos>
-<y-pos>233.32023392510166</y-pos>
-</borderpoint>
-<borderpoint>
-<id>145</id>
-<x-pos>1110.3137848844233</x-pos>
-<y-pos>272.3582493890192</y-pos>
-</borderpoint>
-<borderpoint>
-<id>146</id>
-<x-pos>1027.698449832877</x-pos>
-<y-pos>305.0412390797408</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>69</id>
-<svgid>0</svgid>
-<x-pos>1186.5741007696722</x-pos>
-<y-pos>261.4639184696158</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>139</id>
-<x-pos>1182.9426574707031</x-pos>
-<y-pos>206.9922689850797</y-pos>
-</borderpoint>
-<borderpoint>
-<id>144</id>
-<x-pos>1087.6172642658667</x-pos>
-<y-pos>233.32023392510166</y-pos>
-</borderpoint>
-<borderpoint>
-<id>145</id>
-<x-pos>1110.3137848844233</x-pos>
-<y-pos>272.3582493890192</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>1125.39753441387</x-pos>
-<y-pos>262.541246574274</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>1153.37158488541</x-pos>
-<y-pos>250.597269968449</y-pos>
-</borderpoint>
-<borderpoint>
-<id>0</id>
-<x-pos>1172.23049531566</x-pos>
-<y-pos>274.799538353936</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>1190.1464602244</x-pos>
-<y-pos>299.31612191326</y-pos>
-</borderpoint>
-<borderpoint>
-<id>147</id>
-<x-pos>1241.9536044720521</x-pos>
-<y-pos>274.17397103850374</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>70</id>
-<svgid>0</svgid>
-<x-pos>1207.227922419912</x-pos>
-<y-pos>306.6959480600259</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>2</id>
-<x-pos>1164.37261596972</x-pos>
-<y-pos>314.08893508362</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>1190.1464602244</x-pos>
-<y-pos>299.31612191326</y-pos>
-</borderpoint>
-<borderpoint>
-<id>147</id>
-<x-pos>1241.9536044720521</x-pos>
-<y-pos>274.17397103850374</y-pos>
-</borderpoint>
-<borderpoint>
-<id>156</id>
-<x-pos>1263.3387654491307</x-pos>
-<y-pos>311.1091604331105</y-pos>
-</borderpoint>
-<borderpoint>
-<id>155</id>
-<x-pos>1178.857271450082</x-pos>
-<y-pos>336.95797576117764</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>71</id>
-<svgid>0</svgid>
-<x-pos>747.4468671661062</x-pos>
-<y-pos>475.0820900828568</y-pos>
-<poi>true</poi>
-<shortDescription>T2.1</shortDescription>
-<longDescription>Eingang%20T2.1</longDescription>
-<borderpoint>
-<id>61</id>
-<x-pos>704.761617503586</x-pos>
-<y-pos>448.834268394903</y-pos>
-</borderpoint>
-<borderpoint>
-<id>157</id>
-<x-pos>708.3584147187853</x-pos>
-<y-pos>504.71365887356785</y-pos>
-</borderpoint>
-<borderpoint>
-<id>158</id>
-<x-pos>811.123217120613</x-pos>
-<y-pos>471.29933662021284</y-pos>
-</borderpoint>
-<borderpoint>
-<id>72</id>
-<x-pos>797.834357002113</x-pos>
-<y-pos>447.574122181419</y-pos>
-</borderpoint>
-<borderpoint>
-<id>65</id>
-<x-pos>758.228923622565</x-pos>
-<y-pos>470.977294161348</y-pos>
-</borderpoint>
-<borderpoint>
-<id>64</id>
-<x-pos>743.286881845206</x-pos>
-<y-pos>475.657933754256</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>72</id>
-<svgid>0</svgid>
-<x-pos>323.14802043954126</x-pos>
-<y-pos>513.5400836197371</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>159</id>
-<x-pos>37.550131630651734</x-pos>
-<y-pos>343.94665287450414</y-pos>
-</borderpoint>
-<borderpoint>
-<id>160</id>
-<x-pos>141.57585185336083</x-pos>
-<y-pos>644.6755531546996</y-pos>
-</borderpoint>
-<borderpoint>
-<id>157</id>
-<x-pos>708.3584147187853</x-pos>
-<y-pos>504.71365887356785</y-pos>
-</borderpoint>
-<borderpoint>
-<id>161</id>
-<x-pos>631.4424252657547</x-pos>
-<y-pos>406.9925439185703</y-pos>
-</borderpoint>
-<borderpoint>
-<id>162</id>
-<x-pos>560.2005683859599</x-pos>
-<y-pos>425.90631123179014</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>73</id>
-<svgid>0</svgid>
-<x-pos>821.841033031031</x-pos>
-<y-pos>449.8637340584981</y-pos>
-<poi>true</poi>
-<shortDescription>T2.2</shortDescription>
-<longDescription>Eingang%20T2.2</longDescription>
-<borderpoint>
-<id>72</id>
-<x-pos>797.834357002113</x-pos>
-<y-pos>447.574122181419</y-pos>
-</borderpoint>
-<borderpoint>
-<id>158</id>
-<x-pos>811.123217120613</x-pos>
-<y-pos>471.29933662021284</y-pos>
-</borderpoint>
-<borderpoint>
-<id>163</id>
-<x-pos>840.754800344251</x-pos>
-<y-pos>526.7797211322588</y-pos>
-</borderpoint>
-<borderpoint>
-<id>164</id>
-<x-pos>982.6080551933997</x-pos>
-<y-pos>522.3665087591742</y-pos>
-</borderpoint>
-<borderpoint>
-<id>82</id>
-<x-pos>899.008170224442</x-pos>
-<y-pos>407.968710277653</y-pos>
-</borderpoint>
-<borderpoint>
-<id>81</id>
-<x-pos>862.283151880095</x-pos>
-<y-pos>413.189423669742</y-pos>
-</borderpoint>
-<borderpoint>
-<id>71</id>
-<x-pos>812.956423379196</x-pos>
-<y-pos>438.212842995606</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>74</id>
-<svgid>1</svgid>
-<x-pos>744.4505844902745</x-pos>
-<y-pos>437.5916850296492</y-pos>
-<poi>true</poi>
-<shortDescription>TP1</shortDescription>
-<longDescription>Treffpunkt%20Terminal%202</longDescription>
-<borderpoint>
-<id>18</id>
-<x-pos>768.8881640876691</x-pos>
-<y-pos>467.7289608827571</y-pos>
-</borderpoint>
-<borderpoint>
-<id>19</id>
-<x-pos>746.1214483202118</x-pos>
-<y-pos>391.54802735318844</y-pos>
-</borderpoint>
-<borderpoint>
-<id>27</id>
-<x-pos>571.4306869506836</x-pos>
-<y-pos>455.907781541962</y-pos>
-</borderpoint>
-<borderpoint>
-<id>28</id>
-<x-pos>620.0288686850636</x-pos>
-<y-pos>517.2027855312701</y-pos>
-</borderpoint>
-<category>5</category>
-</vertex>
-<vertex>
-<id>75</id>
-<svgid>1</svgid>
-<x-pos>910.590166150909</x-pos>
-<y-pos>396.73768953932927</y-pos>
-<poi>true</poi>
-<shortDescription>S-Bahn</shortDescription>
-<longDescription>Durchgang%20zur%20S-Bahn</longDescription>
-<borderpoint>
-<id>119</id>
-<x-pos>813.9837741655173</x-pos>
-<y-pos>369.65695449986407</y-pos>
-</borderpoint>
-<borderpoint>
-<id>123</id>
-<x-pos>930.4442588570191</x-pos>
-<y-pos>332.44211232293515</y-pos>
-</borderpoint>
-<borderpoint>
-<id>124</id>
-<x-pos>1004.4360851012555</x-pos>
-<y-pos>444.52440533195573</y-pos>
-</borderpoint>
-<borderpoint>
-<id>121</id>
-<x-pos>908.991030348945</x-pos>
-<y-pos>476.0475685670204</y-pos>
-</borderpoint>
-<borderpoint>
-<id>120</id>
-<x-pos>880.5326356396233</x-pos>
-<y-pos>431.8276014033052</y-pos>
-</borderpoint>
-<borderpoint>
-<id>44</id>
-<x-pos>856.0146340439001</x-pos>
-<y-pos>440.58403054463497</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>76</id>
-<svgid>0</svgid>
-<x-pos>959.1827902253141</x-pos>
-<y-pos>352.7714249915683</y-pos>
-<poi>true</poi>
-</vertex>
-<vertex>
-<id>77</id>
-<svgid>0</svgid>
-<x-pos>971.29383921219</x-pos>
-<y-pos>389.040136401936</y-pos>
-<poi>true</poi>
-<shortDescription>Stairs</shortDescription>
-<longDescription>Treppen%20zum%20S-Bahn</longDescription>
-<borderpoint>
-<id>101</id>
-<x-pos>949.1169447358121</x-pos>
-<y-pos>386.2585398487209</y-pos>
-</borderpoint>
-<borderpoint>
-<id>60</id>
-<x-pos>958.834922318606</x-pos>
-<y-pos>397.8896273190213</y-pos>
-</borderpoint>
-<borderpoint>
-<id>102</id>
-<x-pos>984.3068474445147</x-pos>
-<y-pos>414.11721282644373</y-pos>
-</borderpoint>
-<borderpoint>
-<id>103</id>
-<x-pos>1043.5431836708306</x-pos>
-<y-pos>400.18787633758234</y-pos>
-</borderpoint>
-<borderpoint>
-<id>104</id>
-<x-pos>1020.3764977209347</x-pos>
-<y-pos>352.8281322754535</y-pos>
-</borderpoint>
-<borderpoint>
-<id>105</id>
-<x-pos>976.3891193350565</x-pos>
-<y-pos>382.29967579399187</y-pos>
-</borderpoint>
-<category>2</category>
-</vertex>
-<vertex>
-<id>78</id>
-<svgid>1</svgid>
-<x-pos>811.6327104076896</x-pos>
-<y-pos>451.2096835264225</y-pos>
-<poi>true</poi>
-<shortDescription>Taxi2</shortDescription>
-<longDescription>Taxi%20Terminal%202</longDescription>
-<borderpoint>
-<id>41</id>
-<x-pos>797.3465587969908</x-pos>
-<y-pos>458.97253174142736</y-pos>
-</borderpoint>
-<borderpoint>
-<id>42</id>
-<x-pos>799.0978446252568</x-pos>
-<y-pos>436.20581597397006</y-pos>
-</borderpoint>
-<borderpoint>
-<id>43</id>
-<x-pos>829.3075251628443</x-pos>
-<y-pos>448.4648167718317</y-pos>
-</borderpoint>
-<borderpoint>
-<id>44</id>
-<x-pos>856.0146340439001</x-pos>
-<y-pos>440.58403054463497</y-pos>
-</borderpoint>
-<borderpoint>
-<id>120</id>
-<x-pos>880.5326356396233</x-pos>
-<y-pos>431.8276014033052</y-pos>
-</borderpoint>
-<borderpoint>
-<id>121</id>
-<x-pos>908.991030348945</x-pos>
-<y-pos>476.0475685670204</y-pos>
-</borderpoint>
-<borderpoint>
-<id>122</id>
-<x-pos>651.9898350509172</x-pos>
-<y-pos>562.7362170661847</y-pos>
-</borderpoint>
-<borderpoint>
-<id>28</id>
-<x-pos>620.0288686850636</x-pos>
-<y-pos>517.2027855312701</y-pos>
-</borderpoint>
-<borderpoint>
-<id>18</id>
-<x-pos>768.8881640876691</x-pos>
-<y-pos>467.7289608827571</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>79</id>
-<svgid>1</svgid>
-<x-pos>1226.52773127605</x-pos>
-<y-pos>322.2926310903018</y-pos>
-<poi>true</poi>
-<shortDescription>Taxi%201</shortDescription>
-<longDescription>Taxi%20Terminal%201</longDescription>
-<borderpoint>
-<id>178</id>
-<x-pos>1212.4013068602258</x-pos>
-<y-pos>312.7401485639749</y-pos>
-</borderpoint>
-<borderpoint>
-<id>177</id>
-<x-pos>1250.0539521679436</x-pos>
-<y-pos>371.4082238108841</y-pos>
-</borderpoint>
-<borderpoint>
-<id>179</id>
-<x-pos>1377.0221747172247</x-pos>
-<y-pos>328.0638995613019</y-pos>
-</borderpoint>
-<borderpoint>
-<id>180</id>
-<x-pos>1333.240029010576</x-pos>
-<y-pos>286.4708611399857</y-pos>
-</borderpoint>
-<borderpoint>
-<id>171</id>
-<x-pos>1305.6572772153875</x-pos>
-<y-pos>296.9785761095814</y-pos>
-</borderpoint>
-<borderpoint>
-<id>172</id>
-<x-pos>1245.6757375972788</x-pos>
-<y-pos>316.24272022050684</y-pos>
-</borderpoint>
-<borderpoint>
-<id>173</id>
-<x-pos>1230.789808057018</x-pos>
-<y-pos>305.7350052509111</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>80</id>
-<svgid>1</svgid>
-<x-pos>1211.0939996463735</x-pos>
-<y-pos>327.7398304890111</y-pos>
-<poi>true</poi>
-<shortDescription>Bus</shortDescription>
-<longDescription>Bushaltestelle</longDescription>
-<borderpoint>
-<id>174</id>
-<x-pos>1195.3262700346327</x-pos>
-<y-pos>318.43182750583924</y-pos>
-</borderpoint>
-<borderpoint>
-<id>175</id>
-<x-pos>1197.0775558628986</x-pos>
-<y-pos>331.56647121783385</y-pos>
-</borderpoint>
-<borderpoint>
-<id>168</id>
-<x-pos>1175.1864830095744</x-pos>
-<y-pos>339.0094339429718</y-pos>
-</borderpoint>
-<borderpoint>
-<id>126</id>
-<x-pos>1091.5625550574864</x-pos>
-<y-pos>365.7165430599881</y-pos>
-</borderpoint>
-<borderpoint>
-<id>176</id>
-<x-pos>1121.3344437903966</x-pos>
-<y-pos>411.24997640393445</y-pos>
-</borderpoint>
-<borderpoint>
-<id>177</id>
-<x-pos>1250.0539521679436</x-pos>
-<y-pos>371.4082238108841</y-pos>
-</borderpoint>
-<borderpoint>
-<id>178</id>
-<x-pos>1212.4013068602258</x-pos>
-<y-pos>312.7401485639749</y-pos>
-</borderpoint>
-<category>3</category>
-</vertex>
-<vertex>
-<id>81</id>
-<svgid>1</svgid>
-<x-pos>1204.7389336812128</x-pos>
-<y-pos>304.13529976127074</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>167</id>
-<x-pos>1155.046695984516</x-pos>
-<y-pos>262.3906789563366</y-pos>
-</borderpoint>
-<borderpoint>
-<id>169</id>
-<x-pos>1218.968628716223</x-pos>
-<y-pos>240.06178464594575</y-pos>
-</borderpoint>
-<borderpoint>
-<id>170</id>
-<x-pos>1256.621274023941</x-pos>
-<y-pos>230.4297146354754</y-pos>
-</borderpoint>
-<borderpoint>
-<id>171</id>
-<x-pos>1305.6572772153875</x-pos>
-<y-pos>296.9785761095814</y-pos>
-</borderpoint>
-<borderpoint>
-<id>172</id>
-<x-pos>1245.6757375972788</x-pos>
-<y-pos>316.24272022050684</y-pos>
-</borderpoint>
-<borderpoint>
-<id>173</id>
-<x-pos>1230.789808057018</x-pos>
-<y-pos>305.7350052509111</y-pos>
-</borderpoint>
-<borderpoint>
-<id>174</id>
-<x-pos>1195.3262700346327</x-pos>
-<y-pos>318.43182750583924</y-pos>
-</borderpoint>
-<borderpoint>
-<id>175</id>
-<x-pos>1197.0775558628986</x-pos>
-<y-pos>331.56647121783385</y-pos>
-</borderpoint>
-<borderpoint>
-<id>168</id>
-<x-pos>1175.1864830095744</x-pos>
-<y-pos>339.0094339429718</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>82</id>
-<svgid>1</svgid>
-<x-pos>1035.8757523212234</x-pos>
-<y-pos>365.8702262799764</y-pos>
-<poi>true</poi>
-<shortDescription>Apo</shortDescription>
-<longDescription>Apotheke</longDescription>
-<borderpoint>
-<id>138</id>
-<x-pos>1011.0034069572528</x-pos>
-<y-pos>353.4575422621265</y-pos>
-</borderpoint>
-<borderpoint>
-<id>135</id>
-<x-pos>1039.8996231236408</x-pos>
-<y-pos>344.7011131207968</y-pos>
-</borderpoint>
-<borderpoint>
-<id>134</id>
-<x-pos>1067.4823749188295</x-pos>
-<y-pos>373.5973292871849</y-pos>
-</borderpoint>
-<borderpoint>
-<id>165</id>
-<x-pos>1017.5707288132501</x-pos>
-<y-pos>388.92108028451196</y-pos>
-</borderpoint>
-<category>6</category>
-</vertex>
-<vertex>
-<id>83</id>
-<svgid>0</svgid>
-<x-pos>1170.125404456227</x-pos>
-<y-pos>326.45247197888557</y-pos>
-<poi>true</poi>
-</vertex>
-<vertex>
-<id>84</id>
-<svgid>0</svgid>
-<x-pos>1077.6463010335706</x-pos>
-<y-pos>339.37419529551084</y-pos>
-<poi>false</poi>
-</vertex>
-</vertexes>
-<edges>
-<edge>
-<id>0</id>
-<vertex1>57</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>0</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>1</id>
-<vertex1>36</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>35</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>2</id>
-<vertex1>34</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>36</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>3</id>
-<vertex1>36</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>37</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>4</id>
-<vertex1>25</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>84</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>5</id>
-<vertex1>84</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>33</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>6</id>
-<vertex1>25</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>21</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>7</id>
-<vertex1>24</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>21</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>8</id>
-<vertex1>23</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>21</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>9</id>
-<vertex1>22</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>21</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>10</id>
-<vertex1>21</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>20</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>11</id>
-<vertex1>15</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>20</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>12</id>
-<vertex1>20</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>64</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>13</id>
-<vertex1>52</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>0</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>14</id>
-<vertex1>28</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>29</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>15</id>
-<vertex1>29</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>22</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>16</id>
-<vertex1>29</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>31</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>17</id>
-<vertex1>31</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>30</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>18</id>
-<vertex1>26</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>30</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>19</id>
-<vertex1>30</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>0</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>20</id>
-<vertex1>16</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>14</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>21</id>
-<vertex1>18</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>14</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>22</id>
-<vertex1>11</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>12</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>23</id>
-<vertex1>12</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>13</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>24</id>
-<vertex1>13</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>6</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>25</id>
-<vertex1>32</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>12</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>26</id>
-<vertex1>8</vertex1>
-<vertex1-reachable>false</vertex1-reachable>
-<vertex2>9</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>27</id>
-<vertex1>9</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>5</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>28</id>
-<vertex1>9</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>10</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>29</id>
-<vertex1>10</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>4</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>30</id>
-<vertex1>49</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>32</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>31</id>
-<vertex1>7</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>1</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>32</id>
-<vertex1>7</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>2</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>33</id>
-<vertex1>7</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>3</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>34</id>
-<vertex1>39</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>3</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>35</id>
-<vertex1>39</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>2</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>36</id>
-<vertex1>39</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>1</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>37</id>
-<vertex1>39</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>7</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>38</id>
-<vertex1>39</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>38</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>39</id>
-<vertex1>7</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>40</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>40</id>
-<vertex1>40</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>38</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>41</id>
-<vertex1>40</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>41</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>42</id>
-<vertex1>41</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>8</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>43</id>
-<vertex1>8</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>42</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>44</id>
-<vertex1>42</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>43</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>45</id>
-<vertex1>43</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>11</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>46</id>
-<vertex1>11</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>44</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>47</id>
-<vertex1>44</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>15</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>48</id>
-<vertex1>17</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>19</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<distanceFactor>1.7</distanceFactor>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>49</id>
-<vertex1>19</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>53</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<distanceFactor>1.7</distanceFactor>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>50</id>
-<vertex1>19</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>31</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<distanceFactor>1.7</distanceFactor>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>51</id>
-<vertex1>45</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>46</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>52</id>
-<vertex1>46</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>17</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>53</id>
-<vertex1>14</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>47</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>55</id>
-<vertex1>27</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>57</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>56</id>
-<vertex1>26</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>57</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>57</id>
-<vertex1>57</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>56</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>58</id>
-<vertex1>56</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>28</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>59</id>
-<vertex1>57</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>28</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>60</id>
-<vertex1>56</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>55</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>61</id>
-<vertex1>27</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>56</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>62</id>
-<vertex1>55</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>54</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>63</id>
-<vertex1>54</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>53</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>64</id>
-<vertex1>53</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>52</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>65</id>
-<vertex1>52</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>57</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>66</id>
-<vertex1>52</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>30</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>67</id>
-<vertex1>57</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>30</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>68</id>
-<vertex1>5</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>59</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>69</id>
-<vertex1>59</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>6</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>70</id>
-<vertex1>59</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>13</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>71</id>
-<vertex1>22</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>23</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>72</id>
-<vertex1>24</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>25</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>82</id>
-<vertex1>33</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>68</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>83</id>
-<vertex1>68</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>67</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>84</id>
-<vertex1>67</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>35</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>85</id>
-<vertex1>67</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>34</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>86</id>
-<vertex1>69</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>68</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>87</id>
-<vertex1>36</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>70</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>88</id>
-<vertex1>70</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>69</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>92</id>
-<vertex1>72</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>71</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<distanceFactor>99.56</distanceFactor>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>93</id>
-<vertex1>71</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>55</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>94</id>
-<vertex1>56</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>71</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>95</id>
-<vertex1>73</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>29</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>96</id>
-<vertex1>73</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>28</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>97</id>
-<vertex1>74</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>16</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>98</id>
-<vertex1>74</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex1-stepmarker>
-<x-pos>736.2797853922106</x-pos>
-<y-pos>409.44782146965105</y-pos>
-</vertex1-stepmarker>
-<vertex2>56</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<vertex2-stepmarker>
-<x-pos>773</x-pos>
-<y-pos>456</y-pos>
-</vertex2-stepmarker>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>99</id>
-<vertex1>16</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>75</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>100</id>
-<vertex1>75</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>14</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>101</id>
-<vertex1>18</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex1-stepmarker>
-<x-pos>1099.4264119728323</x-pos>
-<y-pos>292.3330343974005</y-pos>
-</vertex1-stepmarker>
-<vertex2>36</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<vertex2-stepmarker>
-<x-pos>1157</x-pos>
-<y-pos>338</y-pos>
-</vertex2-stepmarker>
-<disabledAdapted>false</disabledAdapted>
-</edge>
-<edge>
-<id>102</id>
-<vertex1>26</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>56</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>103</id>
-<vertex1>0</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>28</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>104</id>
-<vertex1>26</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>52</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>105</id>
-<vertex1>28</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>27</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>106</id>
-<vertex1>16</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>78</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>107</id>
-<vertex1>80</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>81</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>108</id>
-<vertex1>81</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>79</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>109</id>
-<vertex1>81</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>18</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>110</id>
-<vertex1>14</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>82</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>111</id>
-<vertex1>18</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>82</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>112</id>
-<vertex1>84</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>37</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-</edges>
+	<levels>
+		<level>
+			<id>0</id>
+			<min>0</min>
+			<max>5</max>
+		</level>
+		<level>
+			<id>1</id>
+			<min>5</min>
+			<max>10</max>
+		</level>
+	</levels>
+	<gpsmarkers>
+		<gpsmarker>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>77.62238190267871</x-pos>
+			<y-pos>283.2334011527971</y-pos>
+			<latitude>53.62841</latitude>
+			<longitude>10.002896</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>1</id>
+			<svgid>0</svgid>
+			<x-pos>1388.258022561679</x-pos>
+			<y-pos>36.30701602466024</y-pos>
+			<latitude>53.634957</latitude>
+			<longitude>10.003797</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>2</id>
+			<svgid>1</svgid>
+			<x-pos>56.28772682504555</x-pos>
+			<y-pos>271.45210374261916</y-pos>
+			<latitude>53.62841</latitude>
+			<longitude>10.002923</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>3</id>
+			<svgid>1</svgid>
+			<x-pos>1377.2335877565993</x-pos>
+			<y-pos>19.9730626529025</y-pos>
+			<latitude>53.634957</latitude>
+			<longitude>10.003814</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>4</id>
+			<svgid>0</svgid>
+			<x-pos>701.7763866935809</x-pos>
+			<y-pos>486.3604762283797</y-pos>
+			<latitude>53.630602</latitude>
+			<longitude>10.006437</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>5</id>
+			<svgid>0</svgid>
+			<x-pos>1260.110786673949</x-pos>
+			<y-pos>310.08417676158786</y-pos>
+			<latitude>53.633513</latitude>
+			<longitude>10.006077</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>6</id>
+			<svgid>0</svgid>
+			<x-pos>34.186148220730814</x-pos>
+			<y-pos>318.2180853971501</y-pos>
+			<latitude>53.628175</latitude>
+			<longitude>10.003084</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>7</id>
+			<svgid>0</svgid>
+			<x-pos>557.6470095054391</x-pos>
+			<y-pos>411.16780636974215</y-pos>
+			<latitude>53.630061</latitude>
+			<longitude>10.005155</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>8</id>
+			<svgid>0</svgid>
+			<x-pos>621.2182782753227</x-pos>
+			<y-pos>393.830189577083</y-pos>
+			<latitude>53.630564</latitude>
+			<longitude>10.005203</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>10</id>
+			<svgid>0</svgid>
+			<x-pos>692.6702867488272</x-pos>
+			<y-pos>296.10905712167016</y-pos>
+			<latitude>53.631143</latitude>
+			<longitude>10.004672</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>11</id>
+			<svgid>0</svgid>
+			<x-pos>965.9993512655042</x-pos>
+			<y-pos>404.477460251641</y-pos>
+			<latitude>53.631941</latitude>
+			<longitude>10.006287</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>13</id>
+			<svgid>0</svgid>
+			<x-pos>1049.8252487575885</x-pos>
+			<y-pos>181.2279766908626</y-pos>
+			<latitude>53.633017</latitude>
+			<longitude>10.004457</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>14</id>
+			<svgid>0</svgid>
+			<x-pos>1209.3313453910278</x-pos>
+			<y-pos>130.16080864188598</y-pos>
+			<latitude>53.633859</latitude>
+			<longitude>10.00435</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>15</id>
+			<svgid>0</svgid>
+			<x-pos>1337.314504210482</x-pos>
+			<y-pos>21.091417135651568</y-pos>
+			<latitude>53.634737</latitude>
+			<longitude>10.003626</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>16</id>
+			<svgid>0</svgid>
+			<x-pos>166.55270072973173</x-pos>
+			<y-pos>295.22757912586087</y-pos>
+			<latitude>53.628706</latitude>
+			<longitude>10.003197</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>17</id>
+			<svgid>0</svgid>
+			<x-pos>264.91096903965183</x-pos>
+			<y-pos>312.31085720936085</y-pos>
+			<latitude>53.629113</latitude>
+			<longitude>10.003636</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>18</id>
+			<svgid>0</svgid>
+			<x-pos>364.3046054448373</x-pos>
+			<y-pos>328.35878185977305</y-pos>
+			<latitude>53.629511</latitude>
+			<longitude>10.004044</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>19</id>
+			<svgid>0</svgid>
+			<x-pos>544.9732083144346</x-pos>
+			<y-pos>345.4420698265329</y-pos>
+			<latitude>53.630357</latitude>
+			<longitude>10.004768</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>20</id>
+			<svgid>0</svgid>
+			<x-pos>615.8947130055601</x-pos>
+			<y-pos>322.6643708094978</y-pos>
+			<latitude>53.630764</latitude>
+			<longitude>10.004704</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>21</id>
+			<svgid>0</svgid>
+			<x-pos>805.1122142918302</x-pos>
+			<y-pos>261.9767686744437</y-pos>
+			<latitude>53.631738</latitude>
+			<longitude>10.004602</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>22</id>
+			<svgid>0</svgid>
+			<x-pos>881.521058430604</x-pos>
+			<y-pos>239.61320271424208</y-pos>
+			<latitude>53.632126</latitude>
+			<longitude>10.004548</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>23</id>
+			<svgid>0</svgid>
+			<x-pos>954.2026494464603</x-pos>
+			<y-pos>214.7647955293339</y-pos>
+			<latitude>53.632485</latitude>
+			<longitude>10.0045</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>24</id>
+			<svgid>0</svgid>
+			<x-pos>768.3728498281891</x-pos>
+			<y-pos>340.92566285674104</y-pos>
+			<latitude>53.631366</latitude>
+			<longitude>10.005117</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>25</id>
+			<svgid>0</svgid>
+			<x-pos>743.3639139232666</x-pos>
+			<y-pos>405.3163137812562</y-pos>
+			<latitude>53.631025</latitude>
+			<longitude>10.005777</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>26</id>
+			<svgid>0</svgid>
+			<x-pos>1080.2700330596608</x-pos>
+			<y-pos>365.0737768743456</y-pos>
+			<latitude>53.632454</latitude>
+			<longitude>10.00619</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>27</id>
+			<svgid>0</svgid>
+			<x-pos>1007.253995151128</x-pos>
+			<y-pos>270.3894541470737</y-pos>
+			<latitude>53.6324</latitude>
+			<longitude>10.004994</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>28</id>
+			<svgid>0</svgid>
+			<x-pos>1129.5081569195547</x-pos>
+			<y-pos>287.53485488288965</y-pos>
+			<latitude>53.632975</latitude>
+			<longitude>10.005552</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>29</id>
+			<svgid>0</svgid>
+			<x-pos>926.1578683754833</x-pos>
+			<y-pos>340.5559398218528</y-pos>
+			<latitude>53.631907</latitude>
+			<longitude>10.005713</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>30</id>
+			<svgid>0</svgid>
+			<x-pos>899.4509082282941</x-pos>
+			<y-pos>302.0278834706729</y-pos>
+			<latitude>53.631913</latitude>
+			<longitude>10.005059</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>31</id>
+			<svgid>0</svgid>
+			<x-pos>1090.7446213853302</x-pos>
+			<y-pos>248.02589324902962</y-pos>
+			<latitude>53.632957</latitude>
+			<longitude>10.004941</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>32</id>
+			<svgid>0</svgid>
+			<x-pos>1165.2898557641872</x-pos>
+			<y-pos>341.20741329825887</y-pos>
+			<latitude>53.633011</latitude>
+			<longitude>10.006126</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>33</id>
+			<svgid>1</svgid>
+			<x-pos>1218.3569386275772</x-pos>
+			<y-pos>245.12397113288796</y-pos>
+			<latitude>53.6335</latitude>
+			<longitude>10.005434</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>34</id>
+			<svgid>1</svgid>
+			<x-pos>1266.4738666495095</x-pos>
+			<y-pos>307.76676421804524</y-pos>
+			<latitude>53.633523</latitude>
+			<longitude>10.006089</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>35</id>
+			<svgid>1</svgid>
+			<x-pos>576.4952761463283</x-pos>
+			<y-pos>458.47261424900324</y-pos>
+			<latitude>53.630593</latitude>
+			<longitude>10.005842</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>36</id>
+			<svgid>1</svgid>
+			<x-pos>623.704330857267</x-pos>
+			<y-pos>512.9446104187326</y-pos>
+			<latitude>53.630603</latitude>
+			<longitude>10.006459</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>39</id>
+			<svgid>0</svgid>
+			<x-pos>1128.7775201541365</x-pos>
+			<y-pos>159.26657194887858</y-pos>
+			<latitude>53.633456</latitude>
+			<longitude>10.004414</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>40</id>
+			<svgid>0</svgid>
+			<x-pos>1293.139382119804</x-pos>
+			<y-pos>77.3013391750872</y-pos>
+			<latitude>53.634384</latitude>
+			<longitude>10.004017</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>41</id>
+			<svgid>0</svgid>
+			<x-pos>782.3587692300069</x-pos>
+			<y-pos>463.45407645235355</y-pos>
+			<latitude>53.631028</latitude>
+			<longitude>10.006372</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>42</id>
+			<svgid>0</svgid>
+			<x-pos>848.6396530583962</x-pos>
+			<y-pos>441.5631423438947</y-pos>
+			<latitude>53.631417</latitude>
+			<longitude>10.006362</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>45</id>
+			<svgid>0</svgid>
+			<x-pos>1185.7843709729382</x-pos>
+			<y-pos>207.45904367977812</y-pos>
+			<latitude>53.6335</latitude>
+			<longitude>10.00487</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>47</id>
+			<svgid>0</svgid>
+			<x-pos>1037.7059280159547</x-pos>
+			<y-pos>318.68530517263514</y-pos>
+			<latitude>53.632425</latitude>
+			<longitude>10.005616</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>48</id>
+			<svgid>0</svgid>
+			<x-pos>800.7584774764542</x-pos>
+			<y-pos>385.4088649553122</y-pos>
+			<latitude>53.631394</latitude>
+			<longitude>10.005755</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>49</id>
+			<svgid>0</svgid>
+			<x-pos>659.4305591779886</x-pos>
+			<y-pos>439.52326009691376</y-pos>
+			<latitude>53.630599</latitude>
+			<longitude>10.005873</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>50</id>
+			<svgid>0</svgid>
+			<x-pos>695.156562765849</x-pos>
+			<y-pos>361.24128164704314</y-pos>
+			<latitude>53.630971</latitude>
+			<longitude>10.005155</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>51</id>
+			<svgid>0</svgid>
+			<x-pos>1223.737542535841</x-pos>
+			<y-pos>254.94108211871273</y-pos>
+			<latitude>53.6335</latitude>
+			<longitude>10.005476</longitude>
+		</gpsmarker>
+	</gpsmarkers>
+	<categories>
+		<category>
+			<id>0</id>
+			<name>Gates</name>
+		</category>
+		<category>
+			<id>1</id>
+			<name>Security%20Check</name>
+		</category>
+		<category>
+			<id>2</id>
+			<name>Stairs</name>
+		</category>
+		<category>
+			<id>3</id>
+			<name>Eingang</name>
+		</category>
+		<category>
+			<id>4</id>
+			<name>Checkin</name>
+		</category>
+		<category>
+			<id>5</id>
+			<name>Treffpunkte</name>
+		</category>
+		<category>
+			<id>6</id>
+			<name>Dienstleistungen</name>
+		</category>
+		<category>
+			<id>7</id>
+			<name>Restaurants</name>
+		</category>
+	</categories>
+	<vertexes>
+		<vertex>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>725.6700150991223</x-pos>
+			<y-pos>416.44033036772737</y-pos>
+			<poi>true</poi>
+			<shortDescription>Checkin2</shortDescription>
+			<longDescription>Flightline%20Counter</longDescription>
+			<borderpoint>
+				<id>39</id>
+				<x-pos>716.82326568531</x-pos>
+				<y-pos>407.068579438365</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>40</id>
+				<x-pos>710.522404694856</x-pos>
+				<y-pos>399.867595449276</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>35</id>
+				<x-pos>701.593198245084</x-pos>
+				<y-pos>402.46289142174</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>34</id>
+				<x-pos>692.519959027254</x-pos>
+				<y-pos>405.573716296425</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>33</id>
+				<x-pos>701.333962838859</x-pos>
+				<y-pos>417.75778038894</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>62</id>
+				<x-pos>719.523634681218</x-pos>
+				<y-pos>440.553136807452</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>45</id>
+				<x-pos>732.485437785522</x-pos>
+				<y-pos>425.071048446846</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>49</id>
+				<x-pos>742.566815370243</x-pos>
+				<y-pos>420.570433453668</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>38</id>
+				<x-pos>736.986020854755</x-pos>
+				<y-pos>396.627152654187</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>1</id>
+			<svgid>0</svgid>
+			<x-pos>41.7380054630808</x-pos>
+			<y-pos>309.287813259075</y-pos>
+			<poi>true</poi>
+			<shortDescription>A40</shortDescription>
+			<longDescription>Gate%20A/B40</longDescription>
+			<borderpoint>
+				<id>6</id>
+				<x-pos>41.7806839897662</x-pos>
+				<y-pos>294.783794656584</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>7</id>
+				<x-pos>28.1708251630204</x-pos>
+				<y-pos>317.682922206345</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>65.1118705499019</x-pos>
+				<y-pos>323.947789916508</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>70.2965786743767</x-pos>
+				<y-pos>300.616603356372</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>2</id>
+			<svgid>0</svgid>
+			<x-pos>64.1861164298238</x-pos>
+			<y-pos>290.710066252117</y-pos>
+			<poi>true</poi>
+			<shortDescription>A39</shortDescription>
+			<longDescription>Gate%20A/B39</longDescription>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>70.2965786743767</x-pos>
+				<y-pos>300.616603356372</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>12</id>
+				<x-pos>75.9133458092241</x-pos>
+				<y-pos>281.606006899966</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>13</id>
+				<x-pos>73.9690802625462</x-pos>
+				<y-pos>272.532767682136</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>6</id>
+				<x-pos>41.7806839897662</x-pos>
+				<y-pos>294.783794656584</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>3</id>
+			<svgid>0</svgid>
+			<x-pos>90.5045913563499</x-pos>
+			<y-pos>280.64711995668</y-pos>
+			<poi>true</poi>
+			<shortDescription>A38</shortDescription>
+			<longDescription>Gate%20A/B38</longDescription>
+			<borderpoint>
+				<id>13</id>
+				<x-pos>73.9690802625462</x-pos>
+				<y-pos>272.532767682136</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>14</id>
+				<x-pos>117.174981299835</x-pos>
+				<y-pos>276.205269270305</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>112.206302680547</x-pos>
+				<y-pos>295.647924737085</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>12</id>
+				<x-pos>75.9133458092241</x-pos>
+				<y-pos>281.606006899966</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>4</id>
+			<svgid>0</svgid>
+			<x-pos>167.137797760058</x-pos>
+			<y-pos>294.5804302119</y-pos>
+			<poi>true</poi>
+			<shortDescription>A37</shortDescription>
+			<longDescription>Gate%20A/B37</longDescription>
+			<borderpoint>
+				<id>16</id>
+				<x-pos>164.053383667258</x-pos>
+				<y-pos>284.198360962204</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>17</id>
+				<x-pos>161.028970594647</x-pos>
+				<y-pos>312.28219663644</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>20</id>
+				<x-pos>160.164853904821</x-pos>
+				<y-pos>318.114989872218</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>21</id>
+				<x-pos>180.471627392346</x-pos>
+				<y-pos>321.787491460389</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>23</id>
+				<x-pos>212.549946594842</x-pos>
+				<y-pos>326.908303408683</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>24</id>
+				<x-pos>210.883052189139</x-pos>
+				<y-pos>291.90352088892</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>5</id>
+			<svgid>0</svgid>
+			<x-pos>265.445042338552</x-pos>
+			<y-pos>310.835958842988</y-pos>
+			<poi>true</poi>
+			<shortDescription>B32</shortDescription>
+			<longDescription>Gate%20B32</longDescription>
+			<borderpoint>
+				<id>25</id>
+				<x-pos>259.230645662621</x-pos>
+				<y-pos>300.044205122355</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>26</id>
+				<x-pos>251.45358347591</x-pos>
+				<y-pos>333.312748921068</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>29</id>
+				<x-pos>270.95809355265</x-pos>
+				<y-pos>336.512107707276</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>30</id>
+				<x-pos>277.625671175462</x-pos>
+				<y-pos>302.861676892146</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>6</id>
+			<svgid>0</svgid>
+			<x-pos>364.526359709001</x-pos>
+			<y-pos>328.639633057992</y-pos>
+			<poi>true</poi>
+			<shortDescription>B31</shortDescription>
+			<longDescription>Gate%20B31</longDescription>
+			<borderpoint>
+				<id>97</id>
+				<x-pos>399.794638782381</x-pos>
+				<y-pos>354.341034246576</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>86</id>
+				<x-pos>346.989689577681</x-pos>
+				<y-pos>348.997676291337</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>99</id>
+				<x-pos>335.98865849337</x-pos>
+				<y-pos>313.480061647701</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>100</id>
+				<x-pos>400.737584303892</x-pos>
+				<y-pos>322.909516862826</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>98</id>
+				<x-pos>401.051899477731</x-pos>
+				<y-pos>334.853493468651</y-pos>
+			</borderpoint>
+			<category>0</category>
+		</vertex>
+		<vertex>
+			<id>7</id>
+			<svgid>0</svgid>
+			<x-pos>92.8268097322197</x-pos>
+			<y-pos>310.835958842988</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>70.2965786743767</x-pos>
+				<y-pos>300.616603356372</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>123.655866455428</x-pos>
+				<y-pos>307.745577027525</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>11</id>
+				<x-pos>118.903217341326</x-pos>
+				<y-pos>333.021029134338</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>65.1118705499019</x-pos>
+				<y-pos>323.947789916508</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>8</id>
+			<svgid>0</svgid>
+			<x-pos>260.800606474092</x-pos>
+			<y-pos>337.965739153608</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>26</id>
+				<x-pos>251.45358347591</x-pos>
+				<y-pos>333.312748921068</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>29</id>
+				<x-pos>270.95809355265</x-pos>
+				<y-pos>336.512107707276</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>85</id>
+				<x-pos>287.584129068205</x-pos>
+				<y-pos>360.313017938919</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>84</id>
+				<x-pos>227.864246039082</x-pos>
+				<y-pos>350.883562723794</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>9</id>
+			<svgid>0</svgid>
+			<x-pos>261.173905469194</x-pos>
+			<y-pos>326.020171310328</y-pos>
+			<poi>false</poi>
+		</vertex>
+		<vertex>
+			<id>10</id>
+			<svgid>0</svgid>
+			<x-pos>248.481739635709</x-pos>
+			<y-pos>313.701304471944</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>24</id>
+				<x-pos>210.883052189139</x-pos>
+				<y-pos>291.90352088892</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>25</id>
+				<x-pos>259.230645662621</x-pos>
+				<y-pos>300.044205122355</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>26</id>
+				<x-pos>251.45358347591</x-pos>
+				<y-pos>333.312748921068</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>23</id>
+				<x-pos>212.549946594842</x-pos>
+				<y-pos>326.908303408683</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>11</id>
+			<svgid>0</svgid>
+			<x-pos>436.997732162475</x-pos>
+			<y-pos>365.963163786294</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>88</id>
+				<x-pos>413.310191257392</x-pos>
+				<y-pos>359.684392201812</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>90</id>
+				<x-pos>431.226156166131</x-pos>
+				<y-pos>359.055761854137</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>91</id>
+				<x-pos>443.170132771956</x-pos>
+				<y-pos>360.627337723326</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>92</id>
+				<x-pos>461.714728028367</x-pos>
+				<y-pos>364.084804635537</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>93</id>
+				<x-pos>454.171163856267</x-pos>
+				<y-pos>387.972757847187</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>89</id>
+				<x-pos>410.481354692856</x-pos>
+				<y-pos>380.743508848926</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>12</id>
+			<svgid>0</svgid>
+			<x-pos>438.117629147781</x-pos>
+			<y-pos>352.151100967503</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>94</id>
+				<x-pos>420.225125081817</x-pos>
+				<y-pos>357.169870811112</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>95</id>
+				<x-pos>435.312253426017</x-pos>
+				<y-pos>340.19685142389</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>96</id>
+				<x-pos>459.200206637667</x-pos>
+				<y-pos>344.597263857615</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>91</id>
+				<x-pos>443.170132771956</x-pos>
+				<y-pos>360.627337723326</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>90</id>
+				<x-pos>431.226156166131</x-pos>
+				<y-pos>359.055761854137</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>13</id>
+			<svgid>0</svgid>
+			<x-pos>421.31917436817</x-pos>
+			<y-pos>341.698729104633</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>94</id>
+				<x-pos>420.225125081817</x-pos>
+				<y-pos>357.169870811112</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>97</id>
+				<x-pos>399.794638782381</x-pos>
+				<y-pos>354.341034246576</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>98</id>
+				<x-pos>401.051899477731</x-pos>
+				<y-pos>334.853493468651</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>95</id>
+				<x-pos>435.312253426017</x-pos>
+				<y-pos>340.19685142389</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>14</id>
+			<svgid>1</svgid>
+			<x-pos>995.0217568309037</x-pos>
+			<y-pos>368.5938259793311</y-pos>
+			<poi>false</poi>
+			<shortDescription>shortPoiDesc</shortDescription>
+			<longDescription>This%20is%20the%20long%20POI%20description.
+			</longDescription>
+			<borderpoint>
+				<id>123</id>
+				<x-pos>930.4442588570191</x-pos>
+				<y-pos>332.44211232293515</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>125</id>
+				<x-pos>1033.3323012676435</x-pos>
+				<y-pos>300.4811459570816</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>126</id>
+				<x-pos>1091.5625550574864</x-pos>
+				<y-pos>365.7165430599881</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>134</id>
+				<x-pos>1067.4823749188295</x-pos>
+				<y-pos>373.5973292871849</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>135</id>
+				<x-pos>1039.8996231236408</x-pos>
+				<y-pos>344.7011131207968</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>138</id>
+				<x-pos>1011.0034069572528</x-pos>
+				<y-pos>353.4575422621265</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>165</id>
+				<x-pos>1017.5707288132501</x-pos>
+				<y-pos>388.92108028451196</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>166</id>
+				<x-pos>977.2911547631332</x-pos>
+				<y-pos>402.493545453573</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>15</id>
+			<svgid>0</svgid>
+			<x-pos>535.921958802621</x-pos>
+			<y-pos>380.521838031237</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>128</id>
+				<x-pos>567.6365767803388</x-pos>
+				<y-pos>390.9470004445499</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>129</id>
+				<x-pos>508.3486301186158</x-pos>
+				<y-pos>392.46720127223693</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>130</id>
+				<x-pos>509.8688338958111</x-pos>
+				<y-pos>372.4511848724994</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>127</id>
+				<x-pos>557.2485176361713</x-pos>
+				<y-pos>366.87710730562503</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>16</id>
+			<svgid>1</svgid>
+			<x-pos>776.225914316079</x-pos>
+			<y-pos>439.40741816255235</y-pos>
+			<poi>false</poi>
+			<shortDescription>shortPoiDesc</shortDescription>
+			<longDescription>This%20is%20the%20long%20POI%20description.
+			</longDescription>
+			<borderpoint>
+				<id>18</id>
+				<x-pos>768.8881640876691</x-pos>
+				<y-pos>467.7289608827571</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>41</id>
+				<x-pos>797.3465587969908</x-pos>
+				<y-pos>458.97253174142736</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>42</id>
+				<x-pos>799.0978446252568</x-pos>
+				<y-pos>436.20581597397006</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>43</id>
+				<x-pos>829.3075251628443</x-pos>
+				<y-pos>448.4648167718317</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>44</id>
+				<x-pos>856.0146340439001</x-pos>
+				<y-pos>440.58403054463497</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>119</id>
+				<x-pos>813.9837741655173</x-pos>
+				<y-pos>369.65695449986407</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>19</id>
+				<x-pos>746.1214483202118</x-pos>
+				<y-pos>391.54802735318844</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>17</id>
+			<svgid>0</svgid>
+			<x-pos>664.2171998957997</x-pos>
+			<y-pos>343.961084582142</y-pos>
+			<poi>true</poi>
+			<shortDescription>Pizza</shortDescription>
+			<longDescription>Hier%20gibt%20es%20leckere%20Pizza</longDescription>
+			<borderpoint>
+				<id>112</id>
+				<x-pos>611.6789424935566</x-pos>
+				<y-pos>335.20470971176303</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>117</id>
+				<x-pos>634.4455151115496</x-pos>
+				<y-pos>372.85711827228977</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>118</id>
+				<x-pos>756.5969335811653</x-pos>
+				<y-pos>325.57269821953525</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>113</id>
+				<x-pos>736.4572731883255</x-pos>
+				<y-pos>298.42793855962066</y-pos>
+			</borderpoint>
+			<category>7</category>
+		</vertex>
+		<vertex>
+			<id>18</id>
+			<svgid>1</svgid>
+			<x-pos>1119.3994764347665</x-pos>
+			<y-pos>322.2926310903018</y-pos>
+			<poi>true</poi>
+			<shortDescription>TP2</shortDescription>
+			<longDescription>Treffpunkt%20Terminal%201</longDescription>
+			<borderpoint>
+				<id>125</id>
+				<x-pos>1033.3323012676435</x-pos>
+				<y-pos>300.4811459570816</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>167</id>
+				<x-pos>1155.046695984516</x-pos>
+				<y-pos>262.3906789563366</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>168</id>
+				<x-pos>1175.1864830095744</x-pos>
+				<y-pos>339.0094339429718</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>126</id>
+				<x-pos>1091.5625550574864</x-pos>
+				<y-pos>365.7165430599881</y-pos>
+			</borderpoint>
+			<category>5</category>
+		</vertex>
+		<vertex>
+			<id>19</id>
+			<svgid>0</svgid>
+			<x-pos>706.2477825990657</x-pos>
+			<y-pos>364.10074418844636</y-pos>
+			<poi>true</poi>
+			<shortDescription>Stairs03</shortDescription>
+			<longDescription>Treppe%20zum%20Essen</longDescription>
+			<borderpoint>
+				<id>117</id>
+				<x-pos>634.4455151115496</x-pos>
+				<y-pos>372.85711827228977</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>31</id>
+				<x-pos>661.152474874182</x-pos>
+				<y-pos>395.46353929254</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>36</id>
+				<x-pos>689.927604965016</x-pos>
+				<y-pos>383.538706767408</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>37</id>
+				<x-pos>724.024249674396</x-pos>
+				<y-pos>377.904594282558</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>73</id>
+				<x-pos>743.64695789844</x-pos>
+				<y-pos>371.06364944313</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>74</id>
+				<x-pos>779.111804044698</x-pos>
+				<y-pos>358.641952061952</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>118</id>
+				<x-pos>756.5969335811653</x-pos>
+				<y-pos>325.57269821953525</y-pos>
+			</borderpoint>
+			<category>2</category>
+		</vertex>
+		<vertex>
+			<id>20</id>
+			<svgid>0</svgid>
+			<x-pos>897.6487069311</x-pos>
+			<y-pos>305.48872712292</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>107</id>
+				<x-pos>846.0872536098834</x-pos>
+				<y-pos>300.24149308745393</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>108</id>
+				<x-pos>876.9980637461869</x-pos>
+				<y-pos>337.7398529249368</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>109</id>
+				<x-pos>951.9947834211526</x-pos>
+				<y-pos>309.10934845442625</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>110</id>
+				<x-pos>915.0031581760682</x-pos>
+				<y-pos>275.6648653561307</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>21</id>
+			<svgid>0</svgid>
+			<x-pos>919.300048647045</x-pos>
+			<y-pos>352.151101510734</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>79</id>
+				<x-pos>884.246153046813</x-pos>
+				<y-pos>386.005709110935</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>55</id>
+				<x-pos>892.1844886307864</x-pos>
+				<y-pos>393.5575860406935</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>56</id>
+				<x-pos>1052.0053246881544</x-pos>
+				<y-pos>343.1186994179008</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>57</id>
+				<x-pos>1017.7821729994312</x-pos>
+				<y-pos>284.47457299773225</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>58</id>
+				<x-pos>844.782985392305</x-pos>
+				<y-pos>350.75545682612153</y-pos>
+			</borderpoint>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>22</id>
+			<svgid>0</svgid>
+			<x-pos>880.476953156385</x-pos>
+			<y-pos>397.693578913242</y-pos>
+			<poi>true</poi>
+			<shortDescription>Sec01</shortDescription>
+			<longDescription>Security%20Terminal%202</longDescription>
+			<borderpoint>
+				<id>79</id>
+				<x-pos>884.246153046813</x-pos>
+				<y-pos>386.005709110935</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>80</id>
+				<x-pos>856.162315489368</x-pos>
+				<y-pos>394.286840698386</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>81</id>
+				<x-pos>862.283151880095</x-pos>
+				<y-pos>413.189423669742</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>82</id>
+				<x-pos>899.008170224442</x-pos>
+				<y-pos>407.968710277653</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>83</id>
+				<x-pos>899.008170224442</x-pos>
+				<y-pos>400.587701688837</y-pos>
+			</borderpoint>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>23</id>
+			<svgid>0</svgid>
+			<x-pos>928.259224529505</x-pos>
+			<y-pos>388.734403030779</y-pos>
+			<poi>true</poi>
+			<shortDescription>Sec02</shortDescription>
+			<longDescription>Security%20Mitte%201</longDescription>
+			<borderpoint>
+				<id>82</id>
+				<x-pos>899.008170224442</x-pos>
+				<y-pos>407.968710277653</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>83</id>
+				<x-pos>899.008170224442</x-pos>
+				<y-pos>400.587701688837</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>55</id>
+				<x-pos>892.1844886307864</x-pos>
+				<y-pos>393.5575860406935</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>59</id>
+				<x-pos>942.5433004320282</x-pos>
+				<y-pos>377.5250999607991</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>60</id>
+				<x-pos>958.834922318606</x-pos>
+				<y-pos>397.8896273190213</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>67</id>
+				<x-pos>949.7034439794796</x-pos>
+				<y-pos>426.28706760996397</y-pos>
+			</borderpoint>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>24</id>
+			<svgid>0</svgid>
+			<x-pos>964.095928059348</x-pos>
+			<y-pos>377.162134182603</y-pos>
+			<poi>true</poi>
+			<shortDescription>Sec03</shortDescription>
+			<longDescription>Security%20Mitte%202</longDescription>
+			<borderpoint>
+				<id>106</id>
+				<x-pos>942.66546257255</x-pos>
+				<y-pos>377.60768876616487</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>101</id>
+				<x-pos>949.1169447358121</x-pos>
+				<y-pos>386.2585398487209</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>105</id>
+				<x-pos>976.3891193350565</x-pos>
+				<y-pos>382.29967579399187</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>104</id>
+				<x-pos>1020.3764977209347</x-pos>
+				<y-pos>352.8281322754535</y-pos>
+			</borderpoint>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>25</id>
+			<svgid>0</svgid>
+			<x-pos>1054.43423033364</x-pos>
+			<y-pos>341.325436338591</y-pos>
+			<poi>true</poi>
+			<shortDescription>Sec04</shortDescription>
+			<longDescription>Security%20Terminal%201</longDescription>
+			<category>1</category>
+		</vertex>
+		<vertex>
+			<id>26</id>
+			<svgid>0</svgid>
+			<x-pos>757.339039392108</x-pos>
+			<y-pos>401.321451259563</y-pos>
+			<poi>true</poi>
+			<shortDescription>Check01</shortDescription>
+			<longDescription>Checkin%20Lufthansa</longDescription>
+			<borderpoint>
+				<id>50</id>
+				<x-pos>755.168537351148</x-pos>
+				<y-pos>393.206694295134</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>51</id>
+				<x-pos>746.887405763697</x-pos>
+				<y-pos>396.987210889404</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>52</id>
+				<x-pos>755.168537351148</x-pos>
+				<y-pos>408.868834471398</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>53</id>
+				<x-pos>763.269644338872</x-pos>
+				<y-pos>404.36821947822</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>27</id>
+			<svgid>0</svgid>
+			<x-pos>738.52476973473</x-pos>
+			<y-pos>433.126526156556</y-pos>
+			<poi>true</poi>
+			<shortDescription>Check03</shortDescription>
+			<longDescription>Air%20Berlin%20Checkin</longDescription>
+			<borderpoint>
+				<id>49</id>
+				<x-pos>742.566815370243</x-pos>
+				<y-pos>420.570433453668</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>45</id>
+				<x-pos>732.485437785522</x-pos>
+				<y-pos>425.071048446846</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>62</id>
+				<x-pos>719.523634681218</x-pos>
+				<y-pos>440.553136807452</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>46</id>
+				<x-pos>735.18580678143</x-pos>
+				<y-pos>434.072278433208</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>47</id>
+				<x-pos>741.666692371608</x-pos>
+				<y-pos>436.772647429116</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>48</id>
+				<x-pos>749.947823959059</x-pos>
+				<y-pos>431.731958636754</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>28</id>
+			<svgid>0</svgid>
+			<x-pos>781.976773467243</x-pos>
+			<y-pos>436.26223776612</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>68</id>
+				<x-pos>767.050150448763</x-pos>
+				<y-pos>440.193104556843</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>69</id>
+				<x-pos>768.490347246579</x-pos>
+				<y-pos>417.510004991217</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>70</id>
+				<x-pos>806.295513189291</x-pos>
+				<y-pos>426.511244013339</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>71</id>
+				<x-pos>812.956423379196</x-pos>
+				<y-pos>438.212842995606</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>72</id>
+				<x-pos>797.834357002113</x-pos>
+				<y-pos>447.574122181419</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>29</id>
+			<svgid>0</svgid>
+			<x-pos>826.324694802489</x-pos>
+			<y-pos>419.239803314208</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>80</id>
+				<x-pos>856.162315489368</x-pos>
+				<y-pos>394.286840698386</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>75</id>
+				<x-pos>804.315248006505</x-pos>
+				<y-pos>391.046380012848</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>54</id>
+				<x-pos>806.6074185912142</x-pos>
+				<y-pos>426.74411687162734</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>71</id>
+				<x-pos>812.956423379196</x-pos>
+				<y-pos>438.212842995606</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>81</id>
+				<x-pos>862.283151880095</x-pos>
+				<y-pos>413.189423669742</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>30</id>
+			<svgid>0</svgid>
+			<x-pos>740.764563741561</x-pos>
+			<y-pos>384.746975609016</y-pos>
+			<poi>false</poi>
+		</vertex>
+		<vertex>
+			<id>31</id>
+			<svgid>0</svgid>
+			<x-pos>776.153309049483</x-pos>
+			<y-pos>377.131675985793</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>73</id>
+				<x-pos>743.64695789844</x-pos>
+				<y-pos>371.06364944313</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>74</id>
+				<x-pos>779.111804044698</x-pos>
+				<y-pos>358.641952061952</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>75</id>
+				<x-pos>804.315248006505</x-pos>
+				<y-pos>391.046380012848</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>76</id>
+				<x-pos>785.95273883433</x-pos>
+				<y-pos>409.408889185023</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>77</id>
+				<x-pos>764.529811466796</x-pos>
+				<y-pos>385.645642021032</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>78</id>
+				<x-pos>754.628458481799</x-pos>
+				<y-pos>388.165986417213</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>32</id>
+			<svgid>0</svgid>
+			<x-pos>518.318075298034</x-pos>
+			<y-pos>359.29382723385527</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>96</id>
+				<x-pos>459.200206637667</x-pos>
+				<y-pos>344.597263857615</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>131</id>
+				<x-pos>520.7825444408298</x-pos>
+				<y-pos>351.4322269479024</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>132</id>
+				<x-pos>593.0684695882895</x-pos>
+				<y-pos>328.9986639711046</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>133</id>
+				<x-pos>605.971452064121</x-pos>
+				<y-pos>350.2592301909457</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>127</id>
+				<x-pos>557.2485176361713</x-pos>
+				<y-pos>366.87710730562503</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>130</id>
+				<x-pos>509.8688338958111</x-pos>
+				<y-pos>372.4511848724994</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>91</id>
+				<x-pos>443.170132771956</x-pos>
+				<y-pos>360.627337723326</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>33</id>
+			<svgid>0</svgid>
+			<x-pos>1071.8061221159</x-pos>
+			<y-pos>316.209296347218</y-pos>
+			<poi>true</poi>
+			<shortDescription>Check06</shortDescription>
+			<longDescription>American%20Airline%20Counter</longDescription>
+			<borderpoint>
+				<id>149</id>
+				<x-pos>1101.2351852888914</x-pos>
+				<y-pos>314.11984732716354</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>152</id>
+				<x-pos>1062.1971698249738</x-pos>
+				<y-pos>290.5154658838646</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>153</id>
+				<x-pos>1029.514180134252</x-pos>
+				<y-pos>304.13337825499855</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>154</id>
+				<x-pos>1044.0399533301284</x-pos>
+				<y-pos>330.4613421725243</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>34</id>
+			<svgid>0</svgid>
+			<x-pos>1165.87747040278</x-pos>
+			<y-pos>295.155232683013</y-pos>
+			<poi>true</poi>
+			<shortDescription>Check04</shortDescription>
+			<longDescription>British%20Airline%20Counter</longDescription>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>1172.23049531566</x-pos>
+				<y-pos>274.799538353936</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>1151.17137866855</x-pos>
+				<y-pos>292.401188088836</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>1164.37261596972</x-pos>
+				<y-pos>314.08893508362</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>1190.1464602244</x-pos>
+				<y-pos>299.31612191326</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>35</id>
+			<svgid>0</svgid>
+			<x-pos>1148.4070771495</x-pos>
+			<y-pos>273.653210217439</y-pos>
+			<poi>true</poi>
+			<shortDescription>Check05</shortDescription>
+			<longDescription>German%20Wings%20Counter</longDescription>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>1151.17137866855</x-pos>
+				<y-pos>292.401188088836</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>1125.39753441387</x-pos>
+				<y-pos>262.541246574274</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>1153.37158488541</x-pos>
+				<y-pos>250.597269968449</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>1172.23049531566</x-pos>
+				<y-pos>274.799538353936</y-pos>
+			</borderpoint>
+			<category>4</category>
+		</vertex>
+		<vertex>
+			<id>36</id>
+			<svgid>0</svgid>
+			<x-pos>1143.47953033447</x-pos>
+			<y-pos>315.761337545853</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>149</id>
+				<x-pos>1101.2351852888914</x-pos>
+				<y-pos>314.11984732716354</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>1151.17137866855</x-pos>
+				<y-pos>292.401188088836</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>1164.37261596972</x-pos>
+				<y-pos>314.08893508362</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>155</id>
+				<x-pos>1178.857271450082</x-pos>
+				<y-pos>336.95797576117764</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>150</id>
+				<x-pos>1125.7474275569325</x-pos>
+				<y-pos>354.97358444056556</y-pos>
+			</borderpoint>
+			<category>2</category>
+		</vertex>
+		<vertex>
+			<id>37</id>
+			<svgid>0</svgid>
+			<x-pos>1093.6084406941206</x-pos>
+			<y-pos>331.5198091133353</y-pos>
+			<poi>true</poi>
+			<shortDescription>Info1</shortDescription>
+			<longDescription>Information%20Terminal%201</longDescription>
+			<borderpoint>
+				<id>148</id>
+				<x-pos>1044.9478141548707</x-pos>
+				<y-pos>330.4613421725243</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>149</id>
+				<x-pos>1101.2351852888914</x-pos>
+				<y-pos>314.11984732716354</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>150</id>
+				<x-pos>1125.7474275569325</x-pos>
+				<y-pos>354.97358444056556</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>151</id>
+				<x-pos>1034.0534842579636</x-pos>
+				<y-pos>383.1172700075759</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>104</id>
+				<x-pos>1020.3764977209347</x-pos>
+				<y-pos>352.8281322754535</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>56</id>
+				<x-pos>1052.0053246881544</x-pos>
+				<y-pos>343.1186994179008</y-pos>
+			</borderpoint>
+			<category>6</category>
+		</vertex>
+		<vertex>
+			<id>38</id>
+			<svgid>0</svgid>
+			<x-pos>144.610891333109</x-pos>
+			<y-pos>297.805573378937</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>14</id>
+				<x-pos>117.174981299835</x-pos>
+				<y-pos>276.205269270305</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>16</id>
+				<x-pos>164.053383667258</x-pos>
+				<y-pos>284.198360962204</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>17</id>
+				<x-pos>161.028970594647</x-pos>
+				<y-pos>312.28219663644</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>123.655866455428</x-pos>
+				<y-pos>307.745577027525</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>112.206302680547</x-pos>
+				<y-pos>295.647924737085</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>39</id>
+			<svgid>0</svgid>
+			<x-pos>83.0165559460845</x-pos>
+			<y-pos>289.717428328116</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>12</id>
+				<x-pos>75.9133458092241</x-pos>
+				<y-pos>281.606006899966</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>70.2965786743767</x-pos>
+				<y-pos>300.616603356372</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>123.655866455428</x-pos>
+				<y-pos>307.745577027525</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>15</id>
+				<x-pos>112.206302680547</x-pos>
+				<y-pos>295.647924737085</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>40</id>
+			<svgid>0</svgid>
+			<x-pos>148.343881356565</x-pos>
+			<y-pos>320.203513519671</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>17</id>
+				<x-pos>161.028970594647</x-pos>
+				<y-pos>312.28219663644</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>20</id>
+				<x-pos>160.164853904821</x-pos>
+				<y-pos>318.114989872218</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>21</id>
+				<x-pos>180.471627392346</x-pos>
+				<y-pos>321.787491460389</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>22</id>
+				<x-pos>177.447214319736</x-pos>
+				<y-pos>342.526323958287</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>11</id>
+				<x-pos>118.903217341326</x-pos>
+				<y-pos>333.021029134338</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>10</id>
+				<x-pos>123.655866455428</x-pos>
+				<y-pos>307.745577027525</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>41</id>
+			<svgid>0</svgid>
+			<x-pos>205.27197921427</x-pos>
+			<y-pos>329.224906076358</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>21</id>
+				<x-pos>180.471627392346</x-pos>
+				<y-pos>321.787491460389</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>23</id>
+				<x-pos>212.549946594842</x-pos>
+				<y-pos>326.908303408683</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>26</id>
+				<x-pos>251.45358347591</x-pos>
+				<y-pos>333.312748921068</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>84</id>
+				<x-pos>227.864246039082</x-pos>
+				<y-pos>350.883562723794</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>22</id>
+				<x-pos>177.447214319736</x-pos>
+				<y-pos>342.526323958287</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>42</id>
+			<svgid>0</svgid>
+			<x-pos>314.773020490815</x-pos>
+			<y-pos>347.578763116764</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>29</id>
+				<x-pos>270.95809355265</x-pos>
+				<y-pos>336.512107707276</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>86</id>
+				<x-pos>346.989689577681</x-pos>
+				<y-pos>348.997676291337</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>87</id>
+				<x-pos>343.217907491631</x-pos>
+				<y-pos>370.056792938451</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>85</id>
+				<x-pos>287.584129068205</x-pos>
+				<y-pos>360.313017938919</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>43</id>
+			<svgid>0</svgid>
+			<x-pos>375.434108371974</x-pos>
+			<y-pos>357.844485681267</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>87</id>
+				<x-pos>343.217907491631</x-pos>
+				<y-pos>370.056792938451</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>86</id>
+				<x-pos>346.989689577681</x-pos>
+				<y-pos>348.997676291337</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>88</id>
+				<x-pos>413.310191257392</x-pos>
+				<y-pos>359.684392201812</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>89</id>
+				<x-pos>410.481354692856</x-pos>
+				<y-pos>380.743508848926</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>44</id>
+			<svgid>0</svgid>
+			<x-pos>481.513232194923</x-pos>
+			<y-pos>375.887282093868</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>129</id>
+				<x-pos>508.3486301186158</x-pos>
+				<y-pos>392.46720127223693</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>93</id>
+				<x-pos>454.171163856267</x-pos>
+				<y-pos>387.972757847187</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>92</id>
+				<x-pos>461.714728028367</x-pos>
+				<y-pos>364.084804635537</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>130</id>
+				<x-pos>509.8688338958111</x-pos>
+				<y-pos>372.4511848724994</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>45</id>
+			<svgid>0</svgid>
+			<x-pos>626.1269597318983</x-pos>
+			<y-pos>322.0701485859979</y-pos>
+			<poi>true</poi>
+			<shortDescription>Aussicht</shortDescription>
+			<longDescription>Hier%20k%F6nnen%20Sie%20Flugzeuge%20bestaunen
+			</longDescription>
+			<borderpoint>
+				<id>111</id>
+				<x-pos>599.4200187761759</x-pos>
+				<y-pos>318.1297802482684</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>112</id>
+				<x-pos>611.6789424935566</x-pos>
+				<y-pos>335.20470971176303</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>113</id>
+				<x-pos>736.4572731883255</x-pos>
+				<y-pos>298.42793855962066</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>114</id>
+				<x-pos>718.5067063164465</x-pos>
+				<y-pos>280.03955298354947</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>115</id>
+				<x-pos>681.7299351643042</x-pos>
+				<y-pos>254.6460681404035</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>116</id>
+				<x-pos>584.0963641294499</x-pos>
+				<y-pos>287.04465225062415</y-pos>
+			</borderpoint>
+			<category>6</category>
+		</vertex>
+		<vertex>
+			<id>46</id>
+			<svgid>0</svgid>
+			<x-pos>627.878234548667</x-pos>
+			<y-pos>339.58289675368474</y-pos>
+			<poi>false</poi>
+		</vertex>
+		<vertex>
+			<id>47</id>
+			<svgid>1</svgid>
+			<x-pos>1029.391929941079</x-pos>
+			<y-pos>393.29930736109156</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>124</id>
+				<x-pos>1004.4360851012555</x-pos>
+				<y-pos>444.52440533195573</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>166</id>
+				<x-pos>977.2911547631332</x-pos>
+				<y-pos>402.493545453573</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>165</id>
+				<x-pos>1017.5707288132501</x-pos>
+				<y-pos>388.92108028451196</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>134</id>
+				<x-pos>1067.4823749188295</x-pos>
+				<y-pos>373.5973292871849</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>126</id>
+				<x-pos>1091.5625550574864</x-pos>
+				<y-pos>365.7165430599881</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>176</id>
+				<x-pos>1121.3344437903966</x-pos>
+				<y-pos>411.24997640393445</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>49</id>
+			<svgid>0</svgid>
+			<x-pos>544.4629268056339</x-pos>
+			<y-pos>346.9497333015363</y-pos>
+			<poi>true</poi>
+			<shortDescription>B20</shortDescription>
+			<longDescription>Gate%20B20</longDescription>
+		</vertex>
+		<vertex>
+			<id>52</id>
+			<svgid>0</svgid>
+			<x-pos>717.624879861177</x-pos>
+			<y-pos>392.06356755993</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>35</id>
+				<x-pos>701.593198245084</x-pos>
+				<y-pos>402.46289142174</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>36</id>
+				<x-pos>689.927604965016</x-pos>
+				<y-pos>383.538706767408</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>37</id>
+				<x-pos>724.024249674396</x-pos>
+				<y-pos>377.904594282558</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>38</id>
+				<x-pos>736.986020854755</x-pos>
+				<y-pos>396.627152654187</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>39</id>
+				<x-pos>716.82326568531</x-pos>
+				<y-pos>407.068579438365</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>40</id>
+				<x-pos>710.522404694856</x-pos>
+				<y-pos>399.867595449276</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>53</id>
+			<svgid>0</svgid>
+			<x-pos>680.294979626619</x-pos>
+			<y-pos>407.928775159617</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>31</id>
+				<x-pos>661.152474874182</x-pos>
+				<y-pos>395.46353929254</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>32</id>
+				<x-pos>685.002132246765</x-pos>
+				<y-pos>423.20172775848</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>33</id>
+				<x-pos>701.333962838859</x-pos>
+				<y-pos>417.75778038894</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>34</id>
+				<x-pos>692.519959027254</x-pos>
+				<y-pos>405.573716296425</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>35</id>
+				<x-pos>701.593198245084</x-pos>
+				<y-pos>402.46289142174</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>36</id>
+				<x-pos>689.927604965016</x-pos>
+				<y-pos>383.538706767408</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>54</id>
+			<svgid>0</svgid>
+			<x-pos>701.137507257582</x-pos>
+			<y-pos>434.05970532381</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>32</id>
+				<x-pos>685.002132246765</x-pos>
+				<y-pos>423.20172775848</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>61</id>
+				<x-pos>704.761617503586</x-pos>
+				<y-pos>448.834268394903</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>62</id>
+				<x-pos>719.523634681218</x-pos>
+				<y-pos>440.553136807452</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>33</id>
+				<x-pos>701.333962838859</x-pos>
+				<y-pos>417.75778038894</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>55</id>
+			<svgid>0</svgid>
+			<x-pos>729.519663938542</x-pos>
+			<y-pos>451.36256001659274</y-pos>
+			<poi>true</poi>
+			<shortDescription>Info2</shortDescription>
+			<longDescription>Information%20Terminal%202</longDescription>
+			<borderpoint>
+				<id>61</id>
+				<x-pos>704.761617503586</x-pos>
+				<y-pos>448.834268394903</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>63</id>
+				<x-pos>723.664200474942</x-pos>
+				<y-pos>472.23746635944</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>64</id>
+				<x-pos>743.286881845206</x-pos>
+				<y-pos>475.657933754256</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>65</id>
+				<x-pos>758.228923622565</x-pos>
+				<y-pos>470.977294161348</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>66</id>
+				<x-pos>740.946562048755</x-pos>
+				<y-pos>442.713432004179</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>62</id>
+				<x-pos>719.523634681218</x-pos>
+				<y-pos>440.553136807452</y-pos>
+			</borderpoint>
+			<category>6</category>
+		</vertex>
+		<vertex>
+			<id>56</id>
+			<svgid>0</svgid>
+			<x-pos>755.888027601603</x-pos>
+			<y-pos>437.170530343356</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>69</id>
+				<x-pos>768.490347246579</x-pos>
+				<y-pos>417.510004991217</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>48</id>
+				<x-pos>749.947823959059</x-pos>
+				<y-pos>431.731958636754</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>47</id>
+				<x-pos>741.666692371608</x-pos>
+				<y-pos>436.772647429116</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>46</id>
+				<x-pos>735.18580678143</x-pos>
+				<y-pos>434.072278433208</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>62</id>
+				<x-pos>719.523634681218</x-pos>
+				<y-pos>440.553136807452</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>66</id>
+				<x-pos>740.946562048755</x-pos>
+				<y-pos>442.713432004179</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>65</id>
+				<x-pos>758.228923622565</x-pos>
+				<y-pos>470.977294161348</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>72</id>
+				<x-pos>797.834357002113</x-pos>
+				<y-pos>447.574122181419</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>68</id>
+				<x-pos>767.050150448763</x-pos>
+				<y-pos>440.193104556843</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>57</id>
+			<svgid>0</svgid>
+			<x-pos>744.377975029281</x-pos>
+			<y-pos>406.373362649844</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>38</id>
+				<x-pos>736.986020854755</x-pos>
+				<y-pos>396.627152654187</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>37</id>
+				<x-pos>724.024249674396</x-pos>
+				<y-pos>377.904594282558</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>73</id>
+				<x-pos>743.64695789844</x-pos>
+				<y-pos>371.06364944313</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>78</id>
+				<x-pos>754.628458481799</x-pos>
+				<y-pos>388.165986417213</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>51</id>
+				<x-pos>746.887405763697</x-pos>
+				<y-pos>396.987210889404</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>52</id>
+				<x-pos>755.168537351148</x-pos>
+				<y-pos>408.868834471398</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>69</id>
+				<x-pos>768.490347246579</x-pos>
+				<y-pos>417.510004991217</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>48</id>
+				<x-pos>749.947823959059</x-pos>
+				<y-pos>431.731958636754</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>49</id>
+				<x-pos>742.566815370243</x-pos>
+				<y-pos>420.570433453668</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>58</id>
+			<svgid>0</svgid>
+			<x-pos>797.114246778849</x-pos>
+			<y-pos>401.847873886929</y-pos>
+			<poi>true</poi>
+			<shortDescription>shortPoiDesc</shortDescription>
+			<longDescription>This%20is%20the%20long%20POI%20description.
+			</longDescription>
+			<borderpoint>
+				<id>75</id>
+				<x-pos>804.315248006505</x-pos>
+				<y-pos>391.046380012848</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>76</id>
+				<x-pos>785.95273883433</x-pos>
+				<y-pos>409.408889185023</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>77</id>
+				<x-pos>764.529811466796</x-pos>
+				<y-pos>385.645642021032</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>78</id>
+				<x-pos>754.628458481799</x-pos>
+				<y-pos>388.165986417213</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>51</id>
+				<x-pos>746.887405763697</x-pos>
+				<y-pos>396.987210889404</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>50</id>
+				<x-pos>755.168537351148</x-pos>
+				<y-pos>393.206694295134</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>53</id>
+				<x-pos>763.269644338872</x-pos>
+				<y-pos>404.36821947822</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>52</id>
+				<x-pos>755.168537351148</x-pos>
+				<y-pos>408.868834471398</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>69</id>
+				<x-pos>768.490347246579</x-pos>
+				<y-pos>417.510004991217</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>70</id>
+				<x-pos>806.295513189291</x-pos>
+				<y-pos>426.511244013339</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>59</id>
+			<svgid>0</svgid>
+			<x-pos>311.786390107884</x-pos>
+			<y-pos>324.48108448056</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>99</id>
+				<x-pos>335.98865849337</x-pos>
+				<y-pos>313.480061647701</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>86</id>
+				<x-pos>346.989689577681</x-pos>
+				<y-pos>348.997676291337</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>29</id>
+				<x-pos>270.95809355265</x-pos>
+				<y-pos>336.512107707276</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>30</id>
+				<x-pos>277.625671175462</x-pos>
+				<y-pos>302.861676892146</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>64</id>
+			<svgid>0</svgid>
+			<x-pos>1322.7532244810125</x-pos>
+			<y-pos>88.06250094384262</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>136</id>
+				<x-pos>1252.8479409758577</x-pos>
+				<y-pos>108.94329991291477</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>140</id>
+				<x-pos>1342.7261560184438</x-pos>
+				<y-pos>9.986470016007573</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>141</id>
+				<x-pos>1397.19780550298</x-pos>
+				<y-pos>32.68299063456426</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>142</id>
+				<x-pos>1353.620485915351</x-pos>
+				<y-pos>101.6804143374728</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>137</id>
+				<x-pos>1295.5173997387444</x-pos>
+				<y-pos>140.71842877889415</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>67</id>
+			<svgid>0</svgid>
+			<x-pos>1093.0644358212185</x-pos>
+			<y-pos>299.59407310879106</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>149</id>
+				<x-pos>1101.2351852888914</x-pos>
+				<y-pos>314.11984732716354</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>1151.17137866855</x-pos>
+				<y-pos>292.401188088836</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>1125.39753441387</x-pos>
+				<y-pos>262.541246574274</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>145</id>
+				<x-pos>1110.3137848844233</x-pos>
+				<y-pos>272.3582493890192</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>152</id>
+				<x-pos>1062.1971698249738</x-pos>
+				<y-pos>290.5154658838646</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>68</id>
+			<svgid>0</svgid>
+			<x-pos>1035.8692038624558</x-pos>
+			<y-pos>281.4368566139457</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>57</id>
+				<x-pos>1017.7821729994312</x-pos>
+				<y-pos>284.47457299773225</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>143</id>
+				<x-pos>998.6469034411243</x-pos>
+				<y-pos>266.00322361582334</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>144</id>
+				<x-pos>1087.6172642658667</x-pos>
+				<y-pos>233.32023392510166</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>145</id>
+				<x-pos>1110.3137848844233</x-pos>
+				<y-pos>272.3582493890192</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>146</id>
+				<x-pos>1027.698449832877</x-pos>
+				<y-pos>305.0412390797408</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>69</id>
+			<svgid>0</svgid>
+			<x-pos>1186.5741007696722</x-pos>
+			<y-pos>261.4639184696158</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>139</id>
+				<x-pos>1182.9426574707031</x-pos>
+				<y-pos>206.9922689850797</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>144</id>
+				<x-pos>1087.6172642658667</x-pos>
+				<y-pos>233.32023392510166</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>145</id>
+				<x-pos>1110.3137848844233</x-pos>
+				<y-pos>272.3582493890192</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>1125.39753441387</x-pos>
+				<y-pos>262.541246574274</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>1153.37158488541</x-pos>
+				<y-pos>250.597269968449</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>1172.23049531566</x-pos>
+				<y-pos>274.799538353936</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>1190.1464602244</x-pos>
+				<y-pos>299.31612191326</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>147</id>
+				<x-pos>1241.9536044720521</x-pos>
+				<y-pos>274.17397103850374</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>70</id>
+			<svgid>0</svgid>
+			<x-pos>1207.227922419912</x-pos>
+			<y-pos>306.6959480600259</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>1164.37261596972</x-pos>
+				<y-pos>314.08893508362</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>1190.1464602244</x-pos>
+				<y-pos>299.31612191326</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>147</id>
+				<x-pos>1241.9536044720521</x-pos>
+				<y-pos>274.17397103850374</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>156</id>
+				<x-pos>1263.3387654491307</x-pos>
+				<y-pos>311.1091604331105</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>155</id>
+				<x-pos>1178.857271450082</x-pos>
+				<y-pos>336.95797576117764</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>71</id>
+			<svgid>0</svgid>
+			<x-pos>747.4468671661062</x-pos>
+			<y-pos>475.0820900828568</y-pos>
+			<poi>true</poi>
+			<shortDescription>T2.1</shortDescription>
+			<longDescription>Eingang%20T2.1</longDescription>
+			<borderpoint>
+				<id>61</id>
+				<x-pos>704.761617503586</x-pos>
+				<y-pos>448.834268394903</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>157</id>
+				<x-pos>708.3584147187853</x-pos>
+				<y-pos>504.71365887356785</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>158</id>
+				<x-pos>811.123217120613</x-pos>
+				<y-pos>471.29933662021284</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>72</id>
+				<x-pos>797.834357002113</x-pos>
+				<y-pos>447.574122181419</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>65</id>
+				<x-pos>758.228923622565</x-pos>
+				<y-pos>470.977294161348</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>64</id>
+				<x-pos>743.286881845206</x-pos>
+				<y-pos>475.657933754256</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>72</id>
+			<svgid>0</svgid>
+			<x-pos>323.14802043954126</x-pos>
+			<y-pos>513.5400836197371</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>159</id>
+				<x-pos>37.550131630651734</x-pos>
+				<y-pos>343.94665287450414</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>160</id>
+				<x-pos>141.57585185336083</x-pos>
+				<y-pos>644.6755531546996</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>157</id>
+				<x-pos>708.3584147187853</x-pos>
+				<y-pos>504.71365887356785</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>161</id>
+				<x-pos>631.4424252657547</x-pos>
+				<y-pos>406.9925439185703</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>162</id>
+				<x-pos>560.2005683859599</x-pos>
+				<y-pos>425.90631123179014</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>73</id>
+			<svgid>0</svgid>
+			<x-pos>821.841033031031</x-pos>
+			<y-pos>449.8637340584981</y-pos>
+			<poi>true</poi>
+			<shortDescription>T2.2</shortDescription>
+			<longDescription>Eingang%20T2.2</longDescription>
+			<borderpoint>
+				<id>72</id>
+				<x-pos>797.834357002113</x-pos>
+				<y-pos>447.574122181419</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>158</id>
+				<x-pos>811.123217120613</x-pos>
+				<y-pos>471.29933662021284</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>163</id>
+				<x-pos>840.754800344251</x-pos>
+				<y-pos>526.7797211322588</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>164</id>
+				<x-pos>982.6080551933997</x-pos>
+				<y-pos>522.3665087591742</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>82</id>
+				<x-pos>899.008170224442</x-pos>
+				<y-pos>407.968710277653</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>81</id>
+				<x-pos>862.283151880095</x-pos>
+				<y-pos>413.189423669742</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>71</id>
+				<x-pos>812.956423379196</x-pos>
+				<y-pos>438.212842995606</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>74</id>
+			<svgid>1</svgid>
+			<x-pos>744.4505844902745</x-pos>
+			<y-pos>437.5916850296492</y-pos>
+			<poi>true</poi>
+			<shortDescription>TP1</shortDescription>
+			<longDescription>Treffpunkt%20Terminal%202</longDescription>
+			<borderpoint>
+				<id>18</id>
+				<x-pos>768.8881640876691</x-pos>
+				<y-pos>467.7289608827571</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>19</id>
+				<x-pos>746.1214483202118</x-pos>
+				<y-pos>391.54802735318844</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>27</id>
+				<x-pos>571.4306869506836</x-pos>
+				<y-pos>455.907781541962</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>28</id>
+				<x-pos>620.0288686850636</x-pos>
+				<y-pos>517.2027855312701</y-pos>
+			</borderpoint>
+			<category>5</category>
+		</vertex>
+		<vertex>
+			<id>75</id>
+			<svgid>1</svgid>
+			<x-pos>910.590166150909</x-pos>
+			<y-pos>396.73768953932927</y-pos>
+			<poi>true</poi>
+			<shortDescription>S-Bahn</shortDescription>
+			<longDescription>Durchgang%20zur%20S-Bahn</longDescription>
+			<borderpoint>
+				<id>119</id>
+				<x-pos>813.9837741655173</x-pos>
+				<y-pos>369.65695449986407</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>123</id>
+				<x-pos>930.4442588570191</x-pos>
+				<y-pos>332.44211232293515</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>124</id>
+				<x-pos>1004.4360851012555</x-pos>
+				<y-pos>444.52440533195573</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>121</id>
+				<x-pos>908.991030348945</x-pos>
+				<y-pos>476.0475685670204</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>120</id>
+				<x-pos>880.5326356396233</x-pos>
+				<y-pos>431.8276014033052</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>44</id>
+				<x-pos>856.0146340439001</x-pos>
+				<y-pos>440.58403054463497</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>76</id>
+			<svgid>0</svgid>
+			<x-pos>959.1827902253141</x-pos>
+			<y-pos>352.7714249915683</y-pos>
+			<poi>true</poi>
+		</vertex>
+		<vertex>
+			<id>77</id>
+			<svgid>0</svgid>
+			<x-pos>971.29383921219</x-pos>
+			<y-pos>389.040136401936</y-pos>
+			<poi>true</poi>
+			<shortDescription>Stairs</shortDescription>
+			<longDescription>Treppen%20zum%20S-Bahn</longDescription>
+			<borderpoint>
+				<id>101</id>
+				<x-pos>949.1169447358121</x-pos>
+				<y-pos>386.2585398487209</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>60</id>
+				<x-pos>958.834922318606</x-pos>
+				<y-pos>397.8896273190213</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>102</id>
+				<x-pos>984.3068474445147</x-pos>
+				<y-pos>414.11721282644373</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>103</id>
+				<x-pos>1043.5431836708306</x-pos>
+				<y-pos>400.18787633758234</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>104</id>
+				<x-pos>1020.3764977209347</x-pos>
+				<y-pos>352.8281322754535</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>105</id>
+				<x-pos>976.3891193350565</x-pos>
+				<y-pos>382.29967579399187</y-pos>
+			</borderpoint>
+			<category>2</category>
+		</vertex>
+		<vertex>
+			<id>78</id>
+			<svgid>1</svgid>
+			<x-pos>811.6327104076896</x-pos>
+			<y-pos>451.2096835264225</y-pos>
+			<poi>true</poi>
+			<shortDescription>Taxi2</shortDescription>
+			<longDescription>Taxi%20Terminal%202</longDescription>
+			<borderpoint>
+				<id>41</id>
+				<x-pos>797.3465587969908</x-pos>
+				<y-pos>458.97253174142736</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>42</id>
+				<x-pos>799.0978446252568</x-pos>
+				<y-pos>436.20581597397006</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>43</id>
+				<x-pos>829.3075251628443</x-pos>
+				<y-pos>448.4648167718317</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>44</id>
+				<x-pos>856.0146340439001</x-pos>
+				<y-pos>440.58403054463497</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>120</id>
+				<x-pos>880.5326356396233</x-pos>
+				<y-pos>431.8276014033052</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>121</id>
+				<x-pos>908.991030348945</x-pos>
+				<y-pos>476.0475685670204</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>122</id>
+				<x-pos>651.9898350509172</x-pos>
+				<y-pos>562.7362170661847</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>28</id>
+				<x-pos>620.0288686850636</x-pos>
+				<y-pos>517.2027855312701</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>18</id>
+				<x-pos>768.8881640876691</x-pos>
+				<y-pos>467.7289608827571</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>79</id>
+			<svgid>1</svgid>
+			<x-pos>1226.52773127605</x-pos>
+			<y-pos>322.2926310903018</y-pos>
+			<poi>true</poi>
+			<shortDescription>Taxi%201</shortDescription>
+			<longDescription>Taxi%20Terminal%201</longDescription>
+			<borderpoint>
+				<id>178</id>
+				<x-pos>1212.4013068602258</x-pos>
+				<y-pos>312.7401485639749</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>177</id>
+				<x-pos>1250.0539521679436</x-pos>
+				<y-pos>371.4082238108841</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>179</id>
+				<x-pos>1377.0221747172247</x-pos>
+				<y-pos>328.0638995613019</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>180</id>
+				<x-pos>1333.240029010576</x-pos>
+				<y-pos>286.4708611399857</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>171</id>
+				<x-pos>1305.6572772153875</x-pos>
+				<y-pos>296.9785761095814</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>172</id>
+				<x-pos>1245.6757375972788</x-pos>
+				<y-pos>316.24272022050684</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>173</id>
+				<x-pos>1230.789808057018</x-pos>
+				<y-pos>305.7350052509111</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>80</id>
+			<svgid>1</svgid>
+			<x-pos>1211.0939996463735</x-pos>
+			<y-pos>327.7398304890111</y-pos>
+			<poi>true</poi>
+			<shortDescription>Bus</shortDescription>
+			<longDescription>Bushaltestelle</longDescription>
+			<borderpoint>
+				<id>174</id>
+				<x-pos>1195.3262700346327</x-pos>
+				<y-pos>318.43182750583924</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>175</id>
+				<x-pos>1197.0775558628986</x-pos>
+				<y-pos>331.56647121783385</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>168</id>
+				<x-pos>1175.1864830095744</x-pos>
+				<y-pos>339.0094339429718</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>126</id>
+				<x-pos>1091.5625550574864</x-pos>
+				<y-pos>365.7165430599881</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>176</id>
+				<x-pos>1121.3344437903966</x-pos>
+				<y-pos>411.24997640393445</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>177</id>
+				<x-pos>1250.0539521679436</x-pos>
+				<y-pos>371.4082238108841</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>178</id>
+				<x-pos>1212.4013068602258</x-pos>
+				<y-pos>312.7401485639749</y-pos>
+			</borderpoint>
+			<category>3</category>
+		</vertex>
+		<vertex>
+			<id>81</id>
+			<svgid>1</svgid>
+			<x-pos>1204.7389336812128</x-pos>
+			<y-pos>304.13529976127074</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>167</id>
+				<x-pos>1155.046695984516</x-pos>
+				<y-pos>262.3906789563366</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>169</id>
+				<x-pos>1218.968628716223</x-pos>
+				<y-pos>240.06178464594575</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>170</id>
+				<x-pos>1256.621274023941</x-pos>
+				<y-pos>230.4297146354754</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>171</id>
+				<x-pos>1305.6572772153875</x-pos>
+				<y-pos>296.9785761095814</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>172</id>
+				<x-pos>1245.6757375972788</x-pos>
+				<y-pos>316.24272022050684</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>173</id>
+				<x-pos>1230.789808057018</x-pos>
+				<y-pos>305.7350052509111</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>174</id>
+				<x-pos>1195.3262700346327</x-pos>
+				<y-pos>318.43182750583924</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>175</id>
+				<x-pos>1197.0775558628986</x-pos>
+				<y-pos>331.56647121783385</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>168</id>
+				<x-pos>1175.1864830095744</x-pos>
+				<y-pos>339.0094339429718</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>82</id>
+			<svgid>1</svgid>
+			<x-pos>1035.8757523212234</x-pos>
+			<y-pos>365.8702262799764</y-pos>
+			<poi>true</poi>
+			<shortDescription>Apo</shortDescription>
+			<longDescription>Apotheke</longDescription>
+			<borderpoint>
+				<id>138</id>
+				<x-pos>1011.0034069572528</x-pos>
+				<y-pos>353.4575422621265</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>135</id>
+				<x-pos>1039.8996231236408</x-pos>
+				<y-pos>344.7011131207968</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>134</id>
+				<x-pos>1067.4823749188295</x-pos>
+				<y-pos>373.5973292871849</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>165</id>
+				<x-pos>1017.5707288132501</x-pos>
+				<y-pos>388.92108028451196</y-pos>
+			</borderpoint>
+			<category>6</category>
+		</vertex>
+		<vertex>
+			<id>83</id>
+			<svgid>0</svgid>
+			<x-pos>1170.125404456227</x-pos>
+			<y-pos>326.45247197888557</y-pos>
+			<poi>true</poi>
+		</vertex>
+		<vertex>
+			<id>84</id>
+			<svgid>0</svgid>
+			<x-pos>1077.6463010335706</x-pos>
+			<y-pos>339.37419529551084</y-pos>
+			<poi>false</poi>
+		</vertex>
+	</vertexes>
+	<edges>
+		<edge>
+			<id>0</id>
+			<vertex1>57</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>0</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>1</id>
+			<vertex1>36</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>35</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>2</id>
+			<vertex1>34</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>36</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>3</id>
+			<vertex1>36</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>37</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>4</id>
+			<vertex1>25</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>84</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>5</id>
+			<vertex1>84</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>33</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>6</id>
+			<vertex1>25</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>21</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>7</id>
+			<vertex1>24</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>21</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>8</id>
+			<vertex1>23</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>21</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>9</id>
+			<vertex1>22</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>21</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>10</id>
+			<vertex1>21</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>20</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>11</id>
+			<vertex1>15</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>20</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>12</id>
+			<vertex1>20</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>64</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>13</id>
+			<vertex1>52</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>0</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>14</id>
+			<vertex1>28</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>29</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>15</id>
+			<vertex1>29</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>22</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>16</id>
+			<vertex1>29</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>31</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>17</id>
+			<vertex1>31</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>30</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>18</id>
+			<vertex1>26</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>30</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>19</id>
+			<vertex1>30</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>0</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>20</id>
+			<vertex1>16</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>14</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>21</id>
+			<vertex1>18</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>14</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>22</id>
+			<vertex1>11</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>12</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>23</id>
+			<vertex1>12</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>13</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>24</id>
+			<vertex1>13</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>6</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>25</id>
+			<vertex1>32</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>12</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>26</id>
+			<vertex1>8</vertex1>
+			<vertex1-reachable>false</vertex1-reachable>
+			<vertex2>9</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>27</id>
+			<vertex1>9</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>5</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>28</id>
+			<vertex1>9</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>10</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>29</id>
+			<vertex1>10</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>4</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>30</id>
+			<vertex1>49</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>32</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>31</id>
+			<vertex1>7</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>1</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>32</id>
+			<vertex1>7</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>2</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>33</id>
+			<vertex1>7</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>3</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>34</id>
+			<vertex1>39</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>3</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>35</id>
+			<vertex1>39</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>2</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>36</id>
+			<vertex1>39</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>1</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>37</id>
+			<vertex1>39</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>7</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>38</id>
+			<vertex1>39</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>38</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>39</id>
+			<vertex1>7</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>40</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>40</id>
+			<vertex1>40</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>38</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>41</id>
+			<vertex1>40</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>41</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>42</id>
+			<vertex1>41</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>8</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>43</id>
+			<vertex1>8</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>42</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>44</id>
+			<vertex1>42</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>43</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>45</id>
+			<vertex1>43</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>11</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>46</id>
+			<vertex1>11</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>44</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>47</id>
+			<vertex1>44</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>15</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>48</id>
+			<vertex1>17</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>19</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<distanceFactor>1.7</distanceFactor>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>49</id>
+			<vertex1>19</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>53</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<distanceFactor>1.7</distanceFactor>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>50</id>
+			<vertex1>19</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>31</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<distanceFactor>1.7</distanceFactor>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>51</id>
+			<vertex1>45</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>46</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>52</id>
+			<vertex1>46</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>17</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>53</id>
+			<vertex1>14</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>47</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>55</id>
+			<vertex1>27</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>57</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>56</id>
+			<vertex1>26</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>57</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>57</id>
+			<vertex1>57</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>56</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>58</id>
+			<vertex1>56</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>28</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>59</id>
+			<vertex1>57</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>28</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>60</id>
+			<vertex1>56</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>55</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>61</id>
+			<vertex1>27</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>56</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>62</id>
+			<vertex1>55</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>54</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>63</id>
+			<vertex1>54</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>53</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>64</id>
+			<vertex1>53</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>52</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>65</id>
+			<vertex1>52</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>57</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>66</id>
+			<vertex1>52</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>30</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>67</id>
+			<vertex1>57</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>30</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>68</id>
+			<vertex1>5</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>59</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>69</id>
+			<vertex1>59</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>6</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>70</id>
+			<vertex1>59</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>13</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>71</id>
+			<vertex1>22</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>23</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>72</id>
+			<vertex1>24</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>25</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>82</id>
+			<vertex1>33</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>68</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>83</id>
+			<vertex1>68</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>67</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>84</id>
+			<vertex1>67</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>35</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>85</id>
+			<vertex1>67</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>34</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>86</id>
+			<vertex1>69</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>68</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>87</id>
+			<vertex1>36</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>70</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>88</id>
+			<vertex1>70</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>69</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>92</id>
+			<vertex1>72</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>71</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<distanceFactor>99.56</distanceFactor>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>93</id>
+			<vertex1>71</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>55</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>94</id>
+			<vertex1>56</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>71</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>95</id>
+			<vertex1>73</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>29</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>96</id>
+			<vertex1>73</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>28</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>97</id>
+			<vertex1>74</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>16</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>98</id>
+			<vertex1>74</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>736.2797853922106</x-pos>
+				<y-pos>409.44782146965105</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>56</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>773</x-pos>
+				<y-pos>456</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>99</id>
+			<vertex1>16</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>75</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>100</id>
+			<vertex1>75</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>14</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>101</id>
+			<vertex1>18</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>1099.4264119728323</x-pos>
+				<y-pos>292.3330343974005</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>36</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>1157</x-pos>
+				<y-pos>338</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>102</id>
+			<vertex1>26</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>56</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>103</id>
+			<vertex1>0</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>28</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>104</id>
+			<vertex1>26</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>52</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>105</id>
+			<vertex1>28</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>27</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>106</id>
+			<vertex1>16</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>78</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>107</id>
+			<vertex1>80</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>81</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>108</id>
+			<vertex1>81</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>79</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>109</id>
+			<vertex1>81</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>18</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>110</id>
+			<vertex1>14</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>82</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>111</id>
+			<vertex1>18</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>82</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>112</id>
+			<vertex1>84</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>37</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+	</edges>
 </svgmap-data>
 <!-- EOF -->

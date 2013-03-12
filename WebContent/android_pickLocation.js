@@ -5,8 +5,8 @@ var gmapmarker;
 var infoWindow;
 
 var def_zoomval = 17;
-var def_latval = 53.631013;
-var def_longval = 10.005605;
+var def_latval = 53.463254;
+var def_longval = 9.968301;
 
 function if_map_setCoordinate(latitude, longitude) {
 	document.getElementById("gpsmarker_latitude").value = latitude;

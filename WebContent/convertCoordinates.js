@@ -17,7 +17,7 @@ function convertGPS_SVG(latitude, longitude, height) {
 	// erfassen.
 	// Wenn wificompass die gleiche Bilddatei, wie die Dibus-App nutzt, stimmen
 	// die Koordinaten überein. Es muss also nichts umgerechnet werden.
-	if (latitude < 53.6 || latitude > 53.7 || longitude < 10.0
+	if (latitude < 53.4 || latitude > 53.7 || longitude < 9.9
 			|| longitude > 10.1)
 		return [ longitude, latitude, 0 ];
 	// end: for testing
@@ -28,7 +28,7 @@ function convertGPS_SVG(latitude, longitude, height) {
 	var svgid = -1;
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		if (LevelAltitude_min[i] <= height && height <= LevelAltitude_max[i]) {
+		if (Level_min_altitude[i] <= height && height <= Level_max_altitude[i]) {
 			svgid = i;
 			break;
 		}
@@ -191,7 +191,7 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	// G.log("convertSVG_GPS: xPos, yPos, svgid: " + xPos + ", " + xPos + ", "
 	// + svgid);
 
-	var height = (LevelAltitude_min[svgid] + LevelAltitude_max[svgid]) / 2;
+	var height = (Level_min_altitude[svgid] + Level_max_altitude[svgid]) / 2;
 
 	var allgpsmarkers = Gpsmarker_container.getAll();
 	var levelgpsmarkers = new Array();

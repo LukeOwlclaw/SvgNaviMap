@@ -32,7 +32,7 @@
 <script type="text/javascript" src="menu_export.js"></script>
 <script type="text/javascript" src="menu_gpsmarker.js"></script>
 <script type="text/javascript" src="menu_category.js"></script>
-<script type="text/javascript" src="menu_levelaltitude.js"></script>
+<script type="text/javascript" src="menu_level.js"></script>
 
 
 
@@ -84,7 +84,7 @@
           <br>
           <button onclick="menu('category');">categories</button>
           <button onclick="menu('gpsmarker');">gps marker</button>
-          <button onclick="menu('levelaltitude');">level altitude</button>
+          <button onclick="menu('level');">level altitude</button>
           <br>
           <button onclick="menu('export');">export</button>
           <button onclick="menu('import');">import</button>
@@ -223,12 +223,12 @@
           <button onclick="gpsmarker_close();">Close gpsmarker menu</button>
         </div>
         
-        <div id="levelaltitude" style="display: none;">
-        <p id="levelaltitude_details"></p>
+        <div id="level" style="display: none;">
+        <p id="level_details"></p>
         
-        <button onclick="levelaltitude_save();">Check &amp; Save</button>
+        <button onclick="level_save();">Check &amp; Save</button>
         <br>
-        <button onclick="levelaltitude_close();">Close level altitude menu</button>
+        <button onclick="level_close();">Close level altitude menu</button>
         </div>
         
 

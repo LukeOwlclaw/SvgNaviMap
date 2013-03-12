@@ -14,20 +14,24 @@ G.global = 'This is a global variable accessible from everywhere via G.global';
 //All files need to be stored in folder defined by G.getDataDir()
 var levels = ["minimal0.svg","minimal1.svg","minimal2.svg", "minimal-data.xml"];
 //levels = ["airport_level0_fullsvg_big.svg","airport_level1_fullsvg_big.svg","airport-data.xml"];
-levels = ["big0.svg", "big1.svg", "big2.svg", "big3.svg", "big4.svg", "big-data.xml"];
+//levels = ["big0.svg", "big1.svg", "big2.svg", "big3.svg", "big4.svg", "big-data.xml"];
+
+var maps = ["minimal-data.xml", "airport-data.xml", "big-data.xml"];
 
 G.getLevelCount = function() {
-  return levels.length - 1;
+  return Level_svgpath.length;
 }
 
 G.getMapPath = function(level) {
-  return G.getDataDir() + levels[level];
+  return G.getDataDir() + Level_svgpath[level];
 }
 
+//required for exporting (to set name correctly.)
 G.getXmlFilename = function() {
   return levels[levels.length - 1];
 }
 
+//required for downloadin XML configuration file.
 G.getXmlPath = function() {
   return G.getDataDir() + G.getXmlFilename();
 }
@@ -48,8 +52,8 @@ G.loadMaps = function(createScaleButton) {
     newmap.setAttribute("id","map"+i);
     newmap.setAttribute("type","image/svg+xml");
     newmap.setAttribute("class","svg_container");
-    newmap.style.width = "45%";
-    newmap.style.height= "auto";
+    newmap.style.width = "440px";
+    newmap.style.height= "800px";
     
     
     document.getElementById("map_container").appendChild(newmap);
@@ -64,6 +68,13 @@ G.loadMaps = function(createScaleButton) {
       document.getElementById("map_container").appendChild(scalebutton);
     }
   }
+  
+  	//install hooks to be informed when SVG has finished loading.
+  	var embed = document.getElementsByTagName('embed');
+	for ( var i = 0; i < embed.length; i++) {
+		G.install_init_hook(embed[i], i, embed.length, func);
+	}
+	
 }
 
 /*
@@ -120,13 +131,6 @@ G.init = function(func) {
 	G.svg_unit_affiliation_area = new Array();
 	G.svg_unit_gpsmarker = new Array();
 
-   var embed = document.getElementsByTagName('embed');
-
-	for ( var i = 0; i < embed.length; i++) {
-		G.install_init_hook(embed[i], i, embed.length, func);
-	}
-
-   
 };
 
 // Installiert Event Listener, der init_svg() aufruft, sobald SVG element
@@ -507,8 +511,9 @@ var Gpsmarker_clickedID = null;
 var Gpsmarker_current = null;
 var Gpsmarker_move_enabled = false;
 
-var LevelAltitude_min = new Array();
-var LevelAltitude_max = new Array();
+var Level_min_altitude = new Array();
+var Level_max_altitude = new Array();
+var Level_svgpath = new Array();
 
 
 

@@ -65,6 +65,8 @@ function BorderPoint(newID, newSvgid, x_pos, y_pos) {
 
 	this.getShape = function() {
 		"use strict";
+		if(typeof(G.svg_element[svgid]) == 'undefined' || G.svg_element[svgid] == null)
+			return null;
 		return G.svg_element[svgid]
 				.getElementById('borderpoint' + this.getId());
 	};
@@ -127,9 +129,13 @@ function BorderPoint(newID, newSvgid, x_pos, y_pos) {
 		shape.setAttribute('r', G.border_radius);
 
 		// G.log('borderpoint ' + id + ' created.');
-		// if(G.svg_unit_borderpoint[svgid]!=null)
-		G.svg_unit_borderpoint[svgid].appendChild(shape);
-		//G.log('G.svg_unit_borderpoint[svgid] is null. svgid=' + svgid);
+		if(typeof(G.svg_unit_borderpoint[svgid]) != 'undefined' && G.svg_unit_borderpoint[svgid]!=null)
+			G.svg_unit_borderpoint[svgid].appendChild(shape);
+		else
+		{
+			G.log('G.svg_unit_borderpoint[svgid] is undefined or null. svgid=' + svgid);
+			return;
+		}
 
 		this.color();
 		this.paint();
@@ -159,6 +165,8 @@ function BorderPoint(newID, newSvgid, x_pos, y_pos) {
 
 	if (Affiliation_borderpoint_container.add(this) != null) {
 		this.createShape();
+		if(this.getShape() == null)
+			G.log('Creating shape of borderpoint failed.');
 	} else {
 		G.log('Can not create borderpoint, because id is used already.');
 	}

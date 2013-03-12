@@ -50,6 +50,7 @@ function load_from_client_xml(evt) {
 
 function load_from_server_xml(callback) {
 	"use strict";
+	
 	// zu ladene Dateien
 	var filepath = G.getXmlPath();
 
@@ -124,8 +125,9 @@ function import_xml(xmlDom, callback) {
 
 	// reset level altitudes
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		LevelAltitude_min[i] = undefined;
-		LevelAltitude_max[i] = undefined;
+		Level_min_altitude[i] = undefined;
+		Level_max_altitude[i] = undefined;
+		Level_svgpath[i] = undefined;
 	}
 
 	var vertexes_done = false;
@@ -154,8 +156,10 @@ function import_xml(xmlDom, callback) {
 		case 'gpsmarkers':
 			import_xml_gpsmarkers(c);
 			break;
-		case 'levelaltitudes':
-			import_xml_levelaltitudes(c);
+		case 'levels':
+			import_xml_levels(c);
+			//load maps that were just read from XML.
+			G.loadMaps(true);
 			break;
 		case '#text':
 			/*
@@ -168,6 +172,8 @@ function import_xml(xmlDom, callback) {
 			break;
 		}
 	}
+
+	
 
 	// G.log('import completed');
 	if (isFunction(callback)) {
@@ -250,17 +256,17 @@ function import_xml_category(xmlDom) {
 	new Category(id, cname);
 }
 
-function import_xml_levelaltitudes(xmlDom) {
+function import_xml_levels(xmlDom) {
 	"use strict";
 	if (xmlDom.childNodes == undefined) {
-		G.log('levelaltitudes has no children');
+		G.log('levels has no children');
 		return;
 	}
 
 	for ( var i = 0, c = xmlDom.childNodes[i]; i < xmlDom.childNodes.length; c = xmlDom.childNodes[++i]) {
 		switch (c.nodeName) {
-		case 'levelaltitude':
-			import_xml_levelaltitude(c);
+		case 'level':
+			import_xml_level(c);
 			break;
 		case '#text':
 			/*
@@ -269,20 +275,21 @@ function import_xml_levelaltitudes(xmlDom) {
 			break;
 
 		default:
-			G.log('unknown levelaltitudes child: ' + c.nodeName);
+			G.log('unknown levels child: ' + c.nodeName);
 			break;
 		}
 	}
 }
 
-function import_xml_levelaltitude(xmlDom) {
+function import_xml_level(xmlDom) {
 	"use strict";
 	var id = null;
-	var min = null;
-	var max = null;
+	var svgpath = null;
+	var min_altitude = null;
+	var max_altitude = null;
 
 	if (xmlDom.childNodes == undefined) {
-		G.log('levelaltitude has no children');
+		G.log('level has no children');
 		return;
 	}
 
@@ -291,11 +298,14 @@ function import_xml_levelaltitude(xmlDom) {
 		case 'id':
 			id = parseInt(c.childNodes[0].nodeValue, 10);
 			break;
-		case 'min':
-			min = parseFloat(c.childNodes[0].nodeValue);
+		case 'svgpath':
+			svgpath = c.childNodes[0].nodeValue;
 			break;
-		case 'max':
-			max = parseFloat(c.childNodes[0].nodeValue);
+		case 'min_altitude':
+			min_altitude = parseFloat(c.childNodes[0].nodeValue);
+			break;
+		case 'max_altitude':
+			max_altitude = parseFloat(c.childNodes[0].nodeValue);
 			break;
 		case '#text':
 			/*
@@ -304,28 +314,37 @@ function import_xml_levelaltitude(xmlDom) {
 			break;
 
 		default:
-			G.log('unknown levelaltitude child: ' + c.nodeName);
+			G.log('unknown level child: ' + c.nodeName);
 			break;
 		}
 	}
 
 	if (id == null || isNaN(id) || id < 0 || G.svg_element[id] == undefined) {
-		G.log('levelaltitudeid ' + id + ' is not a valid id.');
+		G.log('levelid ' + id + ' is not a valid id.');
 		return;
 	}
 
-	if (min == null || isNaN(min)) {
-		G.log('levelaltitude ' + id + ': min ' + min + ' is not a valid min.');
+	if (min_altitude == null || isNaN(min_altitude)) {
+		G.log('level ' + id + ': min_altitude ' + min_altitude
+				+ ' is not a valid min_altitude.');
 		return;
 	}
 
-	if (max == null || isNaN(max)) {
-		G.log('levelaltitude ' + id + ': max ' + max + ' is not a valid max.');
+	if (max_altitude == null || isNaN(max_altitude)) {
+		G.log('level ' + id + ': max_altitude ' + max_altitude
+				+ ' is not a valid max_altitude.');
 		return;
 	}
 
-	if (min >= max) {
-		G.log('levelaltitude ' + id + ': min must be lower than max.');
+	if (min_altitude >= max_altitude) {
+		G
+				.log('level ' + id
+						+ ': min_altitude must be lower than max_altitude.');
+		return;
+	}
+	
+	if (svgpath == null) {
+		G.log('level ' + id + ': svgpath is not defined.');
 		return;
 	}
 
@@ -333,21 +352,23 @@ function import_xml_levelaltitude(xmlDom) {
 		if (j == id)
 			continue;
 
-		var min2 = LevelAltitude_min[j];
-		var max2 = LevelAltitude_max[j];
+		var min_altitude2 = Level_min_altitude[j];
+		var max_altitude2 = Level_max_altitude[j];
 
-		if (min2 === undefined || max2 === undefined) {
+		if (min_altitude2 === undefined || max_altitude2 === undefined) {
 			continue;
 		}
 
-		if ((min2 < max && max < max2) || (min2 < min && min < max2)) {
-			G.log('levelaltitude ' + id + ': conflicts with level ' + j + '.');
+		if ((min_altitude2 < max_altitude && max_altitude < max_altitude2)
+				|| (min_altitude2 < min_altitude && min_altitude < max_altitude2)) {
+			G.log('level ' + id + ': conflicts with level ' + j + '.');
 			return;
 		}
 	}
 
-	LevelAltitude_min[id] = min;
-	LevelAltitude_max[id] = max;
+	Level_min_altitude[id] = min_altitude;
+	Level_max_altitude[id] = max_altitude;
+	Level_svgpath[id] = svgpath;
 }
 
 function import_xml_gpsmarkers(xmlDom) {

@@ -99,12 +99,12 @@ function gpsmarker_select(gpsmarker) {
 			.getLongitude();
 	Gpsmarker_current.paint_active();
 
-	var map = document.getElementById("mapitems");
-	if (typeof map !== 'undefined') {
+	if (typeof (document.getElementById("mapitems")) !== 'undefined') {
 		if_map_setCoordinate(Gpsmarker_current.getLatitude(), Gpsmarker_current
 				.getLongitude());
-	} else
+	} else {
 		G.log("mapitems undefined!");
+	}
 }
 
 function gpsmarker_deselect() {

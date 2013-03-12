@@ -91,8 +91,7 @@ Interface.position_translate_gps_svg = function(latitude, longitude, height) {
 
 Interface.position_set = function(latitude, longitude, height) {
 	"use strict";
-	// G.log('latitude:' + latitude + ' longitude:' + longitude + ' height:' +
-	// height);
+	G.log('latitude:' + latitude + ' longitude:' + longitude + ' height:' + height);
 	var position = Interface.position_translate_gps_svg(latitude, longitude,
 			height);
 	if (position == null) {
@@ -104,7 +103,7 @@ Interface.position_set = function(latitude, longitude, height) {
 	var posX = position[0];
 	var posY = position[1];
 	var svgid = position[2];
-	// G.log('posX:' + posX + ' posY:' + posY + ' svgid:' + svgid);
+	G.log('posX:' + posX + ' posY:' + posY + ' svgid:' + svgid);
 	// send_response("position_set");
 
 	if (isNaN(svgid) || G.svg_element[svgid] == undefined) {

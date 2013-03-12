@@ -61,6 +61,12 @@ function Polygon() {
 			G.log('Polygon already closed');
 			return;
 		}
+		
+		if(bp.getShape == null || bp.getShape() == null)
+		{
+			G.log("Cannot add borderpoint to shape with borderpoint.getShape==null");
+			return;
+		}
 
 		// test for closing
 		if (BorderPoint_array.length != 0

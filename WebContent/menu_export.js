@@ -43,27 +43,27 @@ function export_xml() {
 	}
 
 	// test for valid level altitudes
-	var check = levelaltitude_check();
+	var check = level_check();
 	if (check != '') {
 		export_warn(check);
 	}
 
 	// start exporting
 
-	if (LevelAltitude_min.length > 0 && LevelAltitude_max.length > 0) {
-		file_content = file_content.concat('<levelaltitudes>\n');
+	if (Level_min_altitude.length > 0 && Level_max_altitude.length > 0) {
+		file_content = file_content.concat('<levels>\n');
 		for ( var i = 0; i < G.svg_element.length; i++) {
 
-			var min = LevelAltitude_min[i];
-			var max = LevelAltitude_max[i];
+			var min = Level_min_altitude[i];
+			var max = Level_max_altitude[i];
 
-			file_content = file_content.concat('<levelaltitude>\n');
+			file_content = file_content.concat('<level>\n');
 			file_content = file_content.concat('<id>' + i + '</id>\n');
 			file_content = file_content.concat('<min>' + min + '</min>\n');
 			file_content = file_content.concat('<max>' + max + '</max>\n');
-			file_content = file_content.concat('</levelaltitude>\n');
+			file_content = file_content.concat('</level>\n');
 		}
-		file_content = file_content.concat('</levelaltitudes>\n');
+		file_content = file_content.concat('</levels>\n');
 	}
 
 	if (gpsmarkerarray.length > 0) {

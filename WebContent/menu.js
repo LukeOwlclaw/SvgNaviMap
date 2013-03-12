@@ -30,8 +30,8 @@ function menu(id) {
 		case 'gpsmarker':
 			gpsmarker_close();
 			break;
-		case 'levelaltitude':
-			levelaltitude_close();
+		case 'level':
+			level_close();
 			break;
 
 		default:
@@ -62,8 +62,8 @@ function menu(id) {
 	case 'gpsmarker':
 		gpsmarker_open();
 		break;
-	case 'levelaltitude':
-		levelaltitude_open();
+	case 'level':
+		level_open();
 		break;
 
 	default:
