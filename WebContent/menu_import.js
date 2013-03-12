@@ -23,7 +23,7 @@ function load_from_string(content_string) {
 		return;
 	}
 
-	import_xml(xml_dom);
+	import_xml(xml_dom, null, true);
 }
 
 function load_from_client_xml(evt) {
@@ -61,10 +61,10 @@ function load_from_server_xml(callback) {
 	asyncXMLRequest.onreadystatechange = function() {
 		if (this.readyState == 4) {
 			if (this.responseXML != null)
-				import_xml(this.responseXML, callback);
+				import_xml(this.responseXML, callback, true);
 			else {
 				if (this.response != null)
-					import_xml(this.response);
+					import_xml(this.response, null, true);
 				else
 					G.log('import: responseXML is null.');
 			}
@@ -82,11 +82,20 @@ function import_close() {
 			load_from_client_xml, false);
 }
 
-function import_xml(xmlDom, callback) {
+function import_xml(xmlDom, callback, loadSvg) {
 	"use strict";
 	if (xmlDom.documentElement.tagName != 'svgmap-data') {
 		G.log('xml file has not a svgmap-data root element.');
 		return;
+	}
+	
+	if(loadSvg == false )
+	{
+		if(G.loadMapsCompleted == false)
+		{
+			setTimeout(function(){import_xml(xmlDom, callback, loadSvg)}, 10);
+			return;
+		}
 	}
 
 	var svgmap = xmlDom.documentElement;
@@ -127,7 +136,8 @@ function import_xml(xmlDom, callback) {
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		Level_min_altitude[i] = undefined;
 		Level_max_altitude[i] = undefined;
-		Level_svgpath[i] = undefined;
+		if(loadSvg)
+			Level_svgpath[i] = undefined;
 	}
 
 	var vertexes_done = false;
@@ -159,7 +169,12 @@ function import_xml(xmlDom, callback) {
 		case 'levels':
 			import_xml_levels(c);
 			//load maps that were just read from XML.
-			G.loadMaps(true);
+			if(loadSvg)
+			{
+				G.loadMaps(true);
+				setTimeout(function(){import_xml(xmlDom, callback, false)}, 10);
+				return;
+			}
 			break;
 		case '#text':
 			/*
@@ -319,9 +334,13 @@ function import_xml_level(xmlDom) {
 		}
 	}
 
+	//this check only makes sense when svgs are loaded.
+	if(G.loadMapsCompleted == true)
+	{
 	if (id == null || isNaN(id) || id < 0 || G.svg_element[id] == undefined) {
 		G.log('levelid ' + id + ' is not a valid id.');
 		return;
+	}
 	}
 
 	if (min_altitude == null || isNaN(min_altitude)) {

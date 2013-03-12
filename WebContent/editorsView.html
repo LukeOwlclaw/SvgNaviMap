@@ -29,6 +29,7 @@
 <script type="text/javascript" src="affiliation_match.js"></script>
 <script type="text/javascript" src="libs/jquery.js"></script>
 <script type="text/javascript" src="convertCoordinates.js"></script>
+<script type="text/javascript" src="editorsView.js"></script>
 
 <!-- für google map-->
 <script type="text/javascript"
@@ -41,7 +42,7 @@
 	$("embed").ready(function() {
 		//Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollst�ndig aufgebaut wurde.
 		console.log('version 13');
-    	G.init(server_init);
+    	G.init();
 	});
 </script>
 </head>

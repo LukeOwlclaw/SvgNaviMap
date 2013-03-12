@@ -72,16 +72,4 @@ function menu(id) {
 	}
 }
 
-function server_init() {
-	"use strict";
 
-	// set visibilities
-	visibility_vertex();
-	visibility_edge();
-	visibility_edgemarker();
-	visibility_borderpoint();
-	visibility_borderline();
-	
-	//init google map
-	if_gmap_init();
-}

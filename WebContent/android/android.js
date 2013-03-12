@@ -1,3 +1,4 @@
+//to be called after svg finished loading
 function android_init() {
 	"use strict";
 
