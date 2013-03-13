@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
-<title>Users View</title>
+<title>User&rsquo;s View</title>
 
 <script type="text/javascript" src="obj_idset.js"></script>
 <script type="text/javascript" src="obj_stepmarker.js"></script>
@@ -26,14 +26,13 @@
 <script type="text/javascript" src="affiliation_match.js"></script>
 <script type="text/javascript" src="routing.js"></script>
 <script type="text/javascript" src="libs/jquery.js"></script>
+<script type="text/javascript" src="usersView.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="style/layout.css">
 <script>
  $("embed").ready(function(){
     //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollst�ndig aufgebaut wurde.
     console.log('version 19');
-    G.loadMaps(true);
-    G.loadMapSelectors();
-    G.init(client_init);
+    G.init();
 }); 
 
    
@@ -43,7 +42,7 @@
   <div id="wrapper">
     <div id="header">
       <h1 id="noscript">Please enable javascript!</h1>
-      <h1>Users View</h1>
+      <h1>User&rsquo;s View</h1>
     </div>
     <!-- header -->
 
@@ -84,7 +83,7 @@
         <div id="import" style="display: none;">
           <input type="file" id="files" name="files[]" multiple /> <br> <br>
           <button onclick="load_from_server_xml(null);">load from server</button>
-          <br><br>
+          <div id="import_from_server"></div>
           <button onclick="import_close(); refresh_location();">Close import</button>
         </div>
         <!-- import -->

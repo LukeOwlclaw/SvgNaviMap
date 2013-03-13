@@ -44,17 +44,13 @@ function position_delete() {
 	}
 }
 
-function position_click(evt) {
-	"use strict";
-	var posX = MZP.translateX(evt);
-	var posY = MZP.translateY(evt);
-	var svgid = G.getSvgId(evt);
-
+function position_set(svgid, posX, posY)
+{
 	if (currPositionPoint == null) {
 		currPositionPoint = new PositionPoint(svgid, posX, posY);
 		if (typeof (svgapp) == "undefined") {
 			document.getElementById('position_NOTexists').style.display = 'none';
-			document.getElementById('position_exists').style.display = 'block';
+			document.getElementById('position_exists').style.display = '';
 		}
 	} else
 		currPositionPoint.setPosition(svgid, posX, posY);
@@ -72,6 +68,14 @@ function position_click(evt) {
 		position_menuRefresh();
 
 	refresh_location();
+}
+
+function position_click(evt) {
+	"use strict";
+	var posX = MZP.translateX(evt);
+	var posY = MZP.translateY(evt);
+	var svgid = G.getSvgId(evt);
+	position_set(svgid, posX, posY)
 }
 
 function refresh_location() {

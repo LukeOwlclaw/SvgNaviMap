@@ -3,7 +3,7 @@
 <!-- <html xmlns="http://www.w3.org/1999/xhtml" manifest="offline.manifest"> -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Editors View</title>
+<title>Editor&rsquo;s View</title>
 
 <script type="text/javascript" src="obj_idset.js"></script>
 <script type="text/javascript" src="global.js"></script>
@@ -50,7 +50,7 @@
   <div id="wrapper">
     <div id="header">
       <h1 id="noscript">Please enable javascript!</h1>
-      <h1>Editors View</h1>
+      <h1>Editor&rsquo;s View</h1>
     </div>
     <!-- header -->
 
@@ -217,8 +217,7 @@
 
             <button onclick="gpsmarker_save();">Save gpsmarker</button>
             <button onclick="gpsmarker_deselect();">Deselect gpsmarker</button>
-            <br>
-            <br>
+            <br> <br>
             <button onclick="gpsmarker_delete();">Delete gpsmarker</button>
 
           </div>
@@ -240,18 +239,22 @@
         <div id="debug">Debug information</div>
 
         <div id="visibility">
-          Show vertices: <input id="visibility_vertex" type="checkbox" checked="checked" onchange="visibility_vertex();">
-          <br> Show edges: <input id="visibility_edge" type="checkbox" checked="checked"
+          <label><input id="visibility_vertex" type="checkbox" checked="checked" onchange="visibility_vertex();">Show
+            vertices </label><label><input id="visibility_edge" type="checkbox" checked="checked"
             onchange="visibility_edge();"
-          > <br> Show edge markers: <input id="visibility_edgemarker" type="checkbox" checked="checked"
+          >Show edges </label><label> <input id="visibility_edgemarker" type="checkbox" checked="checked"
             onchange="visibility_edgemarker();"
-          > <br> Show borderpoints: <input id="visibility_borderpoint" type="checkbox" checked="checked"
+          >Show edge markers
+          </label><label> <input id="visibility_borderpoint" type="checkbox" checked="checked"
             onchange="visibility_borderpoint();"
-          > <br> Show borderlines: <input id="visibility_borderline" type="checkbox" checked="checked"
+          >Show borderpoints
+          </label><label> <input id="visibility_borderline" type="checkbox" checked="checked"
             onchange="visibility_borderline();"
-          > <br> Show gps markers: <input id="visibility_gpsmarker" type="checkbox" checked="checked"
+          > Show borderlines
+          </label><label> <input id="visibility_gpsmarker" type="checkbox" checked="checked"
             onchange="visibility_gpsmarker();"
-          > <br>
+          >Show gps markers
+          </label>
         </div>
 
       </div>

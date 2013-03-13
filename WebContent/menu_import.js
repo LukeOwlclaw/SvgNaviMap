@@ -101,6 +101,8 @@ function import_close() {
 			load_from_client_xml, false);
 }
 
+var showButtonsForSvg = true;
+
 //import_xml needs to be called twice. first loadSvg must be true in order to load svg first.
 //afterwards import_xml is called automatically again with loadSvg==false.
 //if callback is a function, it is called after loading SVG and rest of XML was completed.
@@ -163,6 +165,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 	if (loadSvg == true) {
 		G.loadMapsCompleted = false;
 		G.Level_svgpath = new Array();
+		G.svg_parent = new Array();
 	}
 
 	var vertices_done = false;
@@ -195,7 +198,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 			import_xml_levels(c);
 			//load maps that were just read from XML.
 			if (loadSvg) {
-				G.loadMaps(true);
+				G.loadMaps(showButtonsForSvg);
 				setTimeout(function() {
 					import_xml(xmlDom, callback, false)
 				}, 10);

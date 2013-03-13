@@ -30,6 +30,8 @@ G.setXmlFilename = function(xmlPathRelativeToDataDir) {
 
 //specifies number of levels of map. only available AFTER loading xml file. 
 G.getLevelCount = function() {
+	if(G.Level_svgpath == null)
+		return 0;
 	return G.Level_svgpath.length;
 }
 
@@ -125,6 +127,13 @@ G.svg_init_callback = function() {
  * radio element to div#svgselection for selecting the according SVG
  */
 G.loadMapSelectors = function() {
+	
+	//remove all old items
+	var el = document.getElementById('svgselection');
+	while( el.hasChildNodes() ){
+	    el.removeChild(el.lastChild);
+	}	
+	
 	for ( var i = 0; i < G.getLevelCount(); i++) {
 		var selector = document.createElement("input");
 		selector.setAttribute("type", "radio");
