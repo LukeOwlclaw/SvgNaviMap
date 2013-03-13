@@ -56,11 +56,13 @@ function export_xml() {
 
 			var min = G.Level_min_altitude[i];
 			var max = G.Level_max_altitude[i];
+			var svgpath = G.Level_svgpath[i];
 
 			file_content = file_content.concat('<level>\n');
 			file_content = file_content.concat('<id>' + i + '</id>\n');
-			file_content = file_content.concat('<min>' + min + '</min>\n');
-			file_content = file_content.concat('<max>' + max + '</max>\n');
+			file_content = file_content.concat('<svgpath>' + svgpath + '</svgpath>\n');
+			file_content = file_content.concat('<min_altitude>' + min + '</min_altitude>\n');
+			file_content = file_content.concat('<max_altitude>' + max + '</max_altitude>\n');
 			file_content = file_content.concat('</level>\n');
 		}
 		file_content = file_content.concat('</levels>\n');

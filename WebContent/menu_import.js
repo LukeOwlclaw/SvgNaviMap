@@ -52,6 +52,7 @@ function load_from_client_xml(evt) {
 				// G.log(content_string);
 
 				G.log('import file ' + theFile.name);
+				G.setXmlFilename(theFile.name)
 
 				load_from_string(content_string);
 			};
