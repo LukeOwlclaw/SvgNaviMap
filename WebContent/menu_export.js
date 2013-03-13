@@ -115,7 +115,7 @@ function export_xml() {
 	}
 
 	if (vertexarray.length > 0) {
-		file_content = file_content.concat('<vertexes>\n');
+		file_content = file_content.concat('<vertices>\n');
 		for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
 			file_content = file_content.concat('<vertex>\n');
 			file_content = file_content.concat('<id>' + v.getId() + '</id>\n');
@@ -154,7 +154,7 @@ function export_xml() {
 			file_content = file_content.concat('</vertex>\n');
 		}
 
-		file_content = file_content.concat('</vertexes>\n');
+		file_content = file_content.concat('</vertices>\n');
 	}
 
 	if (edgearray.length > 0) {

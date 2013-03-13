@@ -194,7 +194,7 @@
 			<longitude>9.96949</longitude>
 		</gpsmarker>
 	</gpsmarkers>
-	<vertexes>
+	<vertices>
 		<vertex>
 			<id>0</id>
 			<svgid>0</svgid>
@@ -22595,7 +22595,7 @@
 				<y-pos>2685.9296825175384</y-pos>
 			</borderpoint>
 		</vertex>
-	</vertexes>
+	</vertices>
 	<edges>
 		<edge>
 			<id>0</id>

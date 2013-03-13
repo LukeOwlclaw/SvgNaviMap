@@ -132,7 +132,7 @@
 			<name>Cars</name>
 		</category>
 	</categories>
-	<vertexes>
+	<vertices>
 		<vertex>
 			<id>0</id>
 			<svgid>0</svgid>
@@ -423,7 +423,7 @@
 				<y-pos>110.60190217391305</y-pos>
 			</borderpoint>
 		</vertex>
-	</vertexes>
+	</vertices>
 	<edges>
 		<edge>
 			<id>0</id>

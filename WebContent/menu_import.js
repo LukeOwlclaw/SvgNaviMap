@@ -165,7 +165,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 		G.Level_svgpath = new Array();
 	}
 
-	var vertexes_done = false;
+	var vertices_done = false;
 
 	if (svgmap.childNodes == undefined) {
 		G.log('svgmap-data has no children');
@@ -177,14 +177,14 @@ function import_xml(xmlDom, callback, loadSvg) {
 		case 'categories':
 			import_xml_categories(c);
 			break;
-		case 'vertexes':
-			import_xml_vertexes(c);
-			vertexes_done = true;
+		case 'vertices':
+			import_xml_vertices(c);
+			vertices_done = true;
 			break;
 		case 'edges':
-			if (vertexes_done) {
+			if (vertices_done) {
 				import_xml_edges(c);
-				vertexes_done = false;
+				vertices_done = false;
 			} else
 				G.log('abort trying to import edges first.');
 			break;
@@ -549,10 +549,10 @@ function import_xml_gpsmarker(xmlDom) {
 		gpsmarker.setLongitude(longitude);
 }
 
-function import_xml_vertexes(xmlDom) {
+function import_xml_vertices(xmlDom) {
 	"use strict";
 	if (xmlDom.childNodes == undefined) {
-		G.log('vertexes has no children');
+		G.log('vertices has no children');
 		return;
 	}
 
@@ -568,7 +568,7 @@ function import_xml_vertexes(xmlDom) {
 			break;
 
 		default:
-			G.log('unknown vertexes child: ' + c.nodeName);
+			G.log('unknown vertices child: ' + c.nodeName);
 			break;
 		}
 	}

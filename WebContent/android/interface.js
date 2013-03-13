@@ -247,7 +247,7 @@ Interface.route_delete = function() {
 };
 
 Interface.demo = function() {
-	// hide all vertexes
+	// hide all vertices
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_element[i].getElementById('unit_vertex').setAttribute(
 				'visibility', 'hidden');

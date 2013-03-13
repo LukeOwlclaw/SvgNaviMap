@@ -7,7 +7,7 @@ function dijkstra_reverse(start_node, destination_node, disabledAdapted,
 		return true;
 	}
 
-	// initialize vertexes and edges
+	// initialize vertices and edges
 	var vertexarray = Vertex_container.getAll();
 	for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
 		v.setDijkstraDistance(null);
@@ -98,7 +98,7 @@ function dijkstra_reverse(start_node, destination_node, disabledAdapted,
 				dijkstraEdgeList.add_sort(newVertex, edge);
 
 		} else {
-			// edge between two visited vertexes
+			// edge between two visited vertices
 			var p1 = edge.getVertex1();
 			var p2 = edge.getVertex2();
 			// G.log('visit edge between ' + p1-getId() + ' and ' +
@@ -232,7 +232,7 @@ function DijkstraArrow(new_id, new_vertex_start, new_vertex_end) {
 	}
 
 	if (edge == null) {
-		alert('no edge between vertexes found, but should');
+		alert('no edge between vertices found, but should');
 		return;
 	}
 
@@ -261,7 +261,7 @@ function DijkstraArrow(new_id, new_vertex_start, new_vertex_end) {
 		if (shape.length == 1) {
 			// draw the line a little bit shorter, so that the edge markers do
 			// not
-			// overlap the vertexes
+			// overlap the vertices
 			var line_sub = G.edge_vertexDistance;
 			var x1 = vertex_start.getX();
 			var y1 = vertex_start.getY();
@@ -281,7 +281,7 @@ function DijkstraArrow(new_id, new_vertex_start, new_vertex_end) {
 		} else {
 			// draw the line a little bit shorter, so that the edge markers do
 			// not
-			// overlap the vertexes
+			// overlap the vertices
 			var stepmarker_start = null;
 			var stepmarker_end = null;
 			if (edge.getVertex1().getId() == vertex_start.getId()) {

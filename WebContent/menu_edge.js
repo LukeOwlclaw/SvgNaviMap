@@ -43,12 +43,12 @@ function edge_click(evt) {
 				Vertex_clickedID = null;
 				return;
 			}
-			// test if there is already an edge between this vertexes
+			// test if there is already an edge between this vertices
 			var edgelist = Edge_firstvertex.getEdgelist();
 			for ( var i = 0, e = edgelist[i]; i < edgelist.length; e = edgelist[++i]) {
 				if (e.getVertex1().getId() == Vertex_clickedID
 						|| e.getVertex2().getId() == Vertex_clickedID) {
-					alert('It exists allready an edge between this vertexes!');
+					alert('It exists allready an edge between this vertices!');
 					Edge_clickedID = null;
 					Vertex_clickedID = null;
 					return;

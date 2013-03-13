@@ -74,7 +74,7 @@ function vertex_click(evt) {
 
 	// add, if no vertex yet selected
 	if (Vertex_clickedID == null && Vertex_current == null) {
-		// check for too close vertexes
+		// check for too close vertices
 		var vertexarray = Vertex_container.getAll();
 		for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
 			// only check in same level
@@ -109,7 +109,7 @@ function vertex_click(evt) {
 				Vertex_clickedID = null;
 				return;
 			}
-			// check for too close vertexes
+			// check for too close vertices
 			var vertexarray = Vertex_container.getAll();
 			for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
 				// only check in same level

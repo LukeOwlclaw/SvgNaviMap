@@ -489,7 +489,7 @@ G.svg_unit_dijkstra = null;
 G.svg_unit_gpsmarker = null;
 
 // scaling variables
-// edit only this one if vertexes and edges are to small or big for the svg
+// edit only this one if vertices and edges are to small or big for the svg
 // image
 G.scale = 2;
 // do not edit the following ones

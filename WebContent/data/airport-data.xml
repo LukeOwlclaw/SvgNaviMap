@@ -410,7 +410,7 @@
 			<name>Restaurants</name>
 		</category>
 	</categories>
-	<vertexes>
+	<vertices>
 		<vertex>
 			<id>0</id>
 			<svgid>0</svgid>
@@ -2915,7 +2915,7 @@
 			<y-pos>339.37419529551084</y-pos>
 			<poi>false</poi>
 		</vertex>
-	</vertexes>
+	</vertices>
 	<edges>
 		<edge>
 			<id>0</id>

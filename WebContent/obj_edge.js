@@ -150,7 +150,7 @@ function Edge(newID, newVertex1, newVertex2, newVertex1_reachable,
 		if (shape.length == 1) {
 			// draw the line a little bit shorter, so that the edge markers do
 			// not
-			// overlap the vertexes
+			// overlap the vertices
 			var line_sub = G.edge_vertexDistance;
 			var x1 = vertex1.getX();
 			var y1 = vertex1.getY();
@@ -170,7 +170,7 @@ function Edge(newID, newVertex1, newVertex2, newVertex1_reachable,
 		} else {
 			// draw the line a little bit shorter, so that the edge markers do
 			// not
-			// overlap the vertexes
+			// overlap the vertices
 			var line_sub = G.edge_vertexDistance;
 
 			var x1_0 = vertex1.getX();
