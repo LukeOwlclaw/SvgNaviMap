@@ -32,270 +32,244 @@
 <script type="text/javascript" src="editorsView.js"></script>
 
 <!-- für google map-->
-<script type="text/javascript"
-	src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="android_pickLocation.js"></script>
 
-<link rel="stylesheet" type="text/css" media="screen"
-	href="style/layout.css">
+<link rel="stylesheet" type="text/css" media="screen" href="style/layout.css">
 <script>
 	$("embed").ready(function() {
 		//Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollst�ndig aufgebaut wurde.
 		console.log('version 13');
-    	G.init();
+		G.init();
 	});
 </script>
 </head>
 <body id="body">
 
-	<div id="wrapper">
-		<div id="header">
-			<h1 id="noscript">Please enable javascript!</h1>
-			<h1>Editors View</h1>
-		</div>
-		<!-- header -->
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="noscript">Please enable javascript!</h1>
+      <h1>Editors View</h1>
+    </div>
+    <!-- header -->
 
-		<div id="middle">
+    <div id="middle">
 
-			<div id="container">
-				<div id="content">
-					<div id="mapitems"
-						style="visibility: hidden; position: absolute; right: 0; width: 40%; top: 0px; height: 50%;"></div>
-					<div id="map_container"></div>
-				</div>
-			</div>
-			<!--  container -->
+      <div id="container">
+        <div id="content">
+          <div id="mapitems"
+            style="visibility: hidden; position: absolute; right: 0; width: 40%; top: 0px; height: 50%;"
+          ></div>
+          <div id="map_container"></div>
+        </div>
+      </div>
+      <!--  container -->
 
-			<div class="sidebar" id="sideLeft">
+      <div class="sidebar" id="sideLeft">
 
-				<div id="mainmenu">
-					<p>Select a menu</p>
-					<!-- <button onclick="menu('top');">top</button> -->
-					<button onclick="menu('vertex');">vertex</button>
-					<button onclick="menu('edge');">edge</button>
-					<button onclick="menu('affiliation');">affiliation</button>
-					<br>
-					<button onclick="menu('category');">categories</button>
-					<button onclick="menu('gpsmarker');">gps marker</button>
-					<button onclick="menu('level');">level altitude</button>
-					<br>
-					<button onclick="menu('export');">export</button>
-					<button onclick="menu('import');">import</button>
-				</div>
-
-
-
-				<div id="vertex" style="display: none;">
-					<div id="vertex_default" style="display: none;">
-						<p>Click into image to add a POI vertex (CTRL for no POI) or select one to edit it.</p>
-					</div>
-
-					<div id="vertex_details" style="display: none;">
-						Short description: <input id="vertex_sdesc" maxlength="8" size="8">
-						<br> Long description: <input id="vertex_ldesc"
-							maxlength="40" size="20"> <br> Point
-						of Interest: <input id="vertex_poi" type="checkbox"
-							onchange="vertex_color();">
-						<p id="vertex_category"></p>
-
-						<button onclick="vertex_setCategory();">Set category</button>
-						<button onclick="vertex_deleteCategory();"
-							id="vertex_delete_category">Delete category</button>
-						<p id="vertex_new_category"></p>
-
-						<button onclick="vertex_move_on();" id="vertex_move_on">Move
-							vertex (m)</button>
-						<button onclick="vertex_move_off();" id="vertex_move_off"
-							style="display: none;">Fix vertex (m)</button>
-
-						<button onclick="vertex_save();">Save vertex (ENTER)</button>
-						<button onclick="vertex_deselect();">Deselect vertex (ESC)</button>
-						<button onclick="vertex_delete();">Delete vertex (DEL)</button>
-					</div>
-					<!-- vertex_details -->
-					<br>
-					<button onclick="vertex_close();">Close vertex menu (ESC)</button>
-				</div>
-				<!-- vertex -->
+        <div id="mainmenu">
+          <p>Select a menu</p>
+          <!-- <button onclick="menu('top');">top</button> -->
+          <button onclick="menu('vertex');">vertex</button>
+          <button onclick="menu('edge');">edge</button>
+          <button onclick="menu('affiliation');">affiliation</button>
+          <br>
+          <button onclick="menu('category');">categories</button>
+          <button onclick="menu('gpsmarker');">gps marker</button>
+          <button onclick="menu('level');">level altitude</button>
+          <br>
+          <button onclick="menu('export');">export</button>
+          <button onclick="menu('import');">import</button>
+        </div>
 
 
-				<div id="edge" style="display: none;">
-					<div id="edge_default" style="display: none;">
-						<p>Click on one vertex to add a new edge or select one edge to
-							edit it.</p>
-					</div>
 
-					<div id="edge_add" style="display: none;">
-						<p>Click on a second vertex to add the edge.</p>
-						<button onclick="edge_resetAdd();">Abort add edge</button>
-					</div>
+        <div id="vertex" style="display: none;">
+          <div id="vertex_default" style="display: none;">
+            <p>Click into image to add a POI vertex (CTRL for no POI) or select one to edit it.</p>
+          </div>
 
-					<div id="edge_details" style="display: none;">
-						Route to vertex 1: <input id="edge_route1" type="checkbox"
-							onchange="edge_changeRoute();"> <br> Route to vertex
-						2: <input id="edge_route2" type="checkbox"
-							onchange="edge_changeRoute();"> <br> Distance Factor: <input
-							id="edge_distancefactor" type="number"> <br> Disabled adapted <input
-							id="edge_disabledAdapted" type="checkbox"
-							onchange="edge_changeDisabledAdapted();">
-						<br>
-						<button onclick="edge_save();">Save edge</button>
-						<button onclick="edge_deselect();">Deselect edge</button>
-						<button onclick="edge_delete();">Delete edge</button>
-					</div>
-					<!-- edge_details -->
+          <div id="vertex_details" style="display: none;">
+            Short description: <input id="vertex_sdesc" maxlength="8" size="8"> <br> Long description: <input
+              id="vertex_ldesc" maxlength="40" size="20"
+            > <br> Point of Interest: <input id="vertex_poi" type="checkbox" onchange="vertex_color();">
+            <p id="vertex_category"></p>
 
-					<br>
-					<button onclick="edge_close();">Close edge menu</button>
-				</div>
-				<!-- edge -->
+            <button onclick="vertex_setCategory();">Set category</button>
+            <button onclick="vertex_deleteCategory();" id="vertex_delete_category">Delete category</button>
+            <p id="vertex_new_category"></p>
 
-				<div id="affiliation" style="display: none;">
-					<div id="affiliation_default" style="display: none;">
-						<p>Click on one vertex to add or modify it's affiliation area.</p>
-					</div>
+            <button onclick="vertex_move_on();" id="vertex_move_on">Move vertex (m)</button>
+            <button onclick="vertex_move_off();" id="vertex_move_off" style="display: none;">Fix vertex (m)</button>
 
-					<div id="affiliation_add" style="display: none;">
-						<p>
-							Click into the map to create a boundary point of the affiliation
-							area for this point.<br> At the end click on the first point
-							to close the polygon
-						</p>
-						<button onclick="affiliation_resetAdd();">Abort add
-							affiliation area (ESC)</button>
-            <button onclick="affiliation_renew();">Start over drawing
-							affiliation area (DEL)</button>
-					</div>
-
-					<div id="affiliation_details_add" style="display: none;">
-						<button onclick="affiliation_add();">Add affiliation area (ENTER)</button>
-						<button onclick="affiliation_deselect();">Deselect point (ESC)</button>
-					</div>
-					<div id="affiliation_details_renew" style="display: none;">
-						<button onclick="affiliation_renew();">Renew affiliation
-							area (DEL)</button>
-						<button onclick="affiliation_deselect();">Deselect point (ENTER)</button>
-					</div>
-					<!-- affiliation_details -->
-
-					<br>
-					<button id="affiliation_test" onclick="affiliation_test();">Test
-						affiliation areas</button>
-					<br>
-					<button onclick="affiliation_close();">Close affiliation
-						menu</button>
-				</div>
-				<!-- affiliation -->
+            <button onclick="vertex_save();">Save vertex (ENTER)</button>
+            <button onclick="vertex_deselect();">Deselect vertex (ESC)</button>
+            <button onclick="vertex_delete();">Delete vertex (DEL)</button>
+          </div>
+          <!-- vertex_details -->
+          <br>
+          <button onclick="vertex_close();">Close vertex menu (ESC)</button>
+        </div>
+        <!-- vertex -->
 
 
-				<div id="export" style="display: none;">
-					<a id="export_xml_link" target="_blank">Download all in one xml
-						file</a> <br>
-					<br> Warnings: <br>
-					<p id="export_warnings">none</p>
-					<br>
-					<br>
-					<button onclick="export_close();">Close export</button>
-				</div>
-				<!-- export -->
+        <div id="edge" style="display: none;">
+          <div id="edge_default" style="display: none;">
+            <p>Click on one vertex to add a new edge or select one edge to edit it.</p>
+          </div>
+
+          <div id="edge_add" style="display: none;">
+            <p>Click on a second vertex to add the edge.</p>
+            <button onclick="edge_resetAdd();">Abort add edge</button>
+          </div>
+
+          <div id="edge_details" style="display: none;">
+            Route to vertex 1: <input id="edge_route1" type="checkbox" onchange="edge_changeRoute();"> <br>
+            Route to vertex 2: <input id="edge_route2" type="checkbox" onchange="edge_changeRoute();"> <br>
+            Distance Factor: <input id="edge_distancefactor" type="number"> <br> Disabled adapted <input
+              id="edge_disabledAdapted" type="checkbox" onchange="edge_changeDisabledAdapted();"
+            > <br>
+            <button onclick="edge_save();">Save edge</button>
+            <button onclick="edge_deselect();">Deselect edge</button>
+            <button onclick="edge_delete();">Delete edge</button>
+          </div>
+          <!-- edge_details -->
+
+          <br>
+          <button onclick="edge_close();">Close edge menu</button>
+        </div>
+        <!-- edge -->
+
+        <div id="affiliation" style="display: none;">
+          <div id="affiliation_default" style="display: none;">
+            <p>Click on one vertex to add or modify it's affiliation area.</p>
+          </div>
+
+          <div id="affiliation_add" style="display: none;">
+            <p>
+              Click into the map to create a boundary point of the affiliation area for this point.<br> At the end
+              click on the first point to close the polygon
+            </p>
+            <button onclick="affiliation_resetAdd();">Abort add affiliation area (ESC)</button>
+            <button onclick="affiliation_renew();">Start over drawing affiliation area (DEL)</button>
+          </div>
+
+          <div id="affiliation_details_add" style="display: none;">
+            <button onclick="affiliation_add();">Add affiliation area (ENTER)</button>
+            <button onclick="affiliation_deselect();">Deselect point (ESC)</button>
+          </div>
+          <div id="affiliation_details_renew" style="display: none;">
+            <button onclick="affiliation_renew();">Renew affiliation area (DEL)</button>
+            <button onclick="affiliation_deselect();">Deselect point (ENTER)</button>
+          </div>
+          <!-- affiliation_details -->
+
+          <br>
+          <button id="affiliation_test" onclick="affiliation_test();">Test affiliation areas</button>
+          <br>
+          <button onclick="affiliation_close();">Close affiliation menu</button>
+        </div>
+        <!-- affiliation -->
+
+
+        <div id="export" style="display: none;">
+          <a id="export_xml_link" target="_blank">Download all in one xml file</a> <br> <br> Warnings: <br>
+          <p id="export_warnings">none</p>
+          <br> <br>
+          <button onclick="export_close();">Close export</button>
+        </div>
+        <!-- export -->
 
 
 
 
-				<div id="import" style="display: none;">
-                    <div id="import_from_file">
-					   <input type="file" id="files" name="files[]" multiple /> <br>
-                    </div>
-					<div id="import_from_server"></div>
-					<button onclick="import_close();">Close import</button>
-				</div>
-				<!-- import -->
+        <div id="import" style="display: none;">
+          <div id="import_from_file">
+            <input type="file" id="files" name="files[]" multiple /> <br>
+          </div>
+          <div id="import_from_server"></div>
+          <button onclick="import_close();">Close import</button>
+        </div>
+        <!-- import -->
 
-				<div id="category" style="display: none;">
-					<button onclick="category_add();">Add category</button>
-					<br> Current categories: <br>
-					<div id="category_current"></div>
-					<button id="category_delete" onclick="category_delete();">Delete
-						selected categories</button>
-					<br>
-					<br>
-					<button onclick="category_close();">Close categories</button>
-				</div>
-				<!-- category -->
+        <div id="category" style="display: none;">
+          <button onclick="category_add();">Add category</button>
+          <br> Current categories: <br>
+          <div id="category_current"></div>
+          <button id="category_delete" onclick="category_delete();">Delete selected categories</button>
+          <br> <br>
+          <button onclick="category_close();">Close categories</button>
+        </div>
+        <!-- category -->
 
-				<div id="gpsmarker" style="display: none;">
-					<div id="gpsmarker_default" style="display: none;">
-						<p>Click into image to add a gpsmarker or select one to edit
-							it.</p>
-					</div>
+        <div id="gpsmarker" style="display: none;">
+          <div id="gpsmarker_default" style="display: none;">
+            <p>Click into image to add a gpsmarker or select one to edit it.</p>
+          </div>
 
-					<div id="gpsmarker_details" style="display: none;">
-						Latitude: <input id="gpsmarker_latitude" maxlength="12" size="12">
-						<br> Longitude: <input id="gpsmarker_longitude"
-							maxlength="12" size="12"> <br>
+          <div id="gpsmarker_details" style="display: none;">
+            Latitude: <input id="gpsmarker_latitude" maxlength="12" size="12"> <br> Longitude: <input
+              id="gpsmarker_longitude" maxlength="12" size="12"
+            > <br>
 
-						<button onclick="gpsmarker_move_on();" id="gpsmarker_move_on">Move
-							gpsmarker</button>
-						<button onclick="gpsmarker_move_off();" id="gpsmarker_move_off"
-							style="display: none;">Fix gpsmarker</button>
+            <button onclick="gpsmarker_move_on();" id="gpsmarker_move_on">Move gpsmarker</button>
+            <button onclick="gpsmarker_move_off();" id="gpsmarker_move_off" style="display: none;">Fix
+              gpsmarker</button>
 
-						<button onclick="gpsmarker_save();">Save gpsmarker</button>
-						<button onclick="gpsmarker_deselect();">Deselect
-							gpsmarker</button>
-						<br><br>
-						<button onclick="gpsmarker_delete();">Delete gpsmarker</button>
+            <button onclick="gpsmarker_save();">Save gpsmarker</button>
+            <button onclick="gpsmarker_deselect();">Deselect gpsmarker</button>
+            <br>
+            <br>
+            <button onclick="gpsmarker_delete();">Delete gpsmarker</button>
 
-					</div>
-					<!-- gpsmarker_details -->
-					<br>
-					<button onclick="gpsmarker_hideshowmap();">Hide/show map</button>
-					<button onclick="gpsmarker_close();">Close gpsmarker menu</button>
-				</div>
-				<!-- gpsmarker -->
+          </div>
+          <!-- gpsmarker_details -->
+          <br>
+          <button onclick="gpsmarker_hideshowmap();">Hide/show map</button>
+          <button onclick="gpsmarker_close();">Close gpsmarker menu</button>
+        </div>
+        <!-- gpsmarker -->
 
-				<div id="level" style="display: none;">
-					<p id="level_details"></p>
+        <div id="level" style="display: none;">
+          <p id="level_details"></p>
 
-					<button onclick="level_save();">Check &amp; Save</button>
-					<br>
-					<button onclick="level_close();">Close level
-						altitude menu</button>
-				</div>
+          <button onclick="level_save();">Check &amp; Save</button>
+          <br>
+          <button onclick="level_close();">Close level altitude menu</button>
+        </div>
 
 
-				<div id="debug">Debug information</div>
+        <div id="debug">Debug information</div>
 
-				<br>
-				<br>
-				<div id="visibility">
-					Show vertexes: <input id="visibility_vertex" type="checkbox"
-						checked="checked" onchange="visibility_vertex();"> <br>
-					Show edges: <input id="visibility_edge" type="checkbox"
-						checked="checked" onchange="visibility_edge();"> <br>
-					Show edge markers: <input id="visibility_edgemarker"
-						type="checkbox" checked="checked"
-						onchange="visibility_edgemarker();"> <br> Show
-					borderpoints: <input id="visibility_borderpoint" type="checkbox"
-						checked="checked" onchange="visibility_borderpoint();"> <br>
-					Show borderlines: <input id="visibility_borderline" type="checkbox"
-						checked="checked" onchange="visibility_borderline();"> <br>
-					Show gps markers: <input id="visibility_gpsmarker" type="checkbox"
-						checked="checked" onchange="visibility_gpsmarker();"> <br>
-				</div>
+        <br> <br>
+        <div id="visibility">
+          Show vertexes: <input id="visibility_vertex" type="checkbox" checked="checked" onchange="visibility_vertex();">
+          <br> Show edges: <input id="visibility_edge" type="checkbox" checked="checked"
+            onchange="visibility_edge();"
+          > <br> Show edge markers: <input id="visibility_edgemarker" type="checkbox" checked="checked"
+            onchange="visibility_edgemarker();"
+          > <br> Show borderpoints: <input id="visibility_borderpoint" type="checkbox" checked="checked"
+            onchange="visibility_borderpoint();"
+          > <br> Show borderlines: <input id="visibility_borderline" type="checkbox" checked="checked"
+            onchange="visibility_borderline();"
+          > <br> Show gps markers: <input id="visibility_gpsmarker" type="checkbox" checked="checked"
+            onchange="visibility_gpsmarker();"
+          > <br>
+        </div>
 
-			</div>
-			<!-- sideLeft -->
+      </div>
+      <!-- sideLeft -->
 
 
-			<div class="sidebar" id="sideRight"></div>
+      <div class="sidebar" id="sideRight"></div>
 
-		</div>
-		<!-- middle -->
+    </div>
+    <!-- middle -->
 
 
 
-	</div>
-	<!-- wrapper -->
-	<div id="footer"></div>
+  </div>
+  <!-- wrapper -->
+  <div id="footer"></div>
 </body>
 </html>

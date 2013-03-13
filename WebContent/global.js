@@ -9,14 +9,10 @@ function G() {
 }
 G.global = 'This is a global variable accessible from everywhere via G.global';
 
-//Holds names of SVG maps of all levels. Starting with level 0 going up. Last item must be according xml file.
-//All files need to be stored in folder defined by G.getDataDir()
-//var levels = [ "minimal0.svg", "minimal1.svg", "minimal2.svg",
-//		"minimal-data.xml" ];
-//levels = ["airport_level0_fullsvg_big.svg","airport_level1_fullsvg_big.svg","airport-data.xml"];
-//levels = ["big0.svg", "big1.svg", "big2.svg", "big3.svg", "big4.svg", "big-data.xml"];
-
+//Holds XMLs of all SvgNaviMap projects available. These are displayed in editor's view.
 var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
+
+//default selected SvgNaviMap project
 var selectedMap =  maps[1];
 
 G.getAvailableXmlFiles = function() {
