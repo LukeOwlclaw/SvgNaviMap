@@ -35,7 +35,7 @@ G.getLevelCount = function() {
 
 //returns path to svg map per level. only available AFTER loading xml file.
 G.getMapPath = function(level) {
-	if(G.Level_svgpath[level].startsWith("http://"))
+	if(G.Level_svgpath[level].substr(0,7) == "http://")
 		return  G.Level_svgpath[level]; //absolute URL
 	else
 		return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir

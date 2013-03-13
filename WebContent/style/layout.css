@@ -54,6 +54,8 @@ input {
 -----------------------------------------------------------------------------*/
 #header {
 	height: 150px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #95C3FF
+		), color-stop(1, #5593cd) );
 	background: -moz-linear-gradient(center top , #95C3FF 5%, #5593cd 100%) repeat scroll 0 0 #EDEDED;
     border: 1px solid #DCDCDC;
     border-radius: 6px 6px 6px 6px;
@@ -85,7 +87,7 @@ input {
 }
 
 #content {
-	padding: 0 270px 0 270px;
+	padding-left: 300px;
 }
 
 /* Sidebar Left
@@ -136,6 +138,8 @@ button:active {
 }
 
 .sidebar div {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #EDEDED
+		), color-stop(1, #8F8F8F) );
 	background: -moz-linear-gradient(center top , #EDEDED 5%, #8F8F8F 100%) repeat scroll 0 0 #EDEDED;
     border: 1px solid #DCDCDC;
     border-radius: 6px 6px 6px 6px;
@@ -193,9 +197,19 @@ embed {
 .mapdiv {
 	width: 30%;
 	display: inline-block;
-	border: solid black 1px;
 	margin: 1em;
 	padding: 1em;
+	
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fbfbfb
+		), color-stop(1, #ededed) );
+	background: -moz-linear-gradient(center top , #fbfbfb 5%, #ededed 100%) repeat scroll 0 0 #EDEDED;
+    border: 1px solid #DCDCDC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 0 #FFFFFF inset;
+    
+    resize: both;
+    overflow: auto
+     
 }
 
 /* Content - override right padding because no right sidebar is used.
