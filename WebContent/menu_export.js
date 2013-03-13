@@ -50,12 +50,12 @@ function export_xml() {
 
 	// start exporting
 
-	if (Level_min_altitude.length > 0 && Level_max_altitude.length > 0) {
+	if (G.Level_min_altitude.length > 0 && G.Level_max_altitude.length > 0) {
 		file_content = file_content.concat('<levels>\n');
 		for ( var i = 0; i < G.svg_element.length; i++) {
 
-			var min = Level_min_altitude[i];
-			var max = Level_max_altitude[i];
+			var min = G.Level_min_altitude[i];
+			var max = G.Level_max_altitude[i];
 
 			file_content = file_content.concat('<level>\n');
 			file_content = file_content.concat('<id>' + i + '</id>\n');

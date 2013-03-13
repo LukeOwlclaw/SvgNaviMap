@@ -3,28 +3,33 @@
 	<levels>
 		<level>
 			<id>0</id>
-			<min>0</min>
-			<max>5</max>
+			<svgpath>big0.svg</svgpath>
+			<min_altitude>0</min_altitude>
+			<max_altitude>5</max_altitude>
 		</level>
 		<level>
 			<id>1</id>
-			<min>5</min>
-			<max>10</max>
+			<svgpath>big1.svg</svgpath>
+			<min_altitude>5</min_altitude>
+			<max_altitude>10</max_altitude>
 		</level>
 		<level>
 			<id>2</id>
-			<min>10</min>
-			<max>15</max>
+			<svgpath>big2.svg</svgpath>
+			<min_altitude>10</min_altitude>
+			<max_altitude>15</max_altitude>
 		</level>
 		<level>
 			<id>3</id>
-			<min>15</min>
-			<max>20</max>
+			<svgpath>big3.svg</svgpath>
+			<min_altitude>15</min_altitude>
+			<max_altitude>20</max_altitude>
 		</level>
 		<level>
 			<id>4</id>
-			<min>20</min>
-			<max>25</max>
+			<svgpath>big4.svg</svgpath>
+			<min_altitude>20</min_altitude>
+			<max_altitude>25</max_altitude>
 		</level>
 	</levels>
 	<gpsmarkers>

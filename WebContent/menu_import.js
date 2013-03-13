@@ -5,14 +5,27 @@ function import_open() {
 	document.getElementById('files').addEventListener('change',
 			load_from_client_xml, false);
 
+	if (document.getElementById("import_from_server").childElementCount == 0) {
+		for ( var i in G.getAvailableXmlFiles()) {
+			var file = G.getAvailableXmlFiles()[i];
+			G.log("file: " + file);
+			var scalebutton = document.createElement("button");
+			scalebutton.setAttribute("onclick", "load_from_server_xml(null, \""
+					+ file + "\")");
+			var content = document.createTextNode("Load " + file);
+			scalebutton.appendChild(content);
+			document.getElementById("import_from_server").appendChild(
+					scalebutton);
+		}
+	}
+
 	// alert('Warning: If you load content from files, all current content will
 	// deleted!');
 
 }
 
+//load SvgNaviMap project by XML file as string
 function load_from_string(content_string) {
-	G.log("load_from_string()");
-
 	var parser = new DOMParser();
 	var xml_dom = parser.parseFromString(content_string, 'text/xml');
 	// content_string2 = xml_dom;
@@ -48,10 +61,15 @@ function load_from_client_xml(evt) {
 	}
 }
 
-function load_from_server_xml(callback) {
+//if callback is a function, it is called after loading SVG and rest of XML was completed.
+//if xmlPath is set, this XML file is loaded (instead of default G.getXmlPath())
+function load_from_server_xml(callback, xmlPath) {
 	"use strict";
-	
-	// zu ladene Dateien
+
+	if (typeof (xmlPath) == "string")
+		G.setXmlFilename(xmlPath);
+
+	// Pfad zur zu ladener XML Datei
 	var filepath = G.getXmlPath();
 
 	// G.log("load_from_server_xml(callback)");
@@ -82,18 +100,24 @@ function import_close() {
 			load_from_client_xml, false);
 }
 
+//import_xml needs to be called twice. first loadSvg must be true in order to load svg first.
+//afterwards import_xml is called automatically again with loadSvg==false.
+//if callback is a function, it is called after loading SVG and rest of XML was completed.
 function import_xml(xmlDom, callback, loadSvg) {
 	"use strict";
 	if (xmlDom.documentElement.tagName != 'svgmap-data') {
 		G.log('xml file has not a svgmap-data root element.');
 		return;
 	}
-	
-	if(loadSvg == false )
-	{
-		if(G.loadMapsCompleted == false)
-		{
-			setTimeout(function(){import_xml(xmlDom, callback, loadSvg)}, 10);
+
+	//if loadSvg == false, i.e. if edges and vertices are to be loaded, 
+	//SVG has to be loaded completely. If SVG not ready yet, set timeout
+	//to try again a little later.
+	if (loadSvg == false) {
+		if (G.loadMapsCompleted == false) {
+			setTimeout(function() {
+				import_xml(xmlDom, callback, loadSvg)
+			}, 10);
 			return;
 		}
 	}
@@ -132,12 +156,12 @@ function import_xml(xmlDom, callback, loadSvg) {
 		Gpsmarker_container.getAll()[0].remove();
 	}
 
-	// reset level altitudes
-	for ( var i = 0; i < G.svg_element.length; i++) {
-		Level_min_altitude[i] = undefined;
-		Level_max_altitude[i] = undefined;
-		if(loadSvg)
-			Level_svgpath[i] = undefined;
+	// reset all levels
+	G.Level_min_altitude = new Array();
+	G.Level_max_altitude = new Array();
+	if (loadSvg == true) {
+		G.loadMapsCompleted = false;
+		G.Level_svgpath = new Array();
 	}
 
 	var vertexes_done = false;
@@ -169,10 +193,11 @@ function import_xml(xmlDom, callback, loadSvg) {
 		case 'levels':
 			import_xml_levels(c);
 			//load maps that were just read from XML.
-			if(loadSvg)
-			{
+			if (loadSvg) {
 				G.loadMaps(true);
-				setTimeout(function(){import_xml(xmlDom, callback, false)}, 10);
+				setTimeout(function() {
+					import_xml(xmlDom, callback, false)
+				}, 10);
 				return;
 			}
 			break;
@@ -188,9 +213,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 		}
 	}
 
-	
-
-	// G.log('import completed');
+	G.log('Overlay loaded completely');
 	if (isFunction(callback)) {
 		callback();
 	}
@@ -335,12 +358,11 @@ function import_xml_level(xmlDom) {
 	}
 
 	//this check only makes sense when svgs are loaded.
-	if(G.loadMapsCompleted == true)
-	{
-	if (id == null || isNaN(id) || id < 0 || G.svg_element[id] == undefined) {
-		G.log('levelid ' + id + ' is not a valid id.');
-		return;
-	}
+	if (G.loadMapsCompleted == true) {
+		if (id == null || isNaN(id) || id < 0 || G.svg_element[id] == undefined) {
+			G.log('levelid ' + id + ' is not a valid id.');
+			return;
+		}
 	}
 
 	if (min_altitude == null || isNaN(min_altitude)) {
@@ -361,7 +383,7 @@ function import_xml_level(xmlDom) {
 						+ ': min_altitude must be lower than max_altitude.');
 		return;
 	}
-	
+
 	if (svgpath == null) {
 		G.log('level ' + id + ': svgpath is not defined.');
 		return;
@@ -371,8 +393,8 @@ function import_xml_level(xmlDom) {
 		if (j == id)
 			continue;
 
-		var min_altitude2 = Level_min_altitude[j];
-		var max_altitude2 = Level_max_altitude[j];
+		var min_altitude2 = G.Level_min_altitude[j];
+		var max_altitude2 = G.Level_max_altitude[j];
 
 		if (min_altitude2 === undefined || max_altitude2 === undefined) {
 			continue;
@@ -385,9 +407,9 @@ function import_xml_level(xmlDom) {
 		}
 	}
 
-	Level_min_altitude[id] = min_altitude;
-	Level_max_altitude[id] = max_altitude;
-	Level_svgpath[id] = svgpath;
+	G.Level_min_altitude[id] = min_altitude;
+	G.Level_max_altitude[id] = max_altitude;
+	G.Level_svgpath[id] = svgpath;
 }
 
 function import_xml_gpsmarkers(xmlDom) {

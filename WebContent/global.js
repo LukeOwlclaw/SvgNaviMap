@@ -11,27 +11,41 @@ G.global = 'This is a global variable accessible from everywhere via G.global';
 
 //Holds names of SVG maps of all levels. Starting with level 0 going up. Last item must be according xml file.
 //All files need to be stored in folder defined by G.getDataDir()
-var levels = [ "minimal0.svg", "minimal1.svg", "minimal2.svg",
-		"minimal-data.xml" ];
+//var levels = [ "minimal0.svg", "minimal1.svg", "minimal2.svg",
+//		"minimal-data.xml" ];
 //levels = ["airport_level0_fullsvg_big.svg","airport_level1_fullsvg_big.svg","airport-data.xml"];
 //levels = ["big0.svg", "big1.svg", "big2.svg", "big3.svg", "big4.svg", "big-data.xml"];
 
 var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
+var selectedMap =  maps[1];
 
-G.getLevelCount = function() {
-	return Level_svgpath.length;
+G.getAvailableXmlFiles = function() {
+	return maps;
 }
 
-G.getMapPath = function(level) {
-	return G.getDataDir() + Level_svgpath[level];
-}
-
-//required for exporting (to set name correctly.)
+//specifies file to be loaded when clicking "load from server"
 G.getXmlFilename = function() {
-	return levels[levels.length - 1];
+	return selectedMap;
 }
 
-//required for downloadin XML configuration file.
+G.setXmlFilename = function(xmlPathRelativeToDataDir) {
+	selectedMap = xmlPathRelativeToDataDir;
+}
+
+//specifies number of levels of map. only available AFTER loading xml file. 
+G.getLevelCount = function() {
+	return G.Level_svgpath.length;
+}
+
+//returns path to svg map per level. only available AFTER loading xml file.
+G.getMapPath = function(level) {
+	if(G.Level_svgpath[level].startsWith("http://"))
+		return  G.Level_svgpath[level]; //absolute URL
+	else
+		return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
+}
+
+//required for downloading XML configuration file. internally used only.
 G.getXmlPath = function() {
 	return G.getDataDir() + G.getXmlFilename();
 }
@@ -48,6 +62,15 @@ G.loadMapsCompleted = false;
  * embedded element to div#map_container
  */
 G.loadMaps = function(createScaleButton) {
+	
+	G.loadMapsCompleted = false;
+	
+	//remove all old maps
+	var el = document.getElementById('map_container');
+	while( el.hasChildNodes() ){
+	    el.removeChild(el.lastChild);
+	}
+	
 	for ( var i = 0; i < G.getLevelCount(); i++) {
 		var newmap = document.createElement("embed");
 		newmap.setAttribute("src", G.getMapPath(i));
@@ -55,7 +78,7 @@ G.loadMaps = function(createScaleButton) {
 		newmap.setAttribute("type", "image/svg+xml");
 		newmap.setAttribute("class", "svg_container");
 		newmap.style.width = "440px";
-		newmap.style.height = "800px";
+		newmap.style.height = "200px";
 
 		document.getElementById("map_container").appendChild(newmap);
 
@@ -77,6 +100,7 @@ G.loadMaps = function(createScaleButton) {
 
 G.svg_init_callback = function() {
 	G.loadMapsCompleted = true;
+	G.log("SVG loaded completely.");
 	
 	//install hooks to svg_init() to be informed when SVG has finished loading.
 	//svg_init() must be implemented as global function by each view with uses SvgNaviMap.

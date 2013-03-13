@@ -28,7 +28,7 @@ function convertGPS_SVG(latitude, longitude, height) {
 	var svgid = -1;
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		if (Level_min_altitude[i] <= height && height <= Level_max_altitude[i]) {
+		if (G.Level_min_altitude[i] <= height && height <= G.Level_max_altitude[i]) {
 			svgid = i;
 			break;
 		}
@@ -191,7 +191,7 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	// G.log("convertSVG_GPS: xPos, yPos, svgid: " + xPos + ", " + xPos + ", "
 	// + svgid);
 
-	var height = (Level_min_altitude[svgid] + Level_max_altitude[svgid]) / 2;
+	var height = (G.Level_min_altitude[svgid] + G.Level_max_altitude[svgid]) / 2;
 
 	var allgpsmarkers = Gpsmarker_container.getAll();
 	var levelgpsmarkers = new Array();

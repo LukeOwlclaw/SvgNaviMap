@@ -203,11 +203,10 @@
 
 
 				<div id="import" style="display: none;">
-					<input type="file" id="files" name="files[]" multiple /> <br>
-					<br>
-					<button onclick="load_from_server_xml(null);">load from server</button>
-					<br>
-					<br>
+                    <div id="import_from_file">
+					   <input type="file" id="files" name="files[]" multiple /> <br>
+                    </div>
+					<div id="import_from_server"></div>
 					<button onclick="import_close();">Close import</button>
 				</div>
 				<!-- import -->

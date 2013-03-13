@@ -16,10 +16,10 @@ function level_save() {
 	"use strict";
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		Level_min_altitude[i] = parseInt(document
-				.getElementById('Level_min_altitude_' + i).value, 10);
-		Level_max_altitude[i] = parseInt(document
-				.getElementById('Level_max_altitude_' + i).value, 10);
+		G.Level_min_altitude[i] = parseInt(document
+				.getElementById('G.Level_min_altitude_' + i).value, 10);
+		G.Level_max_altitude[i] = parseInt(document
+				.getElementById('G.Level_max_altitude_' + i).value, 10);
 	}
 
 	var check = level_check();
@@ -34,12 +34,12 @@ function level_display() {
 	var htmlstring = "";
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		var min = Level_min_altitude[i];
-		var max = Level_max_altitude[i];
+		var min = G.Level_min_altitude[i];
+		var max = G.Level_max_altitude[i];
 		htmlstring += 'Level ' + i
-				+ ':<br>Bottom <input id=\'Level_min_altitude_' + i
+				+ ':<br>Bottom <input id=\'G.Level_min_altitude_' + i
 				+ '\' maxlength=\'4\' size=\'4\' value=\'' + min
-				+ '\'><br>Top     <input id=\'Level_max_altitude_' + i
+				+ '\'><br>Top     <input id=\'G.Level_max_altitude_' + i
 				+ '\' maxlength=\'4\' size=\'4\' value=\'' + max
 				+ '\'><br><br>';
 	}
@@ -53,8 +53,8 @@ function level_check() {
 	var ret = '';
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		var min = Level_min_altitude[i];
-		var max = Level_max_altitude[i];
+		var min = G.Level_min_altitude[i];
+		var max = G.Level_max_altitude[i];
 		if (isNaN(min) || isNaN(max) || min >= max) {
 			return 'level ' + i + ': invalid min/max value(s).';
 		}
@@ -63,8 +63,8 @@ function level_check() {
 			if (j == i)
 				continue;
 
-			var min2 = Level_min_altitude[j];
-			var max2 = Level_max_altitude[j];
+			var min2 = G.Level_min_altitude[j];
+			var max2 = G.Level_max_altitude[j];
 
 			if (min2 === undefined || max2 === undefined) {
 				continue;
