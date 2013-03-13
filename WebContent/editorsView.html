@@ -30,6 +30,7 @@
 <script type="text/javascript" src="libs/jquery.js"></script>
 <script type="text/javascript" src="convertCoordinates.js"></script>
 <script type="text/javascript" src="editorsView.js"></script>
+<script type="text/javascript" src="libs/UIManager.js"></script>
 
 <!-- für google map-->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -73,11 +74,9 @@
           <button onclick="menu('vertex');">vertex</button>
           <button onclick="menu('edge');">edge</button>
           <button onclick="menu('affiliation');">affiliation</button>
-          <br>
           <button onclick="menu('category');">categories</button>
           <button onclick="menu('gpsmarker');">gps marker</button>
           <button onclick="menu('level');">level altitude</button>
-          <br>
           <button onclick="menu('export');">export</button>
           <button onclick="menu('import');">import</button>
         </div>
@@ -238,10 +237,8 @@
           <button onclick="level_close();">Close level altitude menu</button>
         </div>
 
-
         <div id="debug">Debug information</div>
 
-        <br> <br>
         <div id="visibility">
           Show vertexes: <input id="visibility_vertex" type="checkbox" checked="checked" onchange="visibility_vertex();">
           <br> Show edges: <input id="visibility_edge" type="checkbox" checked="checked"

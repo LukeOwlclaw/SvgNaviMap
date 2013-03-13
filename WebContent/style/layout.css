@@ -2,38 +2,46 @@
 
 /* Do not change! Generated using http://csslayoutgenerator.com/
 -----------------------------------------------------------------------------*/
-
 * {
 	margin: 0;
 	padding: 0;
 }
+
 html {
 	height: 100%;
 }
-header, nav, section, article, aside, footer {
+
+header,nav,section,article,aside,footer {
 	display: block;
 }
+
 body {
 	font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
 	height: 100%;
 }
+
 a {
 	color: blue;
 	outline: none;
 	text-decoration: underline;
 }
+
 a:hover {
 	text-decoration: none;
 }
+
 p {
 	margin: 0 0 18px
 }
+
 img {
 	border: none;
 }
+
 input {
 	vertical-align: middle;
 }
+
 #wrapper {
 	width: 100%;
 	min-width: 800px;
@@ -42,14 +50,16 @@ input {
 	height: 100%;
 }
 
-
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
 	height: 150px;
-	background: #FFE680;
+	background: -moz-linear-gradient(center top , #95C3FF 5%, #5593cd 100%) repeat scroll 0 0 #EDEDED;
+    border: 1px solid #DCDCDC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 0 #FFFFFF inset;
+    margin: 5px;
 }
-
 
 /* Middle
 -----------------------------------------------------------------------------*/
@@ -59,6 +69,7 @@ input {
 	height: 1%;
 	position: relative;
 }
+
 #middle:after {
 	content: '.';
 	display: block;
@@ -66,25 +77,69 @@ input {
 	visibility: hidden;
 	height: 0;
 }
+
 #container {
 	width: 100%;
 	float: left;
 	overflow: hidden;
 }
+
 #content {
 	padding: 0 270px 0 270px;
 }
-
 
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
 #sideLeft {
 	float: left;
-	width: 250px;
-	/*margin-left: -100%;*/
-	/*position: relative;*/
+	width: 300px;
 	position: fixed;
-	background: #B5E3FF;
+}
+
+button {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed
+		), color-stop(1, #dfdfdf) );
+	background: -moz-linear-gradient(center top, #ededed 5%, #dfdfdf 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',
+		endColorstr='#dfdfdf' );
+	background-color: #ededed;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	color: #777777;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #ffffff;
+	margin: 1px 0px
+}
+
+button:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf
+		), color-stop(1, #ededed) );
+	background: -moz-linear-gradient(center top, #dfdfdf 5%, #ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf',
+		endColorstr='#ededed' );
+	background-color: #dfdfdf;
+}
+
+button:active {
+	position: relative;
+	top: 1px;
+}
+
+.sidebar div {
+	background: -moz-linear-gradient(center top , #EDEDED 5%, #8F8F8F 100%) repeat scroll 0 0 #EDEDED;
+    border: 1px solid #DCDCDC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 0 #FFFFFF inset;
 }
 
 
@@ -99,11 +154,10 @@ input {
 	background: #FFACAA;
 }
 
-
 /* Footer
 -----------------------------------------------------------------------------*/
-#footer {
-	/*margin: -100px auto 0;*/
+#footer { /*margin: -100px auto 0;*/
+	display: none;
 	margin: -40px auto 0;
 	min-width: 800px;
 	/*height: 100px;*/
@@ -112,19 +166,9 @@ input {
 	position: relative;
 }
 
-
-
-
-
-
-
-
-
-
 /* Customize here!
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------*/
-
 .sidebar div {
 	border-style: solid;
 	margin: 2px;
@@ -138,21 +182,20 @@ body {
 	background-color: AliceBlue
 }
 
-
 /* SVG Map
 -----------------------------------------------------------------------------*/
 embed {
-	width: 95%;
-	height: 7000%; /*Do not ask why, but this makes #map use full height.*/
-		
-	/*       position: absolute; */
-	/*       left: 50px; */
-	/*       top: 30px; */
-	
 	border-style: dashed;
-	margin-top: 20px;
 	border-width: 4px;
 	border-color: #95C3FF;
+}
+
+.mapdiv {
+	width: 30%;
+	display: inline-block;
+	border: solid black 1px;
+	margin: 1em;
+	padding: 1em;
 }
 
 /* Content - override right padding because no right sidebar is used.
@@ -160,11 +203,13 @@ embed {
 #content {
 	padding-right: 0;
 }
+
 #header {
-	height: 100px;	
+	height: 100px;
 }
-#header h1{
+
+#header h1 {
 	padding: 1em;
-	padding-bottom: 0;	
+	padding-bottom: 0;
 }
 

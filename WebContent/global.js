@@ -68,15 +68,19 @@ G.loadMaps = function(createScaleButton) {
 	}
 	
 	for ( var i = 0; i < G.getLevelCount(); i++) {
+		var newmapdiv = document.createElement("div");
+		newmapdiv.setAttribute("class", "mapdiv");
+		
 		var newmap = document.createElement("embed");
 		newmap.setAttribute("src", G.getMapPath(i));
 		newmap.setAttribute("id", "map" + i);
 		newmap.setAttribute("type", "image/svg+xml");
 		newmap.setAttribute("class", "svg_container");
-		newmap.style.width = "440px";
-		newmap.style.height = "200px";
+		//newmap.style.width = "440px";
+		//newmap.style.height = "200px";
 
-		document.getElementById("map_container").appendChild(newmap);
+		newmapdiv.appendChild(newmap);
+		
 
 		if (createScaleButton) {
 			var scalebutton = document.createElement("button");
@@ -84,8 +88,16 @@ G.loadMaps = function(createScaleButton) {
 			scalebutton.setAttribute("onclick", "MZP.rescale(" + i + ");");
 			var content = document.createTextNode("Rescale");
 			scalebutton.appendChild(content);
-			document.getElementById("map_container").appendChild(scalebutton);
+			newmapdiv.appendChild(scalebutton);
+			
+			var hideshowbutton = document.createElement("button");
+			hideshowbutton.setAttribute("onclick", "UIManager.setVisibility(\"map" + i + "\", \"toggle\");");
+			var content = document.createTextNode("Hide/Show");
+			hideshowbutton.appendChild(content);
+			newmapdiv.appendChild(hideshowbutton);
 		}
+		
+		document.getElementById("map_container").appendChild(newmapdiv);
 	}
 
 	var embed = document.getElementsByTagName('embed');
@@ -104,6 +116,8 @@ G.svg_init_callback = function() {
 		G.log("svg_init_custom() is not implemented.");
 		return;
 	}
+	else
+		svg_init_custom();
 }
 
 /*
@@ -132,6 +146,7 @@ G.loadMapSelectors = function() {
 	}
 }
 
+//called on document ready.
 G.init = function() {
 	"use strict";
 	// G.log('init start');
@@ -159,10 +174,18 @@ G.init = function() {
 	G.svg_unit_dijkstra = new Array();
 	G.svg_unit_affiliation_area = new Array();
 	G.svg_unit_gpsmarker = new Array();
+	
+	//init_custom() may be implemented as global function by each view with uses SvgNaviMap.
+	if (typeof(init_custom) == 'undefined' || isFunction(init_custom) == false) {
+		G.log("init_custom() is not implemented.");
+		return;
+	}
+	else
+		init_custom();
 
 };
 
-// Installiert Event Listener, der init_svg() aufruft, sobald SVG element
+// Installiert Event Listener, der init_svg() aufruft, sobald ein SVG element
 // geladen ist.
 G.install_init_hook = function(element, id, count, func) {
 	G.svg_init[id] = false;
@@ -217,7 +240,7 @@ G.install_init_hook = function(element, id, count, func) {
 
 G.init_svg = function(element, id) {
 	"use strict";
-	//	 G.log('init_svg ' + id);
+	 G.log('init_svg ' + id);
 
 	// required for SVG embedded using <embed>
 	// e.g. <embed id="map0" src="office_simple.svg" type="image/svg+xml"
