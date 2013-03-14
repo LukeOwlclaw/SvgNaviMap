@@ -61,6 +61,12 @@ G.loadMapsCompleted = false;
  */
 G.loadMaps = function(createScaleButton) {
 	
+	if(G.getLevelCount()==0)
+	{
+		G.log("Xml file not loaded. Do not call G.loadMaps directly. Call load_from_server_xml(null, \"minimal-data.xml\"); instead.");
+		return;
+	}
+	
 	G.loadMapsCompleted = false;
 	
 	//remove all old maps

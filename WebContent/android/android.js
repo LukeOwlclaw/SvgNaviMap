@@ -1,11 +1,16 @@
-//to be called after svg finished loading
-function android_init() {
+//called on page load
+function init_custom() {
 	"use strict";
 
+	load_from_server_xml(null, "minimal-data.xml");  
+}
+
+//to be called after svg finished loading
+function svg_init_custom() {
 	// set visibilities
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		if (G.svg_element[i] == undefined || G.svg_element[i] == null) {
-			G.log("android_init() failed. svg_element " + i + " not ready yet");
+			G.log("init_custom() failed. svg_element " + i + " not ready yet");
 			return;
 		}
 
@@ -30,9 +35,6 @@ function android_init() {
 
 	// set deafult level
 	selectsvg(0);
-
-	// load data
-	load_from_server_xml(null);
 
 	send_response("init completed");
 }
