@@ -17,19 +17,17 @@ function clearPositions() {
 	debug('clear end ' + Anonposition_container.isEmpty());
 }
 
-function anonPosInit() {
+function init_custom() {
 	"use strict";
 
-	// vertices_hide();
-	// edges_hide();
-	// edgemarkers_hide(),
-	// borderpoints_hide();
-	// borderlines_hide();
-	// bordergpsmarkers_hide();
-	all_overlay_hide();
+	showButtonsForSvg = false;
+	
+	// load xml file for map(s) and gpsmarkers
+	load_from_server_xml(null, "airport-data.xml");
+}
 
-	// load xml file for gpsmarkers
-	load_from_server_xml(anonPosStart);
+function svg_init_custom() {
+	all_overlay_hide();
 }
 
 function anonPosStart() {
