@@ -57,7 +57,7 @@ G.getDataDir = function() {
 G.loadMapsCompleted = false;
 /*
  * Appends for each map defined by G.getLevelCount() and G.getMapPath() an
- * embedded element to div#map_container
+ * embedded element to div#map_container. Async call, pretty quick.
  */
 G.loadMaps = function(createScaleButton) {
 	
@@ -114,12 +114,13 @@ G.loadMaps = function(createScaleButton) {
 	}
 }
 
+//hooks that is called when SVG has finished loading.
+//instance of SvgNaviMap may implement svg_init_custom() which is called from here.
 G.svg_init_callback = function() {
 	G.loadMapsCompleted = true;
 	G.log("SVG loaded completely.");
 	
-	//install hooks to svg_init() to be informed when SVG has finished loading.
-	//svg_init() must be implemented as global function by each view with uses SvgNaviMap.
+	
 	if (typeof(svg_init_custom) == 'undefined' || isFunction(svg_init_custom) == false) {
 		G.log("svg_init_custom() is not implemented.");
 		return;
@@ -161,7 +162,7 @@ G.loadMapSelectors = function() {
 	}
 }
 
-//called on document ready.
+//called on document ready. do some internal init of SvgNaviMap. Pretty quick.
 G.init = function() {
 	"use strict";
 	// G.log('init start');
@@ -200,9 +201,9 @@ G.init = function() {
 
 };
 
-// Installiert Event Listener, der init_svg() aufruft, sobald ein SVG element
-// geladen ist.
-G.install_init_hook = function(element, id, count, func) {
+// Installiert Event Listener, der für jedes SVG init_svg() aufruft, und sobald alle SVG elemente
+// geladen sind callback ausführt.
+G.install_init_hook = function(element, id, count, callback) {
 	G.svg_init[id] = false;
 	element
 			.addEventListener(
@@ -212,13 +213,13 @@ G.install_init_hook = function(element, id, count, func) {
 						case false:
 							G.init_svg(element, id);
 
-							if (func != null && func != undefined) {
+							if (callback != null && callback != undefined) {
 								// call only func, if everything is init'ed
 								for ( var i = 0; i < count; i++) {
 									if (G.svg_init[i] != true)
 										return;
 								}
-								func();
+								callback();
 							}
 							break;
 						case true:

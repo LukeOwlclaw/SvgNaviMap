@@ -118,10 +118,15 @@ function import_xml(xmlDom, callback, loadSvg) {
 	//to try again a little later.
 	if (loadSvg == false) {
 		if (G.loadMapsCompleted == false) {
+			G.log("svg not loaded yet. try again later.");
 			setTimeout(function() {
 				import_xml(xmlDom, callback, loadSvg)
 			}, 10);
 			return;
+		} else {
+			G.log("time " + (log_time.length + 1)
+					+ " - Start building overlay.");
+			log_time.push(Date.now());
 		}
 	}
 
@@ -181,10 +186,14 @@ function import_xml(xmlDom, callback, loadSvg) {
 			import_xml_categories(c);
 			break;
 		case 'vertices':
+			//			G.log("time " + (log_time.length + 1) + " - vertices");
+			//			log_time.push(Date.now());
 			import_xml_vertices(c);
 			vertices_done = true;
 			break;
 		case 'edges':
+			//			G.log("time " + (log_time.length + 1) + " - edges");
+			//			log_time.push(Date.now());
 			if (vertices_done) {
 				import_xml_edges(c);
 				vertices_done = false;
@@ -604,10 +613,10 @@ function import_xml_vertex(xmlDom) {
 			svgid = parseInt(c.childNodes[0].nodeValue, 10);
 			break;
 		case 'x-pos':
-			x_pos = parseFloat(c.childNodes[0].nodeValue);
+			x_pos = parseInt(c.childNodes[0].nodeValue);
 			break;
 		case 'y-pos':
-			y_pos = parseFloat(c.childNodes[0].nodeValue);
+			y_pos = parseInt(c.childNodes[0].nodeValue);
 			break;
 		case 'poi':
 			poi = c.childNodes[0].nodeValue;
@@ -738,22 +747,23 @@ function import_xml_vertex(xmlDom) {
 		return;
 	}
 
+	//TODO: this is slow. rewrite.
 	// check for too close points
-	var vertexarray = Vertex_container.getAll();
-	for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
-		// only check in same level
-		if (v.getSvgid() != svgid)
-			continue;
-
-		var distance = parseInt(Math.sqrt(Math.pow(v.getX() - x_pos, 2)
-				+ Math.pow(v.getY() - y_pos, 2)), 10);
-		if (distance < G.vertex_minDistance) {
-			G
-					.log('point ' + id + ': detect too close point with id '
-							+ i + '.');
-			return;
-		}
-	}
+	//	var vertexarray = Vertex_container.getAll();
+	//	for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
+	//		// only check in same level
+	//		if (v.getSvgid() != svgid)
+	//			continue;
+	//
+	//		var distance = parseInt(Math.sqrt(Math.pow(v.getX() - x_pos, 2)
+	//				+ Math.pow(v.getY() - y_pos, 2)), 10);
+	//		if (distance < G.vertex_minDistance) {
+	//			G
+	//					.log('point ' + id + ': detect too close point with id '
+	//							+ i + '.');
+	//			return;
+	//		}
+	//	}
 
 	if (polygon != null) {
 		// close polygon
