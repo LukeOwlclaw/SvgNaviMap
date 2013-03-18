@@ -25,6 +25,7 @@ function overlay_init_completed() {
 		first = log_time[i - 1];
 		second = log_time[i];
 		var text  =(i) + " - " + (i + 1) + ";" + (second - first) + "";
+		text  = (second - first);
 		G.log(text);
 		var _body = document.getElementsByTagName('body') [0];
 		var _div = document.createElement('div');
