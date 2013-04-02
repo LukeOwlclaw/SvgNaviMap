@@ -210,7 +210,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 				G.loadMaps(showButtonsForSvg);
 				setTimeout(function() {
 					import_xml(xmlDom, callback, false)
-				}, 10);
+				}, 3000); //idle time
 				return;
 			}
 			break;

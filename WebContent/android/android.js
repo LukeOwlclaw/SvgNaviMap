@@ -9,7 +9,7 @@ function init_custom() {
 	log_time.push(Date.now());
 
 	showButtonsForSvg = false;
-	load_from_server_xml(overlay_init_completed, "big-data.xml");
+	load_from_server_xml(overlay_init_completed, "minimal-data.xml");
 	
 }
 
@@ -20,6 +20,7 @@ function overlay_init_completed() {
 
 	G.log("overlay_init_completed");
 
+	var a = new Array();
 	var length = log_time.length;
 	for ( var i = 1; i < length; i++) {
 		first = log_time[i - 1];
@@ -27,11 +28,18 @@ function overlay_init_completed() {
 		var text  =(i) + " - " + (i + 1) + ";" + (second - first) + "";
 		text  = (second - first);
 		G.log(text);
-		var _body = document.getElementsByTagName('body') [0];
+		
 		var _div = document.createElement('div');
 		var _text = document.createTextNode(text)
 		_div.appendChild(_text);
-		_body.appendChild(_div);
+		a.push(_div);
+				
+	}
+	
+	var length = a.length;
+	for ( var i = length-1; i >= 0; i--) {
+		var _body = document.getElementsByTagName('body') [0];
+		_body.insertBefore(a[i],_body.firstChild);
 	}
 }
 

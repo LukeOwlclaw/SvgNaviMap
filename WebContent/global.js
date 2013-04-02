@@ -10,7 +10,7 @@ function G() {
 G.global = 'This is a global variable accessible from everywhere via G.global';
 
 //Holds XMLs of all SvgNaviMap projects available. These are displayed in editor's view.
-var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
+var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml", "test.xml" ];
 
 //default selected SvgNaviMap project
 var selectedMap =  maps[1];
@@ -35,17 +35,27 @@ G.getLevelCount = function() {
 	return G.Level_svgpath.length;
 }
 
+var isDevel = true;
+
 //returns path to svg map per level. only available AFTER loading xml file.
 G.getMapPath = function(level) {
 	if(G.Level_svgpath[level].substr(0,7) == "http://")
 		return  G.Level_svgpath[level]; //absolute URL
 	else
-		return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
+	{	
+		if(isDevel)
+			return G.getDataDir() + G.Level_svgpath[level]+ "?time=" + Date.now(); //for development: force no cache.
+		else
+			return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
+	}
 }
 
 //required for downloading XML configuration file. internally used only.
 G.getXmlPath = function() {
-	return G.getDataDir() + G.getXmlFilename();
+	if(isDevel)
+		return G.getDataDir() + G.getXmlFilename() + "?time=" + Date.now(); //for development: force no cache.
+	else
+		return G.getDataDir() + G.getXmlFilename();
 }
 
 //internally used only
