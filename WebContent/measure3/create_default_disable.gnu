@@ -1,0 +1,3 @@
+unset multiplot
+unset output
+

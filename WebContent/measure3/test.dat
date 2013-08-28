@@ -1,0 +1,4 @@
+action device1 device2 device3
+load    200 203 190 2 4
+process 3 9 6 7 3
+save    4 2 7 4 3

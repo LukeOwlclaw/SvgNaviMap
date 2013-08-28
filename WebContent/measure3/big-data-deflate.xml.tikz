@@ -1,0 +1,232 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{gnuplot-lua-tikz}
+\pagestyle{empty}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{\gpbboxborder}
+\begin{document}
+
+\begin{tikzpicture}[gnuplot]
+%% generated with GNUPLOT 4.7p0 (Lua 5.1; terminal rev. 99, script rev. 100)
+%% 11.07.2013 11:44:07
+\path (0.000,0.000) rectangle (15.000,15.000);
+\gpcolor{color=gp lt color axes}
+\gpsetlinetype{gp lt axes}
+\gpsetlinewidth{1.00}
+\draw[gp path] (1.872,2.056)--(11.139,2.056);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,2.056) { 0};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,3.199)--(11.139,3.199);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,3.199) { 2500};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,4.342)--(11.139,4.342);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,4.342) { 5000};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,5.486)--(11.139,5.486);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,5.486) { 7500};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,6.629)--(11.139,6.629);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,6.629) { 10000};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,7.772)--(11.139,7.772);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,7.772) { 12500};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,8.915)--(11.139,8.915);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,8.915) { 15000};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,10.058)--(11.139,10.058);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,10.058) { 17500};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,11.201)--(11.139,11.201);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,11.201) { 20000};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,12.345)--(11.139,12.345);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,12.345) { 22500};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,13.488)--(11.139,13.488);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,13.488) { 25000};
+\gpcolor{color=gp lt color axes}
+\draw[gp path] (1.872,14.631)--(11.139,14.631);
+\gpcolor{color=gp lt color border}
+\node[gp node right] at (1.688,14.631) { 27500};
+\node[gp node left,rotate=-30] at (2.714,1.872) {Desire C};
+\node[gp node left,rotate=-30] at (3.557,1.872) {Desire S};
+\node[gp node left,rotate=-30] at (4.399,1.872) {GT-N7000};
+\node[gp node left,rotate=-30] at (5.242,1.872) {A200 Tablet};
+\node[gp node left,rotate=-30] at (6.084,1.872) {Galaxy Nexus};
+\node[gp node left,rotate=-30] at (6.927,1.872) {One X};
+\node[gp node left,rotate=-30] at (7.769,1.872) {Nexus 10 Tablet};
+\node[gp node left,rotate=-30] at (8.612,1.872) {PC - Firefox};
+\node[gp node left,rotate=-30] at (9.454,1.872) {PC - Chromium};
+\node[gp node left,rotate=-30] at (10.297,1.872) {PC - Chrome};
+\gpsetlinetype{gp lt border}
+\draw[gp path] (1.872,14.631)--(1.872,2.056)--(11.139,2.056);
+\node[gp node center,rotate=-270] at (0.246,8.343) {Execution time [ms]};
+\node[gp node center] at (6.505,0.215) {Device};
+\draw[gp path] (11.507,13.707)--(11.507,14.631)--(14.815,14.631)--(14.815,13.707)--cycle;
+\node[gp node left] at (12.791,14.477) {drawOverlay};
+\def\gpfillpath{(11.691,14.400)--(12.607,14.400)--(12.607,14.554)--(11.691,14.554)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 2}
+\draw[gp path] (11.691,14.400)--(12.607,14.400)--(12.607,14.554)--(11.691,14.554)--cycle;
+\node[gp node left] at (12.791,14.169) {svgRender};
+\def\gpfillpath{(11.691,14.092)--(12.607,14.092)--(12.607,14.246)--(11.691,14.246)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 1}
+\draw[gp path] (11.691,14.092)--(12.607,14.092)--(12.607,14.246)--(11.691,14.246)--cycle;
+\node[gp node left] at (12.791,13.861) {xmlParsing};
+\def\gpfillpath{(11.691,13.784)--(12.607,13.784)--(12.607,13.938)--(11.691,13.938)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 0}
+\draw[gp path] (11.691,13.784)--(12.607,13.784)--(12.607,13.938)--(11.691,13.938)--cycle;
+\def\gpfillpath{(2.335,2.056)--(3.095,2.056)--(3.095,2.697)--(2.335,2.697)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\draw[gp path] (2.335,2.056)--(2.335,2.696)--(3.094,2.696)--(3.094,2.056)--cycle;
+\def\gpfillpath{(2.335,2.696)--(3.095,2.696)--(3.095,6.895)--(2.335,6.895)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (2.335,2.696)--(2.335,6.894)--(3.094,6.894)--(3.094,2.696)--cycle;
+\def\gpfillpath{(2.335,6.894)--(3.095,6.894)--(3.095,14.117)--(2.335,14.117)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (2.335,6.894)--(2.335,14.116)--(3.094,14.116)--(3.094,6.894)--cycle;
+\def\gpfillpath{(3.178,2.056)--(3.937,2.056)--(3.937,2.354)--(3.178,2.354)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 1}
+\draw[gp path] (3.178,2.056)--(3.178,2.353)--(3.936,2.353)--(3.936,2.056)--cycle;
+\def\gpfillpath{(3.178,2.353)--(3.937,2.353)--(3.937,5.250)--(3.178,5.250)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (3.178,2.353)--(3.178,5.249)--(3.936,5.249)--(3.936,2.353)--cycle;
+\def\gpfillpath{(3.178,5.249)--(3.937,5.249)--(3.937,9.459)--(3.178,9.459)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (3.178,5.249)--(3.178,9.458)--(3.936,9.458)--(3.936,5.249)--cycle;
+\def\gpfillpath{(4.020,2.056)--(4.779,2.056)--(4.779,2.537)--(4.020,2.537)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 2}
+\draw[gp path] (4.020,2.056)--(4.020,2.536)--(4.778,2.536)--(4.778,2.056)--cycle;
+\def\gpfillpath{(4.020,2.536)--(4.779,2.536)--(4.779,4.668)--(4.020,4.668)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (4.020,2.536)--(4.020,4.667)--(4.778,4.667)--(4.778,2.536)--cycle;
+\def\gpfillpath{(4.020,4.667)--(4.779,4.667)--(4.779,8.440)--(4.020,8.440)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (4.020,4.667)--(4.020,8.439)--(4.778,8.439)--(4.778,4.667)--cycle;
+\def\gpfillpath{(4.863,2.056)--(5.622,2.056)--(5.622,2.295)--(4.863,2.295)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 3}
+\draw[gp path] (4.863,2.056)--(4.863,2.294)--(5.621,2.294)--(5.621,2.056)--cycle;
+\def\gpfillpath{(4.863,2.294)--(5.622,2.294)--(5.622,4.246)--(4.863,4.246)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (4.863,2.294)--(4.863,4.245)--(5.621,4.245)--(5.621,2.294)--cycle;
+\def\gpfillpath{(4.863,4.245)--(5.622,4.245)--(5.622,7.563)--(4.863,7.563)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (4.863,4.245)--(4.863,7.562)--(5.621,7.562)--(5.621,4.245)--cycle;
+\def\gpfillpath{(5.705,2.056)--(6.464,2.056)--(6.464,2.286)--(5.705,2.286)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 4}
+\draw[gp path] (5.705,2.056)--(5.705,2.285)--(6.463,2.285)--(6.463,2.056)--cycle;
+\def\gpfillpath{(5.705,2.285)--(6.464,2.285)--(6.464,3.541)--(5.705,3.541)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (5.705,2.285)--(5.705,3.540)--(6.463,3.540)--(6.463,2.285)--cycle;
+\def\gpfillpath{(5.705,3.540)--(6.464,3.540)--(6.464,6.746)--(5.705,6.746)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (5.705,3.540)--(5.705,6.745)--(6.463,6.745)--(6.463,3.540)--cycle;
+\def\gpfillpath{(6.548,2.056)--(7.307,2.056)--(7.307,2.235)--(6.548,2.235)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 5}
+\draw[gp path] (6.548,2.056)--(6.548,2.234)--(7.306,2.234)--(7.306,2.056)--cycle;
+\def\gpfillpath{(6.548,2.234)--(7.307,2.234)--(7.307,3.482)--(6.548,3.482)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (6.548,2.234)--(6.548,3.481)--(7.306,3.481)--(7.306,2.234)--cycle;
+\def\gpfillpath{(6.548,3.481)--(7.307,3.481)--(7.307,5.906)--(6.548,5.906)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (6.548,3.481)--(6.548,5.905)--(7.306,5.905)--(7.306,3.481)--cycle;
+\def\gpfillpath{(7.390,2.056)--(8.149,2.056)--(8.149,2.206)--(7.390,2.206)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 6}
+\draw[gp path] (7.390,2.056)--(7.390,2.205)--(8.148,2.205)--(8.148,2.056)--cycle;
+\def\gpfillpath{(7.390,2.205)--(8.149,2.205)--(8.149,2.876)--(7.390,2.876)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (7.390,2.205)--(7.390,2.875)--(8.148,2.875)--(8.148,2.205)--cycle;
+\def\gpfillpath{(7.390,2.875)--(8.149,2.875)--(8.149,3.809)--(7.390,3.809)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (7.390,2.875)--(7.390,3.808)--(8.148,3.808)--(8.148,2.875)--cycle;
+\def\gpfillpath{(8.233,2.056)--(8.992,2.056)--(8.992,2.475)--(8.233,2.475)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 7}
+\draw[gp path] (8.233,2.056)--(8.233,2.474)--(8.991,2.474)--(8.991,2.056)--cycle;
+\def\gpfillpath{(8.233,2.474)--(8.992,2.474)--(8.992,3.488)--(8.233,3.488)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (8.233,2.474)--(8.233,3.487)--(8.991,3.487)--(8.991,2.474)--cycle;
+\def\gpfillpath{(9.075,2.056)--(9.834,2.056)--(9.834,2.106)--(9.075,2.106)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 0}
+\draw[gp path] (9.075,2.056)--(9.075,2.105)--(9.833,2.105)--(9.833,2.056)--cycle;
+\def\gpfillpath{(9.075,2.105)--(9.834,2.105)--(9.834,2.505)--(9.075,2.505)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (9.075,2.105)--(9.075,2.504)--(9.833,2.504)--(9.833,2.105)--cycle;
+\def\gpfillpath{(9.075,2.504)--(9.834,2.504)--(9.834,2.798)--(9.075,2.798)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (9.075,2.504)--(9.075,2.797)--(9.833,2.797)--(9.833,2.504)--cycle;
+\def\gpfillpath{(9.917,2.056)--(10.677,2.056)--(10.677,2.098)--(9.917,2.098)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 0,gp pattern 1,pattern color=.} \gpfillpath;
+\gpsetlinetype{gp lt plot 1}
+\draw[gp path] (9.917,2.056)--(9.917,2.097)--(10.676,2.097)--(10.676,2.056)--cycle;
+\def\gpfillpath{(9.917,2.097)--(10.677,2.097)--(10.677,2.427)--(9.917,2.427)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 1,gp pattern 2,pattern color=.} \gpfillpath;
+\draw[gp path] (9.917,2.097)--(9.917,2.426)--(10.676,2.426)--(10.676,2.097)--cycle;
+\def\gpfillpath{(9.917,2.426)--(10.677,2.426)--(10.677,2.741)--(9.917,2.741)--cycle}
+\gpfill{color=gpbgfillcolor} \gpfillpath;
+\gpfill{color=gp lt color 2,gp pattern 3,pattern color=.} \gpfillpath;
+\draw[gp path] (9.917,2.426)--(9.917,2.740)--(10.676,2.740)--(10.676,2.426)--cycle;
+\gpsetlinetype{gp lt border}
+\draw[gp path] (1.872,14.631)--(1.872,2.056)--(11.139,2.056);
+%% coordinates of the plot area
+\gpdefrectangularnode{gp plot 1}{\pgfpoint{1.872cm}{2.056cm}}{\pgfpoint{11.139cm}{14.631cm}}
+\end{tikzpicture}
+%% gnuplot variables
+\end{document}

@@ -2,3 +2,15 @@
 SimpleWebServer.*
 big.zip
 Octavio/
+WebContent/data/svg_gzip_test/*.svg
+*.gz
+WebContent/node_modules
+WebContent/server.js
+WebContent/server*.js
+result.csv
+WebContent/*.csv
+measure
+measure2
+tmp/
+bargraph/
+~$*

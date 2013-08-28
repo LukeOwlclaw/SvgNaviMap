@@ -2,20 +2,17 @@ function import_open() {
 	"use strict";
 	G.menu_current = 'import';
 	document.getElementById('import').style.display = 'block';
-	document.getElementById('files').addEventListener('change',
-			load_from_client_xml, false);
+	document.getElementById('files').addEventListener('change', load_from_client_xml, false);
 
 	if (document.getElementById("import_from_server").childElementCount == 0) {
 		for ( var i in G.getAvailableXmlFiles()) {
 			var file = G.getAvailableXmlFiles()[i];
 			G.log("file: " + file);
 			var scalebutton = document.createElement("button");
-			scalebutton.setAttribute("onclick", "load_from_server_xml(null, \""
-					+ file + "\")");
+			scalebutton.setAttribute("onclick", "load_from_server_xml(null, \"" + file + "\")");
 			var content = document.createTextNode("Load " + file);
 			scalebutton.appendChild(content);
-			document.getElementById("import_from_server").appendChild(
-					scalebutton);
+			document.getElementById("import_from_server").appendChild(scalebutton);
 		}
 	}
 
@@ -24,7 +21,7 @@ function import_open() {
 
 }
 
-//load SvgNaviMap project by XML file as string
+// load SvgNaviMap project by XML file as string
 function load_from_string(content_string) {
 	var parser = new DOMParser();
 	var xml_dom = parser.parseFromString(content_string, 'text/xml');
@@ -62,8 +59,10 @@ function load_from_client_xml(evt) {
 	}
 }
 
-//if callback is a function, it is called after loading SVG and rest of XML was completed.
-//if xmlPath is set, this XML file is loaded (instead of default G.getXmlPath())
+// if callback is a function, it is called after loading SVG and rest of XML was
+// completed.
+// if xmlPath is set, this XML file is loaded (instead of default
+// G.getXmlPath())
 function load_from_server_xml(callback, xmlPath) {
 	"use strict";
 
@@ -79,17 +78,59 @@ function load_from_server_xml(callback, xmlPath) {
 	asyncXMLRequest.open('GET', filepath);
 	asyncXMLRequest.onreadystatechange = function() {
 		if (this.readyState == 4) {
-			if (this.responseXML != null)
+
+			// G.time("fromLoadXmlStartEndToSVG pure download time");
+			G.timeEnd("loadxml");
+
+			// G.time("firstXMLparse_a");
+			// G.time("firstXMLparse_a1");
+			// G.time("firstXMLparse_a1_a");
+
+			var headers = asyncXMLRequest.getAllResponseHeaders().toLowerCase();
+			// G.timeEnd("firstXMLparse_a1_a");
+			// G.time("firstXMLparse_a1_b");
+			if (headers.indexOf("deflate") !== -1) {
+				G.compression = "deflate";
+				G.log2("Compression:deflate");
+			} else if (headers.indexOf("gzip") !== -1) {
+				G.compression = "gzip";
+				G.log2("Compression:gzip");
+			} else {
+				G.compression = "off";
+				G.log2("Compression:off");
+			}
+			// G.timeEnd("firstXMLparse_a1_b");
+			// G.time("firstXMLparse_a1_c");
+
+			// on first access of responseXML browser parses XML body.
+			G.time("browserBasedXmlParsing");
+			if (this.responseXML != null) {
+				G.timeEnd("browserBasedXmlParsing");
+				// G.log("time " + (log_time.length + 1) + " - loading XML
+				// completed 1. Start parsing.");
+				// log_time.push(Date.now());
+				// G.timeEnd("firstXMLparse_a1_c");
+				// G.time("firstXMLparse");
+				// G.timeEnd("firstXMLparse_a1");
+				// G.time("firstXMLparse_a2");
+				G.time("firstXMLparse");
 				import_xml(this.responseXML, callback, true);
-			else {
-				if (this.response != null)
+			} else { // never applies
+				if (this.response != null) {
+					G.log("time " + (log_time.length + 1) + " - loading XML completed 2. Start parsing.");
+					log_time.push(Date.now());
 					import_xml(this.response, null, true);
-				else
+				} else
 					G.log('import: responseXML is null.');
 			}
 		}
 	};
 	// G.log("asyncXMLRequest.send();");
+	G.log("time " + (log_time.length + 1) + " - start loading XML file.");
+	log_time.push(Date.now());
+
+	G.time("loadxml");
+	// G.timeEnd("fromEverythingStartToLoadXmlStart");
 	asyncXMLRequest.send();
 }
 
@@ -97,39 +138,63 @@ function import_close() {
 	"use strict";
 	G.menu_current = null;
 	document.getElementById('import').style.display = 'none';
-	document.getElementById('files').removeEventListener('change',
-			load_from_client_xml, false);
+	document.getElementById('files').removeEventListener('change', load_from_client_xml, false);
 }
 
 var showButtonsForSvg = true;
 
-//import_xml needs to be called twice. first loadSvg must be true in order to load svg first.
-//afterwards import_xml is called automatically again with loadSvg==false.
-//if callback is a function, it is called after loading SVG and rest of XML was completed.
+// import_xml needs to be called twice. first loadSvg must be true in order to
+// load svg first.
+// afterwards import_xml is called automatically again with loadSvg==false.
+// if callback is a function, it is called after loading SVG and rest of XML was
+// completed.
 function import_xml(xmlDom, callback, loadSvg) {
 	"use strict";
+	// if (loadSvg)
+	// G.timeEnd("firstXMLparse_a2");
+	// if (loadSvg)
+	// G.time("firstXMLparse_a3");
+
 	if (xmlDom.documentElement.tagName != 'svgmap-data') {
 		G.log('xml file has not a svgmap-data root element.');
 		return;
 	}
 
-	//if loadSvg == false, i.e. if edges and vertices are to be loaded, 
-	//SVG has to be loaded completely. If SVG not ready yet, set timeout
-	//to try again a little later.
+	// if (loadSvg)
+	// G.timeEnd("firstXMLparse_a3");
+	// if (loadSvg)
+	// G.time("firstXMLparse_a4");
+
+	// if loadSvg == false, i.e. if edges and vertices are to be loaded,
+	// SVG has to be loaded completely, already. If SVG not ready yet, set
+	// timeout
+	// to try again a little later.
 	if (loadSvg == false) {
+
 		if (G.loadMapsCompleted == false) {
-			G.log("svg not loaded yet. try again later.");
+			G.log2("svg not loaded yet. try again later. this should never happen.");
+			G.time("SVGnotReady");
 			setTimeout(function() {
-				import_xml(xmlDom, callback, loadSvg)
-			}, 10);
+				G.timeEnd("SVGnotReady");
+				import_xml(xmlDom, callback, loadSvg);
+			}, 1);
 			return;
 		} else {
-			G.log("time " + (log_time.length + 1)
-					+ " - Start building overlay.");
+
+			G.time("parseXmlAndBuildOverlay");
+			// G.timeEnd("fromDownloadAndParseToParseXml");
+			G.log("time " + (log_time.length + 1) + " - Start building overlay.");
 			log_time.push(Date.now());
 		}
 	}
 
+	// if (loadSvg)
+	// G.timeEnd("firstXMLparse_a4");
+	//
+	// if (loadSvg)
+	// G.timeEnd("firstXMLparse_a");
+	// if (loadSvg)
+	// G.time("firstXMLparse_b");
 	var svgmap = xmlDom.documentElement;
 
 	// delete old points
@@ -180,20 +245,25 @@ function import_xml(xmlDom, callback, loadSvg) {
 		return;
 	}
 
+	if (loadSvg)
+		G.timeEnd("firstXMLparse_b");
+	if (loadSvg)
+		G.time("firstXMLparse_c");
+
 	for ( var i = 0, c = svgmap.childNodes[i]; i < svgmap.childNodes.length; c = svgmap.childNodes[++i]) {
 		switch (c.nodeName) {
 		case 'categories':
 			import_xml_categories(c);
 			break;
 		case 'vertices':
-			//			G.log("time " + (log_time.length + 1) + " - vertices");
-			//			log_time.push(Date.now());
+			// G.log("time " + (log_time.length + 1) + " - vertices");
+			// log_time.push(Date.now());
 			import_xml_vertices(c);
 			vertices_done = true;
 			break;
 		case 'edges':
-			//			G.log("time " + (log_time.length + 1) + " - edges");
-			//			log_time.push(Date.now());
+			// G.log("time " + (log_time.length + 1) + " - edges");
+			// log_time.push(Date.now());
 			if (vertices_done) {
 				import_xml_edges(c);
 				vertices_done = false;
@@ -204,13 +274,26 @@ function import_xml(xmlDom, callback, loadSvg) {
 			import_xml_gpsmarkers(c);
 			break;
 		case 'levels':
+			// if (loadSvg)
+			// G.timeEnd("firstXMLparse_c");
+			// if (loadSvg)
+			// G.time("firstXMLparse_d");
 			import_xml_levels(c);
-			//load maps that were just read from XML.
+			// load maps that were just read from XML.
 			if (loadSvg) {
-				G.loadMaps(showButtonsForSvg);
-				setTimeout(function() {
-					import_xml(xmlDom, callback, false)
-				}, 3000); //idle time
+				// if (loadSvg)
+				// G.timeEnd("firstXMLparse_d");
+				G.timeEnd("firstXMLparse");
+
+				G.log2("PURE_DOWNLOAD_DUMMY:0");
+				G.loadMaps(showButtonsForSvg, function() {
+					// G.time("secondXMLparse"); == parseXmlAndBuildOverlay
+					import_xml(xmlDom, callback, false);
+				});
+				/*
+				 * setTimeout(function() { import_xml(xmlDom, callback, false) },
+				 * 3000); // idle time
+				 */
 				return;
 			}
 			break;
@@ -226,6 +309,9 @@ function import_xml(xmlDom, callback, loadSvg) {
 		}
 	}
 
+	// G.time("fromParseXmlToEverythingEnd");
+	G.timeEnd("parseXmlAndBuildOverlay");
+	// G.timeEnd("secondXMLparse");
 	G.log('Overlay loaded completely');
 	if (isFunction(callback)) {
 		callback();
@@ -298,8 +384,7 @@ function import_xml_category(xmlDom) {
 	}
 
 	if (Category_container.get(id) != null) {
-		G.log('category ' + id
-				+ ': there exists allready a category with this id.');
+		G.log('category ' + id + ': there exists allready a category with this id.');
 		return;
 	}
 
@@ -370,7 +455,7 @@ function import_xml_level(xmlDom) {
 		}
 	}
 
-	//this check only makes sense when svgs are loaded.
+	// this check only makes sense when svgs are loaded.
 	if (G.loadMapsCompleted == true) {
 		if (id == null || isNaN(id) || id < 0 || G.svg_element[id] == undefined) {
 			G.log('levelid ' + id + ' is not a valid id.');
@@ -379,21 +464,17 @@ function import_xml_level(xmlDom) {
 	}
 
 	if (min_altitude == null || isNaN(min_altitude)) {
-		G.log('level ' + id + ': min_altitude ' + min_altitude
-				+ ' is not a valid min_altitude.');
+		G.log('level ' + id + ': min_altitude ' + min_altitude + ' is not a valid min_altitude.');
 		return;
 	}
 
 	if (max_altitude == null || isNaN(max_altitude)) {
-		G.log('level ' + id + ': max_altitude ' + max_altitude
-				+ ' is not a valid max_altitude.');
+		G.log('level ' + id + ': max_altitude ' + max_altitude + ' is not a valid max_altitude.');
 		return;
 	}
 
 	if (min_altitude >= max_altitude) {
-		G
-				.log('level ' + id
-						+ ': min_altitude must be lower than max_altitude.');
+		G.log('level ' + id + ': min_altitude must be lower than max_altitude.');
 		return;
 	}
 
@@ -501,20 +582,17 @@ function import_xml_gpsmarker(xmlDom) {
 		return;
 	}
 
-	if (svgid == null || isNaN(svgid) || svgid < 0
-			|| G.svg_element[svgid] == undefined) {
+	if (svgid == null || isNaN(svgid) || svgid < 0 || G.svg_element[svgid] == undefined) {
 		G.log('gpsmarker ' + id + ': svgid ' + svgid + ' is not a valid id.');
 		return;
 	}
 
-	if (x_pos == null || isNaN(x_pos) || x_pos < 0
-			|| x_pos > MZP.backup_width[svgid]) {
+	if (x_pos == null || isNaN(x_pos) || x_pos < 0 || x_pos > MZP.backup_width[svgid]) {
 		G.log('gpsmarker ' + id + ': x-value ' + x_pos + ' is not valid.');
 		return;
 	}
 
-	if (y_pos == null || isNaN(y_pos) || y_pos < 0
-			|| y_pos > MZP.backup_height[svgid]) {
+	if (y_pos == null || isNaN(y_pos) || y_pos < 0 || y_pos > MZP.backup_height[svgid]) {
 		G.log('gpsmarker ' + id + ': y-value ' + y_pos + ' is not valid.');
 		return;
 	}
@@ -525,15 +603,12 @@ function import_xml_gpsmarker(xmlDom) {
 	}
 
 	if (longitude == null || isNaN(longitude)) {
-		G
-				.log('gpsmarker ' + id + ': longitude ' + longitude
-						+ ' is not valid.');
+		G.log('gpsmarker ' + id + ': longitude ' + longitude + ' is not valid.');
 		return;
 	}
 
 	if (Gpsmarker_container.get(id) != null) {
-		G.log('gpsmarker ' + id
-				+ ': there exists allready a gpsmarker with this id.');
+		G.log('gpsmarker ' + id + ': there exists allready a gpsmarker with this id.');
 		return;
 	}
 
@@ -541,14 +616,12 @@ function import_xml_gpsmarker(xmlDom) {
 	var gpsmarkerarray = Gpsmarker_container.getAll();
 	for ( var i = 0, g = gpsmarkerarray[i]; i < gpsmarkerarray.length; g = gpsmarkerarray[++i]) {
 		// only check in same level
-		if (g.getSvgid() != svgid)
+		if (g == undefined || g.getSvgid() != svgid)
 			continue;
 
-		var distance = parseInt(Math.sqrt(Math.pow(g.getX() - x_pos, 2)
-				+ Math.pow(g.getY() - y_pos, 2)), 10);
+		var distance = parseInt(Math.sqrt(Math.pow(g.getX() - x_pos, 2) + Math.pow(g.getY() - y_pos, 2)), 10);
 		if (distance < G.vertex_minDistance) {
-			G.log('gpsmarker ' + id + ': detect too close gpsmarker with id '
-					+ i + '.');
+			G.log('gpsmarker ' + id + ': detect too close gpsmarker with id ' + i + '.');
 			return;
 		}
 	}
@@ -662,13 +735,11 @@ function import_xml_vertex(xmlDom) {
 				return;
 			}
 			if (bp_x == null || isNaN(bp_x)) {
-				G.log('borderpointpoint ' + id + ': x-value ' + bp_x
-						+ ' is not valid.');
+				G.log('borderpointpoint ' + id + ': x-value ' + bp_x + ' is not valid.');
 				return;
 			}
 			if (bp_y == null || isNaN(bp_y)) {
-				G.log('borderpointpoint ' + id + ': y-value ' + bp_y
-						+ ' is not valid.');
+				G.log('borderpointpoint ' + id + ': y-value ' + bp_y + ' is not valid.');
 				return;
 			}
 
@@ -678,13 +749,11 @@ function import_xml_vertex(xmlDom) {
 
 				// test if x and y match
 				if (bp_x != bp_tmp.getX()) {
-					G.log('borderpointpoint ' + id + ': x pos does not match: '
-							+ bp_x + ' : ' + bp_tmp.getX());
+					G.log('borderpointpoint ' + id + ': x pos does not match: ' + bp_x + ' : ' + bp_tmp.getX());
 					return;
 				}
 				if (bp_y != bp_tmp.getY()) {
-					G.log('borderpointpoint ' + id + ': y pos does not match: '
-							+ bp_y + ' : ' + bp_tmp.getY());
+					G.log('borderpointpoint ' + id + ': y pos does not match: ' + bp_y + ' : ' + bp_tmp.getY());
 					return;
 				}
 			} else {
@@ -719,20 +788,17 @@ function import_xml_vertex(xmlDom) {
 		return;
 	}
 
-	if (svgid == null || isNaN(svgid) || svgid < 0
-			|| G.svg_element[svgid] == undefined) {
+	if (svgid == null || isNaN(svgid) || svgid < 0 || G.svg_element[svgid] == undefined) {
 		G.log('point ' + id + ': svgid ' + svgid + ' is not a valid id.');
 		return;
 	}
 
-	if (x_pos == null || isNaN(x_pos) || x_pos < 0
-			|| x_pos > MZP.backup_width[svgid]) {
+	if (x_pos == null || isNaN(x_pos) || x_pos < 0 || x_pos > MZP.backup_width[svgid]) {
 		G.log('point ' + id + ': x-value ' + x_pos + ' is not valid.');
 		return;
 	}
 
-	if (y_pos == null || isNaN(y_pos) || y_pos < 0
-			|| y_pos > MZP.backup_height[svgid]) {
+	if (y_pos == null || isNaN(y_pos) || y_pos < 0 || y_pos > MZP.backup_height[svgid]) {
 		G.log('point ' + id + ': y-value ' + y_pos + ' is not valid.');
 		return;
 	}
@@ -747,23 +813,24 @@ function import_xml_vertex(xmlDom) {
 		return;
 	}
 
-	//TODO: this is slow. rewrite.
+	// TODO: this is slow. rewrite.
 	// check for too close points
-	//	var vertexarray = Vertex_container.getAll();
-	//	for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
-	//		// only check in same level
-	//		if (v.getSvgid() != svgid)
-	//			continue;
+	// var vertexarray = Vertex_container.getAll();
+	// for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v =
+	// vertexarray[++i]) {
+	// // only check in same level
+	// if (v.getSvgid() != svgid)
+	// continue;
 	//
-	//		var distance = parseInt(Math.sqrt(Math.pow(v.getX() - x_pos, 2)
-	//				+ Math.pow(v.getY() - y_pos, 2)), 10);
-	//		if (distance < G.vertex_minDistance) {
-	//			G
-	//					.log('point ' + id + ': detect too close point with id '
-	//							+ i + '.');
-	//			return;
-	//		}
-	//	}
+	// var distance = parseInt(Math.sqrt(Math.pow(v.getX() - x_pos, 2)
+	// + Math.pow(v.getY() - y_pos, 2)), 10);
+	// if (distance < G.vertex_minDistance) {
+	// G
+	// .log('point ' + id + ': detect too close point with id '
+	// + i + '.');
+	// return;
+	// }
+	// }
 
 	if (polygon != null) {
 		// close polygon
@@ -924,9 +991,7 @@ function import_xml_edge(xmlDom) {
 	}
 
 	if (v1_id == null || isNaN(v1_id) || v1_id < 0) {
-		console
-				.log('edge ' + id + ': pointid ' + v1_id
-						+ ' is not a valid id.');
+		console.log('edge ' + id + ': pointid ' + v1_id + ' is not a valid id.');
 		return;
 	}
 
@@ -937,9 +1002,7 @@ function import_xml_edge(xmlDom) {
 	}
 
 	if (v2_id == null || isNaN(v2_id) || v2_id < 0) {
-		console
-				.log('edge ' + id + ': pointid ' + v2_id
-						+ ' is not a valid id.');
+		console.log('edge ' + id + ': pointid ' + v2_id + ' is not a valid id.');
 		return;
 	}
 
@@ -955,14 +1018,12 @@ function import_xml_edge(xmlDom) {
 	}
 
 	if (v1_reachable != 'true' && v1_reachable != 'false') {
-		G.log('edge ' + id + ': to point 1 value ' + v1_reachable
-				+ ' is not valid.');
+		G.log('edge ' + id + ': to point 1 value ' + v1_reachable + ' is not valid.');
 		return;
 	}
 
 	if (v2_reachable != 'true' && v2_reachable != 'false') {
-		G.log('edge ' + id + ': to point 1 value ' + v2_reachable
-				+ ' is not valid.');
+		G.log('edge ' + id + ': to point 1 value ' + v2_reachable + ' is not valid.');
 		return;
 	}
 
@@ -972,75 +1033,59 @@ function import_xml_edge(xmlDom) {
 	}
 
 	if (vertex1.getSvgid() == vertex2.getSvgid()
-			&& (v1_stepmarker_x != null || v1_stepmarker_y != null
-					|| v2_stepmarker_x != null || v2_stepmarker_y != null)) {
-		G.log('edge ' + id
-				+ ': stepmarker given, but edge is located only in one level.');
+			&& (v1_stepmarker_x != null || v1_stepmarker_y != null || v2_stepmarker_x != null || v2_stepmarker_y != null)) {
+		G.log('edge ' + id + ': stepmarker given, but edge is located only in one level.');
 		return;
 	}
 
 	if (v1_stepmarker_x != null
-			&& (isNaN(v1_stepmarker_x) || v1_stepmarker_x < 0 || v1_stepmarker_x > MZP.backup_width[vertex1
-					.getSvgid()])) {
-		G.log('edge ' + id + ': stepmarker1: x-value ' + v1_stepmarker_x
-				+ ' is not valid.');
+			&& (isNaN(v1_stepmarker_x) || v1_stepmarker_x < 0 || v1_stepmarker_x > MZP.backup_width[vertex1.getSvgid()])) {
+		G.log('edge ' + id + ': stepmarker1: x-value ' + v1_stepmarker_x + ' is not valid.');
 		return;
 	}
 
 	if (v1_stepmarker_y != null
-			&& (isNaN(v1_stepmarker_y) || v1_stepmarker_y < 0 || v1_stepmarker_y > MZP.backup_height[vertex1
-					.getSvgid()])) {
-		G.log('edge ' + id + ': stepmarker1: y-value ' + v1_stepmarker_y
-				+ ' is not valid.');
+			&& (isNaN(v1_stepmarker_y) || v1_stepmarker_y < 0 || v1_stepmarker_y > MZP.backup_height[vertex1.getSvgid()])) {
+		G.log('edge ' + id + ': stepmarker1: y-value ' + v1_stepmarker_y + ' is not valid.');
 		return;
 	}
 
 	if (v2_stepmarker_x != null
-			&& (isNaN(v2_stepmarker_x) || v2_stepmarker_x < 0 || v2_stepmarker_x > MZP.backup_width[vertex2
-					.getSvgid()])) {
-		G.log('edge ' + id + ': stepmarker2: x-value ' + v2_stepmarker_x
-				+ ' is not valid.');
+			&& (isNaN(v2_stepmarker_x) || v2_stepmarker_x < 0 || v2_stepmarker_x > MZP.backup_width[vertex2.getSvgid()])) {
+		G.log('edge ' + id + ': stepmarker2: x-value ' + v2_stepmarker_x + ' is not valid.');
 		return;
 	}
 
 	if (v2_stepmarker_y != null
-			&& (isNaN(v2_stepmarker_y) || v2_stepmarker_y < 0 || v2_stepmarker_y > MZP.backup_height[vertex2
-					.getSvgid()])) {
-		G.log('edge ' + id + ': stepmarker1: y-value ' + v2_stepmarker_y
-				+ ' is not valid.');
+			&& (isNaN(v2_stepmarker_y) || v2_stepmarker_y < 0 || v2_stepmarker_y > MZP.backup_height[vertex2.getSvgid()])) {
+		G.log('edge ' + id + ': stepmarker1: y-value ' + v2_stepmarker_y + ' is not valid.');
 		return;
 	}
 
-	if (v1_stepmarker_x == null && v1_stepmarker_y != null
-			|| v1_stepmarker_x != null && v1_stepmarker_y == null) {
+	if (v1_stepmarker_x == null && v1_stepmarker_y != null || v1_stepmarker_x != null && v1_stepmarker_y == null) {
 		G.log('edge ' + id + ': stepmarker1: only one coordinate given.');
 		return;
 	}
 
-	if (v2_stepmarker_x == null && v2_stepmarker_y != null
-			|| v2_stepmarker_x != null && v2_stepmarker_y == null) {
+	if (v2_stepmarker_x == null && v2_stepmarker_y != null || v2_stepmarker_x != null && v2_stepmarker_y == null) {
 		G.log('edge ' + id + ': stepmarker2: only one coordinate given.');
 		return;
 	}
 
-	if (distanceFactor != null
-			&& (isNaN(distanceFactor) || distanceFactor <= 0 || distanceFactor > 9999)) {
-		G.log('edge ' + id + ': distance factor ' + distanceFactor
-				+ ' is not a valid distance factor.');
+	if (distanceFactor != null && (isNaN(distanceFactor) || distanceFactor <= 0 || distanceFactor > 9999)) {
+		G.log('edge ' + id + ': distance factor ' + distanceFactor + ' is not a valid distance factor.');
 		return;
 	}
 
 	if (disabledAdapted != 'true' && disabledAdapted != 'false') {
-		G.log('edge ' + id + ': disabled adapted value ' + disabledAdapted
-				+ ' is not valid.');
+		G.log('edge ' + id + ': disabled adapted value ' + disabledAdapted + ' is not valid.');
 		return;
 	}
 
 	var edgelist = vertex1.getEdgelist();
 	for ( var j = 0, e = edgelist[j]; j < edgelist.length; e = edgelist[++j]) {
 		if (e.getVertex1().getId() == v2_id || e.getVertex2().getId() == v2_id) {
-			G.log('edge ' + id + ': find allready edge ' + j + ' from point '
-					+ v1_id + ' to point ' + v2_id + '.');
+			G.log('edge ' + id + ': find allready edge ' + j + ' from point ' + v1_id + ' to point ' + v2_id + '.');
 			return;
 		}
 	}
@@ -1052,8 +1097,7 @@ function import_xml_edge(xmlDom) {
 	if (v2_reachable == 'false')
 		edge_toPid2_bool = false;
 
-	var edge = new Edge(id, vertex1, vertex2, edge_toPid1_bool,
-			edge_toPid2_bool);
+	var edge = new Edge(id, vertex1, vertex2, edge_toPid1_bool, edge_toPid2_bool);
 	if (distanceFactor != null) {
 		edge.setDistanceFactor(distanceFactor);
 	}
@@ -1067,10 +1111,8 @@ function import_xml_edge(xmlDom) {
 	}
 
 	if (v1_stepmarker_x != null)
-		edge.getVertex1_stepmarker().setPosition(v1_stepmarker_x,
-				v1_stepmarker_y);
+		edge.getVertex1_stepmarker().setPosition(v1_stepmarker_x, v1_stepmarker_y);
 
 	if (v2_stepmarker_x != null)
-		edge.getVertex2_stepmarker().setPosition(v2_stepmarker_x,
-				v2_stepmarker_y);
+		edge.getVertex2_stepmarker().setPosition(v2_stepmarker_x, v2_stepmarker_y);
 }

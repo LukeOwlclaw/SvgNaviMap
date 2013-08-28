@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<body class="body" onload="onload()">
+
+<input type=button onClick="load()" value="load div">
+
+<input type=button onClick="loadembed()" value="load embed">
+
+<input type=button onClick="loadonly()" value="load only">
+ 
+<!-- <embed class="c" src="data/minimal1.svg" type="image/svg+xml" /> -->
+
+<input type=button onClick="time()" value="time">
+
+<input type=button onClick="flushlog()" value="flushlog">
+
+
+<div class="d" ><div/>
+
+<div class="log" ><div/>
+
+<embed class="e" />
+
+
+
+
+
+<script>
+
+svgfile =  ("data/svg_gzip_test/compuserver_msn_Ford_Focus.svg");
+svgfile =  ("data/minimal2.svg");
+svgfile =  ("data/svg_gzip_test/A_large_blank_world_map_with_oceans_marked_in_blue.svg");
+svgfile =  ("data/svg_gzip_test/onload.svg");
+svgfile =  ("data/svg_gzip_test/juanmontoya_lingerie.svg");
+svgfile =  ("data/svg_gzip_test/car.svg");
+svgfile =  ("data/airport_level0_fullsvg_big.svg");
+svgfile = "data/airport_level1_fullsvg_big.svg";
+
+var timeCache = {};
+var logArray = [];
+
+var flushlog= function () {
+  for (var i = 0; i < logArray.length; i++) {
+    e = logArray[i];
+    log(e);
+  }
+}
+
+var onload = function () {
+  
+  log_div = document.getElementsByClassName("log")[0];
+  
+    console.log = function(e){
+        logArray.push(e);
+        //log(e);
+    }
+    
+    
+    console.time = function(key){
+        timeCache[key] = Date.now();
+        
+    }
+    console.timeEnd = function(key){
+    
+      if(timeCache[key])
+        console.log(key + ": " + (Date.now()-timeCache[key]) + "ms");
+      else
+        console.log("invalid key " + key);
+    }
+    
+    
+
+  body = document.getElementsByClassName("body")[0];
+  
+  window.addEventListener("webkitAfterPaint", log, true);
+}
+
+function log(e){ 
+  log_div.innerHTML += e + "<br>";
+}
+
+
+var loadonly = function() {
+
+
+  asyncXMLRequest = new XMLHttpRequest();
+  asyncXMLRequest.open('GET', svgfile, true);
+  asyncXMLRequest.setRequestHeader("Cache-Control", "no-cache");
+  asyncXMLRequest.onreadystatechange = function() {
+    if (this.readyState == 2) { //receiving headers.
+      console.timeEnd("received first byte");
+    }
+    if (this.readyState == 4) {
+    console.timeEnd("download complete");
+    }
+  }
+  console.time("download complete");
+  console.time("received first byte");
+  asyncXMLRequest.send();
+}
+
+var loadembed = function() {
+
+  e = document.getElementsByClassName("e")[0];
+  
+  e.onload = function() {
+    console.timeEnd("loadembed onload");
+  }
+
+  console.time("world");
+  console.time("loadembed onload");
+  console.time("showembed");
+  console.time('loadsvg')
+
+  e.src = svgfile;
+  
+  //force body to update
+  body.style.display = 'none';
+  body.offsetHeight;
+  body.style.display = 'block';
+  
+  //console.timeEnd("loadembed");
+}
+
+var load = function() {
+
+
+
+ e = document.getElementsByClassName("c")[0];
+d = document.getElementsByClassName("d")[0];
+/*
+if(e.getSVGDocument)
+{
+  console.log(e.getSVGDocument());
+  console.log(e.getSVGDocument().getElementsByTagName('svg')[0]);
+}
+  
+ svgstr = '<svg xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" /></svg>';
+svgstr2 = '<svg xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="20"/></svg>'
+e.innerHTML = svgstr;
+
+
+var now = Date.now();
+ doc = new DOMParser().parseFromString(
+   svgstr2,
+   'image/svg+xml');
+
+d.appendChild(doc.childNodes[0])
+
+console.log(Date.now() - now );*/
+
+
+asyncXMLRequest = new XMLHttpRequest();
+	asyncXMLRequest.open('GET', svgfile);
+  
+  
+  asyncXMLRequest.setRequestHeader("Cache-Control", "no-cache");
+  
+  state3 = false;
+  asyncXMLRequest.onload = function() {
+          //console.log("asyncXMLRequest.onload: " + (Date.now()));
+          //console.timeEnd("state4");
+        };
+        
+  var lastThree = null;
+	asyncXMLRequest.onreadystatechange = function() {
+    
+    if (this.readyState == 0) {
+    console.log("0");
+    }
+		else if (this.readyState == 1) {
+    console.log("1");
+    }
+		else if (this.readyState == 2) {
+    //console.timeEnd("until2");
+    console.time("state2");
+    
+    console.timeEnd("until first byte");
+    
+    //console.log("This is state 2");
+    }
+		else if (this.readyState == 3) {
+    lastThree = Date.now();
+    if(state3) return;
+    state3 = true;
+    //console.timeEnd("state2");
+    
+    //console.log("This is state 3: " + Date.now());
+    
+    }
+		else if (this.readyState == 4) {
+    //console.timeEnd("state3");
+    
+    //console.log("lastThree till 4: " + (Date.now() - lastThree ));
+    console.timeEnd("download complete");
+    //console.time("state4");
+    //console.time("state4inner");
+    
+			if (this.responseXML != null) {
+      
+        //console.log("Download: " + (Date.now() - startdownload ));
+        
+        svgstr3 = this.responseXML.getElementsByTagName('svg')[0];
+        
+        svgstr3.onload= function() {
+          console.log("svgstr3.onload: " + (Date.now()));
+        };
+        
+        d = document.getElementsByClassName("d")[0];
+        
+        
+        /*var now = Date.now();
+        doc = new DOMParser().parseFromString(
+         svgstr3,
+         'image/svg+xml');*/
+
+      
+      d.onload= function() {
+          console.log("d.onload: " + (Date.now()));
+        };
+        
+        
+        d.onsvgload = function() {
+          alert("d.onsvgload");
+        }
+
+        d.addEventListener('SVGLoad', function() {
+          alert("d.svgload callback");
+        }, false)
+
+        
+        d.appendChild(svgstr3);
+        
+        
+        //console.timeEnd("state4inner");
+
+        //console.log("Parsing: "+ (Date.now() - asyncXMLRequest.now ));
+        console.time("parse");
+      }
+		}
+	};
+  
+  //force re-rendering (not sure if this works; source: http://stackoverflow.com/questions/4721834/measuring-reflow-and-paint-times-in-webkit)
+  //document.body.offsetHeight;
+  //document.body.style.diplay="none";
+  //body.style.display = 'none';
+  //console.log("dispaly none");
+  
+  startdownload= Date.now();
+  console.time("download complete");
+  console.time("until2");
+  console.time("until first byte");
+  console.time('loadsvg')
+  console.time("world");
+	asyncXMLRequest.send();
+  //console.log("Download: " + (Date.now() - startdownload ));
+  
+
+//alert(document.getElementsByTagName('embed'));
+
+  
+}
+
+SvgReady = function(){
+   console.timeEnd('loadsvg')
+};
+
+time = function() {
+
+  //force re-rendering (not sure if this works; source: http://stackoverflow.com/questions/4721834/measuring-reflow-and-paint-times-in-webkit)
+  //document.body.offsetHeight;
+  
+  
+  console.time("render");
+  
+  body.style.display = 'none';
+  body.offsetHeight; //55
+  //console.log("dispaly none");
+  
+  body.style.display = 'block';
+  //body.offsetHeight; // 1
+  
+  console.timeEnd("render");
+}
+  
+  
+
+</script>
+
+</body>
+</html>
