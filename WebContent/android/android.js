@@ -9,7 +9,7 @@ function init_custom() {
 	log_time.push(Date.now());
 
 	showButtonsForSvg = false;
-	load_from_server_xml(overlay_init_completed, "minimal-data.xml");
+	load_from_server_xml(overlay_init_completed, G.getXmlFilename());
 	
 }
 
@@ -19,7 +19,7 @@ function overlay_init_completed() {
 	log_time.push(Date.now());
 
 	G.log("overlay_init_completed");
-
+/*
 	var a = new Array();
 	var length = log_time.length;
 	for ( var i = 1; i < length; i++) {
@@ -34,7 +34,7 @@ function overlay_init_completed() {
 		_div.appendChild(_text);
 		a.push(_div);
 				
-	}
+	}*/
 	
 	var length = a.length;
 	for ( var i = length-1; i >= 0; i--) {

@@ -541,7 +541,7 @@ function import_xml_gpsmarker(xmlDom) {
 	var gpsmarkerarray = Gpsmarker_container.getAll();
 	for ( var i = 0, g = gpsmarkerarray[i]; i < gpsmarkerarray.length; g = gpsmarkerarray[++i]) {
 		// only check in same level
-		if (g.getSvgid() != svgid)
+		if (g == null || g.getSvgid() != svgid)
 			continue;
 
 		var distance = parseInt(Math.sqrt(Math.pow(g.getX() - x_pos, 2)
