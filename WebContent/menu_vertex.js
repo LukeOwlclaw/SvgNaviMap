@@ -9,61 +9,56 @@ function vertex_open() {
 		G.svg_element[i].addEventListener('mousemove', vertex_mousemove, false);
 		// handle clicking
 		G.svg_element[i].addEventListener('click', vertex_click, false);
-    // handle keys
+		// handle keys
 		G.svg_element[i].addEventListener('keydown', vertex_keypress, false);
 	}
-  addEventListener('keydown', vertex_keypress, false);
+	addEventListener('keydown', vertex_keypress, false);
 }
 
 function vertex_keypress(event) {
-  
-  switch(event.keyCode)
-  {
-    case KeyEvent.DOM_VK_RETURN : 
-              vertex_save();
-              break;
-    case KeyEvent.DOM_VK_ESCAPE :
-              if(Vertex_current != null)
-                vertex_deselect();
-              else
-                vertex_close();
-              break;
-    case KeyEvent.DOM_VK_M : 
-              if(document.getElementById('vertex_move_on').style.display == 'none')
-                vertex_move_off();
-              else
-                vertex_move_on();
-              break;
-    case KeyEvent.DOM_VK_P : 
-              document.getElementById('vertex_poi').checked = !document.getElementById('vertex_poi').checked;
-              vertex_color();
-              break;
-    case KeyEvent.DOM_VK_DELETE :
-              vertex_delete();
-              break;
-    default:
-              break;
-  }
-}
 
+	switch (event.keyCode) {
+	case KeyEvent.DOM_VK_RETURN:
+		vertex_save();
+		break;
+	case KeyEvent.DOM_VK_ESCAPE:
+		if (Vertex_current != null)
+			vertex_deselect();
+		else
+			vertex_close();
+		break;
+	case KeyEvent.DOM_VK_M:
+		if (document.getElementById('vertex_move_on').style.display == 'none')
+			vertex_move_off();
+		else
+			vertex_move_on();
+		break;
+	case KeyEvent.DOM_VK_P:
+		document.getElementById('vertex_poi').checked = !document.getElementById('vertex_poi').checked;
+		vertex_color();
+		break;
+	case KeyEvent.DOM_VK_DELETE:
+		vertex_delete();
+		break;
+	default:
+		break;
+	}
+}
 
 function vertex_mousemove(evt) {
 	"use strict";
 	var id = G.getSvgId(evt);
 
 	var zoom = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
-	var zoom2 = G.svg_element[id].viewBox.baseVal.width
-			/ G.svg_element[id].widthUnzoomed;
+	var zoom2 = G.svg_element[id].viewBox.baseVal.width / G.svg_element[id].widthUnzoomed;
 	zoom = zoom / zoom2;
 
 	var offsetX = G.svg_element[id].viewBox.baseVal.x;
 	var offsetY = G.svg_element[id].viewBox.baseVal.y;
 
-	G.debug("X=" + ((evt.clientX / zoom) - offsetX) + " Y="
-			+ ((evt.clientY / zoom) - offsetY) + " zoom=" + zoom
-			+ ';<br> X-org= ' + MZP.translateX(evt) + ' Y-org= '
-			+ MZP.translateY(evt) + '<br>svg-id: ' + id + '<br>vertex-id: '
-			+ Vertex_hoover);
+	G.debug("X=" + ((evt.clientX / zoom) - offsetX) + " Y=" + ((evt.clientY / zoom) - offsetY) + " zoom=" + zoom
+			+ ';<br> X-org= ' + MZP.translateX(evt) + ' Y-org= ' + MZP.translateY(evt) + '<br>svg-id: ' + id
+			+ '<br>vertex-id: ' + Vertex_hoover);
 }
 
 function vertex_click(evt) {
@@ -81,8 +76,7 @@ function vertex_click(evt) {
 			if (v.getSvgid() != svgid)
 				continue;
 
-			var distance = parseInt(Math.sqrt(Math.pow(v.getX() - posX, 2)
-					+ Math.pow(v.getY() - posY, 2)), 10);
+			var distance = parseInt(Math.sqrt(Math.pow(v.getX() - posX, 2) + Math.pow(v.getY() - posY, 2)), 10);
 			if (distance < G.vertex_minDistance) {
 				alert('This site is too near to an existing vertex!');
 				Vertex_clickedID = null;
@@ -120,8 +114,7 @@ function vertex_click(evt) {
 				if (v.getId() == Vertex_current.getId())
 					continue;
 
-				var distance = parseInt(Math.sqrt(Math.pow(v.getX() - posX, 2)
-						+ Math.pow(v.getY() - posY, 2)), 10);
+				var distance = parseInt(Math.sqrt(Math.pow(v.getX() - posX, 2) + Math.pow(v.getY() - posY, 2)), 10);
 				if (distance < G.vertex_minDistance) {
 					alert('This site is too near to an existing vertex!');
 					Vertex_clickedID = null;
@@ -141,8 +134,8 @@ function vertex_click(evt) {
 
 function vertex_save() {
 	"use strict";
-  if(Vertex_current == null)
-    return;
+	if (Vertex_current == null)
+		return;
 	Vertex_current.setShortDesc(document.getElementById('vertex_sdesc').value);
 	Vertex_current.setLongDesc(document.getElementById('vertex_ldesc').value);
 	Vertex_current.setPoi(document.getElementById('vertex_poi').checked);
@@ -155,13 +148,10 @@ function vertex_select(vertex) {
 	document.getElementById('vertex_default').style.display = 'none';
 	document.getElementById('vertex_details').style.display = 'block';
 	document.getElementById('vertex_poi').checked = Vertex_current.getPoi();
-	document.getElementById('vertex_ldesc').value = Vertex_current
-			.getLongDesc();
-	document.getElementById('vertex_sdesc').value = Vertex_current
-			.getShortDesc();
+	document.getElementById('vertex_ldesc').value = Vertex_current.getLongDesc();
+	document.getElementById('vertex_sdesc').value = Vertex_current.getShortDesc();
 	if (Vertex_current.getCategory() != null) {
-		document.getElementById('vertex_category').innerHTML = 'Category: '
-				+ Vertex_current.getCategory().getName();
+		document.getElementById('vertex_category').innerHTML = 'Category: ' + Vertex_current.getCategory().getName();
 		document.getElementById('vertex_delete_category').style.display = 'block';
 	} else {
 		document.getElementById('vertex_category').innerHTML = 'Category: no';
@@ -176,8 +166,7 @@ function vertex_select(vertex) {
 	if (categorylist.length != 0) {
 		var htmlstring = "";
 		for ( var i = 0, c = categorylist[i]; i < categorylist.length; c = categorylist[++i]) {
-			htmlstring += '<option value=\'' + c.getId() + '\'>' + c.getName()
-					+ '</option>';
+			htmlstring += '<option value=\'' + c.getId() + '\'>' + c.getName() + '</option>';
 		}
 
 		p.innerHTML = '<form id=\'vertex_category_form\'><select name=\'category\' size=\'1\' onchange=\'vertex_setCategory2(this.form.category.options[this.form.category.selectedIndex].value)\'>'
@@ -202,8 +191,8 @@ function vertex_deselect() {
 
 function vertex_delete() {
 	"use strict";
-  if(Vertex_current == null)
-    return;
+	if (Vertex_current == null)
+		return;
 	Vertex_current.remove();
 	Vertex_current = null;
 	vertex_deselect();
@@ -213,14 +202,13 @@ function vertex_close() {
 	"use strict";
 	vertex_deselect();
 	G.menu_current = null;
-  Vertex_current = null;
+	Vertex_current = null;
 
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		G.svg_element[i].removeEventListener('mousemove', vertex_mousemove,
-				false);
+		G.svg_element[i].removeEventListener('mousemove', vertex_mousemove, false);
 		G.svg_element[i].removeEventListener('click', vertex_click, false);
-    removeEventListener('keydown', vertex_keypress, false);
-    G.svg_element[i].removeEventListener('keydown', vertex_keypress, false);
+		removeEventListener('keydown', vertex_keypress, false);
+		G.svg_element[i].removeEventListener('keydown', vertex_keypress, false);
 	}
 
 	document.getElementById('vertex_default').style.display = 'none';
@@ -264,8 +252,7 @@ function vertex_setCategory2(categoryid) {
 	var category = Category_container.get(categoryid);
 
 	Vertex_current.setCategory(category);
-	document.getElementById('vertex_category').innerHTML = 'Category: '
-			+ Vertex_current.getCategory().getName();
+	document.getElementById('vertex_category').innerHTML = 'Category: ' + Vertex_current.getCategory().getName();
 
 	document.getElementById('vertex_delete_category').style.display = 'block';
 }

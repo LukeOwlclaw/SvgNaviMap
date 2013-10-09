@@ -14,7 +14,35 @@ function edge_open() {
 	// handle clicking
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_document[i].addEventListener('click', edge_click, false);
+		// handle keys
+		G.svg_element[i].addEventListener('keydown', edge_keypress, false);
 	}
+	addEventListener('keydown', edge_keypress, false);
+}
+
+function edge_keypress(event) {
+
+	switch (event.keyCode) {
+	case KeyEvent.DOM_VK_RETURN:
+		if (Edge_current != null)
+			edge_save();
+		break;
+	case KeyEvent.DOM_VK_ESCAPE:
+		if (document.getElementById('edge_add').style.display != 'none')
+			edge_resetAdd();
+		else if (Edge_current == null)
+			edge_close();
+		else if (Edge_current != null)
+			edge_deselect();
+		break;
+	case KeyEvent.DOM_VK_DELETE:
+		if (Edge_current != null)
+			edge_delete();
+		break;
+	default:
+		break;
+	}
+
 }
 
 function edge_click(evt) {
@@ -46,8 +74,7 @@ function edge_click(evt) {
 			// test if there is already an edge between this vertices
 			var edgelist = Edge_firstvertex.getEdgelist();
 			for ( var i = 0, e = edgelist[i]; i < edgelist.length; e = edgelist[++i]) {
-				if (e.getVertex1().getId() == Vertex_clickedID
-						|| e.getVertex2().getId() == Vertex_clickedID) {
+				if (e.getVertex1().getId() == Vertex_clickedID || e.getVertex2().getId() == Vertex_clickedID) {
 					alert('It exists allready an edge between this vertices!');
 					Edge_clickedID = null;
 					Vertex_clickedID = null;
@@ -56,8 +83,7 @@ function edge_click(evt) {
 			}
 
 			var edge_id = Edge_container.getUnusedId();
-			var edge = new Edge(edge_id, Edge_firstvertex, Vertex_container
-					.get(Vertex_clickedID), true, true);
+			var edge = new Edge(edge_id, Edge_firstvertex, Vertex_container.get(Vertex_clickedID), true, true);
 			// unmark first vertex and second vertex
 			Edge_firstvertex.paint();
 			Vertex_container.get(Vertex_clickedID).paint();
@@ -94,35 +120,30 @@ function edge_movemarker_mousedown(evt) {
 	"use strict";
 	// G.log('down');
 	if (Stepmarker_clickedID != null) {
-		G.svg_element[Edge_current.getVertex1().getSvgid()]
-				.removeEventListener('mousemove', MZP.mouseMove);
-		G.svg_element[Edge_current.getVertex2().getSvgid()]
-				.removeEventListener('mousemove', MZP.mouseMove);
-		G.svg_document[Edge_current.getVertex1().getSvgid()].addEventListener(
-				'mousemove', edge_movemarker_mousemove, false);
-		G.svg_document[Edge_current.getVertex2().getSvgid()].addEventListener(
-				'mousemove', edge_movemarker_mousemove, false);
+		G.svg_element[Edge_current.getVertex1().getSvgid()].removeEventListener('mousemove', MZP.mouseMove);
+		G.svg_element[Edge_current.getVertex2().getSvgid()].removeEventListener('mousemove', MZP.mouseMove);
+		G.svg_document[Edge_current.getVertex1().getSvgid()].addEventListener('mousemove', edge_movemarker_mousemove,
+				false);
+		G.svg_document[Edge_current.getVertex2().getSvgid()].addEventListener('mousemove', edge_movemarker_mousemove,
+				false);
 	}
 }
 
 function edge_movemarker_mousemove(evt) {
 	"use strict";
 	// G.log('move');
-	Stepmarker_container.get(Stepmarker_clickedID).setPosition(
-			MZP.translateX(evt), MZP.translateY(evt));
+	Stepmarker_container.get(Stepmarker_clickedID).setPosition(MZP.translateX(evt), MZP.translateY(evt));
 }
 
 function edge_movemarker_mouseup(evt) {
 	"use strict";
 	// G.log('up');
-	G.svg_document[Edge_current.getVertex1().getSvgid()].removeEventListener(
-			'mousemove', edge_movemarker_mousemove, false);
-	G.svg_document[Edge_current.getVertex2().getSvgid()].removeEventListener(
-			'mousemove', edge_movemarker_mousemove, false);
-	G.svg_element[Edge_current.getVertex1().getSvgid()].addEventListener(
-			'mousemove', MZP.mouseMove);
-	G.svg_element[Edge_current.getVertex2().getSvgid()].addEventListener(
-			'mousemove', MZP.mouseMove);
+	G.svg_document[Edge_current.getVertex1().getSvgid()].removeEventListener('mousemove', edge_movemarker_mousemove,
+			false);
+	G.svg_document[Edge_current.getVertex2().getSvgid()].removeEventListener('mousemove', edge_movemarker_mousemove,
+			false);
+	G.svg_element[Edge_current.getVertex1().getSvgid()].addEventListener('mousemove', MZP.mouseMove);
+	G.svg_element[Edge_current.getVertex2().getSvgid()].addEventListener('mousemove', MZP.mouseMove);
 	Stepmarker_clickedID = null;
 }
 
@@ -139,14 +160,10 @@ function edge_select(edge) {
 	}
 	document.getElementById('edge_default').style.display = 'none';
 	document.getElementById('edge_details').style.display = 'block';
-	document.getElementById('edge_route1').checked = edge
-			.getVertex1_reachable();
-	document.getElementById('edge_route2').checked = edge
-			.getVertex2_reachable();
-	document.getElementById('edge_distancefactor').value = edge
-			.getDistanceFactor();
-	document.getElementById('edge_disabledAdapted').checked = edge
-			.getDisabledAdapted();
+	document.getElementById('edge_route1').checked = edge.getVertex1_reachable();
+	document.getElementById('edge_route2').checked = edge.getVertex2_reachable();
+	document.getElementById('edge_distancefactor').value = edge.getDistanceFactor();
+	document.getElementById('edge_disabledAdapted').checked = edge.getDisabledAdapted();
 	edge.paint_active();
 
 	// handle clicking
@@ -155,14 +172,12 @@ function edge_select(edge) {
 	}
 
 	// activate stepmarker moving
-	G.svg_document[Edge_current.getVertex1().getSvgid()].addEventListener(
-			'mousedown', edge_movemarker_mousedown, false);
-	G.svg_document[Edge_current.getVertex1().getSvgid()].addEventListener(
-			'mouseup', edge_movemarker_mouseup, false);
-	G.svg_document[Edge_current.getVertex2().getSvgid()].addEventListener(
-			'mousedown', edge_movemarker_mousedown, false);
-	G.svg_document[Edge_current.getVertex2().getSvgid()].addEventListener(
-			'mouseup', edge_movemarker_mouseup, false);
+	G.svg_document[Edge_current.getVertex1().getSvgid()]
+			.addEventListener('mousedown', edge_movemarker_mousedown, false);
+	G.svg_document[Edge_current.getVertex1().getSvgid()].addEventListener('mouseup', edge_movemarker_mouseup, false);
+	G.svg_document[Edge_current.getVertex2().getSvgid()]
+			.addEventListener('mousedown', edge_movemarker_mousedown, false);
+	G.svg_document[Edge_current.getVertex2().getSvgid()].addEventListener('mouseup', edge_movemarker_mouseup, false);
 }
 
 function edge_close() {
@@ -182,8 +197,7 @@ function edge_close() {
 function edge_save() {
 	"use strict";
 	// do not save edge, if no route enabled
-	if (!document.getElementById('edge_route1').checked
-			&& !document.getElementById('edge_route2').checked) {
+	if (!document.getElementById('edge_route1').checked && !document.getElementById('edge_route2').checked) {
 		alert('You must enabled at least one route for a edge!');
 		return;
 	}
@@ -193,42 +207,36 @@ function edge_save() {
 	Stepmarker_backup2_x = null;
 	Stepmarker_backup2_y = null;
 
-	Edge_current
-			.setVertex1_reachable(document.getElementById('edge_route1').checked);
-	Edge_current
-			.setVertex2_reachable(document.getElementById('edge_route2').checked);
+	Edge_current.setVertex1_reachable(document.getElementById('edge_route1').checked);
+	Edge_current.setVertex2_reachable(document.getElementById('edge_route2').checked);
 
 	var distanceFactor = document.getElementById('edge_distancefactor').value;
 	distanceFactor = parseFloat(distanceFactor);
 	if (!isNaN(distanceFactor)) {
 		Edge_current.setDistanceFactor(distanceFactor);
 	}
-	Edge_current.setDisabledAdapted(document
-			.getElementById('edge_disabledAdapted').checked);
+	Edge_current.setDisabledAdapted(document.getElementById('edge_disabledAdapted').checked);
 	edge_deselect();
 }
 
 function edge_deselect() {
 	"use strict";
 	if (Stepmarker_backup1_x != null && Stepmarker_backup1_y != null) {
-    if(Edge_current != null)
-      Edge_current.getVertex1_stepmarker().setPosition(Stepmarker_backup1_x,
-          Stepmarker_backup1_y);
+		if (Edge_current != null)
+			Edge_current.getVertex1_stepmarker().setPosition(Stepmarker_backup1_x, Stepmarker_backup1_y);
 		Stepmarker_backup1_x = null;
 		Stepmarker_backup1_y = null;
 
 	}
 	if (Stepmarker_backup2_x != null && Stepmarker_backup2_y != null) {
-    if(Edge_current != null)
-      Edge_current.getVertex2_stepmarker().setPosition(Stepmarker_backup2_x,
-          Stepmarker_backup2_y);
+		if (Edge_current != null)
+			Edge_current.getVertex2_stepmarker().setPosition(Stepmarker_backup2_x, Stepmarker_backup2_y);
 		Stepmarker_backup2_x = null;
 		Stepmarker_backup2_y = null;
 	}
 	if (Edge_current != null) {
 		Edge_current.paint();
-		Edge_current.drawMarkers(Edge_current.getVertex1_reachable(),
-				Edge_current.getVertex2_reachable());
+		Edge_current.drawMarkers(Edge_current.getVertex1_reachable(), Edge_current.getVertex2_reachable());
 		Edge_current.drawDisabledAdapted(Edge_current.getDisabledAdapted());
 	}
 	Edge_current = null;
@@ -239,12 +247,9 @@ function edge_deselect() {
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		G.svg_document[i].addEventListener('click', edge_click, false);
 		// activate stepmarker moving
-		G.svg_document[i].removeEventListener('mousedown',
-				edge_movemarker_mousedown, false);
-		G.svg_document[i].removeEventListener('mousemove',
-				edge_movemarker_mousemove, false);
-		G.svg_document[i].removeEventListener('mouseup',
-				edge_movemarker_mouseup, false);
+		G.svg_document[i].removeEventListener('mousedown', edge_movemarker_mousedown, false);
+		G.svg_document[i].removeEventListener('mousemove', edge_movemarker_mousemove, false);
+		G.svg_document[i].removeEventListener('mouseup', edge_movemarker_mouseup, false);
 	}
 }
 function edge_delete() {
@@ -270,6 +275,5 @@ function edge_resetAdd() {
 
 function edge_changeDisabledAdapted() {
 	"use strict";
-	Edge_current.drawDisabledAdapted(document
-			.getElementById('edge_disabledAdapted').checked);
+	Edge_current.drawDisabledAdapted(document.getElementById('edge_disabledAdapted').checked);
 }

@@ -11,10 +11,10 @@ G.global = 'This is a global variable accessible from everywhere via G.global';
 
 // Holds XMLs of all SvgNaviMap projects available. These are displayed in
 // editor's view.
-var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
+var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml", "empty_squares.xml", "stoneridge.xml" ];
 
 // default selected SvgNaviMap project
-var selectedMap = maps[0];
+var selectedMap = maps[4];
 
 G.getAvailableXmlFiles = function() {
 	return maps;

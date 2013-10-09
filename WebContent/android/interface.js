@@ -188,7 +188,7 @@ Interface.position_focus = function() {
 	}
 };
 
-Interface.levelup = function() {
+Interface.leveldown = function() {
 	"use strict";
 	var id = Interface.currentsvg - 1;
 	if (id >= 0) {
@@ -197,7 +197,7 @@ Interface.levelup = function() {
 	}
 };
 
-Interface.leveldown = function() {
+Interface.levelup = function() {
 	"use strict";
 	var id = Interface.currentsvg + 1;
 	if (id < G.svg_element.length) {
@@ -257,9 +257,9 @@ Interface.demo = function() {
 		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
 	}
 	// set demo position
-	Interface.position_setSVG(680, 408, 0);
+	Interface.position_setID(0);
 	// set demo destination
-	Interface.route(27);
+	Interface.route(7);
 };
 
 Interface.route_refresh = function() {
