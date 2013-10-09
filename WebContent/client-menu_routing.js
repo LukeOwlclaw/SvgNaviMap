@@ -54,16 +54,16 @@ function routing_click(evt) {
 		return;
 	// TODO match aff areas
 
-	// hide vertices
-	for ( var i = 0; i < G.svg_element.length; i++) {
-		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
-	}
-
 	Routing_destination = Vertex_container.get(Vertex_clickedID);
 	Vertex_clickedID = null;
 	Routing_destination.paint_destination();
 
 	routing_refresh();
+
+	// hide vertices
+	for ( var i = 0; i < G.svg_element.length; i++) {
+		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
+	}
 }
 
 function routing_refresh_menu() {

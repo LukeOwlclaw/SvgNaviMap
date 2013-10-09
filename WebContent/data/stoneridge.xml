@@ -4620,6 +4620,14 @@
 <vertex2-reachable>true</vertex2-reachable>
 <disabledAdapted>true</disabledAdapted>
 </edge>
+<edge>
+<id>287</id>
+<vertex1>32</vertex1>
+<vertex1-reachable>true</vertex1-reachable>
+<vertex2>189</vertex2>
+<vertex2-reachable>true</vertex2-reachable>
+<disabledAdapted>true</disabledAdapted>
+</edge>
 </edges>
 </svgmap-data>
 <!-- EOF -->
