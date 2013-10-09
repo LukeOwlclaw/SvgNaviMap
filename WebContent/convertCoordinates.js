@@ -1,8 +1,7 @@
 function convertGPS_SVG(latitude, longitude, height) {
 	"use strict";
 	// test for array given
-	if (typeof (latitude) == "object" && longitude == undefined
-			&& height == undefined) {
+	if (typeof (latitude) == "object" && longitude == undefined && height == undefined) {
 		height = latitude[2];
 		longitude = latitude[1];
 		latitude = latitude[0];
@@ -17,9 +16,11 @@ function convertGPS_SVG(latitude, longitude, height) {
 	// erfassen.
 	// Wenn wificompass die gleiche Bilddatei, wie die Dibus-App nutzt, stimmen
 	// die Koordinaten überein. Es muss also nichts umgerechnet werden.
-	if (latitude < 53.4 || latitude > 53.7 || longitude < 9.9
-			|| longitude > 10.1)
+	if (latitude < 53.4 || latitude > 53.7 || longitude < 9.9 || longitude > 10.1) {
+		G
+				.log("Given parameters do not seem to be latitude and longitude. Use as SVG coordinate instead, using level 0.");
 		return [ longitude, latitude, 0 ];
+	}
 	// end: for testing
 
 	// G.log("convertGPS_SVG: lat, long, alt: " + latitude + ", " + longitude
@@ -48,8 +49,7 @@ function convertGPS_SVG(latitude, longitude, height) {
 	}
 
 	if (levelgpsmarkers.length < 2) {
-		G.log('not enough gps markers (' + levelgpsmarkers.length
-				+ ') in level ' + svgid);
+		G.log('not enough gps markers (' + levelgpsmarkers.length + ') in level ' + svgid);
 		return null;
 	}
 
@@ -57,10 +57,8 @@ function convertGPS_SVG(latitude, longitude, height) {
 	var gpsmarker_array = new Array();
 	var distance_array = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
-		var distance = Math.sqrt(Math.pow(g.getLatitude() - latitude, 2)
-				+ Math.pow(g.getLongitude() - longitude, 2));
-		var ret = insertGpsmarkerSortedDistance(gpsmarker_array,
-				distance_array, g, distance);
+		var distance = Math.sqrt(Math.pow(g.getLatitude() - latitude, 2) + Math.pow(g.getLongitude() - longitude, 2));
+		var ret = insertGpsmarkerSortedDistance(gpsmarker_array, distance_array, g, distance);
 		gpsmarker_array = ret[0];
 		distance_array = ret[1];
 	}
@@ -100,10 +98,9 @@ function convertGPS_SVG(latitude, longitude, height) {
 	// calc scale
 	var scalelist = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
-		var scaleGPS = Math.sqrt(Math.pow(g.getLatitude() - focusGPS_y, 2)
-				+ Math.pow(g.getLongitude() - focusGPS_x, 2));
-		var scaleSVG = Math.sqrt(Math.pow(g.getX() - focusSVG_x, 2)
-				+ Math.pow(g.getY() - focusSVG_y, 2));
+		var scaleGPS = Math
+				.sqrt(Math.pow(g.getLatitude() - focusGPS_y, 2) + Math.pow(g.getLongitude() - focusGPS_x, 2));
+		var scaleSVG = Math.sqrt(Math.pow(g.getX() - focusSVG_x, 2) + Math.pow(g.getY() - focusSVG_y, 2));
 
 		var scale = scaleSVG / scaleGPS;
 		// console.log("g id: " + g.getId() + " scale: " + scale);
@@ -114,12 +111,9 @@ function convertGPS_SVG(latitude, longitude, height) {
 	var alphalist = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
 		// console.log("g id: " + g.getId());
-		var alphaGPS = Math.atan2(g.getLatitude() - focusGPS_y, g
-				.getLongitude()
-				- focusGPS_x);
+		var alphaGPS = Math.atan2(g.getLatitude() - focusGPS_y, g.getLongitude() - focusGPS_x);
 
-		var alphaSVG = Math.atan2(-(g.getY() - focusSVG_y), g.getX()
-				- focusSVG_x);
+		var alphaSVG = Math.atan2(-(g.getY() - focusSVG_y), g.getX() - focusSVG_x);
 		// console.log('alphaSVG: ' + todeg(alphaSVG));
 		// console.log('alphaGPS: ' + todeg(alphaGPS));
 		var alpha = alphaSVG - alphaGPS;
@@ -155,8 +149,7 @@ function convertGPS_SVG(latitude, longitude, height) {
 	alpha /= alphalist.length;
 
 	// convert point
-	var scale_point = Math.sqrt(Math.pow(latitude - focusGPS_y, 2)
-			+ Math.pow(longitude - focusGPS_x, 2));
+	var scale_point = Math.sqrt(Math.pow(latitude - focusGPS_y, 2) + Math.pow(longitude - focusGPS_x, 2));
 	// console.log("scale_point: " + scale_point + ', invers: '
 	// + (1 / scale_point));
 	// console.log("scale: " + scale + ", scale inverted: " + (1 / scale));
@@ -164,10 +157,8 @@ function convertGPS_SVG(latitude, longitude, height) {
 	// console.log("alpha_point: " + todeg(alpha_point));
 	// console.log("alpha: " + todeg(alpha));
 
-	var x_point = focusSVG_x + scale * scale_point
-			* Math.cos(alpha_point + alpha);
-	var y_point = focusSVG_y - scale * scale_point
-			* Math.sin(alpha_point + alpha);
+	var x_point = focusSVG_x + scale * scale_point * Math.cos(alpha_point + alpha);
+	var y_point = focusSVG_y - scale * scale_point * Math.sin(alpha_point + alpha);
 
 	// G.log("convertGPS_SVG: return: " + x_point + ", " + y_point + ", " +
 	// svgid);
@@ -202,8 +193,7 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	}
 
 	if (levelgpsmarkers.length < 2) {
-		G.log('not enough gps markers (' + levelgpsmarkers.length
-				+ ') in level ' + svgid);
+		G.log('not enough gps markers (' + levelgpsmarkers.length + ') in level ' + svgid);
 		return null;
 	}
 
@@ -211,10 +201,8 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	var gpsmarker_array = new Array();
 	var distance_array = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
-		var distance = Math.sqrt(Math.pow(g.getX() - xPos, 2)
-				+ Math.pow(g.getY() - yPos, 2));
-		var ret = insertGpsmarkerSortedDistance(gpsmarker_array,
-				distance_array, g, distance);
+		var distance = Math.sqrt(Math.pow(g.getX() - xPos, 2) + Math.pow(g.getY() - yPos, 2));
+		var ret = insertGpsmarkerSortedDistance(gpsmarker_array, distance_array, g, distance);
 		gpsmarker_array = ret[0];
 		distance_array = ret[1];
 	}
@@ -254,10 +242,9 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	// calc scale
 	var scalelist = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
-		var scaleGPS = Math.sqrt(Math.pow(g.getLatitude() - focusGPS_y, 2)
-				+ Math.pow(g.getLongitude() - focusGPS_x, 2));
-		var scaleSVG = Math.sqrt(Math.pow(g.getX() - focusSVG_x, 2)
-				+ Math.pow(g.getY() - focusSVG_y, 2));
+		var scaleGPS = Math
+				.sqrt(Math.pow(g.getLatitude() - focusGPS_y, 2) + Math.pow(g.getLongitude() - focusGPS_x, 2));
+		var scaleSVG = Math.sqrt(Math.pow(g.getX() - focusSVG_x, 2) + Math.pow(g.getY() - focusSVG_y, 2));
 
 		var scale = scaleSVG / scaleGPS;
 		// console.log("g id: " + g.getId() + " scale: " + scale);
@@ -268,12 +255,9 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	var alphalist = new Array();
 	for ( var j = 0, g = levelgpsmarkers[j]; j < levelgpsmarkers.length; g = levelgpsmarkers[++j]) {
 		// console.log("g id: " + g.getId());
-		var alphaGPS = Math.atan2(g.getLatitude() - focusGPS_y, g
-				.getLongitude()
-				- focusGPS_x);
+		var alphaGPS = Math.atan2(g.getLatitude() - focusGPS_y, g.getLongitude() - focusGPS_x);
 
-		var alphaSVG = Math.atan2(-(g.getY() - focusSVG_y), g.getX()
-				- focusSVG_x);
+		var alphaSVG = Math.atan2(-(g.getY() - focusSVG_y), g.getX() - focusSVG_x);
 		// console.log('alphaSVG: ' + todeg(alphaSVG));
 		// console.log('alphaGPS: ' + todeg(alphaGPS));
 		var alpha = alphaSVG - alphaGPS;
@@ -309,8 +293,7 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	alpha /= alphalist.length;
 
 	// convert point
-	var scale_point = Math.sqrt(Math.pow(xPos - focusSVG_x, 2)
-			+ Math.pow(yPos - focusSVG_y, 2));
+	var scale_point = Math.sqrt(Math.pow(xPos - focusSVG_x, 2) + Math.pow(yPos - focusSVG_y, 2));
 	// console.log("scale_point: " + scale_point + ', invers: '
 	// + (1 / scale_point));
 	// console.log("scale: " + scale + ", scale inverted: " + (1 / scale));
@@ -318,10 +301,8 @@ function convertSVG_GPS(xPos, yPos, svgid) {
 	// console.log("alpha_point: " + todeg(alpha_point));
 	// console.log("alpha: " + todeg(alpha));
 
-	var longitude = focusGPS_x + (1 / scale) * scale_point
-			* Math.cos(alpha_point - alpha);
-	var latitude = focusGPS_y + (1 / scale) * scale_point
-			* Math.sin(alpha_point - alpha);
+	var longitude = focusGPS_x + (1 / scale) * scale_point * Math.cos(alpha_point - alpha);
+	var latitude = focusGPS_y + (1 / scale) * scale_point * Math.sin(alpha_point - alpha);
 
 	// G.log("convertSVG_GPS: return: " + latitude + ", " + longitude + ", "
 	// + height);
@@ -361,8 +342,7 @@ function todeg(alpha) {
 	return alpha * 180 / Math.PI;
 }
 
-function insertGpsmarkerSortedDistance(gpsmarker_array, distance_array,
-		gps_marker, distance) {
+function insertGpsmarkerSortedDistance(gpsmarker_array, distance_array, gps_marker, distance) {
 	"use strict";
 	if (gpsmarker_array.length == 0) {
 		var ret0 = new Array();
@@ -390,15 +370,13 @@ function insertGpsmarkerSortedDistance(gpsmarker_array, distance_array,
 	var rhs_dis = distance_array.slice(pivot);
 
 	if (distance <= distance_array[pivot]) {
-		var ret = insertGpsmarkerSortedDistance(lhs_gps, lhs_dis, gps_marker,
-				distance);
+		var ret = insertGpsmarkerSortedDistance(lhs_gps, lhs_dis, gps_marker, distance);
 		return [ ret[0].concat(rhs_gps), ret[1].concat(rhs_dis) ];
 
 		// return insertGpsmarkerSortedDistance(lhs, element).concat(rhs);
 	}
 
-	var ret = insertGpsmarkerSortedDistance(rhs_gps, rhs_dis, gps_marker,
-			distance);
+	var ret = insertGpsmarkerSortedDistance(rhs_gps, rhs_dis, gps_marker, distance);
 	return [ lhs_gps.concat(ret[0]), lhs_dis.concat(ret[1]) ];
 	// return lhs.concat(insertGpsmarkerSortedDistance(rhs, element));
 }
