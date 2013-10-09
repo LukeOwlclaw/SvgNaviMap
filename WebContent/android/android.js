@@ -1,5 +1,5 @@
 //svg_init_custom() is called after SVG are loaded completely.
-function svg_init_custom2() {
+function svg_init_custom() {
 	"use strict";
 
 	// set visibilities
@@ -8,6 +8,8 @@ function svg_init_custom2() {
 			G.log("svg_init_custom() failed. svg_element " + i + " not ready yet");
 			return;
 		}
+
+		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
 
 		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
 
