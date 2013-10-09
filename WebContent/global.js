@@ -42,7 +42,7 @@ G.getMapPath = function(level) {
 		return G.Level_svgpath[level]; // absolute URL
 	else
 		return G.getDataDir() + G.Level_svgpath[level]; // svg path relative to
-														// data dir
+	// data dir
 }
 
 // required for downloading XML configuration file. internally used only.
@@ -54,6 +54,9 @@ G.getXmlPath = function() {
 G.getDataDir = function() {
 	return "data/";
 }
+
+// show hide/show button for each SVG
+G.showButtonsForSvg = true;
 
 G.loadMapsCompleted = false;
 /*
@@ -379,33 +382,6 @@ G.init_svg = function(element, id) {
 
 	G.svg_init[id] = true;
 
-	// if (typeof (svgapp) != "undefined") {
-	// // set size of svg images
-	//
-	// var ViewX = "0";
-	// var ViewY = "0";
-	// if (self.innerHeight) {
-	// ViewX = self.innerWidth;
-	// ViewY = self.innerHeight;
-	// } else if (document.documentElement
-	// && document.documentElement.clientHeight) {
-	// ViewX = document.documentElement.clientWidth;
-	// ViewY = document.documentElement.clientHeight;
-	// } else if (document.body) {
-	// ViewX = document.body.clientWidth;
-	// ViewY = document.body.clientHeight;
-	// } else {
-	// alert('Can not estimate screen resolution!');
-	// ViewX = null;
-	// ViewY = null;
-	// }
-	//			
-	//		
-	// if (ViewX != null && ViewY != null) {
-	// G.svg_parent[id].style.width = ViewX*97/100 + "px";
-	// G.svg_parent[id].style.height = ViewY*97/100 + "px";
-	// }
-	// }
 };
 
 G.getSvgId = function(event) {

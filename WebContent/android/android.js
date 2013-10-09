@@ -20,7 +20,7 @@ function svg_init_custom() {
 		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
 	}
 
-	// set size of svg images
+	// set size of svg images (required for correct panning)
 	calcSvgSize();
 
 	// set default level
@@ -32,6 +32,8 @@ function svg_init_custom() {
 // to be called after svgnavimap is ready to load svg
 function init_custom() {
 	"use strict";
+
+	G.showButtonsForSvg = false;
 
 	// load data
 	load_from_server_xml(null);

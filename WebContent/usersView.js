@@ -27,7 +27,7 @@ function init_custom() {
 		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
 	}
 
-	showButtonsForSvg = false;
+	G.showButtonsForSvg = false;
 	load_from_server_xml(null);
 }
 

@@ -198,8 +198,7 @@ MZP.scaledZoom = function(scale, scalePoint, id) {
 MZP.calcZoomLevel = function(id) {
 	"use strict";
 	var zoom = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
-	var zoom2 = G.svg_element[id].viewBox.baseVal.width
-			/ G.svg_element[id].widthUnzoomed;
+	var zoom2 = G.svg_element[id].viewBox.baseVal.width / G.svg_element[id].widthUnzoomed;
 	// G.debug('zoom: ' + zoom + 'zoom2: ' + zoom2 + 'zoomLevel: ' + zoom /
 	// zoom2);
 	MZP.zoomLevel[id] = zoom / zoom2;
@@ -366,8 +365,7 @@ MZP.init = function(id) {
 	// window.addEventListener('mousewheel', MZP.zoomViaMouseWheel, false); //
 	// in
 	// case
-	// the
-	// user
+	// the user
 	// rotates
 	// the
 	// mouse
@@ -400,8 +398,7 @@ MZP.init = function(id) {
 	// Internet Explorer, Opera, Google Chrome and Safari
 	// G.svg_parent[id].addEventListener('mousewheel', MZP.zoomViaMouseWheel,
 	// false);
-	MZP.SVGRoot[id]
-			.addEventListener('mousewheel', MZP.zoomViaMouseWheel, false);
+	MZP.SVGRoot[id].addEventListener('mousewheel', MZP.zoomViaMouseWheel, false);
 
 	// This
 	// is
@@ -424,8 +421,7 @@ MZP.init = function(id) {
 	// G.svg_parent[id].addEventListener('DOMMouseScroll',
 	// MZP.zoomViaMouseWheel,
 	// false);
-	MZP.SVGRoot[id].addEventListener('DOMMouseScroll', MZP.zoomViaMouseWheel,
-			false);
+	MZP.SVGRoot[id].addEventListener('DOMMouseScroll', MZP.zoomViaMouseWheel, false);
 
 	MZP.SVGRoot[id].addEventListener('mousedown', MZP.mouseDown);
 	MZP.SVGRoot[id].addEventListener('mouseup', MZP.mouseUp);
@@ -441,8 +437,7 @@ MZP.init = function(id) {
 		MZP.SVGRoot[id].setAttribute('preserveAspectRatio', 'xMinYMin meet');
 		MZP.backup_width[id] = MZP.SVGRoot[id].getAttribute('width');
 		MZP.backup_height[id] = MZP.SVGRoot[id].getAttribute('height');
-		MZP.SVGRoot[id].setAttribute('viewBox', '0 0 '
-				+ MZP.SVGRoot[id].getAttribute('width') + ' '
+		MZP.SVGRoot[id].setAttribute('viewBox', '0 0 ' + MZP.SVGRoot[id].getAttribute('width') + ' '
 				+ MZP.SVGRoot[id].getAttribute('height'));
 
 		viewBox = MZP.SVGRoot[id].getAttribute('viewBox'); // Grab the object
@@ -463,10 +458,8 @@ MZP.init = function(id) {
 		 * MZP.SVGRoot.getAttribute('height');
 		 */
 
-		G.svg_element[id].heightUnzoomed = G.svg_element[id]
-				.getAttribute("height");
-		G.svg_element[id].widthUnzoomed = G.svg_element[id]
-				.getAttribute("width");
+		G.svg_element[id].heightUnzoomed = G.svg_element[id].getAttribute("height");
+		G.svg_element[id].widthUnzoomed = G.svg_element[id].getAttribute("width");
 		G.svg_element[id].setAttribute("width", "100%");
 		G.svg_element[id].setAttribute("height", "100%");
 
@@ -520,7 +513,6 @@ MZP.translateY = function(evt) {
 
 MZP.rescale = function(id) {
 	"use strict";
-	MZP.SVGRoot[id].setAttribute('viewBox', '0 0 ' + MZP.backup_width[id] + ' '
-			+ MZP.backup_height[id]);
+	MZP.SVGRoot[id].setAttribute('viewBox', '0 0 ' + MZP.backup_width[id] + ' ' + MZP.backup_height[id]);
 	MZP.calcZoomLevel(id);
 };
