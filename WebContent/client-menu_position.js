@@ -127,4 +127,5 @@ function refresh_location() {
 
 	currLocation = null;
 	routing_refresh();
+
 }
