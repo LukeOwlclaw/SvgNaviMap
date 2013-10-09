@@ -18,23 +18,23 @@ var selectedMap = maps[0];
 
 G.getAvailableXmlFiles = function() {
 	return maps;
-}
+};
 
 // specifies file to be loaded when clicking "load from server"
 G.getXmlFilename = function() {
 	return selectedMap;
-}
+};
 
 G.setXmlFilename = function(xmlPathRelativeToDataDir) {
 	selectedMap = xmlPathRelativeToDataDir;
-}
+};
 
 // specifies number of levels of map. only available AFTER loading xml file.
 G.getLevelCount = function() {
 	if (G.Level_svgpath == null)
 		return 0;
 	return G.Level_svgpath.length;
-}
+};
 
 // returns path to svg map per level. only available AFTER loading xml file.
 G.getMapPath = function(level) {
@@ -43,17 +43,17 @@ G.getMapPath = function(level) {
 	else
 		return G.getDataDir() + G.Level_svgpath[level]; // svg path relative to
 	// data dir
-}
+};
 
 // required for downloading XML configuration file. internally used only.
 G.getXmlPath = function() {
 	return G.getDataDir() + G.getXmlFilename();
-}
+};
 
 // internally used only
 G.getDataDir = function() {
 	return "data/";
-}
+};
 
 // show hide/show button for each SVG
 G.showButtonsForSvg = true;
@@ -109,7 +109,7 @@ G.loadMaps = function(createScaleButton) {
 	for ( var i = 0; i < embed.length; i++) {
 		G.install_init_hook(embed[i], i, embed.length, G.svg_init_callback);
 	}
-}
+};
 
 G.svg_init_callback = function() {
 	G.loadMapsCompleted = true;
@@ -123,7 +123,7 @@ G.svg_init_callback = function() {
 		return;
 	} else
 		svg_init_custom();
-}
+};
 
 /*
  * Appends for each map defined by G.getLevelCount() and G.getMapPath() an input
@@ -156,7 +156,7 @@ G.loadMapSelectors = function() {
 		selector.parentNode.appendChild(br);
 
 	}
-}
+};
 
 // called on document ready.
 G.init = function() {

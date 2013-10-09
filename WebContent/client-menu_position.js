@@ -71,8 +71,8 @@ function position_click(evt) {
 	var posX = MZP.translateX(evt);
 	var posY = MZP.translateY(evt);
 	var svgid = G.getSvgId(evt);
-	position_set(svgid, posX, posY)
-}
+	position_set(svgid, posX, posY);
+};
 
 function refresh_location() {
 	"use strict";

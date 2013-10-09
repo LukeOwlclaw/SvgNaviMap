@@ -49,7 +49,7 @@ function load_from_client_xml(evt) {
 				// G.log(content_string);
 
 				G.log('import file ' + theFile.name);
-				G.setXmlFilename(theFile.name)
+				G.setXmlFilename(theFile.name);
 
 				load_from_string(content_string);
 			};
@@ -117,7 +117,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 	if (loadSvg == false) {
 		if (G.loadMapsCompleted == false) {
 			setTimeout(function() {
-				import_xml(xmlDom, callback, loadSvg)
+				import_xml(xmlDom, callback, loadSvg);
 			}, 10);
 			return;
 		}
@@ -198,7 +198,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 			if (loadSvg) {
 				G.loadMaps(G.showButtonsForSvg);
 				setTimeout(function() {
-					import_xml(xmlDom, callback, false)
+					import_xml(xmlDom, callback, false);
 				}, 10);
 				return;
 			}

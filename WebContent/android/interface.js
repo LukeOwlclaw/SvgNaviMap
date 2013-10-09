@@ -165,7 +165,7 @@ Interface.position_setSVG = function(posX, posY, svgid) {
 Interface.position_setID = function(vertexid) {
 	var v = Vertex_container.get(vertexid);
 	Interface.position_setSVG(v.getX(), v.getY(), v.getSvgid());
-}
+};
 
 Interface.position_focus = function() {
 	"use strict";
