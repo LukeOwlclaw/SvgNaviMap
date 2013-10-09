@@ -92,8 +92,7 @@ Interface.position_translate_gps_svg = function(latitude, longitude, height) {
 Interface.position_set = function(latitude, longitude, height) {
 	"use strict";
 	G.log('latitude:' + latitude + ' longitude:' + longitude + ' height:' + height);
-	var position = Interface.position_translate_gps_svg(latitude, longitude,
-			height);
+	var position = Interface.position_translate_gps_svg(latitude, longitude, height);
 	if (position == null) {
 		send_response('position_set_failed');
 		send_response('position_translation_failed');
@@ -161,6 +160,11 @@ Interface.position_setSVG = function(posX, posY, svgid) {
 
 	refresh_location();
 };
+
+Interface.position_setID = function(vertexid) {
+	var v = Vertex_container.get(vertexid);
+	Interface.position_setSVG(v.getX(), v.getY(), v.getSvgid());
+}
 
 Interface.position_focus = function() {
 	"use strict";
@@ -249,8 +253,7 @@ Interface.route_delete = function() {
 Interface.demo = function() {
 	// hide all vertices
 	for ( var i = 0; i < G.svg_element.length; i++) {
-		G.svg_element[i].getElementById('unit_vertex').setAttribute(
-				'visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
 	}
 	// set demo position
 	Interface.position_setSVG(680, 408, 0);
@@ -275,8 +278,7 @@ Interface.route = function(id) {
 Interface.routeGPS = function(latitude, longitude, altitude) {
 	"use strict";
 
-	var position = Interface.position_translate_gps_svg(latitude, longitude,
-			altitude);
+	var position = Interface.position_translate_gps_svg(latitude, longitude, altitude);
 	if (position == null) {
 		G.log('position == null');
 		send_response('gpsroute_failed');
@@ -355,8 +357,7 @@ Interface.distance = function(source, destination) {
 		destination_node = destination;
 	}
 
-	if (!(dijkstra_reverse(start_node, destination_node,
-			Interface.disabledAdapted, false))) {
+	if (!(dijkstra_reverse(start_node, destination_node, Interface.disabledAdapted, false))) {
 		send_response('distance: inf');
 		return;
 	}
@@ -377,8 +378,7 @@ Interface.distance = function(source, destination) {
 		var edgelist = node.getEdgelist();
 		var distanceFactor = 1;
 		for ( var i = 0, e = edgelist[i]; i < edgelist.length; e = edgelist[++i]) {
-			if (e.getVertex1().getId() == next_node.getId()
-					|| e.getVertex2().getId() == next_node.getId()) {
+			if (e.getVertex1().getId() == next_node.getId() || e.getVertex2().getId() == next_node.getId()) {
 				distanceFactor = e.getDistanceFactor();
 				distanceSVG += e.getDistance() * e.getDistanceFactor();
 				break;
@@ -429,13 +429,12 @@ function distanceInMeter(source, destination) {
 		destination_node = destination;
 	}
 
-	var source_coordinates = convertSVG_GPS(source_node.getX(), source_node
-			.getY(), source_node.getSvgid());
+	var source_coordinates = convertSVG_GPS(source_node.getX(), source_node.getY(), source_node.getSvgid());
 	if (source_coordinates == null) {
 		return -1;
 	}
-	var destination_coordinates = convertSVG_GPS(destination_node.getX(),
-			destination_node.getY(), destination_node.getSvgid());
+	var destination_coordinates = convertSVG_GPS(destination_node.getX(), destination_node.getY(), destination_node
+			.getSvgid());
 	if (destination_coordinates == null) {
 		return -1;
 	}
@@ -451,8 +450,8 @@ function distanceInMeter(source, destination) {
 
 	var dlong = (long2 - long1) * d2r;
 	var dlat = (lat2 - lat1) * d2r;
-	var a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(lat1 * d2r)
-			* Math.cos(lat2 * d2r) * Math.pow(Math.sin(dlong / 2), 2);
+	var a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(lat1 * d2r) * Math.cos(lat2 * d2r)
+			* Math.pow(Math.sin(dlong / 2), 2);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 	var d = eQuatorialEarthRadius * c;
 
