@@ -54,6 +54,11 @@ function routing_click(evt) {
 		return;
 	// TODO match aff areas
 
+	// hide vertices
+	for ( var i = 0; i < G.svg_element.length; i++) {
+		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
+	}
+
 	Routing_destination = Vertex_container.get(Vertex_clickedID);
 	Vertex_clickedID = null;
 	Routing_destination.paint_destination();
@@ -72,6 +77,10 @@ function routing_refresh_menu() {
 	} else {
 		document.getElementById('routing_default').innerHTML = 'Please click on your destination.';
 
+		// make vertices visible
+		for ( var i = 0; i < G.svg_element.length; i++) {
+			G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'visible');
+		}
 		for ( var i = 0; i < G.svg_element.length; i++) {
 			G.svg_element[i].addEventListener('click', routing_click, false);
 		}
@@ -96,8 +105,7 @@ function routing_refresh() {
 	var route_da = document.getElementById('routing_disabledAdapted').checked;
 
 	if (try_preRouting(currLocation, Routing_destination, route_da)
-			|| dijkstra_reverse(currLocation, Routing_destination, route_da,
-					true)) {
+			|| dijkstra_reverse(currLocation, Routing_destination, route_da, true)) {
 
 		Routing_disabledAdapted = route_da;
 		document.getElementById('routing_default').style.display = 'none';
