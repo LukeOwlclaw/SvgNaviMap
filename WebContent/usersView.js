@@ -1,7 +1,7 @@
 //svg_init_custom() is called after SVG are loaded completely.
 function svg_init_custom() {
 	G.loadMapSelectors();
-	client_selectsvg(0);
+	client_selectsvg(0);	
 }
 
 //called on load of page
@@ -49,49 +49,11 @@ function client_selectsvg(svgid) {
 	for ( var i = 0; i < G.svg_parent.length; i++) {
 		if (i == svgid) {
 			G.svg_parent[i].parentNode.style.display = '';
-			radios[i].checked = true;
+			radios[i].checked = true;			
 		} else {
 			G.svg_parent[i].parentNode.style.display = 'none';
-			radios[i].checked = false;
+			radios[i].checked = false;			
 		}
 	}
-
-}
-
-function hideShowControls() {
-
-	var map = document.getElementById("sideLeft");
-	var container = document.getElementById("content");
-
-	if (typeof map !== 'undefined') {
-		if (map.style.visibility != "hidden") {
-			map.style.visibility = "hidden";
-			container.style.paddingLeft = 0;
-
-			var elements = document.getElementsByClassName('mapdiv');
-			for ( var i in elements) {
-				if (elements.hasOwnProperty(i)) {
-					if (elements[i].style != undefined) {
-						elements[i].style.width = '85%';
-						elements[i].style.height = '900px';
-					}
-				}
-			}
-
-		} else {
-			map.style.visibility = "";
-			container.style.paddingLeft = "300px"
-			var elements = document.getElementsByClassName('mapdiv');
-			for ( var i in elements) {
-				if (elements.hasOwnProperty(i)) {
-					if (elements[i].style != undefined) {
-						elements[i].style.width = '95%';
-						elements[i].style.height = '';
-					}
-				}
-			}
-		}
-	} else
-		G.log("sideLeft undefined!");
 
 }

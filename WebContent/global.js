@@ -10,7 +10,7 @@ function G() {
 G.global = 'This is a global variable accessible from everywhere via G.global';
 
 //Holds XMLs of all SvgNaviMap projects available. These are displayed in editor's view.
-var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml", "test.xml" ];
+var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
 
 //default selected SvgNaviMap project
 var selectedMap =  maps[1];
@@ -35,27 +35,17 @@ G.getLevelCount = function() {
 	return G.Level_svgpath.length;
 }
 
-var isDevel = true;
-
 //returns path to svg map per level. only available AFTER loading xml file.
 G.getMapPath = function(level) {
 	if(G.Level_svgpath[level].substr(0,7) == "http://")
 		return  G.Level_svgpath[level]; //absolute URL
 	else
-	{	
-		if(isDevel)
-			return G.getDataDir() + G.Level_svgpath[level]+ "?time=" + Date.now(); //for development: force no cache.
-		else
-			return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
-	}
+		return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
 }
 
 //required for downloading XML configuration file. internally used only.
 G.getXmlPath = function() {
-	if(isDevel)
-		return G.getDataDir() + G.getXmlFilename() + "?time=" + Date.now(); //for development: force no cache.
-	else
-		return G.getDataDir() + G.getXmlFilename();
+	return G.getDataDir() + G.getXmlFilename();
 }
 
 //internally used only
@@ -67,15 +57,9 @@ G.getDataDir = function() {
 G.loadMapsCompleted = false;
 /*
  * Appends for each map defined by G.getLevelCount() and G.getMapPath() an
- * embedded element to div#map_container. Async call, pretty quick.
+ * embedded element to div#map_container
  */
 G.loadMaps = function(createScaleButton) {
-	
-	if(G.getLevelCount()==0)
-	{
-		G.log("Xml file not loaded. Do not call G.loadMaps directly. Call load_from_server_xml(null, \"minimal-data.xml\"); instead.");
-		return;
-	}
 	
 	G.loadMapsCompleted = false;
 	
@@ -124,13 +108,12 @@ G.loadMaps = function(createScaleButton) {
 	}
 }
 
-//hooks that is called when SVG has finished loading.
-//instance of SvgNaviMap may implement svg_init_custom() which is called from here.
 G.svg_init_callback = function() {
 	G.loadMapsCompleted = true;
 	G.log("SVG loaded completely.");
 	
-	
+	//install hooks to svg_init() to be informed when SVG has finished loading.
+	//svg_init() must be implemented as global function by each view with uses SvgNaviMap.
 	if (typeof(svg_init_custom) == 'undefined' || isFunction(svg_init_custom) == false) {
 		G.log("svg_init_custom() is not implemented.");
 		return;
@@ -172,7 +155,7 @@ G.loadMapSelectors = function() {
 	}
 }
 
-//called on document ready. do some internal init of SvgNaviMap. Pretty quick.
+//called on document ready.
 G.init = function() {
 	"use strict";
 	// G.log('init start');
@@ -211,9 +194,9 @@ G.init = function() {
 
 };
 
-// Installiert Event Listener, der für jedes SVG init_svg() aufruft, und sobald alle SVG elemente
-// geladen sind callback ausführt.
-G.install_init_hook = function(element, id, count, callback) {
+// Installiert Event Listener, der init_svg() aufruft, sobald ein SVG element
+// geladen ist.
+G.install_init_hook = function(element, id, count, func) {
 	G.svg_init[id] = false;
 	element
 			.addEventListener(
@@ -223,13 +206,13 @@ G.install_init_hook = function(element, id, count, callback) {
 						case false:
 							G.init_svg(element, id);
 
-							if (callback != null && callback != undefined) {
+							if (func != null && func != undefined) {
 								// call only func, if everything is init'ed
 								for ( var i = 0; i < count; i++) {
 									if (G.svg_init[i] != true)
 										return;
 								}
-								callback();
+								func();
 							}
 							break;
 						case true:

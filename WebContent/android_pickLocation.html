@@ -27,11 +27,11 @@
     <script type="text/javascript" src="android/demowalk.js"></script>
     <script type="text/javascript" src="convertCoordinates.js"></script>
     <script>
-      var log_time = new Array();
      $("embed").ready(function(){
         //Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
         console.log('version 24');
-        G.init();
+        G.loadMaps(true);
+        G.init(android_init);
     });
     function showgpsmarkers()
     {

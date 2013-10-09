@@ -1,56 +1,11 @@
-//called on page load
-function init_custom() {
-	"use strict";
-
-	G.log("init_custom");
-
-	G.log("time " + (log_time.length + 1)
-			+ " - SvgNaviMap init completed. Start loading SVG.");
-	log_time.push(Date.now());
-
-	showButtonsForSvg = false;
-	load_from_server_xml(overlay_init_completed, G.getXmlFilename());
-	
-}
-
-function overlay_init_completed() {
-	G.log("time " + (log_time.length + 1)
-			+ " - overlay completely rendered and shown.");
-	log_time.push(Date.now());
-
-	G.log("overlay_init_completed");
-/*
-	var a = new Array();
-	var length = log_time.length;
-	for ( var i = 1; i < length; i++) {
-		first = log_time[i - 1];
-		second = log_time[i];
-		var text  =(i) + " - " + (i + 1) + ";" + (second - first) + "";
-		text  = (second - first);
-		G.log(text);
-		
-		var _div = document.createElement('div');
-		var _text = document.createTextNode(text)
-		_div.appendChild(_text);
-		a.push(_div);
-				
-	}*/
-	
-	var length = a.length;
-	for ( var i = length-1; i >= 0; i--) {
-		var _body = document.getElementsByTagName('body') [0];
-		_body.insertBefore(a[i],_body.firstChild);
-	}
-}
-
 //to be called after svg finished loading
-//setting view for user. hiding unneeded fields, scaling SVG etc. Pretty quick.
-function svg_init_custom() {
+function android_init() {
+	"use strict";
 
 	// set visibilities
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		if (G.svg_element[i] == undefined || G.svg_element[i] == null) {
-			G.log("init_custom() failed. svg_element " + i + " not ready yet");
+			G.log("android_init() failed. svg_element " + i + " not ready yet");
 			return;
 		}
 
@@ -73,14 +28,13 @@ function svg_init_custom() {
 	// set size of svg images
 	calcSvgSize();
 
-	// set default level
+	// set deafult level
 	selectsvg(0);
 
-	send_response("init completed");
+	// load data
+	load_from_server_xml(null);
 
-	G.log("time " + (log_time.length + 1)
-			+ " SVG loaded and rendered.");
-	log_time.push(Date.now());
+	send_response("init completed");
 }
 
 function navigate(event) {
