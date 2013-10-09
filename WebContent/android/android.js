@@ -9,20 +9,15 @@ function init_custom() {
 			return;
 		}
 
-		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility',
-				'hidden');
+		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
 
-		G.svg_element[i].getElementById('unit_borderpoint').setAttribute(
-				'visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_borderpoint').setAttribute('visibility', 'hidden');
 
-		G.svg_element[i].getElementById('unit_borderline').setAttribute(
-				'visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_borderline').setAttribute('visibility', 'hidden');
 
-		G.svg_element[i].getElementById('unit_stepmarker').setAttribute(
-				'visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_stepmarker').setAttribute('visibility', 'hidden');
 
-		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute(
-				'visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
 	}
 
 	// set size of svg images
@@ -91,10 +86,8 @@ function navigate(event) {
 		return;
 	}
 
-	if (try_preRouting(currLocation, Routing_destination,
-			Interface.disabledAdapted)
-			|| dijkstra_reverse(currLocation, Routing_destination,
-					Interface.disabledAdapted, true)) {
+	if (try_preRouting(currLocation, Routing_destination, Interface.disabledAdapted)
+			|| dijkstra_reverse(currLocation, Routing_destination, Interface.disabledAdapted, true)) {
 
 		Routing_disabledAdapted = Interface.disabledAdapted;
 
@@ -110,7 +103,7 @@ function navigate(event) {
 function selectsvg(svgid) {
 	"use strict";
 	if (svgid == null || G.svg_parent[svgid] == undefined) {
-		alert('Invalid svg level ' + svgid + ' selected.');
+		// alert('Invalid svg level ' + svgid + ' selected.');
 		return;
 	}
 
@@ -140,8 +133,7 @@ function calcSvgSize() {
 	} else if (self.innerHeight) {
 		ViewX = self.innerWidth;
 		ViewY = self.innerHeight;
-	} else if (document.documentElement
-			&& document.documentElement.clientHeight) {
+	} else if (document.documentElement && document.documentElement.clientHeight) {
 		ViewX = document.documentElement.clientWidth;
 		ViewY = document.documentElement.clientHeight;
 	} else if (document.body) {
@@ -153,14 +145,11 @@ function calcSvgSize() {
 		ViewY = null;
 	}
 
-	console.log("calc svg size: " + self.innerWidth + " x " + self.innerHeight
-			+ "; " + self.outerWidth + " x " + self.outerHeight + "; "
-			+ document.documentElement.clientWidth + " x "
-			+ document.documentElement.clientHeight + "; "
-			+ document.body.clientWidth + " x " + document.body.clientHeight
-			+ "; " + screen.width + " x " + screen.height + "; "
-			+ document.body.offsetWidth + " x " + document.body.offsetHeight
-			+ "; " + document.body.scrollwidth + " x "
+	console.log("calc svg size: " + self.innerWidth + " x " + self.innerHeight + "; " + self.outerWidth + " x "
+			+ self.outerHeight + "; " + document.documentElement.clientWidth + " x "
+			+ document.documentElement.clientHeight + "; " + document.body.clientWidth + " x "
+			+ document.body.clientHeight + "; " + screen.width + " x " + screen.height + "; "
+			+ document.body.offsetWidth + " x " + document.body.offsetHeight + "; " + document.body.scrollwidth + " x "
 			+ document.body.scrollheight + "; ");
 
 	if (ViewX != null && ViewY != null) {
@@ -176,8 +165,7 @@ function mlog(s) {
 	"use strict";
 
 	if (document.getElementById('log')) {
-		document.getElementById('log').innerHTML = s + "<br>"
-				+ document.getElementById('log').innerHTML;
+		document.getElementById('log').innerHTML = s + "<br>" + document.getElementById('log').innerHTML;
 	}
 }
 

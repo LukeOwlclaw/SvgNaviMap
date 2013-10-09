@@ -9,17 +9,18 @@ function G() {
 }
 G.global = 'This is a global variable accessible from everywhere via G.global';
 
-//Holds XMLs of all SvgNaviMap projects available. These are displayed in editor's view.
+// Holds XMLs of all SvgNaviMap projects available. These are displayed in
+// editor's view.
 var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml" ];
 
-//default selected SvgNaviMap project
-var selectedMap =  maps[1];
+// default selected SvgNaviMap project
+var selectedMap = maps[0];
 
 G.getAvailableXmlFiles = function() {
 	return maps;
 }
 
-//specifies file to be loaded when clicking "load from server"
+// specifies file to be loaded when clicking "load from server"
 G.getXmlFilename = function() {
 	return selectedMap;
 }
@@ -28,31 +29,31 @@ G.setXmlFilename = function(xmlPathRelativeToDataDir) {
 	selectedMap = xmlPathRelativeToDataDir;
 }
 
-//specifies number of levels of map. only available AFTER loading xml file. 
+// specifies number of levels of map. only available AFTER loading xml file.
 G.getLevelCount = function() {
-	if(G.Level_svgpath == null)
+	if (G.Level_svgpath == null)
 		return 0;
 	return G.Level_svgpath.length;
 }
 
-//returns path to svg map per level. only available AFTER loading xml file.
+// returns path to svg map per level. only available AFTER loading xml file.
 G.getMapPath = function(level) {
-	if(G.Level_svgpath[level].substr(0,7) == "http://")
-		return  G.Level_svgpath[level]; //absolute URL
+	if (G.Level_svgpath[level].substr(0, 7) == "http://")
+		return G.Level_svgpath[level]; // absolute URL
 	else
-		return G.getDataDir() + G.Level_svgpath[level]; //svg path relative to data dir
+		return G.getDataDir() + G.Level_svgpath[level]; // svg path relative to
+														// data dir
 }
 
-//required for downloading XML configuration file. internally used only.
+// required for downloading XML configuration file. internally used only.
 G.getXmlPath = function() {
 	return G.getDataDir() + G.getXmlFilename();
 }
 
-//internally used only
+// internally used only
 G.getDataDir = function() {
 	return "data/";
 }
-
 
 G.loadMapsCompleted = false;
 /*
@@ -60,29 +61,28 @@ G.loadMapsCompleted = false;
  * embedded element to div#map_container
  */
 G.loadMaps = function(createScaleButton) {
-	
+
 	G.loadMapsCompleted = false;
-	
-	//remove all old maps
+
+	// remove all old maps
 	var el = document.getElementById('map_container');
-	while( el.hasChildNodes() ){
-	    el.removeChild(el.lastChild);
+	while (el.hasChildNodes()) {
+		el.removeChild(el.lastChild);
 	}
-	
+
 	for ( var i = 0; i < G.getLevelCount(); i++) {
 		var newmapdiv = document.createElement("div");
 		newmapdiv.setAttribute("class", "mapdiv");
-		
+
 		var newmap = document.createElement("embed");
 		newmap.setAttribute("src", G.getMapPath(i));
 		newmap.setAttribute("id", "map" + i);
 		newmap.setAttribute("type", "image/svg+xml");
 		newmap.setAttribute("class", "svg_container");
-		//newmap.style.width = "440px";
-		//newmap.style.height = "200px";
+		// newmap.style.width = "440px";
+		// newmap.style.height = "200px";
 
 		newmapdiv.appendChild(newmap);
-		
 
 		if (createScaleButton) {
 			var scalebutton = document.createElement("button");
@@ -91,14 +91,14 @@ G.loadMaps = function(createScaleButton) {
 			var content = document.createTextNode("Rescale");
 			scalebutton.appendChild(content);
 			newmapdiv.appendChild(scalebutton);
-			
+
 			var hideshowbutton = document.createElement("button");
 			hideshowbutton.setAttribute("onclick", "UIManager.setVisibility(\"map" + i + "\", \"toggle\");");
 			var content = document.createTextNode("Hide/Show");
 			hideshowbutton.appendChild(content);
 			newmapdiv.appendChild(hideshowbutton);
 		}
-		
+
 		document.getElementById("map_container").appendChild(newmapdiv);
 	}
 
@@ -111,14 +111,14 @@ G.loadMaps = function(createScaleButton) {
 G.svg_init_callback = function() {
 	G.loadMapsCompleted = true;
 	G.log("SVG loaded completely.");
-	
-	//install hooks to svg_init() to be informed when SVG has finished loading.
-	//svg_init() must be implemented as global function by each view with uses SvgNaviMap.
-	if (typeof(svg_init_custom) == 'undefined' || isFunction(svg_init_custom) == false) {
+
+	// install hooks to svg_init() to be informed when SVG has finished loading.
+	// svg_init() must be implemented as global function by each view with uses
+	// SvgNaviMap.
+	if (typeof (svg_init_custom) == 'undefined' || isFunction(svg_init_custom) == false) {
 		G.log("svg_init_custom() is not implemented.");
 		return;
-	}
-	else
+	} else
 		svg_init_custom();
 }
 
@@ -127,13 +127,13 @@ G.svg_init_callback = function() {
  * radio element to div#svgselection for selecting the according SVG
  */
 G.loadMapSelectors = function() {
-	
-	//remove all old items
+
+	// remove all old items
 	var el = document.getElementById('svgselection');
-	while( el.hasChildNodes() ){
-	    el.removeChild(el.lastChild);
-	}	
-	
+	while (el.hasChildNodes()) {
+		el.removeChild(el.lastChild);
+	}
+
 	for ( var i = 0; i < G.getLevelCount(); i++) {
 		var selector = document.createElement("input");
 		selector.setAttribute("type", "radio");
@@ -155,14 +155,13 @@ G.loadMapSelectors = function() {
 	}
 }
 
-//called on document ready.
+// called on document ready.
 G.init = function() {
 	"use strict";
 	// G.log('init start');
 	document.getElementById('noscript').style.display = 'none';
 
-	if (null == (window.BlobBuilder || window.WebKitBlobBuilder
-			|| window.MozBlobBuilder || window.MSBlobBuilder || Blob)) {
+	if (null == (window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder || window.MSBlobBuilder || Blob)) {
 		var warning = "Warning! This browser does not support BlobBuilder. You will NOT be able to export and save your changes!";
 		document.getElementById('noscript').style.display = 'block';
 		document.getElementById('noscript').innerHTML = warning;
@@ -183,13 +182,13 @@ G.init = function() {
 	G.svg_unit_dijkstra = new Array();
 	G.svg_unit_affiliation_area = new Array();
 	G.svg_unit_gpsmarker = new Array();
-	
-	//init_custom() may be implemented as global function by each view with uses SvgNaviMap.
-	if (typeof(init_custom) == 'undefined' || isFunction(init_custom) == false) {
+
+	// init_custom() may be implemented as global function by each view with
+	// uses SvgNaviMap.
+	if (typeof (init_custom) == 'undefined' || isFunction(init_custom) == false) {
 		G.log("init_custom() is not implemented.");
 		return;
-	}
-	else
+	} else
 		init_custom();
 
 };
@@ -217,16 +216,13 @@ G.install_init_hook = function(element, id, count, func) {
 							break;
 						case true:
 							G.svg_parent[id] = element;
-							G.svg_document[id] = G.svg_parent[id]
-									.getSVGDocument();
-							G.svg_element[id] = G.svg_document[id]
-									.getElementsByTagName('svg')[0];
+							G.svg_document[id] = G.svg_parent[id].getSVGDocument();
+							G.svg_element[id] = G.svg_document[id].getElementsByTagName('svg')[0];
 							G.svg_element[id].appendChild(G.svg_unit_tuhh[id]);
 							MZP.init(id);
 
 							// renew vertex events, so that chrome gets them
-							for ( var i = 0, v = Vertex_container.getAll()[i]; i < Vertex_container
-									.getAll().length; v = Vertex_container
+							for ( var i = 0, v = Vertex_container.getAll()[i]; i < Vertex_container.getAll().length; v = Vertex_container
 									.getAll()[++i]) {
 								if (v.getSvgid() == id)
 									v.refreshChrome();
@@ -234,14 +230,12 @@ G.install_init_hook = function(element, id, count, func) {
 							// renew positionpoint animation also, so that
 							// chrome starts
 							// it
-							if (currPositionPoint != null
-									&& currPositionPoint.getSvgid() == id) {
+							if (currPositionPoint != null && currPositionPoint.getSvgid() == id) {
 								currPositionPoint.refreshChrome();
 							}
 							break;
 						default:
-							console.log('invalid entry ' + G.svg_init[id]
-									+ ' in G.svg_init[' + id + ']');
+							console.log('invalid entry ' + G.svg_init[id] + ' in G.svg_init[' + id + ']');
 							break;
 						}
 					});
@@ -249,7 +243,7 @@ G.install_init_hook = function(element, id, count, func) {
 
 G.init_svg = function(element, id) {
 	"use strict";
-	 G.log('init_svg ' + id);
+	G.log('init_svg ' + id);
 
 	// required for SVG embedded using <embed>
 	// e.g. <embed id="map0" src="office_simple.svg" type="image/svg+xml"
@@ -272,8 +266,7 @@ G.init_svg = function(element, id) {
 	G.svg_element[id].appendChild(unit_tuhh);
 	G.svg_unit_tuhh[id] = G.svg_element[id].getElementById('unit_tuhh');
 
-	var unit_vertex = document.createElementNS('http://www.w3.org/2000/svg',
-			'g');
+	var unit_vertex = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_vertex.setAttribute('id', 'unit_vertex');
 	G.svg_unit_tuhh[id].appendChild(unit_vertex);
 	G.svg_unit_vertex[id] = G.svg_element[id].getElementById('unit_vertex');
@@ -283,39 +276,30 @@ G.init_svg = function(element, id) {
 	G.svg_unit_tuhh[id].appendChild(unit_edge);
 	G.svg_unit_edge[id] = G.svg_element[id].getElementById('unit_edge');
 
-	var unit_stepmarker = document.createElementNS(
-			'http://www.w3.org/2000/svg', 'g');
+	var unit_stepmarker = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_stepmarker.setAttribute('id', 'unit_stepmarker');
 	G.svg_unit_tuhh[id].appendChild(unit_stepmarker);
-	G.svg_unit_stepmarker[id] = G.svg_element[id]
-			.getElementById('unit_stepmarker');
+	G.svg_unit_stepmarker[id] = G.svg_element[id].getElementById('unit_stepmarker');
 
-	var unit_borderpoint = document.createElementNS(
-			'http://www.w3.org/2000/svg', 'g');
+	var unit_borderpoint = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_borderpoint.setAttribute('id', 'unit_borderpoint');
 	G.svg_unit_tuhh[id].appendChild(unit_borderpoint);
-	G.svg_unit_borderpoint[id] = G.svg_element[id]
-			.getElementById('unit_borderpoint');
+	G.svg_unit_borderpoint[id] = G.svg_element[id].getElementById('unit_borderpoint');
 
-	var unit_borderline = document.createElementNS(
-			'http://www.w3.org/2000/svg', 'g');
+	var unit_borderline = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_borderline.setAttribute('id', 'unit_borderline');
 	G.svg_unit_tuhh[id].appendChild(unit_borderline);
-	G.svg_unit_borderline[id] = G.svg_element[id]
-			.getElementById('unit_borderline');
+	G.svg_unit_borderline[id] = G.svg_element[id].getElementById('unit_borderline');
 
-	var unit_dijkstra = document.createElementNS('http://www.w3.org/2000/svg',
-			'g');
+	var unit_dijkstra = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_dijkstra.setAttribute('id', 'unit_dijkstra');
 	G.svg_unit_tuhh[id].appendChild(unit_dijkstra);
 	G.svg_unit_dijkstra[id] = G.svg_element[id].getElementById('unit_dijkstra');
 
-	var unit_gpsmarker = document.createElementNS('http://www.w3.org/2000/svg',
-			'g');
+	var unit_gpsmarker = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 	unit_gpsmarker.setAttribute('id', 'unit_gpsmarker');
 	G.svg_unit_tuhh[id].appendChild(unit_gpsmarker);
-	G.svg_unit_gpsmarker[id] = G.svg_element[id]
-			.getElementById('unit_gpsmarker');
+	G.svg_unit_gpsmarker[id] = G.svg_element[id].getElementById('unit_gpsmarker');
 
 	// add title
 	var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
@@ -336,8 +320,7 @@ G.init_svg = function(element, id) {
 
 	// 1. start marker
 	var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-	var marker_1 = document.createElementNS('http://www.w3.org/2000/svg',
-			'marker');
+	var marker_1 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
 	marker_1.setAttribute('id', 'Triangle-start');
 	marker_1.setAttribute('viewBox', '0 0 8 8');
 	marker_1.setAttribute('refX', '4');
@@ -354,8 +337,7 @@ G.init_svg = function(element, id) {
 	defs.appendChild(marker_1);
 
 	// 2. end marker
-	var marker_2 = document.createElementNS('http://www.w3.org/2000/svg',
-			'marker');
+	var marker_2 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
 	marker_2.setAttribute('id', 'Triangle-end');
 	marker_2.setAttribute('viewBox', '0 0 8 8');
 	marker_2.setAttribute('refX', '4');
@@ -372,8 +354,7 @@ G.init_svg = function(element, id) {
 	defs.appendChild(marker_2);
 
 	// 3. switch marker
-	var marker_3 = document.createElementNS('http://www.w3.org/2000/svg',
-			'marker');
+	var marker_3 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
 	marker_3.setAttribute('id', 'Triangle-switch');
 	marker_3.setAttribute('viewBox', '0 0 8 8');
 	marker_3.setAttribute('refX', '4');
@@ -461,8 +442,7 @@ G.debug_append = function(s) {
 
 function isFunction(functionToCheck) {
 	var getType = {};
-	return functionToCheck
-			&& getType.toString.call(functionToCheck) === '[object Function]';
+	return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
 }
 
 G.log = function(s) {
@@ -471,8 +451,7 @@ G.log = function(s) {
 	if (console && isFunction(console.log))
 		console.log(s);
 
-	if (typeof (debug) != "undefined" && debug != null && debug != undefined
-			&& isFunction(debug))
+	if (typeof (debug) != "undefined" && debug != null && debug != undefined && isFunction(debug))
 		debug(s);
 
 	/*
