@@ -1,5 +1,5 @@
-//to be called after svg finished loading
-function init_custom() {
+//svg_init_custom() is called after SVG are loaded completely.
+function svg_init_custom() {
 	"use strict";
 
 	// set visibilities
@@ -23,13 +23,20 @@ function init_custom() {
 	// set size of svg images
 	calcSvgSize();
 
-	// set deafult level
+	// set default level
 	selectsvg(0);
+
+	send_response("svg_init_custom completed");
+}
+
+// to be called after svgnavimap is ready to load svg
+function init_custom() {
+	"use strict";
 
 	// load data
 	load_from_server_xml(null);
 
-	send_response("init completed");
+	send_response("init_custom completed");
 }
 
 function navigate(event) {
@@ -103,7 +110,7 @@ function navigate(event) {
 function selectsvg(svgid) {
 	"use strict";
 	if (svgid == null || G.svg_parent[svgid] == undefined) {
-		// alert('Invalid svg level ' + svgid + ' selected.');
+		alert('Invalid svg level ' + svgid + ' selected.');
 		return;
 	}
 
