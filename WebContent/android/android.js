@@ -1,5 +1,5 @@
 //to be called after svg finished loading
-function android_init() {
+function init_custom() {
 	"use strict";
 
 	// set visibilities
