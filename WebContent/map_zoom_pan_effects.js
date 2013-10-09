@@ -73,6 +73,10 @@ MZP.processKeyPress = function(evt) {
 		break;
 	}
 	MZP.SVGRoot[id].setAttribute('viewBox', viewBoxValues.join(' ')); // Convert
+
+	// do not propagate this key press to avoid browser window scrolling.
+	evt.preventDefault();
+
 	// the
 	// viewBoxValues
 	// array into a
@@ -197,9 +201,14 @@ MZP.scaledZoom = function(scale, scalePoint, id) {
 
 MZP.calcZoomLevel = function(id) {
 	"use strict";
+
+	// for some reason the HTML document has to be changed in order to
+	// calcZoomLevel() works correctly. This is what G.debug_append() does.
+	G.debug_append(" ");
+
 	var zoom = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
 	var zoom2 = G.svg_element[id].viewBox.baseVal.width / G.svg_element[id].widthUnzoomed;
-	// G.debug('zoom: ' + zoom + 'zoom2: ' + zoom2 + 'zoomLevel: ' + zoom /
+	// G.debug('zoom: ' + zoom + ' zoom2: ' + zoom2 + ' zoomLevel: ' + zoom /
 	// zoom2);
 	MZP.zoomLevel[id] = zoom / zoom2;
 };
@@ -246,6 +255,10 @@ MZP.zoomViaMouseWheel = function(mouseWheelEvent) {
 
 MZP.mouseDown = function(e) {
 	"use strict";
+
+	var id = G.getSvgId(e);
+	MZP.calcZoomLevel(id);
+
 	// ignore right click (button==2)
 	if (e.button == 2)
 		return;
@@ -287,6 +300,9 @@ MZP.mouseMove = function(e) {
 MZP.move = function(newXpos, newYpos, svgid) {
 	MZP.isPanning = true;
 	var deltaX = (MZP.oldPosition[0] - newXpos) / MZP.zoomLevel[svgid];
+	// G.log("MZP.oldPosition[0]:" + MZP.oldPosition[0] + " newXpos:" + newXpos
+	// + " MZP.zoomLevel[svgid]:"
+	// + MZP.zoomLevel[svgid]);
 	var deltaY = (MZP.oldPosition[1] - newYpos) / MZP.zoomLevel[svgid];
 	if (deltaX != 0 || deltaY != 0) {
 		var viewBox = MZP.SVGRoot[svgid].getAttribute('viewBox'); // Grab the
@@ -513,6 +529,8 @@ MZP.translateY = function(evt) {
 
 MZP.rescale = function(id) {
 	"use strict";
+	// G.log(MZP.SVGRoot[id].getAttribute('viewBox'));
+	// G.log('0 0 ' + MZP.backup_width[id] + ' ' + MZP.backup_height[id]);
 	MZP.SVGRoot[id].setAttribute('viewBox', '0 0 ' + MZP.backup_width[id] + ' ' + MZP.backup_height[id]);
 	MZP.calcZoomLevel(id);
 };
