@@ -2,6 +2,20 @@
 function svg_init_custom() {
 	G.loadMapSelectors();
 	client_selectsvg(0);
+
+	// set visibilities
+	for ( var i = 0; i < G.svg_element.length; i++) {
+		if (G.svg_element[i] == undefined || G.svg_element[i] == null) {
+			G.log("svg_init_custom() failed. svg_element " + i + " not ready yet");
+			return;
+		}
+		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_borderpoint').setAttribute('visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_borderline').setAttribute('visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_stepmarker').setAttribute('visibility', 'hidden');
+		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
+	}
 }
 
 // called on load of page
@@ -9,23 +23,6 @@ function init_custom() {
 	"use strict";
 
 	refresh_location();
-
-	for ( var i = 0; i < G.svg_element.length; i++) {
-		if (G.svg_element[i] == undefined || G.svg_element[i] == null) {
-			G.log("client_init() failed. svg_element " + i + " not ready yet");
-			return;
-		}
-
-		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
-
-		G.svg_element[i].getElementById('unit_borderpoint').setAttribute('visibility', 'hidden');
-
-		G.svg_element[i].getElementById('unit_borderline').setAttribute('visibility', 'hidden');
-
-		G.svg_element[i].getElementById('unit_stepmarker').setAttribute('visibility', 'hidden');
-
-		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
-	}
 
 	G.showButtonsForSvg = false;
 	load_from_server_xml(null);

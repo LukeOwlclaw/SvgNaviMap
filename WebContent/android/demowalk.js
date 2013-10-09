@@ -27,8 +27,7 @@ function DemoWalk_Iteration(nextVertex_id) {
 		return;
 	}
 
-	if (DijkstraArrows.length == 0
-			&& nextVertex_id != Routing_destination.getId()) {
+	if (DijkstraArrows.length == 0 && nextVertex_id != Routing_destination.getId()) {
 		G.log("DijkstraArrows.length == 0");
 		Interface.dodemowalk = false;
 		return;
@@ -57,8 +56,7 @@ function DemoWalk_Iteration(nextVertex_id) {
 
 		// if near next vertex
 		if (deltaX < 5 && deltaY < 5) {
-			DemoWalk_Refresh(nextVertex.getSvgid(), nextVertex.getX(),
-					nextVertex.getY());
+			DemoWalk_Refresh(nextVertex.getSvgid(), nextVertex.getX(), nextVertex.getY());
 
 			if (nextVertex_id == Routing_destination.getId()) {
 				Interface.dodemowalk = false;
@@ -122,10 +120,14 @@ function DemoWalk_Iteration(nextVertex_id) {
 		// if near next stepmarker
 		if (deltaX < 3 && deltaY < 3) {
 			var newSvgid = parseInt(nextVertex.getSvgid(), 10);
-			selectsvg(newSvgid);
+
+			if (typeof (selectsvg) == 'undefined' || isFunction(selectsvg) == false) {
+				client_selectsvg(newSvgid);
+			} else
+				selectsvg(newSvgid);
+
 			Interface.currentsvg = newSvgid;
-			DemoWalk_Refresh(newSvgid, stepmarker_next.getX(), stepmarker_next
-					.getY());
+			DemoWalk_Refresh(newSvgid, stepmarker_next.getX(), stepmarker_next.getY());
 
 			window.setTimeout("DemoWalk_Iteration(" + nextVertex_id + ")", 800);
 

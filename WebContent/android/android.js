@@ -1,11 +1,11 @@
 //svg_init_custom() is called after SVG are loaded completely.
-function svg_init_custom() {
+function svg_init_custom2() {
 	"use strict";
 
 	// set visibilities
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		if (G.svg_element[i] == undefined || G.svg_element[i] == null) {
-			G.log("android_init() failed. svg_element " + i + " not ready yet");
+			G.log("svg_init_custom() failed. svg_element " + i + " not ready yet");
 			return;
 		}
 

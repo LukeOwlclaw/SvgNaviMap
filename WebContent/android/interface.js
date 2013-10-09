@@ -165,6 +165,7 @@ Interface.position_setSVG = function(posX, posY, svgid) {
 Interface.position_setID = function(vertexid) {
 	var v = Vertex_container.get(vertexid);
 	Interface.position_setSVG(v.getX(), v.getY(), v.getSvgid());
+	currLocation = v;
 };
 
 Interface.position_focus = function() {
@@ -259,7 +260,7 @@ Interface.demo = function() {
 	// set demo position
 	Interface.position_setID(0);
 	// set demo destination
-	Interface.route(7);
+	Interface.route(153);
 };
 
 Interface.route_refresh = function() {

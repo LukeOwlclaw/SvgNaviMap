@@ -2,7 +2,7 @@
 //it is called after SVG are loaded completely.
 function svg_init_custom() {
 	"use strict";
-	
+
 	G.log("svg_init_custom");
 
 	// set visibilities
@@ -11,14 +11,14 @@ function svg_init_custom() {
 	visibility_edgemarker();
 	visibility_borderpoint();
 	visibility_borderline();
-	
-	//init google map
+
+	// init google map
 	if_gmap_init();
-	
+
 }
 
-//called on load of page
+// called on load of page
 function init_custom() {
-	//open import menu
+	// open import menu
 	import_open();
 }
