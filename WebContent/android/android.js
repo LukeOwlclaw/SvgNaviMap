@@ -22,8 +22,8 @@ function svg_init_custom() {
 		G.svg_element[i].getElementById('unit_gpsmarker').setAttribute('visibility', 'hidden');
 	}
 
-	// set size of svg images (required for correct panning)
-	calcSvgSize();
+	// set size of svg images (required for correct panning NOT FOR ANDROID!)
+	// calcSvgSize();
 
 	// set default level
 	selectsvg(0);
