@@ -196,6 +196,7 @@ Interface.leveldown = function() {
 		selectsvg(id);
 		Interface.currentsvg = id;
 	}
+	setTimeout("Interface.route_refresh();",400);
 };
 
 Interface.levelup = function() {
@@ -205,6 +206,7 @@ Interface.levelup = function() {
 		selectsvg(id);
 		Interface.currentsvg = id;
 	}
+	setTimeout("Interface.route_refresh();",400);
 };
 
 Interface.route_changeDisabledAdapted = function(disabledAdapted) {

@@ -30,18 +30,18 @@
 	$("embed").ready(function() {
 		//Ersetzt onload(), denn Initialisierung darf erst erfolgen, nachdem der DOM vollstaendig aufgebaut wurde.
 		console.log('version 24');
-    G.loadMaps(false);
+    	//G.loadMaps(false);
 		G.init();
 	});
 </script>
 </head>
-<body>
+<body bgcolor="black">
 	<h1 id="noscript">Please enable javascript!</h1>
 	<div id="location"></div>
-  <div id="map_container"></div>
+  	<div id="map_container"></div>
 	<!-- On some devices a single SVG in a HTML page looks blurry.
     		Adding at least one character solves this issue.
     http://stackoverflow.com/questions/14623209/zooming-webview-with-svg-inside-svg-is-pixelized-if-zoomed  -->
-	<font color="white">.</font>
+	<font color="black">.</font>
 </body>
 </html>

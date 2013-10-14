@@ -191,8 +191,9 @@ G.init = function() {
 	if (typeof (init_custom) == 'undefined' || isFunction(init_custom) == false) {
 		G.log("init_custom() is not implemented.");
 		return;
-	} else
+	} else {
 		init_custom();
+	}
 
 };
 

@@ -462,9 +462,14 @@ MZP.init = function(id) {
 		// attribute.
 
 		if (navigator.userAgent.indexOf("Opera") != -1) // Opera does not
-			// understand 100% for
-			// <embed>
+		// understand 100% for
+		// <embed>
+		{
 			G.svg_parent[id].height = "700px";
+		} else {
+			G.svg_parent[id].height = "100%";
+			G.svg_parent[id].width = "100%";
+		}
 
 		/*
 		 * what is happening here ??? xZoom =

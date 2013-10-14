@@ -1,5 +1,11 @@
 @CHARSET "ISO-8859-1";
 
+@-o-viewport 		{ width: device-width; }	/* Opera */
+@-webkit-viewport	{ width: device-width; }	/* Chrome, iOS, Safari */
+@-moz-viewport		{ width: device-width; }	/* Firefox */
+@-ms-viewport		{ width: device-width; }	/* Explorer */
+@viewport			{ width: device-width; }
+
 * {
 	margin: 0;
 	padding: 0;
@@ -195,7 +201,7 @@ embed {
 }
 
 .mapdiv {
-	width: 30%;
+	width: 80%;
 	display: inline-block;
 	margin: 1em;
 	padding: 1em;
