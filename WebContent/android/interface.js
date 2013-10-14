@@ -179,6 +179,9 @@ Interface.position_focus = function() {
 			selectsvg(svgid);
 			Interface.currentsvg = svgid;
 			window.setTimeout("Interface.position_focus()", 1000);
+			setTimeout("Interface.route_refresh();",300);
+			setTimeout("Interface.route_refresh();",600);
+			setTimeout("Interface.route_refresh();",900);
 		} else {
 			// MZP.set(xPos, yPos, svgid);
 			send_response('position_focus_' + xPos + '_' + yPos);
@@ -195,8 +198,12 @@ Interface.leveldown = function() {
 	if (id >= 0) {
 		selectsvg(id);
 		Interface.currentsvg = id;
+		//sometimes edgemarkers are lost, get them back after level change was completed.
+		setTimeout("Interface.route_refresh();",300);
+		setTimeout("Interface.route_refresh();",600);
+		setTimeout("Interface.route_refresh();",900);
 	}
-	setTimeout("Interface.route_refresh();",400);
+
 };
 
 Interface.levelup = function() {
@@ -206,7 +213,10 @@ Interface.levelup = function() {
 		selectsvg(id);
 		Interface.currentsvg = id;
 	}
-	setTimeout("Interface.route_refresh();",400);
+	//sometimes edgemarkers are lost, get them back after level change was completed.
+	setTimeout("Interface.route_refresh();",300);
+	setTimeout("Interface.route_refresh();",600);
+	setTimeout("Interface.route_refresh();",900);
 };
 
 Interface.route_changeDisabledAdapted = function(disabledAdapted) {
