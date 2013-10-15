@@ -199,18 +199,67 @@ MZP.scaledZoom = function(scale, scalePoint, id) {
 	MZP.calcZoomLevel(id);
 };
 
+
+
 MZP.calcZoomLevel = function(id) {
 	"use strict";
-
+	
 	// for some reason the HTML document has to be changed in order to
 	// calcZoomLevel() works correctly. This is what G.debug_append() does.
 	G.debug_append(" ");
-
-	var zoom = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
-	var zoom2 = G.svg_element[id].viewBox.baseVal.width / G.svg_element[id].widthUnzoomed;
-	// G.debug('zoom: ' + zoom + ' zoom2: ' + zoom2 + ' zoomLevel: ' + zoom /
-	// zoom2);
+	
+	G.log("********** parentwidth: " + G.svg_parent[id].clientWidth + " ***** UNZOOMED: " + G.svg_element[id].widthUnzoomed)
+	G.log("********** parentheight: " + G.svg_parent[id].clientHeight + " ***** UNZOOMED: " + G.svg_element[id].heightUnzoomed)
+	var zoomWidth = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
+	var zoomHeight = G.svg_parent[id].clientHeight / G.svg_element[id].heightUnzoomed;
+	
+	if(zoomWidth < zoomHeight)
+		{
+		var zoom = zoomWidth;
+		var zoom2 = G.svg_element[id].viewBox.baseVal.width / G.svg_element[id].widthUnzoomed;
+		}
+	else
+		{
+		var zoom = zoomHeight;
+		var zoom2 = G.svg_element[id].viewBox.baseVal.height / G.svg_element[id].heightUnzoomed;
+		}
+	
+	
+	
+	var zoomLevelA = zoom / zoom2;
+	
 	MZP.zoomLevel[id] = zoom / zoom2;
+	
+	
+//	 G.log('zoom: ' + zoom + ' zoom2: ' + zoom2 + ' zoomLevelA: ' + zoomLevelA);
+//	 
+//	 G.log("G.svg_element[0].currentScale: " + G.svg_element[0].currentScale);
+//	 
+//	 G.log("innerWidth: " + window.innerWidth + "  innerHeight: " + window.innerHeight);
+//	 
+//	 //G.log("outerheight"  + screen.height / window.devicePixelRatio - window.screenTop);
+//	 G.log(screen.height + " " + window.devicePixelRatio + " " + window.screenTop);
+	 
+	 G.log("shownWidth (in px): " + window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[id])
+	 G.log("shownHeight (in px): " + window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[id])
+	 
+	 var xValue = ((window.pageXOffset || document.documentElement.scrollLeft)) - G.svg_parent[id].offsetLeft;
+	 var yValue = ((window.pageYOffset || document.documentElement.scrollTop)) - G.svg_parent[id].offsetTop;
+	 
+	 var leftFirstPixel = xValue / zoomLevelA;
+	 var topFirstPixel = yValue / zoomLevelA;
+
+//	 var zoomLevelB =document.documentElement.clientWidth / window.innerWidth;
+//	 G.log("zoomlevelB =" +  zoomLevelB);
+	 
+
+	 
+//	 G.log("window.pageXOffset: " + window.pageXOffset);
+//	 G.log("document.documentElement.scrollLeft: " + document.documentElement.scrollLeft);
+	 
+	G.log("first visible pixels: left: " + leftFirstPixel + " top: " + topFirstPixel);
+	 
+	
 };
 
 MZP.zoomViaMouseWheel = function(mouseWheelEvent) {
@@ -360,12 +409,120 @@ MZP.set = function(newXpos, newYpos, svgid) {
 
 	viewBoxValues[0] = posX;
 	viewBoxValues[1] = posY;
-
+	
+	Interface.levelset(svgid);
+	
 	MZP.SVGRoot[svgid].setAttribute('viewBox', viewBoxValues.join(' '));
 
 	MZP.oldPosition = [ newXpos, newYpos ];
 	MZP.calcZoomLevel(svgid);
 };
+
+MZP.show_position = function(xPos, yPos, svgid) {
+	
+	MZP.calcZoomLevel(svgid);
+	
+	var viewBox = MZP.SVGRoot[svgid].getAttribute('viewBox');
+	var viewBoxValues = viewBox.split(' ');
+	
+	
+	//G.log("window.innerHeight: " + window.innerHeight);
+	
+	var bb = MZP.SVGRoot[svgid].getBBox();
+	var box = bb.x + " " + bb.y + " " + bb.width+ " " + bb.height;
+	//G.log(".getBBox():"+ box);
+	
+	var browser = true; //as opposed to android webview
+	if(browser)
+	{
+		var xValue= viewBoxValues[0];
+		var yValue= viewBoxValues[1];
+		var widthValue= viewBoxValues[2];
+		var heightValue= viewBoxValues[3];
+	}
+	else
+	{
+//		G.log("shownWidth (in px): " + window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[id])
+//		 G.log("shownHeight (in px): " + window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[id])
+		 
+		 var xValue2 = ((window.pageXOffset || document.documentElement.scrollLeft)) - G.svg_parent[svgid].offsetLeft;
+		 var yValue2 = ((window.pageYOffset || document.documentElement.scrollTop)) - G.svg_parent[svgid].offsetTop;
+		 
+		 var leftFirstPixel = xValue2 / MZP.zoomLevel[svgid];
+		 var topFirstPixel = yValue2 / MZP.zoomLevel[svgid];
+		 
+		 
+		var xValue = leftFirstPixel;
+		var yValue = topFirstPixel;
+		var widthValue= window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[svgid];
+		var heightValue= window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[svgid];
+	}
+	
+	G.log('viewBox vorher: ' +[xValue, yValue, widthValue, heightValue].join(' '));
+	
+	
+	var visibleLeft = parseInt(xValue);
+	var visibleRight = parseInt(xValue) + parseInt(widthValue);
+	var visibleTop = parseInt(yValue);
+	var visibleBottom = parseInt(yValue) + parseInt(heightValue);
+	
+	var bothInside = true;
+	if(xPos > visibleLeft && xPos < visibleRight)
+	{
+		G.log("xPos inside: " + xPos + ">"+ visibleLeft +"&&"+ xPos +"<" +visibleRight);
+	}
+	else
+	{
+		G.log("xPos outside: NOT: " + xPos + ">"+ visibleLeft +"&&"+ xPos +"<" +visibleRight);
+		bothInside = false;
+	}
+	if(yPos > visibleTop && yPos < visibleBottom)
+	{
+		G.log("yPos inside: " + yPos + ">"+ visibleTop +"&&"+ yPos +"<" +visibleBottom);
+	}	
+	else
+	{
+		G.log("yPos outside: NOT: " + yPos + ">"+ visibleTop +"&&"+ yPos +"<" +visibleBottom);
+		bothInside = false;
+	}
+	
+	
+	
+	
+	MZP.oldPosition = [ xValue, yValue ];
+	
+	
+	//if available width contains xPos, set left to 0, else center
+	if(widthValue > xPos)
+		xValue = 0;
+	else
+		xValue = (xPos) - (widthValue / 2 );
+	//if available height contains xPos, set left to 0, else center
+	if(heightValue > yPos)
+		yValue = 0;
+	else
+		yValue = (yPos) - (heightValue / 2);
+	
+	
+	if(bothInside)
+		return;
+	
+	//for browsers:
+	if(browser)
+	{
+		MZP.SVGRoot[svgid].setAttribute('viewBox', [xValue, yValue, widthValue, heightValue].join(' '));
+	}
+	else
+	{
+		//for android:
+		window.scrollTo(xValue*MZP.zoomLevel[svgid], yValue*MZP.zoomLevel[svgid]);
+		G.log('scrollTo: ' + xValue + " " + yValue);
+	}
+	
+	
+	G.log('viewBox nacher: ' +[xValue, yValue, widthValue, heightValue].join(' '));
+	
+}
 
 /**
  * add event listeners and initialize objects when SVG object is loaded

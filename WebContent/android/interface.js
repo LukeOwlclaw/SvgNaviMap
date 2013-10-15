@@ -128,6 +128,7 @@ Interface.position_set = function(latitude, longitude, height) {
 	}
 
 	send_response('position_is_set');
+	//send_response('position_is_set' + svgid + " " + posX + " " + posY);
 
 	Interface.route_refresh();
 };
@@ -157,9 +158,14 @@ Interface.position_setSVG = function(posX, posY, svgid) {
 	}
 
 	send_response('position_is_set');
+	//send_response('position_is_set' + svgid + " " + posX + " " + posY);
 
 	refresh_location();
 	Interface.route_refresh();
+};
+
+Interface.refresh_location = function() {
+	refresh_location()
 };
 
 Interface.position_setID = function(vertexid) {
@@ -174,6 +180,7 @@ Interface.position_focus = function() {
 		var svgid = parseInt(currPositionPoint.getSvgid(), 10);
 		var xPos = currPositionPoint.getX();
 		var yPos = currPositionPoint.getY();
+		
 		// handel load time of svg image
 		if (svgid != Interface.currentsvg) {
 			selectsvg(svgid);
@@ -185,9 +192,33 @@ Interface.position_focus = function() {
 		} else {
 			// MZP.set(xPos, yPos, svgid);
 			send_response('position_focus_' + xPos + '_' + yPos);
-			// var elem = currPositionPoint.getShape().getClientRects()[0];
-			// console.log(elem.left + ', ' + elem.top);
-			// window.scrollTo(elem.left, elem.top);
+			
+//			 var elem = currPositionPoint.getShape().getClientRects()[0];
+//			 console.log(elem.left + ', ' + elem.top);
+//			 window.scrollTo(elem.left, elem.top);
+			
+			
+			
+			MZP.show_position(xPos, yPos, svgid);			
+		}
+	}
+};
+
+Interface.position_pintolocation = function() {
+	"use strict";
+	if (currPositionPoint != null) {
+		var svgid = parseInt(currPositionPoint.getSvgid(), 10);
+		var xPos = currPositionPoint.getX();
+		var yPos = currPositionPoint.getY();
+		
+		// handel load time of svg image
+		if (svgid != Interface.currentsvg) {
+			Interface.levelset(svgid)
+			window.setTimeout("Interface.position_pintolocation()", 200);			
+		} else {
+			Interface.route_refresh()
+			MZP.set(xPos, yPos, svgid);
+			send_response("should be pinned to: " + xPos + " , " + yPos);
 		}
 	}
 };
@@ -196,27 +227,28 @@ Interface.leveldown = function() {
 	"use strict";
 	var id = Interface.currentsvg - 1;
 	if (id >= 0) {
-		selectsvg(id);
-		Interface.currentsvg = id;
-		//sometimes edgemarkers are lost, get them back after level change was completed.
-		setTimeout("Interface.route_refresh();",300);
-		setTimeout("Interface.route_refresh();",600);
-		setTimeout("Interface.route_refresh();",900);
+		Interface.levelset(id);		
 	}
-
 };
+
+Interface.levelset = function(svgid) {
+	if(Interface.currentsvg == svgid)
+		return;
+	
+	selectsvg(svgid);
+	Interface.currentsvg = svgid;
+	//sometimes edgemarkers are lost, get them back after level change was completed.
+	setTimeout("Interface.route_refresh();",300);
+	setTimeout("Interface.route_refresh();",600);
+	setTimeout("Interface.route_refresh();",900);
+}
 
 Interface.levelup = function() {
 	"use strict";
 	var id = Interface.currentsvg + 1;
 	if (id < G.svg_element.length) {
-		selectsvg(id);
-		Interface.currentsvg = id;
+		Interface.levelset(id);
 	}
-	//sometimes edgemarkers are lost, get them back after level change was completed.
-	setTimeout("Interface.route_refresh();",300);
-	setTimeout("Interface.route_refresh();",600);
-	setTimeout("Interface.route_refresh();",900);
 };
 
 Interface.route_changeDisabledAdapted = function(disabledAdapted) {
