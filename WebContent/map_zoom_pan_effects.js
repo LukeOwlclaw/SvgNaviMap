@@ -208,8 +208,8 @@ MZP.calcZoomLevel = function(id) {
 	// calcZoomLevel() works correctly. This is what G.debug_append() does.
 	G.debug_append(" ");
 	
-	G.log("********** parentwidth: " + G.svg_parent[id].clientWidth + " ***** UNZOOMED: " + G.svg_element[id].widthUnzoomed)
-	G.log("********** parentheight: " + G.svg_parent[id].clientHeight + " ***** UNZOOMED: " + G.svg_element[id].heightUnzoomed)
+//	G.log("********** parentwidth: " + G.svg_parent[id].clientWidth + " ***** UNZOOMED: " + G.svg_element[id].widthUnzoomed)
+//	G.log("********** parentheight: " + G.svg_parent[id].clientHeight + " ***** UNZOOMED: " + G.svg_element[id].heightUnzoomed)
 	var zoomWidth = G.svg_parent[id].clientWidth / G.svg_element[id].widthUnzoomed;
 	var zoomHeight = G.svg_parent[id].clientHeight / G.svg_element[id].heightUnzoomed;
 	
@@ -240,8 +240,8 @@ MZP.calcZoomLevel = function(id) {
 //	 //G.log("outerheight"  + screen.height / window.devicePixelRatio - window.screenTop);
 //	 G.log(screen.height + " " + window.devicePixelRatio + " " + window.screenTop);
 	 
-	 G.log("shownWidth (in px): " + window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[id])
-	 G.log("shownHeight (in px): " + window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[id])
+//	 G.log("shownWidth (in px): " + window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[id])
+//	 G.log("shownHeight (in px): " + window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[id])
 	 
 	 var xValue = ((window.pageXOffset || document.documentElement.scrollLeft)) - G.svg_parent[id].offsetLeft;
 	 var yValue = ((window.pageYOffset || document.documentElement.scrollTop)) - G.svg_parent[id].offsetTop;
@@ -249,15 +249,15 @@ MZP.calcZoomLevel = function(id) {
 	 var leftFirstPixel = xValue / zoomLevelA;
 	 var topFirstPixel = yValue / zoomLevelA;
 
-//	 var zoomLevelB =document.documentElement.clientWidth / window.innerWidth;
-//	 G.log("zoomlevelB =" +  zoomLevelB);
+	 var zoomLevelB =document.documentElement.clientWidth / window.innerWidth;
+//	 G.log("============ zoomlevelB =" +  zoomLevelB);
 	 
 
 	 
 //	 G.log("window.pageXOffset: " + window.pageXOffset);
 //	 G.log("document.documentElement.scrollLeft: " + document.documentElement.scrollLeft);
 	 
-	G.log("first visible pixels: left: " + leftFirstPixel + " top: " + topFirstPixel);
+//	G.log("first visible pixels: left: " + leftFirstPixel + " top: " + topFirstPixel);
 	 
 	
 };
@@ -432,7 +432,12 @@ MZP.show_position = function(xPos, yPos, svgid) {
 	var box = bb.x + " " + bb.y + " " + bb.width+ " " + bb.height;
 	//G.log(".getBBox():"+ box);
 	
-	var browser = true; //as opposed to android webview
+	//if svgapp is defined this is android webview
+	if (typeof svgapp === 'undefined') 
+		var browser = true; //as opposed to android webview
+	else
+		var browser = false;
+	
 	if(browser)
 	{
 		var xValue= viewBoxValues[0];
@@ -492,13 +497,13 @@ MZP.show_position = function(xPos, yPos, svgid) {
 	MZP.oldPosition = [ xValue, yValue ];
 	
 	
-	//if available width contains xPos, set left to 0, else center
-	if(widthValue > xPos)
+	//if 3/4 of available width contains xPos, set left to 0, else center
+	if(widthValue * 0.75  > xPos)
 		xValue = 0;
 	else
 		xValue = (xPos) - (widthValue / 2 );
-	//if available height contains xPos, set left to 0, else center
-	if(heightValue > yPos)
+	//if 3/4 of available height contains xPos, set left to 0, else center
+	if(heightValue * 0.75 > yPos)
 		yValue = 0;
 	else
 		yValue = (yPos) - (heightValue / 2);

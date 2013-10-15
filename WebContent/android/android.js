@@ -45,9 +45,16 @@ function init_custom() {
 
 function selectsvg(svgid) {
 	"use strict";
+
+	calcSvgSize();
+
 	if (svgid == null || G.svg_parent[svgid] == undefined) {
 		alert('Invalid svg level ' + svgid + ' selected.');
 		return;
+	}
+
+	for ( var i = 0; i < G.svg_parent.length; i++) {
+		G.svg_parent[i].style.display = 'none';
 	}
 
 	for ( var i = 0; i < G.svg_parent.length; i++) {
@@ -88,7 +95,7 @@ function calcSvgSize() {
 		ViewY = null;
 	}
 
-	console.log("calc svg size: " + self.innerWidth + " x " + self.innerHeight + "; " + self.outerWidth + " x "
+	G.log("+++++ calc svg size: " + self.innerWidth + " x " + self.innerHeight + "; " + self.outerWidth + " x "
 			+ self.outerHeight + "; " + document.documentElement.clientWidth + " x "
 			+ document.documentElement.clientHeight + "; " + document.body.clientWidth + " x "
 			+ document.body.clientHeight + "; " + screen.width + " x " + screen.height + "; "

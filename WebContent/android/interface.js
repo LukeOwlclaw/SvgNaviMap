@@ -185,6 +185,10 @@ Interface.position_focus = function() {
 		if (svgid != Interface.currentsvg) {
 			selectsvg(svgid);
 			Interface.currentsvg = svgid;
+			//ALTERNATIVE: (together with other ALTERNATIVE line, this should suffice. Other setTimeout() can be removed.)
+			//window.setTimeout("Interface.position_focus()", 100);
+			window.setTimeout("Interface.position_focus()", 400);
+			window.setTimeout("Interface.position_focus()", 700);
 			window.setTimeout("Interface.position_focus()", 1000);
 			setTimeout("Interface.route_refresh();",300);
 			setTimeout("Interface.route_refresh();",600);
@@ -192,6 +196,9 @@ Interface.position_focus = function() {
 		} else {
 			// MZP.set(xPos, yPos, svgid);
 			send_response('position_focus_' + xPos + '_' + yPos);
+			
+			//ALTERNATIVE:
+//			setTimeout("Interface.route_refresh();",20);			
 			
 //			 var elem = currPositionPoint.getShape().getClientRects()[0];
 //			 console.log(elem.left + ', ' + elem.top);
