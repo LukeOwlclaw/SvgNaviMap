@@ -388,6 +388,14 @@ function navigate(event) {
 		Routing_disabledAdapted = Interface.disabledAdapted;
 
 		// Interface.position_focus();
+		
+		//show all routing vertices:
+		var vertex = currLocation;
+		while(vertex != "destination" && vertex.getDijkstraUsed())
+		{
+			vertex.show();
+			vertex = vertex.getDijkstraNextVertex();
+		}	
 
 		send_response("route_success");
 	} else {

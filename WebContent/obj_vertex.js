@@ -152,8 +152,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 		if (found)
 			edgelist.splice(i, 1);
 		else
-			alert('not found id ' + deleteEdge.getId()
-					+ ' in edgelist of vertex ' + this.getId());
+			alert('not found id ' + deleteEdge.getId() + ' in edgelist of vertex ' + this.getId());
 	};
 
 	this.setCategory = function(newCategory) {
@@ -175,8 +174,11 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 	this.paint = function() {
 		"use strict";
 		var test = G.svg_element[svgid].getElementById('destination_marker');
-		if (test != undefined)
-			G.svg_unit_vertex[svgid].removeChild(test);
+		if (test != undefined) {
+			test.remove();
+			// G.svg_unit_vertex[svgid].removeChild(test);
+
+		}
 
 		if (this.getPoi()) {
 			this.getShape().setAttribute('fill', 'black');
@@ -237,8 +239,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 				return;
 
 			// do not unpaint, if routing destination
-			if (Routing_destination != null
-					&& Routing_destination.getId() == id)
+			if (Routing_destination != null && Routing_destination.getId() == id)
 				return;
 
 			Vertex_container.get(id).paint();
@@ -247,8 +248,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 
 	this.createShape = function() {
 		"use strict";
-		var shape = document.createElementNS('http://www.w3.org/2000/svg',
-				'circle');
+		var shape = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
 		shape.setAttribute('id', 'vertex' + this.getId());
 		shape.setAttribute('cx', this.getX());
@@ -260,6 +260,14 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 		this.refreshChrome();
 
 		this.paint();
+	};
+
+	this.show = function() {
+		this.getShape().setAttribute('visibility', 'visible');
+	};
+
+	this.hide = function() {
+		this.getShape().setAttribute('visibility', 'hidden');
 	};
 
 	this.paint_active = function() {
@@ -276,20 +284,23 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 		this.paint_active();
 
 		var test = G.svg_element[svgid].getElementById('destination_marker');
-		if (test != undefined)
-			G.svg_unit_vertex[svgid].removeChild(test);
+		if (test != undefined) {
+			test.remove();
+			// G.svg_unit_vertex[svgid].removeChild(test);
 
-		var path = document.createElementNS('http://www.w3.org/2000/svg',
-				'path');
+		}
+
+		var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 		path.setAttribute('id', 'destination_marker');
-		path.setAttribute('d', 'M ' + (x - G.destinationmarker_dim) + ' '
-				+ (y - 4 * G.destinationmarker_dim) + ' L ' + x + ' ' + y
-				+ ' L ' + (x + G.destinationmarker_dim) + ' '
-				+ (y - 4 * G.destinationmarker_dim) + ' z');
+		path.setAttribute('d', 'M ' + (x - G.destinationmarker_dim) + ' ' + (y - 4 * G.destinationmarker_dim) + ' L '
+				+ x + ' ' + y + ' L ' + (x + G.destinationmarker_dim) + ' ' + (y - 4 * G.destinationmarker_dim) + ' z');
 		path.setAttribute('fill', 'rgb(50,204,50)');
 		path.setAttribute('style', 'stroke:rgb(0,0,0)');
 		path.setAttribute('stroke-width', '0.9');
+		path.setAttribute('visibility', 'visible');
 		G.svg_unit_vertex[svgid].appendChild(path);
+		bringToFront(path);
+
 	};
 
 	this.remove = function() {
@@ -320,4 +331,26 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 	} else {
 		G.log('Can not create vertex, because id is used already.');
 	}
+}
+
+function bringToFront(el) {
+	if (el.parentNode == undefined)
+		return false;
+
+	if (el == el.parentNode.firstChild)
+		return true;
+
+	// move element "on top of" all others within the same grouping
+	el.parentNode.appendChild(el);
+
+	// move element "underneath" all others within the same grouping
+	el.parentNode.insertBefore(el, el.parentNode.firstChild);
+
+	// move element "on top of" all others in the entire document
+	el.ownerSVGElement.appendChild(el);
+
+	// move element "underneath" all others in the entire document
+	el.ownerSVGElement.appendChild(el, el.ownerSVGElement.firstChild);
+
+	return true;
 }
