@@ -14,3 +14,6 @@ measure2
 tmp/
 bargraph/
 ~$*
+AndroidSvgNaviMap/assets/svgnavimap/
+AndroidSvgNaviMap/bin/
+AndroidSvgNaviMap/gen/

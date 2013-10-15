@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/mapview_menu_locate"
+        android:showAsAction="always"
+        android:title="locate"
+        />
+    
+    
+    <item
+        android:id="@+id/mapview_menu_setpos"
+        android:showAsAction="always"
+        android:title="set pos"
+        />
+    
+    <item
+        android:id="@+id/mapview_menu_levelup"
+        android:showAsAction="always"
+        android:title="level up"
+        />
+    <item
+        android:id="@+id/mapview_menu_leveldown"
+        android:showAsAction="always"
+        android:title="level down"/>
+    
+    <item
+        android:id="@+id/mapview_menu_navigate"
+        android:showAsAction="always"
+        android:title="navigate"
+        />
+    
+
+</menu>
