@@ -175,7 +175,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 		"use strict";
 		var test = G.svg_element[svgid].getElementById('destination_marker');
 		if (test != undefined) {
-			test.remove();
+			test.parentElement.removeChild(test);
 			// G.svg_unit_vertex[svgid].removeChild(test);
 
 		}
@@ -285,7 +285,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 
 		var test = G.svg_element[svgid].getElementById('destination_marker');
 		if (test != undefined) {
-			test.remove();
+			test.parentElement.removeChild(test)
 			// G.svg_unit_vertex[svgid].removeChild(test);
 
 		}

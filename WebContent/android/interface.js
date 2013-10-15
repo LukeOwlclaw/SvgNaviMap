@@ -198,7 +198,7 @@ Interface.position_focus = function() {
 			send_response('position_focus_' + xPos + '_' + yPos);
 			
 			//ALTERNATIVE:
-//			setTimeout("Interface.route_refresh();",20);			
+			setTimeout("Interface.route_refresh();",20);			
 			
 //			 var elem = currPositionPoint.getShape().getClientRects()[0];
 //			 console.log(elem.left + ', ' + elem.top);
@@ -336,6 +336,14 @@ function navigate(event) {
 		Routing_destination.paint();
 		Routing_destination = null;
 	}
+	
+	//hide all old routing vertices:
+	var vertex = currLocation;
+	while(vertex != null && vertex != "destination" && vertex.getDijkstraUsed())
+	{
+		vertex.hide();
+		vertex = vertex.getDijkstraNextVertex();
+	}
 
 	if (Vertex_clickedID == null) {
 		if (event == null) {
@@ -365,7 +373,7 @@ function navigate(event) {
 		G.log('navigate: no Routing_destination found');
 		return;
 	}
-
+	
 	Vertex_clickedID = null;
 	Routing_destination.paint_destination();
 
