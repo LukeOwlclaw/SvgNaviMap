@@ -25,10 +25,11 @@ This software is currently a proof of concept. It certainly needs improvement.
 HOW TO USE THIS SOFTWARE
 ########################
 * Optionaly, deploy in webserver
-* Open editorsView.html
+* Open editorsView.html (launch Chrome with command line parameter "--disable-web-security" to allow loading XML files from local disk)
 * Import XML from server
 * Edit using GUI
-* Export and save to data/svgmap-data.xml
+* Export and save to data/svgmap-data.xml (add entry to global.js to be able to load project later)
+* Load project using AndroidSvgNaviMap or usersView.html
 
 
 
