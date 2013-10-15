@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with thi
 IF YOU NEED ANOTHER LICENSE
 ###########################
 
-If you are planning to integrate FootPath into a commercial product, please contact us for licensing options.
+If you are planning to integrate SvgNaviMap into a commercial product, please contact us for licensing options.
 
 OTHER ISSUES
 ############
