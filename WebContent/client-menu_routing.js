@@ -102,6 +102,13 @@ function routing_refresh() {
 
 	G.log('Refresh route to ' + Routing_destination.getId());
 
+	// hide all old routing vertices:
+	var vertex = currLocation;
+	while (vertex != null && vertex != "destination" && vertex.getDijkstraUsed()) {
+		vertex.hide();
+		vertex = vertex.getDijkstraNextVertex();
+	}
+
 	var route_da = document.getElementById('routing_disabledAdapted').checked;
 
 	if (try_preRouting(currLocation, Routing_destination, route_da)
@@ -114,6 +121,13 @@ function routing_refresh() {
 			G.svg_element[i].removeEventListener('click', routing_click, false);
 		}
 		Client_event_clickRouting = false;
+
+		// show all routing vertices:
+		var vertex = currLocation;
+		while (vertex != "destination" && vertex.getDijkstraUsed()) {
+			vertex.show();
+			vertex = vertex.getDijkstraNextVertex();
+		}
 
 		client_selectsvg(currLocation.getSvgid());
 	}

@@ -38,6 +38,9 @@ function PositionPoint(svg_id, x_pos, y_pos) {
 
 	this.getShape = function() {
 		"use strict";
+		var shape = G.svg_element[svgid].getElementById('positionpoint');
+		if (shape == null)
+			this.createShape();
 		return G.svg_element[svgid].getElementById('positionpoint');
 	};
 
@@ -51,8 +54,7 @@ function PositionPoint(svg_id, x_pos, y_pos) {
 		// animation
 		// <animate attributeName="r" attributeType="XML"
 		// dur="1.5s" from="3" to="7" fill="freeze" repeatCount="indefinite"/>
-		var animation = document.createElementNS('http://www.w3.org/2000/svg',
-				'animate');
+		var animation = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
 		animation.setAttribute('id', 'positionpointBlink');
 		animation.setAttribute('attributeName', 'r');
 		animation.setAttribute('attributeType', 'XML');
@@ -67,8 +69,7 @@ function PositionPoint(svg_id, x_pos, y_pos) {
 
 	this.createShape = function() {
 		"use strict";
-		var shape = document.createElementNS('http://www.w3.org/2000/svg',
-				'circle');
+		var shape = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
 		shape.setAttribute('id', 'positionpoint');
 		shape.setAttribute('cx', this.getX());
