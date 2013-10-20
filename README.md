@@ -24,7 +24,7 @@ This software is currently a proof of concept. It certainly needs improvement.
 
 HOW TO USE THIS SOFTWARE
 ########################
-* Optionally, run /webcontent/startserver.cmd to start the minimal webserver
+* Optionally, run /webcontent/startserver.cmd to start the minimal web server (Usage with Webserver only supported by Firefoy)
 * Open editorsView.html (launch Chrome with command line parameter "--disable-web-security" to allow loading XML files from local disk)
 * Import XML from server
 * Edit using GUI
