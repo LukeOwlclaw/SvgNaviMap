@@ -103,10 +103,8 @@ function routing_refresh() {
 	G.log('Refresh route to ' + Routing_destination.getId());
 
 	// hide all old routing vertices:
-	var vertex = currLocation;
-	while (vertex != null && vertex != "destination" && vertex.getDijkstraUsed()) {
-		vertex.hide();
-		vertex = vertex.getDijkstraNextVertex();
+	for ( var i = 0; i < Vertex_container.getAll().length; i++) {
+		Vertex_container.getAll()[i].hide();
 	}
 
 	var route_da = document.getElementById('routing_disabledAdapted').checked;
