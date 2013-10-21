@@ -175,7 +175,8 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 		"use strict";
 		var test = G.svg_element[svgid].getElementById('destination_marker');
 		if (test != undefined) {
-			test.parentElement.removeChild(test);
+      //WHY SHOULD WE DELETE THIS MARKER?
+			//test.parentElement.removeChild(test);
 			// G.svg_unit_vertex[svgid].removeChild(test);
 
 		}
@@ -226,6 +227,7 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 
 		shape.onmouseout = function(evt) {
 			"use strict";
+      
 			// do not unpaint, if vertex is selected
 			if (Vertex_current != null)
 				return;
@@ -285,9 +287,8 @@ function Vertex(newID, newSvgid, x_pos, y_pos) {
 
 		var test = G.svg_element[svgid].getElementById('destination_marker');
 		if (test != undefined) {
+      //we create a new marker shortly, so delete this one.
 			test.parentElement.removeChild(test)
-			// G.svg_unit_vertex[svgid].removeChild(test);
-
 		}
 
 		var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
