@@ -77,11 +77,12 @@ function load_from_server_xml(callback, xmlPath) {
 	var asyncXMLRequest = new XMLHttpRequest();
 	asyncXMLRequest.open('GET', filepath);
 	asyncXMLRequest.onreadystatechange = function() {
+		G.log("readyState: " + this.readyState);
 		if (this.readyState == 4) {
 			if (this.responseXML != null)
 				import_xml(this.responseXML, callback, true);
 			else {
-				if (this.response != null)
+				if (this.response != null && this.response != "")
 					import_xml(this.response, null, true);
 				else
 					G.log('import: responseXML is null.');
@@ -89,7 +90,19 @@ function load_from_server_xml(callback, xmlPath) {
 		}
 	};
 	// G.log("asyncXMLRequest.send();");
-	asyncXMLRequest.send();
+	try {
+		asyncXMLRequest.send();
+		G.log("asyncXMLRequest.send() DONE");
+	} catch (err) {
+		var msg = "Something went terribly wrong loading this project.";
+		var localfilecheck = "file://";
+		if (document.URL.substring(0, localfilecheck.length) === localfilecheck)
+			if (err.code == 19)
+				msg += " Either run Chrome with command line parameter '--disable-web-security' or serve this HTML via a web server.";
+		msg += "\n\nError message: " + err.message;
+		G.log(msg);
+		alert(msg);
+	}
 }
 
 function import_close() {

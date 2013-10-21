@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -50,7 +51,10 @@ public class MainActivity extends Activity {
 		if (Build.VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN) {
 			mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 		} else {
-			Log.w(LOGTAG, "At least API 16 is required!");
+			String msg = "At least API 16 is required!";
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
+			Log.w(LOGTAG, msg);
 		}
 
 		mWebView.getWebView().setWebChromeClient(new WebChromeClient());
@@ -59,7 +63,10 @@ public class MainActivity extends Activity {
 		mWebView.getWebView().addJavascriptInterface(js, "svgapp");
 
 		mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
-		// mWebView.loadUrl("file:///android_asset/first-office/android.html");
+
+		// mWebView.loadUrl("file:///android_asset/svgnavimap/data/stoneridge_gif1.svg");
+		// mWebView.loadUrl("file:///android_asset/svgnavimap/data/stoneridge_gif1.svg");
+		// mWebView.loadUrl("file:///android_res/raw/svgnavimap/android.html");
 
 	}
 
