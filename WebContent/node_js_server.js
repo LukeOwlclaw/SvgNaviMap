@@ -16,10 +16,10 @@ http.createServer(function(request, response) {
 	else 
 	{ 
 		if (methode=="PUT") {
-			response.writeHead(500, {"Content-Type": "text/plain"});
-			response.write("Unsupported Request Methode\n");
-			response.end();
-			//PUT(filename,response,request);
+			//response.writeHead(500, {"Content-Type": "text/plain"});
+			//response.write("Unsupported Request Methode\n");
+			//response.end();
+			PUT(filename,response,request);
 		}
 		else {
 			console.log("Unsupported Request: " + request.method + " " + request.url);
@@ -102,41 +102,22 @@ function GET(filename,response) {
 	});
 }
 
-function PUT(filename,response) {
-	path.exists(filename, function(exists) {
-		
-		if(!exists) {
-			response.writeHead(404, {"Content-Type": "text/plain"});
-			response.write("404 Not Found\n");
+function PUT(filename,response,request) {
+	var body = "";
+	request.on('data', function (chunk) {
+		body += chunk;
+	});
+
+	request.on('end', function () {
+		fs.writeFile(filename,body, function(err, file) {
+			if(err) {        
+				response.writeHead(500, {"Content-Type": "text/plain"});
+				response.write(err + "\n");
+				response.end();
+				return;
+			}
+			response.writeHead(200);
 			response.end();
-			return;
-		}
-	 
-		if (fs.statSync(filename).isDirectory()) {
-			filename += '/index.html';
-		}
-	 
-		fs.readFile(filename, "binary", function(err, file) {
-		  if(err) {        
-			response.writeHead(500, {"Content-Type": "text/plain"});
-			response.write(err + "\n");
-			response.end();
-			return;
-		}
-	 
-		//throttleUpload(request, 5, 500)
-		
-		response.writeHead(200, {"Cache-Control": "no-cache, must-revalidate"});
-		
-		//response.writeHead(200, {"Cache-Control": "public, max-age=60, s-maxage=60"});
-		
-		
-		response.write(file, "binary");
-		
-		response.end();
-		/*setTimeout(function() {
-			response.end();
-			}, 2000);*/
 		});
 	});
 }
