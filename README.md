@@ -24,11 +24,12 @@ This software is currently a proof of concept. It certainly needs improvement.
 
 HOW TO USE THIS SOFTWARE
 ########################
-* Optionally, run /webcontent/startserver.cmd to start the minimal web server (Usage with Webserver only supported by Firefox)
+* Optionally, run /webcontent/startserver.cmd to start the minimal web server (Usage with web server only supported by Firefox)
 * Open editorsView.html (launch Chrome with command line parameter "--disable-web-security" to allow loading XML files from local disk)
 * Import XML from server
 * Edit using GUI
-* Export and save to data/svgmap-data.xml (add entry to global.js to be able to load project later)
+* Use the save button in the main menu to save it directly to the server (web server usage required)
+* Alternately, export and save to data/svgmap-data.xml (add entry to global.js to be able to load project later)
 * Load project using AndroidSvgNaviMap or usersView.html
 
 
