@@ -13,7 +13,7 @@ function export_close() {
 	document.getElementById('export').style.display = 'none';
 }
 
-function export_xml() {
+function get_xml_data() {
 	"use strict";
 
 	var gpsmarkerarray = Gpsmarker_container.getAll();
@@ -204,7 +204,13 @@ function export_xml() {
 
 	file_content = file_content.concat('</svgmap-data>\n');
 	file_content = file_content.concat('<!-- EOF -->\n');
+	
+	return file_content;
+}
 
+function export_xml(){
+	"use strict";
+	var file_content=get_xml_data();
 	window.URL = window.webkitURL || window.URL;
 	window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder
 			|| window.MozBlobBuilder || window.MSBlobBuilder;
@@ -237,4 +243,17 @@ function export_warn(message) {
 	}
 
 	document.getElementById('export_warnings').innerHTML += '<br>';
+}
+
+function save_xml(){
+	"use strict";
+	var file_content=get_xml_data();
+	var xml_path_url='./data/' + G.getXmlFilename();
+	jQuery.ajax({
+				url:xml_path_url,
+				type: 'PUT',
+				dataType: 'xml',
+				data: file_content,
+				success: alert('Saved')
+				});
 }
