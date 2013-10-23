@@ -23,8 +23,8 @@ function get_xml_data() {
 
 	var file_content = "";
 
-	file_content = file_content.concat('<!-- '+G.getXmlFilename()+' -->\n');
-	file_content = file_content.concat('<svgmap-data>\n');
+	file_content = file_content.concat('<!-- '+G.getXmlFilename()+' -->\r\n');
+	file_content = file_content.concat('<svgmap-data>\r\n');
 
 	// test for min 2 gps marker per level
 	var markerArray = new Array();
@@ -51,25 +51,25 @@ function get_xml_data() {
 	// start exporting
 
 	if (G.Level_min_altitude.length > 0 && G.Level_max_altitude.length > 0) {
-		file_content = file_content.concat('<levels>\n');
+		file_content = file_content.concat('\t<levels>\r\n');
 		for ( var i = 0; i < G.svg_element.length; i++) {
 
 			var min = G.Level_min_altitude[i];
 			var max = G.Level_max_altitude[i];
 			var svgpath = G.Level_svgpath[i];
 
-			file_content = file_content.concat('<level>\n');
-			file_content = file_content.concat('<id>' + i + '</id>\n');
-			file_content = file_content.concat('<svgpath>' + svgpath + '</svgpath>\n');
-			file_content = file_content.concat('<min_altitude>' + min + '</min_altitude>\n');
-			file_content = file_content.concat('<max_altitude>' + max + '</max_altitude>\n');
-			file_content = file_content.concat('</level>\n');
+			file_content = file_content.concat('\t\t<level>\r\n');
+			file_content = file_content.concat('\t\t\t<id>' + i + '</id>\r\n');
+			file_content = file_content.concat('\t\t\t<svgpath>' + svgpath + '</svgpath>\r\n');
+			file_content = file_content.concat('\t\t\t<min_altitude>' + min + '</min_altitude>\r\n');
+			file_content = file_content.concat('\t\t\t<max_altitude>' + max + '</max_altitude>\r\n');
+			file_content = file_content.concat('\t\t</level>\r\n');
 		}
-		file_content = file_content.concat('</levels>\n');
+		file_content = file_content.concat('\t</levels>\r\n');
 	}
 
 	if (gpsmarkerarray.length > 0) {
-		file_content = file_content.concat('<gpsmarkers>\n');
+		file_content = file_content.concat('\t<gpsmarkers>\r\n');
 		for ( var i = 0, g = gpsmarkerarray[i]; i < gpsmarkerarray.length; g = gpsmarkerarray[++i]) {
 
 			var latitude = parseFloat(g.getLatitude());
@@ -85,125 +85,125 @@ function get_xml_data() {
 						+ g.getSvgid() + ' has a invalid longitude.');
 				continue;
 			}
-			file_content = file_content.concat('<gpsmarker>\n');
-			file_content = file_content.concat('<id>' + g.getId() + '</id>\n');
-			file_content = file_content.concat('<svgid>' + g.getSvgid()
-					+ '</svgid>\n');
-			file_content = file_content.concat('<x-pos>' + g.getX()
-					+ '</x-pos>\n');
-			file_content = file_content.concat('<y-pos>' + g.getY()
-					+ '</y-pos>\n');
-			file_content = file_content.concat('<latitude>' + g.getLatitude()
-					+ '</latitude>\n');
-			file_content = file_content.concat('<longitude>' + g.getLongitude()
-					+ '</longitude>\n');
-			file_content = file_content.concat('</gpsmarker>\n');
+			file_content = file_content.concat('\t\t<gpsmarker>\r\n');
+			file_content = file_content.concat('\t\t\t<id>' + g.getId() + '</id>\r\n');
+			file_content = file_content.concat('\t\t\t<svgid>' + g.getSvgid()
+					+ '</svgid>\r\n');
+			file_content = file_content.concat('\t\t\t<x-pos>' + g.getX()
+					+ '</x-pos>\r\n');
+			file_content = file_content.concat('\t\t\t<y-pos>' + g.getY()
+					+ '</y-pos>\r\n');
+			file_content = file_content.concat('\t\t\t<latitude>' + g.getLatitude()
+					+ '</latitude>\r\n');
+			file_content = file_content.concat('\t\t\t<longitude>' + g.getLongitude()
+					+ '</longitude>\r\n');
+			file_content = file_content.concat('\t\t</gpsmarker>\r\n');
 		}
-		file_content = file_content.concat('</gpsmarkers>\n');
+		file_content = file_content.concat('\t</gpsmarkers>\r\n');
 	}
 
 	if (categoryarray.length > 0) {
-		file_content = file_content.concat('<categories>\n');
+		file_content = file_content.concat('\t<categories>\r\n');
 		for ( var i = 0, c = categoryarray[i]; i < categoryarray.length; c = categoryarray[++i]) {
-			file_content = file_content.concat('<category>\n');
-			file_content = file_content.concat('<id>' + c.getId() + '</id>\n');
-			file_content = file_content.concat('<name>' + escape(c.getName())
-					+ '</name>\n');
-			file_content = file_content.concat('</category>\n');
+			file_content = file_content.concat('\t\t<category>\r\n');
+			file_content = file_content.concat('\t\t\t<id>' + c.getId() + '</id>\r\n');
+			file_content = file_content.concat('\t\t\t<name>' + escape(c.getName())
+					+ '</name>\r\n');
+			file_content = file_content.concat('\t\t</category>\r\n');
 		}
-		file_content = file_content.concat('</categories>\n');
+		file_content = file_content.concat('\t</categories>\r\n');
 	}
 
 	if (vertexarray.length > 0) {
-		file_content = file_content.concat('<vertices>\n');
+		file_content = file_content.concat('\t<vertices>\r\n');
 		for ( var i = 0, v = vertexarray[i]; i < vertexarray.length; v = vertexarray[++i]) {
-			file_content = file_content.concat('<vertex>\n');
-			file_content = file_content.concat('<id>' + v.getId() + '</id>\n');
-			file_content = file_content.concat('<svgid>' + v.getSvgid()
-					+ '</svgid>\n');
-			file_content = file_content.concat('<x-pos>' + v.getX()
-					+ '</x-pos>\n');
-			file_content = file_content.concat('<y-pos>' + v.getY()
-					+ '</y-pos>\n');
-			file_content = file_content.concat('<poi>' + v.getPoi()
-					+ '</poi>\n');
+			file_content = file_content.concat('\t\t<vertex>\r\n');
+			file_content = file_content.concat('\t\t\t<id>' + v.getId() + '</id>\r\n');
+			file_content = file_content.concat('\t\t\t<svgid>' + v.getSvgid()
+					+ '</svgid>\r\n');
+			file_content = file_content.concat('\t\t\t<x-pos>' + v.getX()
+					+ '</x-pos>\r\n');
+			file_content = file_content.concat('\t\t\t<y-pos>' + v.getY()
+					+ '</y-pos>\r\n');
+			file_content = file_content.concat('\t\t\t<poi>' + v.getPoi()
+					+ '</poi>\r\n');
 
 			if (v.getShortDesc() != '')
-				file_content = file_content.concat('<shortDescription>'
-						+ escape(v.getShortDesc()) + '</shortDescription>\n');
+				file_content = file_content.concat('\t\t\t<shortDescription>'
+						+ escape(v.getShortDesc()) + '</shortDescription>\r\n');
 			if (v.getLongDesc() != '')
-				file_content = file_content.concat('<longDescription>'
-						+ escape(v.getLongDesc()) + '</longDescription>\n');
+				file_content = file_content.concat('\t\t\t<longDescription>'
+						+ escape(v.getLongDesc()) + '</longDescription>\r\n');
 			if (v.getPolygon() != null) {
 				var points = v.getPolygon().getBorderPoints();
 				for ( var j = 0; j < points.length; j++) {
-					file_content = file_content.concat('<borderpoint>\n');
-					file_content = file_content.concat('<id>'
-							+ points[j].getId() + '</id>\n');
-					file_content = file_content.concat('<x-pos>'
-							+ points[j].getX() + '</x-pos>\n');
-					file_content = file_content.concat('<y-pos>'
-							+ points[j].getY() + '</y-pos>\n');
-					file_content = file_content.concat('</borderpoint>\n');
+					file_content = file_content.concat('\t\t\t<borderpoint>\r\n');
+					file_content = file_content.concat('\t\t\t\t<id>'
+							+ points[j].getId() + '</id>\r\n');
+					file_content = file_content.concat('\t\t\t\t<x-pos>'
+							+ points[j].getX() + '</x-pos>\r\n');
+					file_content = file_content.concat('\t\t\t\t<y-pos>'
+							+ points[j].getY() + '</y-pos>\r\n');
+					file_content = file_content.concat('\t\t\t</borderpoint>\r\n');
 				}
 			}
 			if (v.getCategory() != null) {
-				file_content = file_content.concat('<category>'
-						+ v.getCategory().getId() + '</category>\n');
+				file_content = file_content.concat('\t\t\t<category>'
+						+ v.getCategory().getId() + '</category>\r\n');
 			}
-			file_content = file_content.concat('</vertex>\n');
+			file_content = file_content.concat('\t\t</vertex>\r\n');
 		}
 
-		file_content = file_content.concat('</vertices>\n');
+		file_content = file_content.concat('\t</vertices>\r\n');
 	}
 
 	if (edgearray.length > 0) {
-		file_content = file_content.concat('<edges>\n');
+		file_content = file_content.concat('\t<edges>\r\n');
 		for ( var i = 0, e = edgearray[i]; i < edgearray.length; e = edgearray[++i]) {
-			file_content = file_content.concat('<edge>\n');
-			file_content = file_content.concat('<id>' + e.getId() + '</id>\n');
-			file_content = file_content.concat('<vertex1>'
-					+ e.getVertex1().getId() + '</vertex1>\n');
-			file_content = file_content.concat('<vertex1-reachable>'
-					+ e.getVertex1_reachable() + '</vertex1-reachable>\n');
+			file_content = file_content.concat('\t\t<edge>\r\n');
+			file_content = file_content.concat('\t\t\t<id>' + e.getId() + '</id>\r\n');
+			file_content = file_content.concat('\t\t\t<vertex1>'
+					+ e.getVertex1().getId() + '</vertex1>\r\n');
+			file_content = file_content.concat('\t\t\t<vertex1-reachable>'
+					+ e.getVertex1_reachable() + '</vertex1-reachable>\r\n');
 
 			if (e.getVertex1_stepmarker() != null) {
-				file_content = file_content.concat('<vertex1-stepmarker>\n');
-				file_content = file_content.concat('<x-pos>'
-						+ e.getVertex1_stepmarker().getX() + '</x-pos>\n');
-				file_content = file_content.concat('<y-pos>'
-						+ e.getVertex1_stepmarker().getY() + '</y-pos>\n');
-				file_content = file_content.concat('</vertex1-stepmarker>\n');
+				file_content = file_content.concat('\t\t\t<vertex1-stepmarker>\r\n');
+				file_content = file_content.concat('\t\t\t\t<x-pos>'
+						+ e.getVertex1_stepmarker().getX() + '</x-pos>\r\n');
+				file_content = file_content.concat('\t\t\t\t<y-pos>'
+						+ e.getVertex1_stepmarker().getY() + '</y-pos>\r\n');
+				file_content = file_content.concat('\t\t\t</vertex1-stepmarker>\r\n');
 			}
 
-			file_content = file_content.concat('<vertex2>'
-					+ e.getVertex2().getId() + '</vertex2>\n');
-			file_content = file_content.concat('<vertex2-reachable>'
-					+ e.getVertex2_reachable() + '</vertex2-reachable>\n');
+			file_content = file_content.concat('\t\t\t<vertex2>'
+					+ e.getVertex2().getId() + '</vertex2>\r\n');
+			file_content = file_content.concat('\t\t\t<vertex2-reachable>'
+					+ e.getVertex2_reachable() + '</vertex2-reachable>\r\n');
 
 			if (e.getVertex2_stepmarker() != null) {
-				file_content = file_content.concat('<vertex2-stepmarker>\n');
-				file_content = file_content.concat('<x-pos>'
-						+ e.getVertex2_stepmarker().getX() + '</x-pos>\n');
-				file_content = file_content.concat('<y-pos>'
-						+ e.getVertex2_stepmarker().getY() + '</y-pos>\n');
-				file_content = file_content.concat('</vertex2-stepmarker>\n');
+				file_content = file_content.concat('\t\t\t<vertex2-stepmarker>\r\n');
+				file_content = file_content.concat('\t\t\t\t<x-pos>'
+						+ e.getVertex2_stepmarker().getX() + '</x-pos>\r\n');
+				file_content = file_content.concat('\t\t\t\t<y-pos>'
+						+ e.getVertex2_stepmarker().getY() + '</y-pos>\r\n');
+				file_content = file_content.concat('\t\t\t</vertex2-stepmarker>\r\n');
 			}
 
 			if (e.getDistanceFactor() != 1.0) {
-				file_content = file_content.concat('<distanceFactor>'
-						+ e.getDistanceFactor() + '</distanceFactor>\n');
+				file_content = file_content.concat('\t\t\t<distanceFactor>'
+						+ e.getDistanceFactor() + '</distanceFactor>\r\n');
 			}
-			file_content = file_content.concat('<disabledAdapted>'
-					+ e.getDisabledAdapted() + '</disabledAdapted>\n');
-			file_content = file_content.concat('</edge>\n');
+			file_content = file_content.concat('\t\t\t<disabledAdapted>'
+					+ e.getDisabledAdapted() + '</disabledAdapted>\r\n');
+			file_content = file_content.concat('\t\t</edge>\r\n');
 		}
 
-		file_content = file_content.concat('</edges>\n');
+		file_content = file_content.concat('\t</edges>\r\n');
 	}
 
-	file_content = file_content.concat('</svgmap-data>\n');
-	file_content = file_content.concat('<!-- EOF -->\n');
+	file_content = file_content.concat('</svgmap-data>\r\n');
+	file_content = file_content.concat('<!-- EOF -->\r\n');
 	
 	return file_content;
 }
