@@ -252,8 +252,13 @@ function save_xml(){
 	jQuery.ajax({
 				url:xml_path_url,
 				type: 'PUT',
-				dataType: 'xml',
+				dataType: 'text',
 				data: file_content,
-				success: alert('Saved')
+				success: function(response) {
+						alert(response);
+						},
+				error: function(xhr, status, error) {
+					alert(xhr.responseText);
+					}
 				});
 }

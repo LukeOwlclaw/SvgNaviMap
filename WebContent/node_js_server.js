@@ -16,9 +16,6 @@ http.createServer(function(request, response) {
 	else 
 	{ 
 		if (methode=="PUT") {
-			//response.writeHead(500, {"Content-Type": "text/plain"});
-			//response.write("Unsupported Request Methode\n");
-			//response.end();
 			PUT(filename,response,request);
 		}
 		else {
@@ -82,6 +79,7 @@ function GET(filename,response) {
 			response.writeHead(500, {"Content-Type": "text/plain"});
 			response.write(err + "\n");
 			response.end();
+			console.log("Internal server error: " + err + "\n");
 			return;
 		}
 	 
@@ -114,9 +112,11 @@ function PUT(filename,response,request) {
 				response.writeHead(500, {"Content-Type": "text/plain"});
 				response.write(err + "\n");
 				response.end();
+				console.log("Internal server error: " + err + "\n");
 				return;
 			}
 			response.writeHead(200);
+			response.write("Saved");
 			response.end();
 		});
 	});
