@@ -20,9 +20,39 @@ G.getAvailableXmlFiles = function(callback) {
 	 jQuery.ajax({
 		url:'./data/index.json',
 		dataType: 'json',
-		 success: function(responseJSON) {
-			G.log("JSON: " + responseJSON.srcName);
-			callback(responseJSON.srcName);
+		success: function(responseJSON) {
+			G.log("JSON: " + responseJSON);
+			callback(responseJSON);
+			},
+		error: function(response) {
+			G.log("Error: " + response);;
+			}
+	 });
+	//return maps;
+};
+
+G.putAvailableXmlFiles = function(availableXmlFiles) {
+	 jQuery.ajax({
+		url:'./data/index.json',
+		type: 'PUT',
+		data: JSON.stringify(availableXmlFiles),
+		success : function(responseJSON) {
+					// for ( var i in document.getElementById("import_from_server").children) {
+						// G.log("I: " +  document.getElementById("import_from_server").children[i]);
+					// }
+					var myNode=document.getElementById("import_from_server");
+					while (myNode.firstChild) {
+						myNode.removeChild(myNode.firstChild);
+					}
+					alert("Project created");
+					close_project_menu();
+					import_open();
+				//document.getElementById("import_from_server").remove();
+			},
+		
+		
+		error: function(response) {
+			G.log("Error: " + response);
 			}
 	 });
 	//return maps;

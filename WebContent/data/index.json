@@ -1,9 +1,1 @@
-{
-	"srcName":  [ 
-		"minimal-data.xml",
-		"airport-data.xml",
-		"big-data.xml",
-		"single_floor.xml",
-		"stoneridge.xml"
-	]
-}
+["minimal-data.xml","airport-data.xml","big-data.xml","single_floor.xml","stoneridge.xml"]

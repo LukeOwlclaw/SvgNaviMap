@@ -33,7 +33,10 @@ function menu(id) {
 		case 'level':
 			level_close();
 			break;
-
+		case 'new_project':
+			close_project_menu();
+			break;
+			
 		default:
 			alert('default menu close');
 			break;
@@ -65,7 +68,9 @@ function menu(id) {
 	case 'level':
 		level_open();
 		break;
-
+	case 'new_project':
+		open_project_menu();
+		break;
 	default:
 		alert('default menu open');
 		break;

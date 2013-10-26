@@ -244,21 +244,3 @@ function export_warn(message) {
 
 	document.getElementById('export_warnings').innerHTML += '<br>';
 }
-
-function save_xml(){
-	"use strict";
-	var file_content=get_xml_data();
-	var xml_path_url='./data/' + G.getXmlFilename();
-	jQuery.ajax({
-				url:xml_path_url,
-				type: 'PUT',
-				dataType: 'text',
-				data: file_content,
-				success: function(response) {
-						alert(response);
-						},
-				error: function(xhr, status, error) {
-					alert(xhr.responseText);
-					}
-				});
-}

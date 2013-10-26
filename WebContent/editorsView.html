@@ -17,6 +17,7 @@
 <script type="text/javascript" src="menu_category.js"></script>
 <script type="text/javascript" src="menu_gpsmarker.js"></script>
 <script type="text/javascript" src="menu_level.js"></script>
+<script type="text/javascript" src="menu_project_management.js"></script>
 <script type="text/javascript" src="obj_vertex.js"></script>
 <script type="text/javascript" src="obj_edge.js"></script>
 <script type="text/javascript" src="obj_polygon.js"></script>
@@ -79,6 +80,7 @@
           <button onclick="menu('level');">level altitude</button>
           <button onclick="menu('export');">export</button>
           <button onclick="menu('import');">import</button>
+		  <button onclick="menu('new_project');">new project</button>
 		  <button onclick="save_xml();">Save</button>
         </div>
 
@@ -192,6 +194,20 @@
         </div>
         <!-- import -->
 
+		<div id="new_project" style="display: none;">
+			 <div id="project_name">
+				Project Name:
+				<input type="text" id="fname"><br>
+			</div>
+ 			<div id="upload_svg">
+				SVG-Files:
+				<input type="file" id="files" name="files[]" multiple /> <br>
+			</div>
+			<button onclick="create_project();">Create Project</button>
+			<button onclick="close_project_menu();">Close</button>
+		</div>
+        <!-- new project -->
+		
         <div id="category" style="display: none;">
           <button onclick="category_add();">Add category</button>
           <br> Current categories: <br>
