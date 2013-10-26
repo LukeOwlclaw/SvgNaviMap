@@ -5,20 +5,25 @@ function import_open() {
 	document.getElementById('files').addEventListener('change', load_from_client_xml, false);
 
 	if (document.getElementById("import_from_server").childElementCount == 0) {
-		for ( var i in G.getAvailableXmlFiles()) {
-			var file = G.getAvailableXmlFiles()[i];
-			G.log("file: " + file);
-			var scalebutton = document.createElement("button");
-			scalebutton.setAttribute("onclick", "load_from_server_xml(null, \"" + file + "\")");
-			var content = document.createTextNode("Load " + file);
-			scalebutton.appendChild(content);
-			document.getElementById("import_from_server").appendChild(scalebutton);
-		}
+		G.getAvailableXmlFiles(import_load_menu)
 	}
 
 	// alert('Warning: If you load content from files, all current content will
 	// deleted!');
 
+}
+
+function import_load_menu(availableXmlFiles) {
+	"use strict";
+	for ( var i in availableXmlFiles) {
+		var file = availableXmlFiles[i];
+		G.log("file: " + file);
+		var scalebutton = document.createElement("button");
+		scalebutton.setAttribute("onclick", "load_from_server_xml(null, \"" + file + "\")");
+		var content = document.createTextNode("Load " + file);
+		scalebutton.appendChild(content);
+		document.getElementById("import_from_server").appendChild(scalebutton);
+	}
 }
 
 // load SvgNaviMap project by XML file as string

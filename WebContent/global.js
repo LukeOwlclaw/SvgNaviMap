@@ -16,8 +16,16 @@ var maps = [ "minimal-data.xml", "airport-data.xml", "big-data.xml", "single_flo
 // default selected SvgNaviMap project
 var selectedMap = maps[3];
 
-G.getAvailableXmlFiles = function() {
-	return maps;
+G.getAvailableXmlFiles = function(callback) {
+	 jQuery.ajax({
+		url:'./data/index.json',
+		dataType: 'json',
+		 success: function(responseJSON) {
+			G.log("JSON: " + responseJSON.srcName);
+			callback(responseJSON.srcName);
+			}
+	 });
+	//return maps;
 };
 
 // specifies file to be loaded when clicking "load from server"
