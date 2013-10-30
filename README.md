@@ -29,6 +29,7 @@ HOW TO USE THIS SOFTWARE
 * Import XML from server
 * Edit using GUI
 * Use the save button in the main menu to save it directly to the server (web server usage required)
+* Use the new project menu to create new projects(svg must be already created; web server usage required)
 * Alternately, export and save to data/svgmap-data.xml (add entry to global.js to be able to load project later)
 * Load project using AndroidSvgNaviMap or usersView.html
 
