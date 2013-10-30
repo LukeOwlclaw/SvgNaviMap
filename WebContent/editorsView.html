@@ -67,7 +67,7 @@
       </div>
       <!--  container -->
 
-      <div class="sidebar" id="sideLeft">
+      <div class="sidebar" id="sideLeft" style="width:310px">
 
         <div id="mainmenu">
           <p>Select a menu</p>
@@ -200,8 +200,10 @@
 				<input type="text" id="fname"><br>
 			</div>
  			<div id="upload_svg">
-				SVG-Files:
-				<input type="file" id="files" name="files[]" multiple /> <br>
+				 SVG-Files:<br>
+				<input type="file" id="files_input" name="files[]" multiple/> <br>
+				<div id="display_svg" style="border:0px">
+				</div>
 			</div>
 			<button onclick="create_project();">Create Project</button>
 			<button onclick="close_project_menu();">Close</button>
