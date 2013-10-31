@@ -30,7 +30,9 @@ http.createServer(function(request, response) {
 }).listen(parseInt(port, 10),'localhost');
  
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
-
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('addr: '+add);
+})
 var toggle = true;
 function throttleUpload(req, msBusy, msWait) {
   if(req.complete) 
