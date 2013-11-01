@@ -18,21 +18,43 @@ function close_project_menu(){
 function create_project(){
 	"use strict";
 	var files = document.getElementById("files_input").files
-	var project_name = document.getElementById('fname').value + ".xml";
-	var level = new Array();
+	var project_name = document.getElementById('fname').value;
+	
+	if(!isAlphanumeric(project_name)){
+		alert("Invalide project name! Use only 0-9 a-z A-Z");
+		return;
+	}
+	project_name = project_name.concat(".xml")
+	
+;	var level = new Array();
 	var minHeight = new Array();
 	var maxHeight = new Array()
 	
 	for(var i =0;  document.getElementById("level"+i)!=null; i++){
-	
-		level.push(document.getElementById("level"+i).value);
-		minHeight.push(document.getElementById("min"+i).value);
-		maxHeight.push(document.getElementById("max"+i).value);
+		
+		var tmp=document.getElementById("level"+i).value;
+		if(!isNumeric(tmp)){
+			alert("Invalid level! Numeric entry only!")
+			return;
+		}
+		level.push(tmp);
+		tmp=document.getElementById("min"+i).value;
+		if(!isNumeric(tmp)){
+			alert("Invalid minHeight! Numeric entry only!")
+			return;
+		}
+		minHeight.push(tmp);
+		tmp=document.getElementById("max"+i).value;
+		if(!isNumeric(tmp)){
+			alert("Invalid maxHeight! Numeric entry only!")
+			return;
+		}
+		maxHeight.push(tmp);
 		
 	}
 	
 	var xml_file = generate_xml_base(project_name,files,level,minHeight,maxHeight);
-	//G.log("level:"+level + " min:" +minHeight +" max:" +maxHeight);
+	// G.log("level:"+level + " min:" +minHeight +" max:" +maxHeight);
 	
 	jQuery.ajax({
 		url:'./data/'+project_name,
@@ -61,12 +83,31 @@ function add_project(availableXmlFiles){
 }
 
 function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
 
+    var files = evt.target.files; // FileList object
+	var msg="";
+	var error
+	for (var i = 0, f2; f2 = files[i]; i++) {
+	
+		if(f2.type != "image/svg+xml"){
+			msg = msg.concat(escape(f2.name) +" is not an svg file!\r\n");
+			error=true;
+		}
+	}
+	if (error){
+		alert(msg);				
+		document.getElementById("files_input").value='';
+		document.getElementById("display_svg").innerHTML=null;
+		return;
+	}
+	
     // files is a FileList of File objects. List some properties.
-    var output = [];
+    var output = [];		
+	
+
     for (var i = 0, f; f = files[i]; i++) {
-      output.push('Level: ','<input type="number" id="level',i,'" size="2">',
+
+		output.push('Level: ','<input type="number" id="level',i,'" size="2">',
 					' Min height: ','<input type="number" id="min',i,'" size="2">',
 					' Max height: ','<input type="number" id="max',i,'" size="2">',	
 					'<br><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
@@ -139,4 +180,21 @@ function upload_svg(file) {
 			});	
 	}
 	r.readAsText(file);
+}
+
+function isNumeric(number){
+	var numericExpression = /^[0-9]+$/;
+	if(number.match(numericExpression)){
+		return true;
+	}else{
+		return false;
+	}
+}
+function isAlphanumeric(string){
+	var alphaExp = /^[0-9a-zA-Z]+$/;
+	if(string.match(alphaExp)){
+		return true;
+	}else{
+		return false;
+	}
 }
