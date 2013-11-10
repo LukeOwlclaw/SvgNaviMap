@@ -63,43 +63,56 @@ function throttleUpload(req, msBusy, msWait) {
 }
 
 function GET(filename,response) {
-	path.exists(filename, function(exists) {
-		
-		if(!exists) {
-			response.writeHead(404, {"Content-Type": "text/plain"});
-			response.write("404 Not Found\n");
-			response.end();
-			return;
-		}
-	 
-		if (fs.statSync(filename).isDirectory()) {
-			filename += '/index.html';
-		}
-	 
-		fs.readFile(filename, "binary", function(err, file) {
-		  if(err) {        
-			response.writeHead(500, {"Content-Type": "text/plain"});
-			response.write(err + "\n");
-			response.end();
-			console.log("Internal server error: " + err + "\n");
-			return;
-		}
-	 
-		//throttleUpload(request, 5, 500)
-		
+	var s = "ip-address";
+	if(filename.indexOf(s) !== -1)
+	{
 		response.writeHead(200, {"Cache-Control": "no-cache, must-revalidate"});
-		
-		//response.writeHead(200, {"Cache-Control": "public, max-age=60, s-maxage=60"});
-		
-		
-		response.write(file, "binary");
-		
-		response.end();
-		/*setTimeout(function() {
+		require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+			response.write(add);
 			response.end();
-			}, 2000);*/
+			return;
+		})
+	}
+	else
+	{
+		path.exists(filename, function(exists) {
+			
+			if(!exists) {
+				response.writeHead(404, {"Content-Type": "text/plain"});
+				response.write("404 Not Found\n");
+				response.end();
+				return;
+			}
+		 
+			if (fs.statSync(filename).isDirectory()) {
+				filename += '/index.html';
+			}
+		 
+			fs.readFile(filename, "binary", function(err, file) {
+			  if(err) {        
+				response.writeHead(500, {"Content-Type": "text/plain"});
+				response.write(err + "\n");
+				response.end();
+				console.log("Internal server error: " + err + "\n");
+				return;
+			}
+		 
+			//throttleUpload(request, 5, 500)
+			
+			response.writeHead(200, {"Cache-Control": "no-cache, must-revalidate"});
+			
+			//response.writeHead(200, {"Cache-Control": "public, max-age=60, s-maxage=60"});
+			
+			
+			response.write(file, "binary");
+			
+			response.end();
+			/*setTimeout(function() {
+				response.end();
+				}, 2000);*/
+			});
 		});
-	});
+	}
 }
 
 function PUT(filename,response,request) {
