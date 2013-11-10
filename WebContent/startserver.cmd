@@ -1,5 +1,5 @@
 @echo off
-netstat -aon | find ":8888" > NUL
+netstat -aon | find "127.0.0.1:8888         0.0.0.0:0" > NUL
 
 IF %ERRORLEVEL% EQU 0 (
   echo Port 8888 seems to be in use. Abort starting server.
