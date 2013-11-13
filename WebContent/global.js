@@ -144,6 +144,9 @@ G.loadMaps = function(createScaleButton) {
 	}
 
 	var embed = document.getElementsByTagName('embed');
+	
+	G.svg_document = new Array();
+	G.svg_element = new Array();
 	for ( var i = 0; i < embed.length; i++) {
 		G.install_init_hook(embed[i], i, embed.length, G.svg_init_callback);
 	}
