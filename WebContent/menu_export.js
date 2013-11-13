@@ -211,27 +211,50 @@ function get_xml_data() {
 
 function export_xml(){
 	"use strict";
-	var file_content=get_xml_data();
-	window.URL = window.webkitURL || window.URL;
-	window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder
-			|| window.MozBlobBuilder || window.MSBlobBuilder;
+	// var file_content=get_xml_data();
+	// window.URL = window.webkitURL || window.URL;
+	// window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder
+			// || window.MozBlobBuilder || window.MSBlobBuilder;
 
-	var blob;
-	if (typeof BlobBuilder !== "undefined") {
-		var blobbuilder = new BlobBuilder();
-		blobbuilder.append(file_content);
-		blob = blobbuilder.getBlob('text\/xml');
+	// var blob;
+	// if (typeof BlobBuilder !== "undefined") {
+		// var blobbuilder = new BlobBuilder();
+		// blobbuilder.append(file_content);
+		// blob = blobbuilder.getBlob('text\/xml');
 
-	} else {
-		blob = new Blob([ file_content ], {
-			"type" : "text\/xml"
-		});
-	}
+	// } else {
+		// blob = new Blob([ file_content ], {
+			// "type" : "text\/xml"
+		// });
+	// }
 
 	var a_vertex = document.getElementById('export_xml_link');
-	a_vertex.href = window.URL.createObjectURL(blob);
-	a_vertex.download = G.getXmlFilename();
+	// a_vertex.href = window.URL.createObjectURL(blob);
+	// a_vertex.download = G.getXmlFilename();
 
+	
+	var file_names="";
+	file_names = file_names.concat("?arg=" + encodeURIComponent(G.getXmlFilename()) );
+	for ( var i = 0; i < G.svg_element.length; i++) {
+		var svgpath = G.Level_svgpath[i];
+		var y=i+1;
+		file_names = file_names.concat("&arg" + "=" + encodeURIComponent(svgpath));
+	}
+	//G.log("File names: " + file_names);
+	
+	jQuery.ajax({
+		url:'./ip-address.txt',
+		dataType: 'text',
+		success: function(responseIP) {
+			var url = "http://" + responseIP + file_names;
+			G.log(url);
+			a_vertex.href=url;
+			a_vertex.download = G.getXmlFilename().substring(0, G.getXmlFilename().length - 3) + ".zip";
+			},
+		error: function(response) {
+			G.log("Error: " + response);;
+			}
+	 });
 }
 
 function export_warn(message) {
@@ -248,6 +271,7 @@ function export_warn(message) {
 
 
 function make_qr_code() {
+	"use strict";
 	var file_names="";
 	file_names = file_names.concat("?arg=" + encodeURIComponent(G.getXmlFilename()) );
 	for ( var i = 0; i < G.svg_element.length; i++) {
