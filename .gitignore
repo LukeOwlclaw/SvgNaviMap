@@ -17,3 +17,4 @@ bargraph/
 AndroidSvgNaviMap/assets/svgnavimap/
 AndroidSvgNaviMap/bin/
 AndroidSvgNaviMap/gen/
+/WebContent/data/out.zip
