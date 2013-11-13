@@ -8,6 +8,14 @@ IF %ERRORLEVEL% EQU 0 (
   echo Port 8888 is available. Continue...
 )
 
+netstat -aon | find "127.0.0.1:8887         0.0.0.0:0" > NUL
+
+IF %ERRORLEVEL% EQU 0 (
+  echo Port 8887 seems to be in use. Abort starting server.
+  goto end
+) ELSE (
+  echo Port 8887 is available. Continue...
+)
 
 IF %PROCESSOR_ARCHITECTURE%==x86 (
     echo Starting node.js 32 bit...

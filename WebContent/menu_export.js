@@ -11,7 +11,7 @@ function export_close() {
 	"use strict";
 	G.menu_current = null;
 	document.getElementById('export').style.display = 'none';
-	document.getElementById("qrcode").innerHTML = 'none';
+	document.getElementById("qrcode").innerHTML = '';
 }
 
 function get_xml_data() {
@@ -252,7 +252,8 @@ function make_qr_code() {
 	file_names = file_names.concat("?arg=" + encodeURIComponent(G.getXmlFilename()) );
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		var svgpath = G.Level_svgpath[i];
-		file_names = file_names.concat("&arg" + i + "=" + encodeURIComponent(svgpath));
+		var y=i+1;
+		file_names = file_names.concat("&arg" + "=" + encodeURIComponent(svgpath));
 	}
 	//G.log("File names: " + file_names);
 	
@@ -260,7 +261,7 @@ function make_qr_code() {
 		url:'./ip-address.txt',
 		dataType: 'text',
 		success: function(responseIP) {
-			var url = "http://" + responseIP +":8888" + file_names;
+			var url = "http://" + responseIP + file_names;
 			G.log(url);
 			new QRCode(document.getElementById("qrcode"), url);
 			},
