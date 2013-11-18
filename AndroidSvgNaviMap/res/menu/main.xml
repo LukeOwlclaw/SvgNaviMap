@@ -22,11 +22,17 @@
         android:id="@+id/mapview_menu_leveldown"
         android:showAsAction="always"
         android:title="level down"/>
-    
+
     <item
         android:id="@+id/mapview_menu_navigate"
         android:showAsAction="always"
         android:title="navigate"
+        />
+
+    <item
+        android:id="@+id/appsettings_reload_html"
+        android:showAsAction="always"
+        android:title="reload html"
         />
     
 

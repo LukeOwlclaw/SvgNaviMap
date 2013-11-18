@@ -1,0 +1,28 @@
+{
+	"version": "0.0.1",
+	"files": [
+		"libs/jquery.js",
+		"obj_idset.js",
+		"global.js",
+		"map_zoom_pan_effects.js",
+		"client-menu_position.js",
+		"client-menu_routing.js",
+		"obj_positionpoint.js",
+		"obj_borderline.js",
+		"obj_borderpoint.js",
+		"obj_edge.js",
+		"obj_polygon.js",
+		"obj_stepmarker.js",
+		"obj_vertex.js",
+		"obj_category.js",
+		"obj_gpsmarker.js",
+		"menu_import.js",
+		"routing.js",
+		"affiliation_match.js",
+		"android/android.js",
+		"android/interface.js",
+		"android/demowalk.js",
+		"convertCoordinates.js",
+		"android.html"
+	]
+}
