@@ -42,7 +42,7 @@ function init_custom() {
 	var xml = svgapp.getProjectXML();
 	if (xml) {
 		console.log("importing xml");
-		import_xml(xml, null, true);
+		load_from_string(xml);
 	} else {
 		console.warn("project xml not found");
 	}

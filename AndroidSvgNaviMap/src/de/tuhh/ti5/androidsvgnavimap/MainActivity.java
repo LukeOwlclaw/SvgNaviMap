@@ -264,6 +264,7 @@ public class MainActivity extends Activity {
 
             try {
                 FileUtils.unzip(file, htmlDir);
+                file.delete();
             } catch (IOException e) {
                 Log.e(LOGTAG, e.getMessage());
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
@@ -275,6 +276,7 @@ public class MainActivity extends Activity {
 
             try {
                 FileUtils.unzip(file, dataDir);
+                file.delete();
             } catch (IOException e) {
                 Log.e(LOGTAG, e.getMessage());
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();

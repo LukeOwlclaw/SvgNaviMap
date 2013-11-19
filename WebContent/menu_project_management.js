@@ -24,7 +24,6 @@ function create_project(){
 		alert("Invalide project name! Use only 0-9 a-z A-Z");
 		return;
 	}
-	project_name = project_name.concat(".xml")
 	
 ;	var level = new Array();
 	var minHeight = new Array();
@@ -53,20 +52,21 @@ function create_project(){
 		
 	}
 	
-	var xml_file = generate_xml_base(project_name,files,level,minHeight,maxHeight);
+	var xml_file = generate_xml_base(project_name.concat(".xml"),files,level,minHeight,maxHeight);
 	// G.log("level:"+level + " min:" +minHeight +" max:" +maxHeight);
 	
 	jQuery.ajax({
-		url:'./data/'+project_name,
+		url:'/projects/new/'+project_name.concat(".xml"),
 		type: 'PUT',
 		data: xml_file,
+		dataType: 'application/xml',
 		error: function(response) {
 			G.log("Error: " + response);
-			}
+		}
 	 });
 	 
 	for(var i=0; i<files.length ;i++){
-		upload_svg(files[i]);
+		upload_svg(project_name, files[i]);
 	}
 	
 	G.getAvailableXmlFiles(add_project);
@@ -76,7 +76,7 @@ function add_project(availableXmlFiles){
 	"use strict";
 	var tmp = document.getElementById('fname').value;
 	availableXmlFiles.push(tmp + ".xml");
-	G.putAvailableXmlFiles(availableXmlFiles);
+	//G.putAvailableXmlFiles(availableXmlFiles);
 	
 	
 
@@ -122,19 +122,20 @@ function handleFileSelect(evt) {
 function save_xml(){
 	"use strict";
 	var file_content=get_xml_data();
-	var xml_path_url='./data/' + G.getXmlFilename();
+	var project_name = G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.'));
+	var xml_path_url='/projects/'+project_name+'/upload/project.xml';
 	jQuery.ajax({
-				url:xml_path_url,
-				type: 'PUT',
-				dataType: 'text',
-				data: file_content,
-				success: function(response) {
-						alert(response);
-						},
-				error: function(xhr, status, error) {
-					alert(xhr.responseText);
-					}
-				});
+		url: xml_path_url,
+		type: 'PUT',
+		dataType: 'text',
+		data: file_content,
+		success: function(response) {
+				alert(response);
+			},
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		}
+	});
 }
 
 function generate_xml_base(file_name,files,level,minheight,maxheight){
@@ -164,18 +165,19 @@ function generate_xml_base(file_name,files,level,minheight,maxheight){
 	return file_content;
 }
 
-function upload_svg(file) {
+function upload_svg(project_name, file) {
 
-	var filename = "./data/"+file.name;
+	var filename = "/projects/"+project_name+"/upload/"+file.name;
 	var r = new FileReader();
 	r.onload = function(e) { 
 		var contents = e.target.result;
 			jQuery.ajax({
-			url:filename,
-			type: 'PUT',
-			data: contents,
-			error: function(response) {
-				G.log("Error: " + response);
+				url: filename,
+				type: 'PUT',
+				data: contents,
+				dataType: 'image/svg+xml',
+				error: function(response) {
+					G.log("Error: " + response);
 				}
 			});	
 	}

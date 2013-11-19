@@ -11,6 +11,8 @@
 		"express": "3.x",
 		"async": "0.2.5",
 		"qrcode-npm": "0.0.3",
+		"xpath": "0.0.5",
+		"xmldom": "0.1.16",
 		"zipstream": "git://github.com/sgade/node-zipstream.git#656502699b7cbf6c730fd3353a3775b117e464be"
 	}
 }

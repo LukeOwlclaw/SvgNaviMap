@@ -232,29 +232,11 @@ function export_xml(){
 	// a_vertex.href = window.URL.createObjectURL(blob);
 	// a_vertex.download = G.getXmlFilename();
 
-	
-	var file_names="";
-	file_names = file_names.concat("?arg=" + encodeURIComponent(G.getXmlFilename()) );
-	for ( var i = 0; i < G.svg_element.length; i++) {
-		var svgpath = G.Level_svgpath[i];
-		var y=i+1;
-		file_names = file_names.concat("&arg" + "=" + encodeURIComponent(svgpath));
-	}
-	//G.log("File names: " + file_names);
-	
-	jQuery.ajax({
-		url:'./ip-address.txt',
-		dataType: 'text',
-		success: function(responseIP) {
-			var url = "http://" + responseIP + file_names;
-			G.log(url);
-			a_vertex.href=url;
-			a_vertex.download = G.getXmlFilename().substring(0, G.getXmlFilename().length - 3) + ".zip";
-			},
-		error: function(response) {
-			G.log("Error: " + response);;
-			}
-	 });
+	var project_name = G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.'));
+	get_project_files(project_name, function (files) {
+		a_vertex.href = files.zip;
+		a_vertex.download = project_name + ".zip";
+	});
 }
 
 function export_warn(message) {
@@ -269,28 +251,22 @@ function export_warn(message) {
 	document.getElementById('export_warnings').innerHTML += '<br>';
 }
 
+function get_project_files(name, cb) {
+	"use strict";
+
+	jQuery.ajax({
+		url: '/projects/'+name+'/files.json',
+		success: cb,
+		error: function(response) {
+			G.log("Error: " + response);
+		}
+	});
+}
+
 
 function make_qr_code() {
 	"use strict";
-	var file_names="";
-	file_names = file_names.concat("?arg=" + encodeURIComponent(G.getXmlFilename()) );
-	for ( var i = 0; i < G.svg_element.length; i++) {
-		var svgpath = G.Level_svgpath[i];
-		var y=i+1;
-		file_names = file_names.concat("&arg" + "=" + encodeURIComponent(svgpath));
-	}
-	//G.log("File names: " + file_names);
-	
-	jQuery.ajax({
-		url:'./ip-address.txt',
-		dataType: 'text',
-		success: function(responseIP) {
-			var url = "http://" + responseIP + file_names;
-			G.log(url);
-			new QRCode(document.getElementById("qrcode"), url);
-			},
-		error: function(response) {
-			G.log("Error: " + response);;
-			}
-	 });
+	get_project_files(G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.')), function (files) {
+		new QRCode(document.getElementById("qrcode"), 'map,'+files.zip+'?android=true');
+	});
 }

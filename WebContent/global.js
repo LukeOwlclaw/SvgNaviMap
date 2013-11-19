@@ -18,7 +18,7 @@ var selectedMap = maps[3];
 
 G.getAvailableXmlFiles = function(callback) {
 	 jQuery.ajax({
-		url:'./data/index.json',
+		url:'/projects/list.json',
 		dataType: 'json',
 		success: function(responseJSON) {
 			G.log("JSON: " + responseJSON);
