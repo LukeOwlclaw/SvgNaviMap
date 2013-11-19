@@ -18,7 +18,6 @@ AndroidSvgNaviMap/assets/svgnavimap/
 AndroidSvgNaviMap/bin/
 AndroidSvgNaviMap/gen/
 /WebContent/data/out.zip
-node_modules
 local.properties
 .idea
 .gradle

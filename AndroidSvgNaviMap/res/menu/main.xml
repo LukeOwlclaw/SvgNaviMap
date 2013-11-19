@@ -30,9 +30,9 @@
         />
 
     <item
-        android:id="@+id/appsettings_reload_html"
+        android:id="@+id/scan_qr"
         android:showAsAction="always"
-        android:title="reload html"
+        android:title="scan"
         />
     
 

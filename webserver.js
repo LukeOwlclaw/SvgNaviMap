@@ -12,12 +12,15 @@ var app = express();
 
 app.use(express.logger());
 
-WEBCONTENT_DIR = path.join(__dirname, 'WebContent')
-PROJECT_DIR = path.join(WEBCONTENT_DIR, 'data')
-PORT = 8888
+WEBCONTENT_DIR = path.join(__dirname, 'WebContent');
+VIEW_DIR = path.join(__dirname, 'views');
+PROJECT_DIR = path.join(WEBCONTENT_DIR, 'data');
+PORT = parseInt(process.argv[2], 10) || 8888;
 
 // static files
 app.use(express.static(WEBCONTENT_DIR));
+app.set('views', VIEW_DIR);
+app.set('view engine', 'jade');
 
 function readAppPackage(cb) {
 	fs.readFile('android_package.json', function (err, data) {
@@ -182,7 +185,7 @@ app.get('/', function (req, res) {
 		qr.addData(url);
 		qr.make();
 
-		res.send('App JS/HTML update: '+qr.createImgTag());
+		res.render('index', {qr: qr.createImgTag()});
 	});
 });
 

@@ -83,6 +83,8 @@ public class MainActivity extends Activity {
 		CustomJavaScriptHandler js = new CustomJavaScriptHandler(this);
 		mWebView.getWebView().addJavascriptInterface(js, "svgapp");
 
+        mWebView.loadUrl(new File(getDir("html", MODE_PRIVATE), "android.html").toURI().toString());
+
         //mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
         //mWebView.loadUrl("http://10.0.0.110:8888/android.html");
 
@@ -240,7 +242,7 @@ public class MainActivity extends Activity {
 			}
 			destSetCount++;
 			return true;
-        case R.id.appsettings_reload_html:
+        case R.id.scan_qr:
             launchQRScanner();
             return true;
         case android.R.id.home: // button upper left
@@ -270,7 +272,7 @@ public class MainActivity extends Activity {
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
             }
 
-            mWebView.loadUrl("file://" + (new File(htmlDir, "android.html")).getAbsolutePath());
+            mWebView.loadUrl(new File(htmlDir, "android.html").toURI().toString());
         } else if (file.getName().equals("map.zip")) {
             File dataDir = getDir("data", MODE_PRIVATE);
 
