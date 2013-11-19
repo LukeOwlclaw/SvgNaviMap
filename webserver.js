@@ -10,6 +10,18 @@ var dns = require('dns');
 var os = require('os');
 var app = express();
 
+
+/**
+ * Features:
+ *  - project listing
+ *  - on-the-fly compression for packed downloads
+ *  - project creation/updating
+ *
+ * TODO:
+ *  - subdir for each project?
+ */
+
+
 app.use(express.logger());
 
 WEBCONTENT_DIR = path.join(__dirname, 'WebContent');
@@ -69,6 +81,7 @@ function projectFiles(project, cb) {
 	});
 }
 
+// html + js for android app
 app.get('/appupdate/get.zip', function (req, res) {
 	readAppPackage(function (err, data) {
 		if (err) {
@@ -90,6 +103,7 @@ app.get('/appupdate/get.zip', function (req, res) {
 	});
 });
 
+// project list
 app.get('/projects/list.json', function (req, res) {
 	fs.readdir(PROJECT_DIR, function (err, files) {
 		if (err) {
@@ -106,6 +120,7 @@ app.get('/projects/list.json', function (req, res) {
 	});
 });
 
+// file list and download link for project
 app.get('/projects/:project/files.json', function (req, res) {
 	projectFiles(req.params.project, function (err, files) {
 		if (err) {
@@ -118,6 +133,7 @@ app.get('/projects/:project/files.json', function (req, res) {
 	});
 });
 
+// project download
 app.get('/projects/:project.zip', function (req, res) {
 	var android = req.query.android == 'true';
 
@@ -150,7 +166,12 @@ app.get('/projects/:project.zip', function (req, res) {
 	});
 });
 
+// new project
 app.put('/projects/new/:project.xml', function (req, res) {
+	if (req.ip != '127.0.0.1') {
+		return res.send(403, 'access denied');
+	}
+
 	var stream = fs.createWriteStream(path.join(PROJECT_DIR, req.params.project+'.xml'));
 	req.pipe(stream);
 	stream.on('finish', function () {
@@ -161,7 +182,12 @@ app.put('/projects/new/:project.xml', function (req, res) {
 	});
 });
 
+// upload (and update)
 app.put('/projects/:project/upload/:file', function (req, res) {
+	if (req.ip != '127.0.0.1') {
+		return res.send(403, 'access denied');
+	}
+
 	var stream = fs.createWriteStream(path.join(PROJECT_DIR, req.params.file));
 	req.pipe(stream);
 	stream.on('finish', function () {
@@ -172,6 +198,7 @@ app.put('/projects/:project/upload/:file', function (req, res) {
 	});
 });
 
+// index
 app.get('/', function (req, res) {
 	getServerIP(function (err, ip) {
 		if (err) {
