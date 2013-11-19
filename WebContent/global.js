@@ -90,6 +90,10 @@ G.getXmlPath = function() {
 
 // internally used only
 G.getDataDir = function() {
+	if (typeof svgapp != "undefined") {
+		return svgapp.getProjectDirPath();
+	}
+
 	return "data/";
 };
 

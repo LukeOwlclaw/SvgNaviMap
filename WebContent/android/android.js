@@ -38,7 +38,14 @@ function init_custom() {
 	G.showButtonsForSvg = false;
 
 	// load data
-	load_from_server_xml(null);
+	//load_from_server_xml(null);
+	var xml = svgapp.getProjectXML();
+	if (xml) {
+		console.log("importing xml");
+		import_xml(xml, null, true);
+	} else {
+		console.warn("project xml not found");
+	}
 
 	send_response("init_custom completed");
 }

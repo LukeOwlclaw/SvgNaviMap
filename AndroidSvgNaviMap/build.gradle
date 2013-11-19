@@ -8,13 +8,8 @@ buildscript {
 }
 apply plugin: 'android'
 
-//dependencies {
-//    compile fileTree(dir: 'libs', include: '*.jar')
-//}
-
 dependencies {
-    compile files('libs/android-support-v4.jar')
-    compile files('libs/zbar.jar')
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 task copyNativeLibs(type: Copy) {

@@ -229,4 +229,8 @@ public class SvgWebView {
 		return mWebView.getSettings();
 	}
 
+    public void reload() {
+        mWebView.reload();
+    }
+
 }

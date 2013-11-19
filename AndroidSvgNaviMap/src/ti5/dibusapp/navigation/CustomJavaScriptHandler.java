@@ -1,13 +1,19 @@
 package ti5.dibusapp.navigation;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.util.Log;
+import android.webkit.JavascriptInterface;
 
 /**
  * This class enables the communication between javascript and android java.
@@ -15,16 +21,21 @@ import android.util.Log;
  * @author Christian
  */
 public class CustomJavaScriptHandler {
+    private static final String TAG = "CustomJavaScriptHandler";
+
 	/**
 	 * Where to send the instructions.
 	 */
 	private List<JSInstructor> instructors;
 
+    private Context context;
+
 	/**
 	 * Initializes the handler.
 	 */
-	public CustomJavaScriptHandler() {
+	public CustomJavaScriptHandler(Context ctx) {
 		this.instructors = new ArrayList<CustomJavaScriptHandler.JSInstructor>();
+        context = ctx;
 	}
 
 	/**
@@ -161,4 +172,26 @@ public class CustomJavaScriptHandler {
 		public void jsinstruct(final String s);
 	}
 
+    public File getProjectDir() {
+        return context.getDir("data", Context.MODE_PRIVATE);
+    }
+
+    @JavascriptInterface
+    public String getProjectDirPath() {
+        Log.d(TAG, "getProjectDirPath() called");
+        return getProjectDir().toURI().toString();
+    }
+
+    @JavascriptInterface
+    public String getProjectXML() {
+        Log.d(TAG, "getProjectXML() called");
+        File projectFile = new File(getProjectDir(), "project.xml");
+        try {
+            Log.d(TAG, "reading project file "+projectFile.getAbsolutePath());
+            return IOUtils.toString(new FileInputStream(projectFile));
+        } catch (IOException e) {
+            Log.e(TAG, "project file not found");
+            return "";
+        }
+    }
 }

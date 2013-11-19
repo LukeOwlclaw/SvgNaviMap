@@ -67,7 +67,8 @@
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
-    <orderEntry type="library" name="zbar" level="project" />
+    <orderEntry type="library" exported="" name="zbar" level="project" />
+    <orderEntry type="library" name="commons-io-2.4" level="project" />
   </component>
 </module>
 

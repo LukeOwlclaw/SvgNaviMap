@@ -1,10 +1,10 @@
 package de.tuhh.ti5.androidsvgnavimap;
 
+import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
 import ti5.dibusapp.navigation.CustomJavaScriptHandler;
 import ti5.dibusapp.navigation.SvgWebView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -25,20 +25,15 @@ import com.dm.zbar.android.scanner.ZBarScannerActivity;
 
 import net.sourceforge.zbar.Symbol;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
+import org.apache.commons.io.IOUtils;
+
 import java.io.DataInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 public class MainActivity extends Activity {
 
@@ -85,7 +80,7 @@ public class MainActivity extends Activity {
 
 		mWebView.getWebView().setWebChromeClient(new WebChromeClient());
 
-		CustomJavaScriptHandler js = new CustomJavaScriptHandler();
+		CustomJavaScriptHandler js = new CustomJavaScriptHandler(this);
 		mWebView.getWebView().addJavascriptInterface(js, "svgapp");
 
         //mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
@@ -154,11 +149,11 @@ public class MainActivity extends Activity {
     }
 
     private void handleAppUpdate(URL url) {
-        new FileRetriever(url, "app.zip").execute();
+        new FileRetriever(url, new File(getCacheDir(), "app.zip")).execute();
     }
 
     private void handleMapDownload(URL url) {
-
+        new FileRetriever(url, new File(getCacheDir(), "map.zip")).execute();
     }
 
     @Override
@@ -261,39 +256,31 @@ public class MainActivity extends Activity {
 		return mWebView;
 	}
 
-    protected void fileDownloaded(String fileName) {
-        if (fileName.length() == 0) {
+    protected void fileDownloaded(File file) {
+        if (file == null) {
             Toast.makeText(this, "Download error", Toast.LENGTH_SHORT).show();
-        } else if (fileName.equals("app.zip")) {
+        } else if (file.getName().equals("app.zip")) {
             File htmlDir = getDir("html", MODE_PRIVATE);
 
             try {
-                FileInputStream is = new FileInputStream(new File(getFilesDir(), "app.zip"));
-                ZipInputStream zis = new ZipInputStream(new BufferedInputStream(is));
-                try {
-                    ZipEntry ze;
-                    while ((ze = zis.getNextEntry()) != null) {
-                        File targetFile = new File(htmlDir, ze.getName());
-                        targetFile.getParentFile().mkdirs();
-
-                        FileOutputStream os = new FileOutputStream(targetFile);
-                        byte[] buffer = new byte[1024];
-                        int count;
-                        while ((count = zis.read(buffer)) != -1) {
-                            os.write(buffer, 0, count);
-                        }
-                    }
-                } finally {
-                    zis.close();
-                }
+                FileUtils.unzip(file, htmlDir);
             } catch (IOException e) {
                 Log.e(LOGTAG, e.getMessage());
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
             }
 
-            Toast.makeText(this, "Unzip successful", Toast.LENGTH_SHORT).show();
-
             mWebView.loadUrl("file://" + (new File(htmlDir, "android.html")).getAbsolutePath());
+        } else if (file.getName().equals("map.zip")) {
+            File dataDir = getDir("data", MODE_PRIVATE);
+
+            try {
+                FileUtils.unzip(file, dataDir);
+            } catch (IOException e) {
+                Log.e(LOGTAG, e.getMessage());
+                Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
+            }
+
+            mWebView.reload();
         } else {
             Toast.makeText(this, "Download successful", Toast.LENGTH_SHORT).show();
         }
@@ -303,41 +290,31 @@ public class MainActivity extends Activity {
 
     }
 
-    private class FileRetriever extends AsyncTask<Void, Void, String> {
-        URL url;
-        String fileName;
+    private class FileRetriever extends AsyncTask<Void, Void, File> {
+        URL downloadUrl;
+        File outputFile;
 
-        public FileRetriever(URL u, String fn) {
-            url = u;
-            fileName = fn;
+        public FileRetriever(URL url, File outFile) {
+            downloadUrl = url;
+            outputFile = outFile;
         }
 
-        protected String doInBackground(Void... args) {
+        protected File doInBackground(Void... args) {
             try {
-                InputStream is = url.openStream();
-                DataInputStream dis = new DataInputStream(is);
+                InputStream is = downloadUrl.openStream();
+                FileOutputStream outputStream = new FileOutputStream(outputFile);
 
-                byte[] buffer = new byte[1024];
-                int length;
+                IOUtils.copy(new DataInputStream(is), outputStream);
 
-                FileOutputStream fos = new FileOutputStream(new File(getFilesDir(), fileName));
-
-                while ((length = dis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, length);
-                }
-
-                return fileName;
+                return this.outputFile;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return "";
+
+            return null;
         }
 
-        protected void onProgressUpdate(Integer... progress) {
-
-        }
-
-        protected void onPostExecute(String file) {
+        protected void onPostExecute(File file) {
             fileDownloaded(file);
         }
     }
