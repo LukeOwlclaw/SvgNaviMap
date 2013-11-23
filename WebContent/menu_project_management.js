@@ -76,6 +76,8 @@ function add_project(availableXmlFiles){
 	"use strict";
 	var tmp = document.getElementById('fname').value;
 	availableXmlFiles.push(tmp + ".xml");
+	close_project_menu();
+	import_open();
 	//G.putAvailableXmlFiles(availableXmlFiles);
 	
 	
@@ -123,7 +125,7 @@ function save_xml(){
 	"use strict";
 	var file_content=get_xml_data();
 	var project_name = G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.'));
-	var xml_path_url='/projects/'+project_name+'/upload/project.xml';
+	var xml_path_url='/projects/'+project_name+'/upload/'+ project_name +'.xml';
 	jQuery.ajax({
 		url: xml_path_url,
 		type: 'PUT',

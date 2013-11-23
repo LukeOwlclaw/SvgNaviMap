@@ -79,41 +79,27 @@ function load_from_server_xml(callback, xmlPath) {
 
 	// G.log("load_from_server_xml(callback)");
 
-	var asyncXMLRequest = new XMLHttpRequest();
-	asyncXMLRequest.open('GET', filepath);
-	asyncXMLRequest.onreadystatechange = function() {
-		G.log("readyState: " + this.readyState);
-		if (this.readyState == 4) {
-			if (this.responseXML != null)
-				import_xml(this.responseXML, callback, true);
-			else {
-				if (this.response != null && this.response != "")
-					import_xml(this.response, null, true);
-				else
-					G.log('import: responseXML is null.');
-			}
-		}
-	};
-	// G.log("asyncXMLRequest.send();");
-	try {
-		asyncXMLRequest.send();
-		G.log("asyncXMLRequest.send() DONE");
-	} catch (err) {
-		var msg = "Something went terribly wrong loading this project.";
-		var localfilecheck = "file://";
-		if (document.URL.substring(0, localfilecheck.length) === localfilecheck)
-			if (err.code == 19)
-				msg += " Either run Chrome with command line parameter '--disable-web-security' or serve this HTML via a web server.";
-		msg += "\n\nError message: " + err.message;
-		G.log(msg);
-		alert(msg);
-	}
+	jQuery.ajax({
+		url:		filepath,
+		type:		'GET',
+		dataType: 	'xml',
+		success : 	function(responseXML) {
+						import_xml(responseXML, callback, true);
+					},
+		error: function(jqXHR, textStatus, errorThrown ) {
+						var msg = "Something went terribly wrong loading this project.";
+						msg += "\n\nError message: " + errorThrown;
+						G.log(msg);
+						alert(msg);
+					}
+	});
 }
 
 function import_close() {
 	"use strict";
 	G.menu_current = null;
 	document.getElementById('import').style.display = 'none';
+	document.getElementById("import_from_server").innerHTML = '';
 	document.getElementById('files').removeEventListener('change', load_from_client_xml, false);
 }
 
