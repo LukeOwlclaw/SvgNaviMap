@@ -3,19 +3,19 @@
 	<levels>
 		<level>
 			<id>0</id>
-			<svgpath>http://localhost:8080/SvgNaviMap/data/minimal0.svg</svgpath>
+			<svgpath>http://localhost:8888/data/minimal0.svg</svgpath>
 			<min_altitude>0</min_altitude>
 			<max_altitude>5</max_altitude>
 		</level>
 		<level>
 			<id>1</id>
-			<svgpath>http://localhost:8080/SvgNaviMap/data/minimal0.svg</svgpath>
+			<svgpath>http://localhost:8888/data/minimal0.svg</svgpath>
 			<min_altitude>5</min_altitude>
 			<max_altitude>10</max_altitude>
 		</level>
 		<level>
 			<id>2</id>
-			<svgpath>http://localhost:8080/SvgNaviMap/data/minimal2.svg</svgpath>
+			<svgpath>http://localhost:8888/data/minimal2.svg</svgpath>
 			<min_altitude>10</min_altitude>
 			<max_altitude>15</max_altitude>
 		</level>
