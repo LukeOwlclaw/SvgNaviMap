@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.util.Log;
-import android.webkit.JavascriptInterface;
 
 /**
  * This class enables the communication between javascript and android java.
@@ -21,21 +20,21 @@ import android.webkit.JavascriptInterface;
  * @author Christian
  */
 public class CustomJavaScriptHandler {
-    private static final String TAG = "CustomJavaScriptHandler";
+	private static final String TAG = "CustomJavaScriptHandler";
 
 	/**
 	 * Where to send the instructions.
 	 */
 	private List<JSInstructor> instructors;
 
-    private Context context;
+	private Context context;
 
 	/**
 	 * Initializes the handler.
 	 */
 	public CustomJavaScriptHandler(Context ctx) {
 		this.instructors = new ArrayList<CustomJavaScriptHandler.JSInstructor>();
-        context = ctx;
+		context = ctx;
 	}
 
 	/**
@@ -44,7 +43,6 @@ public class CustomJavaScriptHandler {
 	 * @param s
 	 *            any kind of parameter
 	 */
-	@android.webkit.JavascriptInterface
 	public final void instruct(final String s) {
 		if (this.instructors.isEmpty()) {
 			Log.i("CustomJavaScriptHandler", "instructors is empty, instruct: "
@@ -72,7 +70,6 @@ public class CustomJavaScriptHandler {
 	 *            a value (from javascript)
 	 */
 	@SuppressWarnings({ "static-method", "unused" })
-	@android.webkit.JavascriptInterface
 	public final void return_value(final String name, final String value) {
 		Log.d("CustomJavaScriptHandler", "Received variable " + name
 				+ " with content: " + value);
@@ -172,26 +169,24 @@ public class CustomJavaScriptHandler {
 		public void jsinstruct(final String s);
 	}
 
-    public File getProjectDir() {
-        return context.getDir("data", Context.MODE_PRIVATE);
-    }
+	public File getProjectDir() {
+		return context.getDir("data", Context.MODE_PRIVATE);
+	}
 
-    @JavascriptInterface
-    public String getProjectDirPath() {
-        Log.d(TAG, "getProjectDirPath() called");
-        return getProjectDir().toURI().toString();
-    }
+	public String getProjectDirPath() {
+		Log.d(TAG, "getProjectDirPath() called");
+		return getProjectDir().toURI().toString();
+	}
 
-    @JavascriptInterface
-    public String getProjectXML() {
-        Log.d(TAG, "getProjectXML() called");
-        File projectFile = new File(getProjectDir(), "project.xml");
-        try {
-            Log.d(TAG, "reading project file "+projectFile.getAbsolutePath());
-            return IOUtils.toString(new FileInputStream(projectFile));
-        } catch (IOException e) {
-            Log.e(TAG, "project file not found");
-            return "";
-        }
-    }
+	public String getProjectXML() {
+		Log.d(TAG, "getProjectXML() called");
+		File projectFile = new File(getProjectDir(), "project.xml");
+		try {
+			Log.d(TAG, "reading project file " + projectFile.getAbsolutePath());
+			return IOUtils.toString(new FileInputStream(projectFile));
+		} catch (IOException e) {
+			Log.e(TAG, "project file not found");
+			return "";
+		}
+	}
 }

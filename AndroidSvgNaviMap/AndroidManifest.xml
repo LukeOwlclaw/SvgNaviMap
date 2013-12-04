@@ -9,8 +9,8 @@
     <uses-feature android:name="android.hardware.camera" />
  
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
 
     <application
         android:allowBackup="true"
