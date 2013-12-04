@@ -99,7 +99,7 @@ input {
 #sideLeft {
 	float: left;
 	width: 300px;
-	position: fixed;
+	position: absolute;
 }
 
 button {
