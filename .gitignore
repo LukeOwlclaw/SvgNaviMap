@@ -23,3 +23,4 @@ local.properties
 .gradle
 gradle
 build
+AndroidSvgNaviMap/target/
