@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <!-- <LinearLayout -->
+    <!-- android:id="@+id/sample_scan_result_layout" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:orientation="vertical" > -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/sample_scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="scanNow"
+            android:text="@string/sample_scan_start_button_text" />
+
+        <Button
+            android:id="@+id/sample_createarff_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="createArffFile"
+            android:text="Create arff.file" />
+
+        <Button
+            android:id="@+id/scan_now_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wifi Scan" 
+            android:onClick="takeWifiScanNow"/>
+        
+    </LinearLayout>
+
+    <AutoCompleteTextView 
+        android:id="@+id/roomTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="" >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/sample_locateme_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startWekaService"
+            android:text="Start Weka" />
+
+        <Button
+            android:id="@+id/sample_locateme_multi_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopWekaService"
+            android:text="Stop Weka" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sample_scan_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/sample_scan_text_start" />
+
+    <ScrollView
+        android:id="@+id/sample_scan_result_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:scrollbars="horizontal|vertical" >
+
+        <HorizontalScrollView
+            android:id="@+id/sample_scan_result_scroll_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scrollbars="horizontal">
+
+            <TableLayout
+                android:id="@+id/sample_scan_result_table2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="5dp" >
+
+                <TableRow
+                    android:id="@+id/sample_scan_result_table_row_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Room" />
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Confidence(%)" />
+
+                   
+                </TableRow>
+            </TableLayout>
+            <!-- </LinearLayout> -->
+
+        </HorizontalScrollView>
+    </ScrollView>
+    
+    <ScrollView
+        android:id="@+id/sample_scan_result_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:scrollbars="horizontal|vertical" >
+
+        <HorizontalScrollView
+            android:id="@+id/sample_scan_result_scroll_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scrollbars="horizontal">
+
+            <TableLayout
+                android:id="@+id/sample_scan_result_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="5dp" >
+
+                <TableRow
+                    android:id="@+id/sample_scan_result_table_row_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/sample_scan_wifi_ssid" />
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/sample_scan_wifi_bssid" />
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/sample_scan_wifi_rssi" />
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/sample_scan_wifi_frequency" />
+
+                    <TextView
+                        android:id="@+id/sample_scan_result_table_row_title_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/sample_scan_wifi_capabilities" />
+                </TableRow>
+            </TableLayout>
+            <!-- </LinearLayout> -->
+
+        </HorizontalScrollView>
+    </ScrollView>
+
+</LinearLayout>

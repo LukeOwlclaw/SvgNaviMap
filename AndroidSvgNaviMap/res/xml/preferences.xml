@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Text Edit Preferences" >
+        <EditTextPreference
+            android:defaultValue="/rssi/"
+            android:key="workdir"
+            android:summary="Begin and end with slash!"
+            android:title="Working directory" />
+        <EditTextPreference
+            android:defaultValue="rssi.log"
+            android:key="logfile"
+            android:title="logfile" />
+        <EditTextPreference
+            android:defaultValue="rssi.arff"
+            android:key="arfffile"
+            android:title="arfffile" />
+        <EditTextPreference
+            android:defaultValue="weka.classifier.model"
+            android:key="wekaclassifier"
+            android:summary="Weka classifier (pre-builded evaluation tree). If file does not exist, it is created automatically, but this can take VERY LONG time."
+            android:title="Weka classifier model" />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:key="userid"
+            android:summary="Not really used. Leave as is (0)"
+            android:title="userid" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="createtestarff"
+            android:summary="If enabled, on each &apos;locate me&apos; a test_DATE.arff is created."
+            android:title="Create test arff" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="savemodeltosdcard"
+            android:summary="If enabled, model has not to be calculated each time opening this app. But for big models saving will fail."
+            android:title="Save Weka-model to SD-Card" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="dummy"
+            android:summary="$Rev: 9771 $ $LastChangedDate: 2013-02-20 11:22:19 +0100 (Wed, 20 Feb 2013) $"
+            android:title="Versionsnummer" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Weka" >
+        <ListPreference
+            android:entries="@array/weka_algorithms"
+            android:key="algorithms"
+            android:summary="Choos an anlgorithms to build the weka classifier."
+            android:title="Choose an Algorithm" android:entryValues="@array/weka_algorithms_value"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
