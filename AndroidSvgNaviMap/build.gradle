@@ -1,3 +1,5 @@
+// USE GRADLE VERSION 1.8 http://downloads.gradle.org/distributions/gradle-1.8-bin.zip !!!
+
 buildscript {
     repositories {
         mavenCentral()
