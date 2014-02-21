@@ -38,6 +38,12 @@
 
     <!-- end: sample scan -->
     <string name="locate_service_description">The service used to provide localization.</string>
+    <string name="menu_locate">Locate</string>
+    <string name="menu_levelup">Level up</string>
+    <string name="menu_leveldown">Level down</string>
+    <string name="menu_setdestination">Set destination</string>
+    <string name="menu_scanqr">Scan QR</string>
+    <string name="menu_navigate">Navigate</string>
     <string-array name="weka_algorithms">
         <item>Vote</item>
         <item>Random Tree</item>

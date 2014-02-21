@@ -3,36 +3,42 @@
     <item
         android:id="@+id/mapview_menu_locate"
         android:showAsAction="always"
-        android:title="locate"
+        android:title="@string/menu_locate"
+        android:icon="@drawable/glyphicons_233_direction_white"
         />
-    
-    
+
     <item
         android:id="@+id/mapview_menu_setpos"
         android:showAsAction="always"
-        android:title="set pos"
+        android:title="@string/menu_setdestination"
+        android:icon="@drawable/glyphicons_377_riflescope_white"
         />
     
     <item
         android:id="@+id/mapview_menu_levelup"
         android:showAsAction="always"
-        android:title="level up"
+        android:title="@string/menu_levelup"
+        android:icon="@drawable/glyphicons_213_up_arrow_white"
         />
     <item
         android:id="@+id/mapview_menu_leveldown"
         android:showAsAction="always"
-        android:title="level down"/>
+        android:title="@string/menu_leveldown"
+        android:icon="@drawable/glyphicons_212_down_arrow_white"
+        />
 
     <item
         android:id="@+id/mapview_menu_navigate"
         android:showAsAction="always"
-        android:title="navigate"
+        android:title="@string/menu_navigate"
+        android:icon="@drawable/glyphicons_431_shoe_steps_white"
         />
 
     <item
         android:id="@+id/scan_qr"
         android:showAsAction="always"
-        android:title="scan"
+        android:title="@string/menu_scanqr"
+        android:icon="@drawable/glyphicons_258_qrcode_white"
         />
     
 

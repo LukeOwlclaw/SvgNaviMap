@@ -5,8 +5,13 @@ import ti5.dibusapp.navigation.CustomJavaScriptHandler;
 import ti5.dibusapp.navigation.SvgWebView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
@@ -34,6 +39,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -42,6 +48,9 @@ public class MainActivity extends Activity {
     private static final int ZBAR_SCANNER_REQUEST = 1;
 
 	private SvgWebView mWebView;
+    private boolean learnLocation = false;
+
+    private int selectedNode;
 
     @SuppressLint({ "NewApi", "SetJavaScriptEnabled" })
 	@Override
@@ -85,6 +94,16 @@ public class MainActivity extends Activity {
 
         mWebView.loadUrl(new File(getDir("html", MODE_PRIVATE), "android.html").toURI().toString());
 
+        js.addInstructor(new CustomJavaScriptHandler.JSInstructor() {
+            @Override
+            public void jsinstruct(String s) {
+                String parts[] = s.split(":");
+                if (parts[0].equals("position")) {
+                    nodeSelected(Integer.valueOf(parts[1]));
+                }
+            }
+        });
+
         //mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
         //mWebView.loadUrl("http://10.0.0.110:8888/android.html");
 
@@ -92,6 +111,58 @@ public class MainActivity extends Activity {
 		// mWebView.loadUrl("file:///android_asset/svgnavimap/data/stoneridge_gif1.svg");
 		// mWebView.loadUrl("file:///android_res/raw/svgnavimap/android.html");
 	}
+
+    private void nodeSelected(int nodeid) {
+        selectedNode = nodeid;
+
+        Log.i(LOGTAG, String.format("selected id: %d", selectedNode));
+
+        wifiScan();
+    }
+
+    private void wifiScan() {
+        Log.i(LOGTAG, "Preparing Wifi scan");
+        final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+
+        Log.i(LOGTAG, "Checking Wifi status");
+        if (!wifiManager.isWifiEnabled()) {
+            Log.i(LOGTAG, "Enabling Wifi");
+            wifiManager.setWifiEnabled(true);
+
+            while (!wifiManager.isWifiEnabled()) {
+                Log.i(LOGTAG, "Waiting for Wifi...");
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException ignored) {
+
+                }
+            }
+        } else {
+            Log.i(LOGTAG, "Wifi already enabled");
+        }
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
+
+        final BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.i(LOGTAG, "Received scan result");
+                List<ScanResult> scanResults = wifiManager.getScanResults();
+
+                for (ScanResult result : scanResults) {
+                    Log.i(LOGTAG, result.toString());
+                }
+
+                unregisterReceiver(this);
+            }
+        };
+        Log.i(LOGTAG, "Registering result handler");
+        registerReceiver(receiver, intentFilter);
+
+        Log.i(LOGTAG, "Starting Wifi scan");
+        wifiManager.startScan();
+    }
 
     public void  launchQRScanner() {
         if (isCameraAvailable()) {
@@ -167,12 +238,6 @@ public class MainActivity extends Activity {
 		final MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 
-		menu.findItem(R.id.mapview_menu_levelup).setIcon(R.drawable.arrowup);
-		menu.findItem(R.id.mapview_menu_leveldown).setIcon(R.drawable.arrowdown);
-		menu.findItem(R.id.mapview_menu_navigate).setIcon(R.drawable.navigate);
-		menu.findItem(R.id.mapview_menu_locate).setIcon(R.drawable.locate);
-		menu.findItem(R.id.mapview_menu_setpos).setIcon(R.drawable.compass);
-
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -186,31 +251,10 @@ public class MainActivity extends Activity {
 			getWebview().svgPositionFocus();
 			return true;
 		case R.id.mapview_menu_setpos:
+            toggleLearnLocation();
 
-			switch (posSetCount) {
-			case 0:
-				getWebview().svgPositionBySvg(200, 400, 0);
-				break;
-			case 1:
-				getWebview().svgPositionBySvg(312.4863600935308,
-						433.6749805144193, 0);
-				break;
-			case 2:
-				getWebview().svgPositionBySvg(340.5300077942323,
-						265.41309431021045, 0);
-				break;
-			case 3:
-				getWebview().svgPositionBySvg(269.25331254871395,
-						243.13172252533124, 1);
-				break;
-			case 4:
-				getWebview().svgPositionBySvg(305.42166796570535,
-						407.8986749805144, 1);
-				posSetCount = -1;
-				break;
-			}
-			posSetCount++;
-			getWebview().svgPositionFocus();
+
+
 
 			return true;
 		case R.id.mapview_menu_levelup:
@@ -254,7 +298,16 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	private SvgWebView getWebview() {
+    private void toggleLearnLocation() {
+        learnLocation = !learnLocation;
+        if (learnLocation) {
+            getWebview().svgPositionActivate();
+        } else {
+            getWebview().svgPositionDeactivate();
+        }
+    }
+
+    private SvgWebView getWebview() {
 		return mWebView;
 	}
 
