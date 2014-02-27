@@ -44,18 +44,18 @@ function readAppPackage(cb) {
 }
 
 function getServerIPs(cb) {
-  var interfaces = os.networkInterfaces();
-  var addresses = [];
-  for (k in interfaces) {
-      for (k2 in interfaces[k]) {
-          var address = interfaces[k][k2];
-          if (address.family == 'IPv4' && !address.internal) {
-              addresses.push(address.address)
-          }
-      }
-  }
-  console.log('addresses:'+addresses);
-  cb(addresses);
+	var interfaces = os.networkInterfaces();
+	var addresses = [];
+	for (k in interfaces) {
+			for (k2 in interfaces[k]) {
+					var address = interfaces[k][k2];
+					if (address.family == 'IPv4' && !address.internal) {
+							addresses.push(address.address)
+					}
+			}
+	}
+	console.log('addresses:'+addresses);
+	cb(null, addresses);
 }
 
 function getServerIP(cb) {
@@ -67,7 +67,7 @@ function extractSvgs(xml_file, cb) {
 		if (err) return cb(err);
 
 		var doc = new dom().parseFromString(data);
-    	var nodes = xpath.select("//svgpath", doc);
+			var nodes = xpath.select("//svgpath", doc);
 
 		async.map(nodes, function (node, cb) {
 			cb(null, node.firstChild.data);
@@ -85,12 +85,17 @@ function projectFiles(project, cb) {
 		svg: function (cb) {
 			extractSvgs(path.join(PROJECT_DIR, xml_file), cb);
 		},
-		ip: getServerIP
+		ip: getServerIP,
+		ips: getServerIPs
 	}, function (err, results) {
 		if (err) return cb(err);
 
 		files.svg = results.svg;
 		files.zip = 'http://'+results.ip[0]+':'+PORT+'/projects/'+project+'.zip';
+		files.zips = [];
+		for (var i = 0; i < results.ips.length; i++) {
+			files.zips.push('http://'+results.ips[i]+':'+PORT+'/projects/'+project+'.zip');
+		}
 
 		cb(null, files);
 	});
@@ -215,29 +220,29 @@ app.put('/projects/:project/upload/:file', function (req, res) {
 
 // index
 app.get('/', function (req, res) {
-	getServerIPs(function (addresses) {
-    if (addresses.length == 0) {
-      var err = "No network interfaces found!";
-      console.error(err);
-      return res.send(500, err);
-    }
-    var qrs = [];
-    var apps = [];
-    for (var i = 0; i < addresses.length; i++) {
-      var ip = addresses[i];
-      var applink = 'http://'+ip+':'+PORT+'/appupdate/get.zip'
-      var url = 'app,' + applink
+	getServerIPs(function (err, addresses) {
+		if (addresses.length == 0) {
+			var err = "No network interfaces found!";
+			console.error(err);
+			return res.send(500, err);
+		}
+		var qrs = [];
+		var apps = [];
+		for (var i = 0; i < addresses.length; i++) {
+			var ip = addresses[i];
+			var applink = 'http://'+ip+':'+PORT+'/appupdate/get.zip'
+			var url = 'app,' + applink
 
-      var qr = QRCode.qrcode(4, 'L');
-      qr.addData(url);
-      qr.make();
-      
-      var app = {};
-      app.qr = qr.createImgTag(5);
-      app.applink = applink;
-      apps.push(app);
-    }
-    res.render('index', {apps: apps});
+			var qr = QRCode.qrcode(4, 'L');
+			qr.addData(url);
+			qr.make();
+			
+			var app = {};
+			app.qr = qr.createImgTag(5);
+			app.applink = applink;
+			apps.push(app);
+		}
+		res.render('index', {apps: apps});
 	});
 });
 

@@ -267,6 +267,16 @@ function get_project_files(name, cb) {
 function make_qr_code() {
 	"use strict";
 	get_project_files(G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.')), function (files) {
-		new QRCode(document.getElementById("qrcode"), 'map,'+files.zip+'?android=true');
+		for (var i = 0; i < files.zips.length; i++) {
+			new QRCode(document.getElementById("qrcode"), 'map,'+files.zips[i]+'?android=true');
+			var myP = document.createElement('p');
+			myP.innerHTML = files.zips[i];
+			document.getElementById("qrcode").appendChild(myP);
+		}
+		if(files.zips.length == 0) {
+			var myP = document.createElement('p');
+			myP.innerHTML = "No network interface available to export.";
+			document.getElementById("qrcode").appendChild(myP);
+		}
 	});
 }
