@@ -43,6 +43,21 @@ function readAppPackage(cb) {
 	});
 }
 
+function getServerIPs(cb) {
+  var interfaces = os.networkInterfaces();
+  var addresses = [];
+  for (k in interfaces) {
+      for (k2 in interfaces[k]) {
+          var address = interfaces[k][k2];
+          if (address.family == 'IPv4' && !address.internal) {
+              addresses.push(address.address)
+          }
+      }
+  }
+  console.log('addresses:'+addresses);
+  cb(addresses);
+}
+
 function getServerIP(cb) {
 	dns.lookup(os.hostname(), cb);
 }
@@ -200,20 +215,29 @@ app.put('/projects/:project/upload/:file', function (req, res) {
 
 // index
 app.get('/', function (req, res) {
-	getServerIP(function (err, ip) {
-		if (err) {
-			console.error(err);
-			return res.send(500, err);
-		}
+	getServerIPs(function (addresses) {
+    if (addresses.length == 0) {
+      var err = "No network interfaces found!";
+      console.error(err);
+      return res.send(500, err);
+    }
+    var qrs = [];
+    var apps = [];
+    for (var i = 0; i < addresses.length; i++) {
+      var ip = addresses[i];
+      var applink = 'http://'+ip+':'+PORT+'/appupdate/get.zip'
+      var url = 'app,' + applink
 
-		var applink = 'http://'+ip+':'+PORT+'/appupdate/get.zip'
-		var url = 'app,' + applink
-
-		var qr = QRCode.qrcode(4, 'L');
-		qr.addData(url);
-		qr.make();
-
-		res.render('index', {qr: qr.createImgTag(), applink: applink});
+      var qr = QRCode.qrcode(4, 'L');
+      qr.addData(url);
+      qr.make();
+      
+      var app = {};
+      app.qr = qr.createImgTag();
+      app.applink = applink;
+      apps.push(app);
+    }
+    res.render('index', {apps: apps});
 	});
 });
 

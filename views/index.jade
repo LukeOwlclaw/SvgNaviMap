@@ -5,7 +5,8 @@ html(lang="en")
       a(href='/usersView.html') user view
     p
       a(href='/editorsView.html') editor view
-    p
-      div scan for html+js app update
-      div!=qr
-      a(href='#{applink}') #{applink}
+    - each app in apps
+      p
+        div scan for html+js app update
+        div!=app.qr
+        a(href='#{app.applink}') #{app.applink}
