@@ -233,7 +233,7 @@ app.get('/', function (req, res) {
       qr.make();
       
       var app = {};
-      app.qr = qr.createImgTag();
+      app.qr = qr.createImgTag(5);
       app.applink = applink;
       apps.push(app);
     }
