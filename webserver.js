@@ -206,13 +206,14 @@ app.get('/', function (req, res) {
 			return res.send(500, err);
 		}
 
-		var url = 'app,http://'+ip+':'+PORT+'/appupdate/get.zip'
+		var applink = 'http://'+ip+':'+PORT+'/appupdate/get.zip'
+		var url = 'app,' + applink
 
 		var qr = QRCode.qrcode(4, 'L');
 		qr.addData(url);
 		qr.make();
 
-		res.render('index', {qr: qr.createImgTag()});
+		res.render('index', {qr: qr.createImgTag(), applink: applink});
 	});
 });
 
