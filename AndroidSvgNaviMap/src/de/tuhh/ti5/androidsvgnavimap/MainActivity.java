@@ -1,14 +1,17 @@
 package de.tuhh.ti5.androidsvgnavimap;
 
 import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
+import james.weka.android.LocateService;
 import ti5.dibusapp.navigation.CustomJavaScriptHandler;
 import ti5.dibusapp.navigation.SvgWebView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
@@ -16,6 +19,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -51,6 +55,10 @@ public class MainActivity extends Activity {
     private boolean learnLocation = false;
 
     private int selectedNode;
+    private boolean wekaRegistered = false;
+    private boolean mIsBound = false;
+
+    private SSIDMap map = new SSIDMap();
 
     @SuppressLint({ "NewApi", "SetJavaScriptEnabled" })
 	@Override
@@ -104,6 +112,8 @@ public class MainActivity extends Activity {
             }
         });
 
+        toggleWekaService();
+
         //mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
         //mWebView.loadUrl("http://10.0.0.110:8888/android.html");
 
@@ -113,14 +123,18 @@ public class MainActivity extends Activity {
 	}
 
     private void nodeSelected(int nodeid) {
+        if (!learnLocation) {
+            return;
+        }
+
         selectedNode = nodeid;
 
         Log.i(LOGTAG, String.format("selected id: %d", selectedNode));
 
-        wifiScan();
+        wifiScan(nodeid);
     }
 
-    private void wifiScan() {
+    private void wifiScan(final int nodeid) {
         Log.i(LOGTAG, "Preparing Wifi scan");
         final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
@@ -151,17 +165,23 @@ public class MainActivity extends Activity {
                 List<ScanResult> scanResults = wifiManager.getScanResults();
 
                 for (ScanResult result : scanResults) {
-                    Log.i(LOGTAG, result.toString());
+                    Log.i(LOGTAG, String.format("%s: %d", result.BSSID, result.level));
                 }
+
+                map.addScanResult(nodeid, scanResults);
 
                 unregisterReceiver(this);
             }
         };
-        Log.i(LOGTAG, "Registering result handler");
-        registerReceiver(receiver, intentFilter);
+
+        if (nodeid >= 0) {
+            Log.i(LOGTAG, "Registering result handler");
+            registerReceiver(receiver, intentFilter);
+        }
 
         Log.i(LOGTAG, "Starting Wifi scan");
-        wifiManager.startScan();
+        boolean success = wifiManager.startScan();
+        Log.i(LOGTAG, String.format("%s", success));
     }
 
     public void  launchQRScanner() {
@@ -248,14 +268,21 @@ public class MainActivity extends Activity {
 	public final boolean onOptionsItemSelected(final MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.mapview_menu_locate:
-			getWebview().svgPositionFocus();
+            if (learnLocation) {
+                toggleLearnLocation();
+            }
+
+            try {
+                map.saveToFile(new File(getDir("rssi", MODE_PRIVATE), "data.arff"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            locateService.scan();
+            wifiScan(-1);
 			return true;
 		case R.id.mapview_menu_setpos:
             toggleLearnLocation();
-
-
-
-
 			return true;
 		case R.id.mapview_menu_levelup:
 			getWebview().svgLevelup();
@@ -342,6 +369,80 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "Download successful", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private LocateService locateService = null;
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            locateService = ((LocateService.LocateServiceBinder) service)
+                    .getService();
+            Log.i(LOGTAG, "bound");
+            mIsBound = true;
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName className) {
+            locateService = null;
+
+            mIsBound = false;
+        }
+
+    };
+
+    private void doBindService() {
+        bindService(new Intent(this, LocateService.class),
+                mConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    private void doUnbindService() {
+        if (mIsBound) {
+            // Detach our existing connection.
+            unbindService(mConnection);
+        }
+    }
+
+    public void toggleWekaService() {
+        Log.i(LOGTAG, "toggleWeka pressed");
+        if (!wekaRegistered) {
+            Log.i(LOGTAG, "weka service broadcast receiver is not registered, try to register it.");
+            registerReceiver(wekaReceiver, new IntentFilter(
+                    LocateService.WEKA_LOCALIZARION_BROADCAST_INTENT));
+            wekaRegistered = true;
+
+            if (!mIsBound) {
+                Log.i(LOGTAG, "binding service and try to get classification result.");
+                doBindService();
+            } else {
+                Log.i(LOGTAG, "service already bound, do nothing but wait for classification result from service.");
+            }
+        } else {
+            Log.i(LOGTAG, "Weka service broadcast receiver is registered, so try unregister it.");
+            unregisterReceiver(wekaReceiver);
+            wekaRegistered = false;
+
+            if (locateService != null) {
+                Log.i(LOGTAG, "unbinding service.");
+                doUnbindService();
+            } else {
+                Log.i(LOGTAG, "service not bound.");
+            }
+        }
+    }
+
+    private BroadcastReceiver wekaReceiver = new BroadcastReceiver() {
+        private static final String LOG_TAG = "Weka_receiver";
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String room = intent.getExtras().getString(LocateService.ROOM);
+            double confidence = intent.getExtras().getDouble(LocateService.CONFIDENCE);
+            Log.i(LOG_TAG, "Get new classifcation result : Room " + room + "(" + confidence + ")");
+
+            getWebview().svgPositionByID(Integer.valueOf(room.replace("vertex_", "")));
+        }
+    };
 
     private class InvalidQRCode extends Throwable {
 

@@ -108,7 +108,7 @@ function refresh_location() {
 			currLocation = v;
 			currLocation.paint_active();
 			if (typeof (svgapp) != "undefined")
-				svgapp.instruct('position:' + v.getShortDesc() + ':' + v.getLongDesc());
+				svgapp.instruct('position:' + v.getId() + ':' + v.getShortDesc() + ':' + v.getLongDesc());
 			else
 				document.getElementById('location').innerHTML = htmlHeader + 'You are at \'' + v.getShortDesc()
 						+ '\'.<br>Details: ' + v.getLongDesc() + '<br>Id: ' + v.getId() + '.<br><br>Svgid: '

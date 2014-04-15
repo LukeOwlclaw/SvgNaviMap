@@ -1,5 +1,6 @@
 package james.weka.android;
 
+import de.tuhh.ti5.androidsvgnavimap.MainActivity;
 import james.weka.ClassifyResult;
 import james.weka.WekaLocalService;
 import james.weka.exception.InitializationException;
@@ -8,6 +9,7 @@ import james.weka.impl.WekaLocalUtil;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import de.tuhh.ti5.androidsvgnavimap.Logger;
 import de.tuhh.ti5.androidsvgnavimap.SampleScanActivity;
@@ -85,7 +88,7 @@ public class LocateService extends Service {
 			// getSystemService(Context.VIBRATOR_SERVICE);
 			// v.vibrate(30);
 
-			Log.w(LOG_TAG, "Get new wifi scan result and isClaasifying is "
+			Log.w(LOG_TAG, "Get new wifi scan result and isClassifying is "
 					+ isClassifying
 					+ (isClassifying ? ", do nothing."
 							: ", try to classify scan result."));
@@ -115,15 +118,19 @@ public class LocateService extends Service {
 
 	@Override
 	public void onCreate() {
+
+    }
+
+    public void scan() {
 		// initilize the file or database here
-		Log.i(LOG_TAG, "locateService created.");
+		Log.i(LOG_TAG, "locateService scan");
 		isClassifying = true;// set to true so that the receiver callback won't
 								// work at begining
 		initialized = false;
 		IntentFilter wifiIntent = new IntentFilter();
 		wifiIntent.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 		wifiIntent.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-		Log.i(LOG_TAG, "Resgister wifi scan receiver.");
+		Log.i(LOG_TAG, "Register wifi scan receiver.");
 		this.registerReceiver(wifiScanReceiver, wifiIntent);
 		sharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -197,12 +204,12 @@ public class LocateService extends Service {
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		Log.i(LOG_TAG, "locateService get binded. ");
+		Log.i(LOG_TAG, "locateService got bound.");
 
 		// build notification
-		Intent sampleScanintent = new Intent(this, SampleScanActivity.class);
+		Intent mainActivity = new Intent(this, MainActivity.class);
 		PendingIntent pIntent = PendingIntent.getActivity(this, 0,
-				sampleScanintent, 0);
+				mainActivity, 0);
 		// the addAction re-use the same intent to keep the example short
 		notificationBuilder = new Builder(this).setOngoing(true)
 				.setContentTitle("WifiScans are being logged...")
@@ -227,14 +234,12 @@ public class LocateService extends Service {
 		sendBroadcast(broadcast);
 	}
 
-	private String getWorkDir() {
-		String workdir = sharedPref.getString("workdir", "/rssi/");
-		return Environment.getExternalStorageDirectory() + workdir;
+	private File getWorkDir() {
+        return getDir("rssi", MODE_PRIVATE);
 	}
 
 	private File getOhrtArff() {
-		String arffFileName = sharedPref.getString("arfffile", "rssi.arff");
-		return new File(getWorkDir(), arffFileName);
+		return new File(getWorkDir(), "data.arff");
 	}
 
 	/**
@@ -254,7 +259,7 @@ public class LocateService extends Service {
 
 					initialized = true;
 					Log.i(LOG_TAG,
-							"Enableing wifi scan result call back when initialized");
+							"Enabling wifi scan result callback when initialized");
 					isClassifying = false;// enable the wifi receiver callback
 											// when initialized
 				} else {
@@ -301,7 +306,12 @@ public class LocateService extends Service {
 						e);
 			}
 			if (trainingArff.exists()) {
-				try {
+                try {
+                    Log.i(LOG_TAG, new Scanner(trainingArff).useDelimiter("\\A").next());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                try {
 					int algorithm = Integer.parseInt(sharedPref.getString(
 							"algorithms",
 							String.valueOf(WekaLocalService.FAST_RANDOM_TREE)));
@@ -325,7 +335,7 @@ public class LocateService extends Service {
 			}
 		} else {
 			Log.w(LOG_TAG,
-					"Find no model file nor training dataset, initialized is "
+					"Found no model file or training dataset, initialized is "
 							+ initialized);
 		}
 

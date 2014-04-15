@@ -1,181 +1,175 @@
 <!-- single_floor.xml -->
 <svgmap-data>
-<levels>
-<level>
-<id>0</id>
-<svgpath>single_floor.svg</svgpath>
-<min_altitude>0</min_altitude>
-<max_altitude>5</max_altitude>
-</level>
-<level>
-<id>1</id>
-<svgpath>undefined</svgpath>
-<min_altitude>undefined</min_altitude>
-<max_altitude>undefined</max_altitude>
-</level>
-</levels>
-<gpsmarkers>
-<gpsmarker>
-<id>0</id>
-<svgid>0</svgid>
-<x-pos>1.4591408268733852</x-pos>
-<y-pos>2.042797167479838</y-pos>
-<latitude>53.46309</latitude>
-<longitude>9.967259</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>1</id>
-<svgid>0</svgid>
-<x-pos>110.89470284237727</x-pos>
-<y-pos>2.042797167479838</y-pos>
-<latitude>53.463141</latitude>
-<longitude>9.967398</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>2</id>
-<svgid>0</svgid>
-<x-pos>1.750968992248062</x-pos>
-<y-pos>165.75839794267364</y-pos>
-<latitude>53.462933</latitude>
-<longitude>9.967382</longitude>
-</gpsmarker>
-<gpsmarker>
-<id>3</id>
-<svgid>0</svgid>
-<x-pos>110.89470284237727</x-pos>
-<y-pos>166.63388243879768</y-pos>
-<latitude>53.462978</latitude>
-<longitude>9.967532</longitude>
-</gpsmarker>
-</gpsmarkers>
-<vertices>
-<vertex>
-<id>0</id>
-<svgid>0</svgid>
-<x-pos>57.1983204134367</x-pos>
-<y-pos>39.68863049095607</y-pos>
-<poi>true</poi>
-<shortDescription>room1</shortDescription>
-<borderpoint>
-<id>0</id>
-<x-pos>1.1673126614987082</x-pos>
-<y-pos>1.459140836730484</y-pos>
-</borderpoint>
-<borderpoint>
-<id>1</id>
-<x-pos>111.18653100775194</x-pos>
-<y-pos>0.87548450598113</y-pos>
-</borderpoint>
-<borderpoint>
-<id>2</id>
-<x-pos>111.18653100775194</x-pos>
-<y-pos>81.42005814939199</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>30.933785529715763</x-pos>
-<y-pos>80.25274548789328</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>30.933785529715763</x-pos>
-<y-pos>60.9920865731646</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>1.1673126614987082</x-pos>
-<y-pos>60.9920865731646</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>1</id>
-<svgid>0</svgid>
-<x-pos>56.322835917312666</x-pos>
-<y-pos>125.7779392764858</y-pos>
-<poi>true</poi>
-<shortDescription>room2</shortDescription>
-<borderpoint>
-<id>2</id>
-<x-pos>111.18653100775194</x-pos>
-<y-pos>81.42005814939199</y-pos>
-</borderpoint>
-<borderpoint>
-<id>6</id>
-<x-pos>111.47835917312662</x-pos>
-<y-pos>167.21753876954702</y-pos>
-</borderpoint>
-<borderpoint>
-<id>7</id>
-<x-pos>1.750968992248062</x-pos>
-<y-pos>166.63388243879768</y-pos>
-</borderpoint>
-<borderpoint>
-<id>8</id>
-<x-pos>1.1673126614987082</x-pos>
-<y-pos>100.38888889874599</y-pos>
-</borderpoint>
-<borderpoint>
-<id>9</id>
-<x-pos>30.35012919896641</x-pos>
-<y-pos>100.68071706412067</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>30.933785529715763</x-pos>
-<y-pos>80.25274548789328</y-pos>
-</borderpoint>
-</vertex>
-<vertex>
-<id>2</id>
-<svgid>0</svgid>
-<x-pos>15.466892764857882</x-pos>
-<y-pos>80.83640181864263</y-pos>
-<poi>false</poi>
-<borderpoint>
-<id>8</id>
-<x-pos>1.1673126614987082</x-pos>
-<y-pos>100.38888889874599</y-pos>
-</borderpoint>
-<borderpoint>
-<id>9</id>
-<x-pos>30.35012919896641</x-pos>
-<y-pos>100.68071706412067</y-pos>
-</borderpoint>
-<borderpoint>
-<id>3</id>
-<x-pos>30.933785529715763</x-pos>
-<y-pos>80.25274548789328</y-pos>
-</borderpoint>
-<borderpoint>
-<id>4</id>
-<x-pos>30.933785529715763</x-pos>
-<y-pos>60.9920865731646</y-pos>
-</borderpoint>
-<borderpoint>
-<id>5</id>
-<x-pos>1.1673126614987082</x-pos>
-<y-pos>60.9920865731646</y-pos>
-</borderpoint>
-</vertex>
-</vertices>
-<edges>
-<edge>
-<id>0</id>
-<vertex1>0</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>2</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<distanceFactor>0.6</distanceFactor>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-<edge>
-<id>1</id>
-<vertex1>2</vertex1>
-<vertex1-reachable>true</vertex1-reachable>
-<vertex2>1</vertex2>
-<vertex2-reachable>true</vertex2-reachable>
-<disabledAdapted>true</disabledAdapted>
-</edge>
-</edges>
+	<levels>
+		<level>
+			<id>0</id>
+			<svgpath>single_floor.svg</svgpath>
+			<min_altitude>0</min_altitude>
+			<max_altitude>5</max_altitude>
+		</level>
+	</levels>
+	<gpsmarkers>
+		<gpsmarker>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>1.4591408268733852</x-pos>
+			<y-pos>2.042797167479838</y-pos>
+			<latitude>53.46309</latitude>
+			<longitude>9.967259</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>1</id>
+			<svgid>0</svgid>
+			<x-pos>110.89470284237727</x-pos>
+			<y-pos>2.042797167479838</y-pos>
+			<latitude>53.463141</latitude>
+			<longitude>9.967398</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>2</id>
+			<svgid>0</svgid>
+			<x-pos>1.750968992248062</x-pos>
+			<y-pos>165.75839794267364</y-pos>
+			<latitude>53.462933</latitude>
+			<longitude>9.967382</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>3</id>
+			<svgid>0</svgid>
+			<x-pos>110.89470284237727</x-pos>
+			<y-pos>166.63388243879768</y-pos>
+			<latitude>53.462978</latitude>
+			<longitude>9.967532</longitude>
+		</gpsmarker>
+	</gpsmarkers>
+	<vertices>
+		<vertex>
+			<id>0</id>
+			<svgid>0</svgid>
+			<x-pos>57.1983204134367</x-pos>
+			<y-pos>39.68863049095607</y-pos>
+			<poi>true</poi>
+			<shortDescription>room1</shortDescription>
+			<borderpoint>
+				<id>0</id>
+				<x-pos>1.1673126614987082</x-pos>
+				<y-pos>1.459140836730484</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>1</id>
+				<x-pos>111.18653100775194</x-pos>
+				<y-pos>0.87548450598113</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>111.18653100775194</x-pos>
+				<y-pos>81.42005814939199</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>30.933785529715763</x-pos>
+				<y-pos>80.25274548789328</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>30.933785529715763</x-pos>
+				<y-pos>60.9920865731646</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>1.1673126614987082</x-pos>
+				<y-pos>60.9920865731646</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>1</id>
+			<svgid>0</svgid>
+			<x-pos>56.322835917312666</x-pos>
+			<y-pos>125.7779392764858</y-pos>
+			<poi>true</poi>
+			<shortDescription>room2</shortDescription>
+			<borderpoint>
+				<id>2</id>
+				<x-pos>111.18653100775194</x-pos>
+				<y-pos>81.42005814939199</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>6</id>
+				<x-pos>111.47835917312662</x-pos>
+				<y-pos>167.21753876954702</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>7</id>
+				<x-pos>1.750968992248062</x-pos>
+				<y-pos>166.63388243879768</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>1.1673126614987082</x-pos>
+				<y-pos>100.38888889874599</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>30.35012919896641</x-pos>
+				<y-pos>100.68071706412067</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>30.933785529715763</x-pos>
+				<y-pos>80.25274548789328</y-pos>
+			</borderpoint>
+		</vertex>
+		<vertex>
+			<id>2</id>
+			<svgid>0</svgid>
+			<x-pos>15.466892764857882</x-pos>
+			<y-pos>80.83640181864263</y-pos>
+			<poi>false</poi>
+			<borderpoint>
+				<id>8</id>
+				<x-pos>1.1673126614987082</x-pos>
+				<y-pos>100.38888889874599</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>9</id>
+				<x-pos>30.35012919896641</x-pos>
+				<y-pos>100.68071706412067</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>3</id>
+				<x-pos>30.933785529715763</x-pos>
+				<y-pos>80.25274548789328</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>4</id>
+				<x-pos>30.933785529715763</x-pos>
+				<y-pos>60.9920865731646</y-pos>
+			</borderpoint>
+			<borderpoint>
+				<id>5</id>
+				<x-pos>1.1673126614987082</x-pos>
+				<y-pos>60.9920865731646</y-pos>
+			</borderpoint>
+		</vertex>
+	</vertices>
+	<edges>
+		<edge>
+			<id>0</id>
+			<vertex1>0</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>2</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<distanceFactor>0.6</distanceFactor>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>1</id>
+			<vertex1>2</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex2>1</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+	</edges>
 </svgmap-data>
 <!-- EOF -->

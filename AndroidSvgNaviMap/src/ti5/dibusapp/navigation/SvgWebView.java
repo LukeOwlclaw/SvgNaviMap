@@ -18,9 +18,7 @@ public class SvgWebView {
 
 	/**
 	 * Default constructor
-	 * 
-	 * @param context
-	 *            a Context object used to access application assets
+	 *
 	 */
 	public SvgWebView(final WebView webView) {
 		mWebView = webView;
@@ -179,10 +177,14 @@ public class SvgWebView {
 	/**
 	 * Set current position by SVG coordinate.
 	 */
-	public final void svgPositionBySvg(double x, double y, int floor) {
-		loadUrl("javascript: Interface.position_setSVG(" + x + ", " + y + ", "
-				+ floor + ");");
-	}
+    public final void svgPositionBySvg(double x, double y, int floor) {
+        loadUrl("javascript: Interface.position_setSVG(" + x + ", " + y + ", "
+                + floor + ");");
+    }
+
+    public final void svgPositionByID(int vertexid) {
+        loadUrl("javascript: Interface.position_setID(" + vertexid + ");");
+    }
 
 	/**
 	 * Demonstrate a walk.
