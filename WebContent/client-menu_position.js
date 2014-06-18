@@ -57,8 +57,8 @@ function position_set(svgid, posX, posY) {
 		svgapp.instruct('position_is_set');
 		var position = Interface.position_translate_svg_gps(currPositionPoint.getX(), currPositionPoint.getY(),
 				currPositionPoint.getSvgid());
-		send_returnvalue("position", "{ \"xpos\": \"" + position[0] + "\", \"ypos\": \"" + position[1]
-				+ "\", \"svgid\": \"" + position[2] + "\"}");
+//		send_returnvalue("position", "{ \"xpos\": \"" + position[0] + "\", \"ypos\": \"" + position[1]
+//				+ "\", \"svgid\": \"" + position[2] + "\"}");
 
 	} else
 		position_menuRefresh();
@@ -107,7 +107,7 @@ function refresh_location() {
 
 			currLocation = v;
 			currLocation.paint_active();
-			if (typeof (svgapp) != "undefined")
+			if (typeof (svgapp) != "undefined") // TELL JAVA THAT NODE WAS SELECTED
 				svgapp.instruct('position:' + v.getId() + ':' + v.getShortDesc() + ':' + v.getLongDesc());
 			else
 				document.getElementById('location').innerHTML = htmlHeader + 'You are at \'' + v.getShortDesc()

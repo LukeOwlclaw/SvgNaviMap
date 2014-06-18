@@ -29,6 +29,7 @@ import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Toast;
+
 import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
 
@@ -169,9 +170,12 @@ public class MainActivity extends Activity {
                 }
 
                 map.addScanResult(nodeid, scanResults);
-
+                toast("learned wifi fingerprint for room " + nodeid);
+                
                 unregisterReceiver(this);
             }
+
+			
         };
 
         if (nodeid >= 0) {
@@ -270,18 +274,21 @@ public class MainActivity extends Activity {
 		case R.id.mapview_menu_locate:
             if (learnLocation) {
                 toggleLearnLocation();
-            }
-
-            try {
-                map.saveToFile(new File(getDir("rssi", MODE_PRIVATE), "data.arff"));
-            } catch (IOException e) {
-                e.printStackTrace();
+                
+                try {
+                    map.saveToFile(new File(getDir("rssi", MODE_PRIVATE), "data.arff"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                
             }
 
             locateService.scan();
             wifiScan(-1);
 			return true;
 		case R.id.mapview_menu_setpos:
+			if(learnLocation)
+				locateService.stopScan();
             toggleLearnLocation();
 			return true;
 		case R.id.mapview_menu_levelup:
@@ -328,8 +335,10 @@ public class MainActivity extends Activity {
     private void toggleLearnLocation() {
         learnLocation = !learnLocation;
         if (learnLocation) {
+        	Toast.makeText(this, "Learn mode activated.", Toast.LENGTH_SHORT).show();
             getWebview().svgPositionActivate();
         } else {
+        	Toast.makeText(this, "Learn mode deactivated.", Toast.LENGTH_SHORT).show();
             getWebview().svgPositionDeactivate();
         }
     }
@@ -439,7 +448,7 @@ public class MainActivity extends Activity {
             String room = intent.getExtras().getString(LocateService.ROOM);
             double confidence = intent.getExtras().getDouble(LocateService.CONFIDENCE);
             Log.i(LOG_TAG, "Get new classifcation result : Room " + room + "(" + confidence + ")");
-
+            toast("You are here");
             getWebview().svgPositionByID(Integer.valueOf(room.replace("vertex_", "")));
         }
     };
@@ -476,4 +485,8 @@ public class MainActivity extends Activity {
             fileDownloaded(file);
         }
     }
+    
+    private void toast(String string) {
+    	Toast.makeText(this, string, Toast.LENGTH_SHORT).show();		
+	}
 }

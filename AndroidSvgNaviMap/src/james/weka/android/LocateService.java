@@ -92,7 +92,9 @@ public class LocateService extends Service {
 					+ isClassifying
 					+ (isClassifying ? ", do nothing."
 							: ", try to classify scan result."));
+			
 			wifiScanReceiver.goAsync();
+			
 			if (!isClassifying) {
 				performOnBackgroundThread(runClassify);
 			}
@@ -120,6 +122,13 @@ public class LocateService extends Service {
 	public void onCreate() {
 
     }
+	
+	/**
+	 * This is a dirty workaround.
+	 */
+	public void stopScan() {
+		this.unregisterReceiver(wifiScanReceiver);
+	}
 
     public void scan() {
 		// initilize the file or database here

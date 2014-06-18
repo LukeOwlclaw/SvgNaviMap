@@ -9,9 +9,9 @@ function svg_init_custom() {
 			return;
 		}
 
-		G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
+		//G.svg_element[i].getElementById('unit_vertex').setAttribute('visibility', 'hidden');
 
-		G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
+		//G.svg_element[i].getElementById('unit_edge').setAttribute('visibility', 'hidden');
 
 		G.svg_element[i].getElementById('unit_borderpoint').setAttribute('visibility', 'hidden');
 
