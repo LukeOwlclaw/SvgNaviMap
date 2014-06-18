@@ -101,8 +101,16 @@ public class MainActivity extends Activity {
 		CustomJavaScriptHandler js = new CustomJavaScriptHandler(this);
 		mWebView.getWebView().addJavascriptInterface(js, "svgapp");
 
-        mWebView.loadUrl(new File(getDir("html", MODE_PRIVATE), "android.html").toURI().toString());
-
+//        mWebView.loadUrl(new File(getDir("html", MODE_PRIVATE), "android.html").toURI().toString());
+        File startHtml = new File(getDir("html", MODE_PRIVATE), "android.html");
+        if(startHtml.exists()) {
+            mWebView.loadUrl(startHtml.toURI().toString());
+        }
+        else {
+        	String html_value = "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"><title>Load SvgNaviMap application</title></head><body style=\"width:300px; color: #00000; \"><br><br><br><p>Please launch SvgNaviMap server and scan shown QR code using scan button to download SvgNaviMap application files.</p></body></html>";
+//        	mWebView.loadUrl("<html>Please launch SvgNaviMap server and scan shown QR code using scan button to download SvgNaviMap application files.</html>");
+        	mWebView.loadData(html_value, "text/html", "UTF-8");
+        }
         js.addInstructor(new CustomJavaScriptHandler.JSInstructor() {
             @Override
             public void jsinstruct(String s) {
@@ -221,6 +229,8 @@ public class MainActivity extends Activity {
     }
 
     private void handleScanResult(String data) {
+    	
+    	
         final String[] dataParts = data.split(",", 2);
 
         try {
@@ -232,8 +242,10 @@ public class MainActivity extends Activity {
             final URL url = new URL(dataParts[1]);
 
             if (mode.equals("app")) {
+            	toast("QR code scanned successfully. Downloading SvgNaviMap application... Please wait!", true);
                 handleAppUpdate(url);
             } else if (mode.equals("map")) {
+            	toast("QR code scanned successfully. Downloading SvgNaviMap project data...", true);
                 handleMapDownload(url);
             } else {
                 throw new InvalidQRCode();
@@ -245,7 +257,9 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void handleAppUpdate(URL url) {
+    
+
+	private void handleAppUpdate(URL url) {
         new FileRetriever(url, new File(getCacheDir(), "app.zip")).execute();
     }
 
@@ -361,7 +375,9 @@ public class MainActivity extends Activity {
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
             }
 
-            mWebView.loadUrl(new File(htmlDir, "android.html").toURI().toString());
+            
+            File startHtml = new File(htmlDir, "android.html");
+            mWebView.loadUrl(startHtml.toURI().toString());            
         } else if (file.getName().equals("map.zip")) {
             File dataDir = getDir("data", MODE_PRIVATE);
 
@@ -488,5 +504,9 @@ public class MainActivity extends Activity {
     
     private void toast(String string) {
     	Toast.makeText(this, string, Toast.LENGTH_SHORT).show();		
+	}
+    
+    private void toast(String string, boolean alwaysLong) {
+    	Toast.makeText(this, string, Toast.LENGTH_LONG).show();			
 	}
 }

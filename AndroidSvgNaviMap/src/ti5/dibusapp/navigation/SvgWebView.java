@@ -49,6 +49,10 @@ public class SvgWebView {
 	public void loadUrl(String string) {
 		mWebView.loadUrl(string);
 	}
+	
+	public void loadData(String data, String mimeType, String encoding) {
+		mWebView.loadData(data, mimeType, encoding);
+	}
 
 	/**
 	 * Activates setting position.
