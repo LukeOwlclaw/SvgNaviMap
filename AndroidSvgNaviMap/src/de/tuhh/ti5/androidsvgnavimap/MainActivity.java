@@ -245,7 +245,7 @@ public class MainActivity extends Activity {
             	toast("QR code scanned successfully. Downloading SvgNaviMap application... Please wait!", true);
                 handleAppUpdate(url);
             } else if (mode.equals("map")) {
-            	toast("QR code scanned successfully. Downloading SvgNaviMap project data...", true);
+            	toast("QR code scanned successfully. Downloading SvgNaviMap project data... Please wait!", true);
                 handleMapDownload(url);
             } else {
                 throw new InvalidQRCode();
