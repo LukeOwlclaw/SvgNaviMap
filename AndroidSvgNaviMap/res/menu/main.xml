@@ -1,11 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/mapview_menu_locate"
+        android:id="@+id/mapview_menu_locating_mode"
         android:showAsAction="always"
-        android:title="@string/menu_locate"
-        android:icon="@drawable/glyphicons_233_direction_white"
+        android:title="Locating mode"
+        android:icon="@drawable/locating_mode_inactive"
         />
+    
+    <item
+        android:id="@+id/mapview_menu_locate_now"
+        android:showAsAction="always"
+        android:title="Locate now"
+        android:icon="@drawable/locate"
+        />    
+    
 
     <item
         android:id="@+id/mapview_menu_learning_mode"
@@ -27,16 +35,16 @@
         android:icon="@drawable/glyphicons_212_down_arrow_white"
         />
 
-    <item
+    <!-- <item
         android:id="@+id/mapview_menu_navigate"
         android:showAsAction="ifRoom"
         android:title="@string/menu_navigate"
         android:icon="@drawable/glyphicons_431_shoe_steps_white"
-        />
+        />  -->
 
     <item
         android:id="@+id/scan_qr"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/menu_scanqr"
         android:icon="@drawable/glyphicons_258_qrcode_white"
         />

@@ -128,8 +128,8 @@ public class MainActivity extends Activity {
 			map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
 			toast("Loaded data.arff");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			toast("Loading data.arff failed. Check logcat output.");
 		}
 
 
@@ -318,11 +318,17 @@ public class MainActivity extends Activity {
     public void updateActionBarIcons(Menu menu) {
     	
     	MenuItem learnButton = menu.findItem(R.id.mapview_menu_learning_mode);
+    	MenuItem locatingModeButton = menu.findItem(R.id.mapview_menu_locating_mode);
     	
     	if(learnLocation)
     		learnButton.setIcon(R.drawable.learning_mode_active);
     	else
-    		learnButton.setIcon(R.drawable.learning_mode_inactive);    	
+    		learnButton.setIcon(R.drawable.learning_mode_inactive);
+    	
+    	if(wekaRegistered)
+    		locatingModeButton.setIcon(R.drawable.locating_mode_active);
+    	else
+    		locatingModeButton.setIcon(R.drawable.locating_mode_inactive);    	
         
     }
 
@@ -332,8 +338,8 @@ public class MainActivity extends Activity {
 	@Override
 	public final boolean onOptionsItemSelected(final MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.mapview_menu_locate:
-            if (learnLocation) {
+		case R.id.mapview_menu_locating_mode:
+			if (learnLocation) {
             	toast("Stop learning mode first.");
             	return true;
 //                toggleLearnLocation();
@@ -352,9 +358,16 @@ public class MainActivity extends Activity {
                 toast("writing data.arff failed. abort.");
                 return true;
             }
-
-            locateService.scan();
             
+            toggleWekaService();
+            
+            return true;
+		case R.id.mapview_menu_locate_now:
+            
+			if(locateService == null) {
+            	toast("Enable locating mode first!");            	
+            }
+			
             final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
             wifiManager.startScan();
             
@@ -371,7 +384,6 @@ public class MainActivity extends Activity {
 //				map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
 //				map.saveToFile(new File(LocateService.getWorkDir(), "data_copy.arff"));
 //			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 			
@@ -380,29 +392,29 @@ public class MainActivity extends Activity {
 		case R.id.mapview_menu_leveldown:
 			getWebview().svgLeveldown();
 			return true;
-		case R.id.mapview_menu_navigate:
-
-			switch (destSetCount) {
-			case 0:
-				getWebview().svgRoute(115); // fixed destination.
-				// (JC Penny, upper level)
-				break;
-			case 1:
-				getWebview().svgRoute(144);
-				break;
-			case 2:
-				getWebview().svgRoute(102);
-				break;
-			case 3:
-				getWebview().svgRoute(113);
-				break;
-			case 4:
-				getWebview().svgRoute(60); // fixed destination.
-				destSetCount = -1;
-				break;
-			}
-			destSetCount++;
-			return true;
+//		case R.id.mapview_menu_navigate:
+//
+//			switch (destSetCount) {
+//			case 0:
+//				getWebview().svgRoute(115); // fixed destination.
+//				// (JC Penny, upper level)
+//				break;
+//			case 1:
+//				getWebview().svgRoute(144);
+//				break;
+//			case 2:
+//				getWebview().svgRoute(102);
+//				break;
+//			case 3:
+//				getWebview().svgRoute(113);
+//				break;
+//			case 4:
+//				getWebview().svgRoute(60); // fixed destination.
+//				destSetCount = -1;
+//				break;
+//			}
+//			destSetCount++;
+//			return true;
         case R.id.scan_qr:
             launchQRScanner();
             return true;
@@ -419,6 +431,12 @@ public class MainActivity extends Activity {
 	}
 
     private void toggleLearnLocation() {
+    	
+    	if(locateService != null) {
+    		toast("Stop locating mode first. Abort.");
+    		return;
+    	}
+    	
         learnLocation = !learnLocation;
         invalidateOptionsMenu();
         
@@ -479,6 +497,7 @@ public class MainActivity extends Activity {
             Log.i(LOGTAG, "bound");
             mIsBound = true;
 
+            locateService.scan();
         }
 
         @Override
@@ -561,8 +580,8 @@ public class MainActivity extends Activity {
         public void onReceive(Context context, Intent intent) {
             String room = intent.getExtras().getString(LocateService.ROOM);
             double confidence = intent.getExtras().getDouble(LocateService.CONFIDENCE);
-            Log.i(LOG_TAG, "Get new classifcation result : Room " + room + "(" + confidence + ")");
-            toast("You are here");
+            Log.i(LOG_TAG, "Get new classifcation result : Room " + room + " (" + confidence + ")");
+            toast("You are here: Room " + room + " (" + String.format("%.2f", confidence)  + ")");
             getWebview().svgPositionByID(Integer.valueOf(room.replace("vertex_", "")));
         }
     };
