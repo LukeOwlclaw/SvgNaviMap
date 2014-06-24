@@ -8,6 +8,7 @@ var dom = require('xmldom').DOMParser;
 var express = require('express');
 var dns = require('dns');
 var os = require('os');
+var busboy = require('connect-busboy');
 var app = express();
 
 
@@ -21,7 +22,7 @@ var app = express();
  *  - subdir for each project?
  */
 
-
+app.use(busboy()); 
 app.use(express.logger());
 
 WEBCONTENT_DIR = path.join(__dirname, 'WebContent');
@@ -180,8 +181,8 @@ app.get('/projects/:project.zip', function (req, res) {
 			if (android && filename.split('.').pop() == 'xml') {
 				zipfilename = 'project.xml';
 			}
-			if (android && filename.split('.').pop() == 'arff') {
-				zipfilename = 'project.arff';
+			if (filename.split('.').pop() == 'arff') {
+				zipfilename = 'data.arff';
 			}
 			var srcfile = path.join(PROJECT_DIR, filename);
 			if (fs.existsSync(srcfile)) {
@@ -197,9 +198,41 @@ app.get('/projects/:project.zip', function (req, res) {
 			zip.finalize(function (written) {
 				console.log("sent "+written+" bytes zipped project package");
 			});
-		})
+		});
 	});
 });
+
+app.post('/projects/:project.arff', function(req, res) {
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+    	var target_path = path.join(PROJECT_DIR, req.params.project + ".arff");
+    	var project_path = path.join(PROJECT_DIR, req.params.project + ".xml");    	
+    	if (fs.existsSync(project_path)) {
+    		console.log("Uploading: " + filename + " to: " + target_path);        
+	        fstream = fs.createWriteStream(target_path);
+	        file.pipe(fstream);
+	        fstream.on('close', function () {
+	            res.redirect('back');
+	        });
+    	} else {
+    		var msg = "Cannot upload arff because project does not exist: " + project_path;
+    		console.log(msg);
+    		return res.send(406, msg);
+    	}
+    });
+});
+	
+//file list and download link for project
+app.get('/upload', function (req, res) {
+	 
+	var html = '<html><body><form method="post"  enctype="multipart/form-data" action="/projects/minimal-data.arff">'
+		+'<input type="file" name="arff">'
+		+'<input type="submit">'
+		+'</form></body></html>';
+	res.send(html);
+});
+
 
 // new project
 app.put('/projects/new/:project.xml', function (req, res) {

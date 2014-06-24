@@ -1,6 +1,10 @@
 package de.tuhh.ti5.androidsvgnavimap;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 
 import android.os.Environment;
 import android.util.Log;
@@ -14,22 +18,45 @@ public class Utils {
 		} else {
 			File file = new File(Environment.getExternalStorageDirectory()
 					+ File.separator + directory);
-			if (file.exists()){
+			if (file.exists()) {
 				if (!file.isDirectory()) {
 					Log.w("Utils", "directory passed to getSdDir() is a file!");
 					return null;
-				} 
-				
+				}
+
 			} else {
 
-					if (file.mkdirs() == false) {
-						Log.w("Utils", "file.mkdirs() failed.");
-						return null;
-					} else
-						file.mkdir();
+				if (file.mkdirs() == false) {
+					Log.w("Utils", "file.mkdirs() failed.");
+					return null;
+				} else
+					file.mkdir();
 
-				}
+			}
 			return file;
+		}
+	}
+
+	public static void copyFile(File sourceFile, File destFile)
+			throws IOException {
+		if (!destFile.exists()) {
+			destFile.createNewFile();
+		}
+
+		FileChannel source = null;
+		FileChannel destination = null;
+
+		try {
+			source = new FileInputStream(sourceFile).getChannel();
+			destination = new FileOutputStream(destFile).getChannel();
+			destination.transferFrom(source, 0, source.size());
+		} finally {
+			if (source != null) {
+				source.close();
+			}
+			if (destination != null) {
+				destination.close();
+			}
 		}
 	}
 

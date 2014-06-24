@@ -46,6 +46,7 @@ import android.widget.Toast;
 
 import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
+import com.google.common.io.Files;
 
 import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
 
@@ -480,6 +481,11 @@ public class MainActivity extends Activity {
             try {
                 FileUtils.unzip(file, dataDir);
                 file.delete();
+                
+                File arffFile = new File(dataDir, "data.arff");
+                if(arffFile.exists())
+                	Utils.copyFile(arffFile, new File(LocateService.getWorkDir(), "data.arff"));                
+                
             } catch (IOException e) {
                 Log.e(LOGTAG, e.getMessage());
                 Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();

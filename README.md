@@ -23,6 +23,7 @@ If you are planning to integrate SvgNaviMap into a commercial product, please co
 #### Webserver
 * Windows users run startserver.cmd.
 * On other systems, make sure you've installed nodejs, then execute ``node webserver.js``.
+* Missing packages install using: npm install <package_name>
 
 #### Edit
 * Go to http://localhost:8888/editorsView.html
