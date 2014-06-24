@@ -180,6 +180,7 @@ Interface.position_focus = function() {
 		var svgid = parseInt(currPositionPoint.getSvgid(), 10);
 		var xPos = currPositionPoint.getX();
 		var yPos = currPositionPoint.getY();
+		G.log("go to position: " + xPos + ", " + yPos + " at level " + svgid + " (origin=top left)");
 		
 		// handel load time of svg image
 		if (svgid != Interface.currentsvg) {

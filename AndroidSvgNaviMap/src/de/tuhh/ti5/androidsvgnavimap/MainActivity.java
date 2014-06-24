@@ -472,7 +472,8 @@ public class MainActivity extends Activity {
 
             
             File startHtml = new File(htmlDir, "android.html");
-            mWebView.loadUrl(startHtml.toURI().toString());            
+            mWebView.loadUrl(startHtml.toURI().toString());
+            toast("SvgNaviMap app installed successfully.");
         } else if (file.getName().equals("map.zip")) {
             File dataDir = getDir("data", MODE_PRIVATE);
 
@@ -485,6 +486,7 @@ public class MainActivity extends Activity {
             }
 
             mWebView.reload();
+            toast("SvgNaviMap data downloaded successfully.");
         } else {
             Toast.makeText(this, "Download successful", Toast.LENGTH_SHORT).show();
         }

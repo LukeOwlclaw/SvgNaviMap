@@ -461,6 +461,17 @@ MZP.show_position = function(xPos, yPos, svgid) {
 		var yValue = topFirstPixel;
 		var widthValue= window.innerWidth * window.devicePixelRatio * MZP.zoomLevel[svgid];
 		var heightValue= window.innerHeight * window.devicePixelRatio * MZP.zoomLevel[svgid];
+		
+//		G.log('viewBox_left window.pageXOffset: ' + window.pageXOffset);
+//		G.log('viewBox_left document.documentElement.scrollLeft: ' + document.documentElement.scrollLeft);
+//		G.log('viewBox_left G.svg_parent[svgid].offsetLeft: ' + G.svg_parent[svgid].offsetLeft);
+//		
+//		G.log('viewBox_right document.documentElement.scrollWidth: ' + document.documentElement.scrollWidth);
+//		G.log('viewBox_right G.svg_parent[svgid].offsetWidth: ' + G.svg_parent[svgid].offsetWidth);
+//		
+//		G.log('viewBox widthValue: ' + widthValue);
+//		G.log('viewBox window.devicePixelRatio: ' +  window.devicePixelRatio);
+//		G.log('viewBox MZP.zoomLevel[svgid]: ' + MZP.zoomLevel[svgid]);
 	}
 	
 	G.log('viewBox vorher: ' +[xValue, yValue, widthValue, heightValue].join(' '));
