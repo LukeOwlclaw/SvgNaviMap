@@ -306,9 +306,25 @@ public class MainActivity extends Activity {
 
 		final MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
-
 		return super.onCreateOptionsMenu(menu);
 	}
+    
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+    	updateActionBarIcons(menu);
+    	return super.onPrepareOptionsMenu(menu);
+    }
+    
+    public void updateActionBarIcons(Menu menu) {
+    	
+    	MenuItem learnButton = menu.findItem(R.id.mapview_menu_learning_mode);
+    	
+    	if(learnLocation)
+    		learnButton.setIcon(R.drawable.learning_mode_active);
+    	else
+    		learnButton.setIcon(R.drawable.learning_mode_inactive);    	
+        
+    }
 
 	int posSetCount = 0;
 	int destSetCount = 0;
@@ -351,13 +367,13 @@ public class MainActivity extends Activity {
 		case R.id.mapview_menu_levelup:
 			
 			
-			try {
-				map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
-				map.saveToFile(new File(LocateService.getWorkDir(), "data_copy.arff"));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
+//				map.saveToFile(new File(LocateService.getWorkDir(), "data_copy.arff"));
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			
 			getWebview().svgLevelup();
 			return true;
@@ -404,6 +420,8 @@ public class MainActivity extends Activity {
 
     private void toggleLearnLocation() {
         learnLocation = !learnLocation;
+        invalidateOptionsMenu();
+        
         if (learnLocation) {
         	Toast.makeText(this, "Learn mode activated.", Toast.LENGTH_SHORT).show();
             getWebview().svgPositionActivate();
@@ -533,6 +551,7 @@ public class MainActivity extends Activity {
 		} else {
 			wekaServiceOff();
 		}
+		invalidateOptionsMenu();
     }
 
     private BroadcastReceiver wekaReceiver = new BroadcastReceiver() {

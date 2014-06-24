@@ -11,7 +11,7 @@
         android:id="@+id/mapview_menu_learning_mode"
         android:showAsAction="always"
         android:title="@string/menu_toggle_learning_mode"
-        android:icon="@drawable/glyphicons_377_riflescope_white"
+        android:icon="@drawable/learning_mode_inactive"
         />
     
     <item
