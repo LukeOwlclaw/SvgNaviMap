@@ -78,8 +78,10 @@ function extractSvgs(xml_file, cb) {
 function projectFiles(project, cb) {
 	var files = {};
 	var xml_file = project+'.xml';
+	var arff_file = project+'.arff';
 
 	files.xml = xml_file;
+	files.arff = arff_file;
 
 	async.parallel({
 		svg: function (cb) {
@@ -170,6 +172,7 @@ app.get('/projects/:project.zip', function (req, res) {
 
 		var zipfiles = [];
 		zipfiles.push(files.xml);
+		zipfiles.push(files.arff);
 		Array.prototype.push.apply(zipfiles, files.svg);
 
 		async.eachSeries(zipfiles, function (filename, cb) {
@@ -177,7 +180,19 @@ app.get('/projects/:project.zip', function (req, res) {
 			if (android && filename.split('.').pop() == 'xml') {
 				zipfilename = 'project.xml';
 			}
-			zip.addFile(fs.createReadStream(path.join(PROJECT_DIR, filename)), {name: zipfilename}, cb);
+			if (android && filename.split('.').pop() == 'arff') {
+				zipfilename = 'project.arff';
+			}
+			var srcfile = path.join(PROJECT_DIR, filename);
+			if (fs.existsSync(srcfile)) {
+				zip.addFile(fs.createReadStream(srcfile), {name: zipfilename}, cb);
+			} 
+			else {
+				console.log("file "+srcfile+" not found. skip and continue.");
+				cb();
+			}
+			
+			
 		}, function () {
 			zip.finalize(function (written) {
 				console.log("sent "+written+" bytes zipped project package");
