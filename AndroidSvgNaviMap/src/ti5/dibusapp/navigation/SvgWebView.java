@@ -173,6 +173,8 @@ public class SvgWebView {
 
 	/**
 	 * Focuses the current position, if set.
+	 * 
+	 * Does only go to level of current position. Does not scroll, so that position becomes visible.
 	 */
 	public final void svgPositionFocus() {
 		loadUrl("javascript: Interface.position_focus();");

@@ -586,6 +586,7 @@ public class MainActivity extends Activity {
             Log.i(LOG_TAG, "Get new classifcation result : Room " + room + " (" + confidence + ")");
             toast("You are here: Room " + room + " (" + String.format("%.2f", confidence)  + ")");
             getWebview().svgPositionByID(Integer.valueOf(room.replace("vertex_", "")));
+            getWebview().svgPositionFocus();
         }
     };
 
