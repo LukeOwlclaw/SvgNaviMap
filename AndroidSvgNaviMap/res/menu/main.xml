@@ -50,8 +50,18 @@
         />
     
     <item
+        android:id="@+id/mapview_menu_reread_data_arff"
+        android:title="Re-read data.arff"        
+        />
+    
+    <item
         android:id="@+id/mapview_menu_show_wifi_scans_count"
         android:title="Show wifi scans count"        
+        />
+    
+    <item
+        android:id="@+id/mapview_menu_upload_wifi_scans"
+        android:title="Upload wifi scans (arff)"        
         />
     
     <item

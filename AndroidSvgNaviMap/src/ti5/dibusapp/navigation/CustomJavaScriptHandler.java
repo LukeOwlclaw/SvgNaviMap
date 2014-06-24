@@ -2,6 +2,7 @@ package ti5.dibusapp.navigation;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -180,13 +181,24 @@ public class CustomJavaScriptHandler {
 
 	public String getProjectXML() {
 		Log.d(TAG, "getProjectXML() called");
-		File projectFile = new File(getProjectDir(), "project.xml");
+		
+		File[] xmlFiles = getProjectDir().listFiles(new FilenameFilter() {
+            public boolean accept(File dir, String name) {
+                return name.toLowerCase().endsWith(".xml");
+            }
+        });
+		
+		if(xmlFiles.length != 1) {
+			Log.e(TAG, "project file not found. there are "+ xmlFiles.length + " xml files.");
+			return "";
+		}
+		File projectFile = xmlFiles[0];
 		try {
 			Log.d(TAG, "reading project file " + projectFile.getAbsolutePath());
 			return IOUtils.toString(new FileInputStream(projectFile));
 		} catch (IOException e) {
 			Log.e(TAG, "project file not found");
 			return "";
-		}
+		} 
 	}
 }

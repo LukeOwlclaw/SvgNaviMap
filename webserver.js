@@ -178,12 +178,6 @@ app.get('/projects/:project.zip', function (req, res) {
 
 		async.eachSeries(zipfiles, function (filename, cb) {
 			var zipfilename = filename;
-			if (android && filename.split('.').pop() == 'xml') {
-				zipfilename = 'project.xml';
-			}
-			if (filename.split('.').pop() == 'arff') {
-				zipfilename = 'data.arff';
-			}
 			var srcfile = path.join(PROJECT_DIR, filename);
 			if (fs.existsSync(srcfile)) {
 				zip.addFile(fs.createReadStream(srcfile), {name: zipfilename}, cb);
@@ -202,8 +196,29 @@ app.get('/projects/:project.zip', function (req, res) {
 	});
 });
 
-app.post('/projects/:project.arff', function(req, res) {
+app.post('/projects/:project.arff', function(req,res) { 
+//	    console.log(req.headers);
+	    
+	    var target_path = path.join(PROJECT_DIR, req.params.project + ".arff");
+	    
+	    console.log("Uploading: new arff file to: " + target_path);    
+	    
+	    var ws    = fs.createWriteStream(target_path);
+	    
+	    req.on('data', function(data) { 
+	      ws.write(data); 
+	    }); 
+	    
+	    req.on('end', function() {
+	    	ws.end();
+	    	res.send(200, "ok");
+	      });
+
+	});
+
+app.post('/projects/:project.arff2', function(req, res) {
     var fstream;
+    console.log(req);
     req.pipe(req.busboy);
     req.busboy.on('file', function (fieldname, file, filename) {
     	var target_path = path.join(PROJECT_DIR, req.params.project + ".arff");

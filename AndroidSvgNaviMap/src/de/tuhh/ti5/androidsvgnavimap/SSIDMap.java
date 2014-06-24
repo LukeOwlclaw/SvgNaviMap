@@ -60,6 +60,11 @@ public class SSIDMap {
         ssidMap.clear();
     }
     
+    /**
+     * Clears all scans, then reads scans from arffFile.
+     * @param arffFile
+     * @throws IOException
+     */
     public void readFromFile(File arffFile) throws IOException {
     	List<String> lines = new ArrayList<String>();// = FileUtils.readLines(arffFile);
     	Scanner s = new Scanner(arffFile);
@@ -145,7 +150,7 @@ public class SSIDMap {
             	Map<String, Integer> map = result.getScanData();
             	for (Entry<String, Integer> entry2 : map.entrySet()) {
             		String bssid = entry2.getKey();
-            		Log.v(LOGTAG, "adding bssid: " + bssid);
+            		//Log.v(LOGTAG, "adding bssid: " + bssid);
                     bssids.add(bssid);
 				}
                 
@@ -207,7 +212,7 @@ public class SSIDMap {
 
         writer.close();
 
-        Log.i(LOGTAG, new Scanner(arffFile).useDelimiter("\\A").next());
+        //Log.v(LOGTAG, new Scanner(arffFile).useDelimiter("\\A").next());
     }
 
 	}
