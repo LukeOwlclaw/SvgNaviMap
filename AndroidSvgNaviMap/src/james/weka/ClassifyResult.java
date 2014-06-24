@@ -23,7 +23,7 @@ public class ClassifyResult {
 		return propsSorted;
 	}
 
-	public String getClassLable() {
+	public String getClassLabel() {
 		return classLable;
 	}
 

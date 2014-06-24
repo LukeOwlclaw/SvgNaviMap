@@ -241,7 +241,7 @@ public class LocateService extends Service {
 
 	private void broadcastResult(ClassifyResult result) {
 		Intent broadcast = new Intent(WEKA_LOCALIZARION_BROADCAST_INTENT);
-		broadcast.putExtra(ROOM, result.getClassLable());
+		broadcast.putExtra(ROOM, result.getClassLabel());
 		broadcast.putExtra(CONFIDENCE, result.getConfidence());
 		broadcast.putExtra(ALLPOSSIBILITIES,
 				(Serializable) result.getPropsSorted());
@@ -391,7 +391,7 @@ public class LocateService extends Service {
 					return;
 				}
 				if (result != null) {
-					Log.i(LOG_TAG, "ClassfyResult is " + result.toString());
+					Log.i(LOG_TAG, "ClassifyResult is " + result.toString());
 					broadcastResult(result);
 				}
 			}

@@ -50,6 +50,11 @@
         />
     
     <item
+        android:id="@+id/mapview_menu_show_wifi_scans_count"
+        android:title="Show wifi scans count"        
+        />
+    
+    <item
         android:id="@+id/mapview_menu_clear_wifi_scans"
         android:title="Clear wifi scans"        
         />

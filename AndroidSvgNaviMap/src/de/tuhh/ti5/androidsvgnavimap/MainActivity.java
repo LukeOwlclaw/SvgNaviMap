@@ -424,6 +424,9 @@ public class MainActivity extends Activity {
         case R.id.mapview_menu_clear_wifi_scans:
         	map.clearScanResults();
         	 return true;
+        case R.id.mapview_menu_show_wifi_scans_count:
+        	toast(map.toString());
+        	 return true;
 		default:
 			return super.onOptionsItemSelected(item);
 
