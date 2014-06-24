@@ -1,7 +1,21 @@
 package de.tuhh.ti5.androidsvgnavimap;
 
-import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
 import james.weka.android.LocateService;
+
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sourceforge.zbar.Symbol;
+
+import org.apache.commons.io.IOUtils;
+
 import ti5.dibusapp.navigation.CustomJavaScriptHandler;
 import ti5.dibusapp.navigation.SvgWebView;
 import android.annotation.SuppressLint;
@@ -33,18 +47,7 @@ import android.widget.Toast;
 import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
 
-import net.sourceforge.zbar.Symbol;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
+import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
 
 public class MainActivity extends Activity {
 
@@ -120,9 +123,18 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        
+        try {
+			map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
+			toast("Loaded data.arff");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 
         toggleWekaService();
-
+        
         //mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
         //mWebView.loadUrl("http://10.0.0.110:8888/android.html");
 
@@ -131,6 +143,18 @@ public class MainActivity extends Activity {
 		// mWebView.loadUrl("file:///android_res/raw/svgnavimap/android.html");
 	}
 
+    @Override
+    protected void onStart() {
+    	wekaServiceOn();
+    	super.onStart();
+    }
+    
+    @Override
+    protected void onStop() {
+    	wekaServiceOff();
+    	super.onStop();
+    }
+    
     private void nodeSelected(int nodeid) {
         if (!learnLocation) {
             return;
@@ -140,10 +164,17 @@ public class MainActivity extends Activity {
 
         Log.i(LOGTAG, String.format("selected id: %d", selectedNode));
 
-        wifiScan(nodeid);
+        wifiLearnScan(nodeid);
     }
 
-    private void wifiScan(final int nodeid) {
+    boolean wifiLearningInProgress = false;
+    private void wifiLearnScan(final int nodeid) {
+    	if(wifiLearningInProgress)
+    	{
+    		Log.i(LOGTAG, "wifiLearningInProgress. Abort.");
+    		return;
+    	}
+    	wifiLearningInProgress = true;
         Log.i(LOGTAG, "Preparing Wifi scan");
         final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
@@ -172,15 +203,15 @@ public class MainActivity extends Activity {
             public void onReceive(Context context, Intent intent) {
                 Log.i(LOGTAG, "Received scan result");
                 List<ScanResult> scanResults = wifiManager.getScanResults();
-
-                for (ScanResult result : scanResults) {
-                    Log.i(LOGTAG, String.format("%s: %d", result.BSSID, result.level));
-                }
-
-                map.addScanResult(nodeid, scanResults);
+                
+                
+                CompleteScanResult completeScanResult = new CompleteScanResult(scanResults);
+                
+                map.addScanResult(nodeid, completeScanResult);
                 toast("learned wifi fingerprint for room " + nodeid);
                 
                 unregisterReceiver(this);
+                wifiLearningInProgress = false;
             }
 
 			
@@ -287,25 +318,47 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.mapview_menu_locate:
             if (learnLocation) {
-                toggleLearnLocation();
+            	toast("Stop learning mode first.");
+            	return true;
+//                toggleLearnLocation();
+            }
+            
+            if(wifiLearningInProgress) {
+            	toast("wifiLearningInProgress. abort. wait until learning is finished.");
+            	return true;
+            }
                 
-                try {
-                    map.saveToFile(new File(getDir("rssi", MODE_PRIVATE), "data.arff"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                
+            try {
+                map.saveToFile(new File(LocateService.getWorkDir(), "data.arff"));
+                Log.i(LOGTAG, "data.arff created");
+            } catch (IOException e) {
+                e.printStackTrace();
+                toast("writing data.arff failed. abort.");
+                return true;
             }
 
             locateService.scan();
-            wifiScan(-1);
+            
+            final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+            wifiManager.startScan();
+            
 			return true;
-		case R.id.mapview_menu_setpos:
-			if(learnLocation)
-				locateService.stopScan();
+		case R.id.mapview_menu_learning_mode:
+			//stop locate service, if enabled, to avoid disturbing learing process.
+			locateService.stopScan();
             toggleLearnLocation();
 			return true;
 		case R.id.mapview_menu_levelup:
+			
+			
+			try {
+				map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
+				map.saveToFile(new File(LocateService.getWorkDir(), "data_copy.arff"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			getWebview().svgLevelup();
 			return true;
 		case R.id.mapview_menu_leveldown:
@@ -340,6 +393,9 @@ public class MainActivity extends Activity {
         case android.R.id.home: // button upper left
             onBackPressed();
             return true;
+        case R.id.mapview_menu_clear_wifi_scans:
+        	map.clearScanResults();
+        	 return true;
 		default:
 			return super.onOptionsItemSelected(item);
 
@@ -425,35 +481,58 @@ public class MainActivity extends Activity {
         if (mIsBound) {
             // Detach our existing connection.
             unbindService(mConnection);
+            mIsBound = false;
         }
     }
 
-    public void toggleWekaService() {
-        Log.i(LOGTAG, "toggleWeka pressed");
-        if (!wekaRegistered) {
-            Log.i(LOGTAG, "weka service broadcast receiver is not registered, try to register it.");
-            registerReceiver(wekaReceiver, new IntentFilter(
-                    LocateService.WEKA_LOCALIZARION_BROADCAST_INTENT));
-            wekaRegistered = true;
+	public void wekaServiceOn() {
+		if(wekaRegistered == true) {
+			Log.w(LOGTAG, "Cannot enable wekaService because already on.");
+			return;
+		}
+		
+		Log.i(LOGTAG,
+				"weka service broadcast receiver is not registered, try to register it.");
+		registerReceiver(wekaReceiver, new IntentFilter(
+				LocateService.WEKA_LOCALIZARION_BROADCAST_INTENT));
+		wekaRegistered = true;
 
-            if (!mIsBound) {
-                Log.i(LOGTAG, "binding service and try to get classification result.");
-                doBindService();
-            } else {
-                Log.i(LOGTAG, "service already bound, do nothing but wait for classification result from service.");
-            }
-        } else {
-            Log.i(LOGTAG, "Weka service broadcast receiver is registered, so try unregister it.");
-            unregisterReceiver(wekaReceiver);
-            wekaRegistered = false;
+		if (!mIsBound) {
+			Log.i(LOGTAG,
+					"binding service and try to get classification result.");
+			doBindService();
+		} else {
+			Log.i(LOGTAG,
+					"service already bound, do nothing but wait for classification result from service.");
+		}
+	}
 
-            if (locateService != null) {
-                Log.i(LOGTAG, "unbinding service.");
-                doUnbindService();
-            } else {
-                Log.i(LOGTAG, "service not bound.");
-            }
-        }
+	public void wekaServiceOff() {
+		if(wekaRegistered == false) {
+			Log.w(LOGTAG, "Cannot disable wekaService because already off.");
+			return;
+		}
+		
+		Log.i(LOGTAG,
+				"Weka service broadcast receiver is registered, so try unregister it.");
+			unregisterReceiver(wekaReceiver);
+			wekaRegistered = false;
+
+		if (locateService != null) {
+			Log.i(LOGTAG, "unbinding service.");
+			doUnbindService();
+		} else {
+			Log.i(LOGTAG, "service not bound.");
+		}
+	}
+
+	public void toggleWekaService() {
+		Log.i(LOGTAG, "toggleWeka pressed");
+		if (!wekaRegistered) {
+			wekaServiceOn();
+		} else {
+			wekaServiceOff();
+		}
     }
 
     private BroadcastReceiver wekaReceiver = new BroadcastReceiver() {
@@ -470,6 +549,7 @@ public class MainActivity extends Activity {
     };
 
     private class InvalidQRCode extends Throwable {
+		private static final long serialVersionUID = 1L;
 
     }
 

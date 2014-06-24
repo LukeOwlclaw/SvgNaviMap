@@ -39,6 +39,7 @@
     <!-- end: sample scan -->
     <string name="locate_service_description">The service used to provide localization.</string>
     <string name="menu_locate">Locate</string>
+    <string name="menu_toggle_learning_mode">Learning mode</string>
     <string name="menu_levelup">Level up</string>
     <string name="menu_leveldown">Level down</string>
     <string name="menu_setdestination">Set destination</string>

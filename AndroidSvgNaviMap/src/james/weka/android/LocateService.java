@@ -23,6 +23,7 @@ import java.util.Scanner;
 
 import de.tuhh.ti5.androidsvgnavimap.Logger;
 import de.tuhh.ti5.androidsvgnavimap.SampleScanActivity;
+import de.tuhh.ti5.androidsvgnavimap.Utils;
 
 import org.apache.commons.io.FileUtils;
 
@@ -79,38 +80,42 @@ public class LocateService extends Service {
 
 	Builder notificationBuilder;
 
-	private BroadcastReceiver wifiScanReceiver = new BroadcastReceiver() {
+	private BroadcastReceiver wifiScanReceiver = null;
+	
+	private BroadcastReceiver createWifiScanReceiver() {
+		return new BroadcastReceiver() {
 
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			// for testing only:
-			// Vibrator v = (Vibrator)
-			// getSystemService(Context.VIBRATOR_SERVICE);
-			// v.vibrate(30);
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				// for testing only:
+				// Vibrator v = (Vibrator)
+				// getSystemService(Context.VIBRATOR_SERVICE);
+				// v.vibrate(30);
 
-			Log.w(LOG_TAG, "Get new wifi scan result and isClassifying is "
-					+ isClassifying
-					+ (isClassifying ? ", do nothing."
-							: ", try to classify scan result."));
-			
-			wifiScanReceiver.goAsync();
-			
-			if (!isClassifying) {
-				performOnBackgroundThread(runClassify);
+				Log.w(LOG_TAG, "Get new wifi scan result and isClassifying is "
+						+ isClassifying
+						+ (isClassifying ? ", do nothing."
+								: ", try to classify scan result."));
+				
+				wifiScanReceiver.goAsync();
+				
+				if (!isClassifying) {
+					performOnBackgroundThread(runClassify);
+				}
+
+				StringBuffer wifiLogEntry = createLogEntryFromScanResult(wm
+						.getScanResults());
+				createWifiScanLogEntry(wifiLogEntry.toString());
+
+				NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+				notificationBuilder.setContentTitle("Last log at: "
+						+ getCurrentTimeStamp());
+				notificationManager.notify(0, notificationBuilder.build());
+
 			}
-
-			StringBuffer wifiLogEntry = createLogEntryFromScanResult(wm
-					.getScanResults());
-			createWifiScanLogEntry(wifiLogEntry.toString());
-
-			NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-			notificationBuilder.setContentTitle("Last log at: "
-					+ getCurrentTimeStamp());
-			notificationManager.notify(0, notificationBuilder.build());
-
-		}
-	};
+		};
+	}
 
 	public class LocateServiceBinder extends Binder {
 		public LocateService getService() {
@@ -127,7 +132,10 @@ public class LocateService extends Service {
 	 * This is a dirty workaround.
 	 */
 	public void stopScan() {
-		this.unregisterReceiver(wifiScanReceiver);
+		if(wifiScanReceiver != null) {
+			this.unregisterReceiver(wifiScanReceiver);
+			wifiScanReceiver = null;
+		}
 	}
 
     public void scan() {
@@ -140,6 +148,9 @@ public class LocateService extends Service {
 		wifiIntent.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 		wifiIntent.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
 		Log.i(LOG_TAG, "Register wifi scan receiver.");
+		if(wifiScanReceiver != null)
+			Log.e(LOG_TAG, "wifiscanreceiver created multiple times!");
+		wifiScanReceiver = createWifiScanReceiver();
 		this.registerReceiver(wifiScanReceiver, wifiIntent);
 		sharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -205,9 +216,8 @@ public class LocateService extends Service {
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		notificationManager.cancelAll();
 
-		// Cancel the persistent notification.
-		this.unregisterReceiver(wifiScanReceiver);
-		kill();
+		stopScan();
+		
 
 	}
 
@@ -229,10 +239,6 @@ public class LocateService extends Service {
 		return mBinder;
 	}
 
-	private void kill() {
-		// kill all long term tasks
-	}
-
 	private void broadcastResult(ClassifyResult result) {
 		Intent broadcast = new Intent(WEKA_LOCALIZARION_BROADCAST_INTENT);
 		broadcast.putExtra(ROOM, result.getClassLable());
@@ -243,8 +249,8 @@ public class LocateService extends Service {
 		sendBroadcast(broadcast);
 	}
 
-	private File getWorkDir() {
-        return getDir("rssi", MODE_PRIVATE);
+	public static File getWorkDir() {
+        return Utils.getSdDir("AndroidSvgNaviMap/rssi");
 	}
 
 	private File getOhrtArff() {

@@ -8,9 +8,9 @@
         />
 
     <item
-        android:id="@+id/mapview_menu_setpos"
+        android:id="@+id/mapview_menu_learning_mode"
         android:showAsAction="always"
-        android:title="@string/menu_setdestination"
+        android:title="@string/menu_toggle_learning_mode"
         android:icon="@drawable/glyphicons_377_riflescope_white"
         />
     
@@ -29,7 +29,7 @@
 
     <item
         android:id="@+id/mapview_menu_navigate"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/menu_navigate"
         android:icon="@drawable/glyphicons_431_shoe_steps_white"
         />
@@ -39,6 +39,11 @@
         android:showAsAction="always"
         android:title="@string/menu_scanqr"
         android:icon="@drawable/glyphicons_258_qrcode_white"
+        />
+    
+    <item
+        android:id="@+id/mapview_menu_clear_wifi_scans"
+        android:title="Clear wifi scans"        
         />
     
 
