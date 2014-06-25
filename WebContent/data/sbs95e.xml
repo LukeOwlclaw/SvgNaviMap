@@ -1,33 +1,33 @@
-<!-- big-data.xml -->
+<!-- sbs95e.xml -->
 <svgmap-data>
 	<levels>
 		<level>
 			<id>0</id>
-			<svgpath>big0.svg</svgpath>
+			<svgpath>sbs95e_0.svg</svgpath>
 			<min_altitude>0</min_altitude>
 			<max_altitude>5</max_altitude>
 		</level>
 		<level>
 			<id>1</id>
-			<svgpath>big1.svg</svgpath>
+			<svgpath>sbs95e_1.svg</svgpath>
 			<min_altitude>5</min_altitude>
 			<max_altitude>10</max_altitude>
 		</level>
 		<level>
 			<id>2</id>
-			<svgpath>big2.svg</svgpath>
+			<svgpath>sbs95e_2.svg</svgpath>
 			<min_altitude>10</min_altitude>
 			<max_altitude>15</max_altitude>
 		</level>
 		<level>
 			<id>3</id>
-			<svgpath>big3.svg</svgpath>
+			<svgpath>sbs95e_3.svg</svgpath>
 			<min_altitude>15</min_altitude>
 			<max_altitude>20</max_altitude>
 		</level>
 		<level>
 			<id>4</id>
-			<svgpath>big4.svg</svgpath>
+			<svgpath>sbs95e_4.svg</svgpath>
 			<min_altitude>20</min_altitude>
 			<max_altitude>25</max_altitude>
 		</level>
