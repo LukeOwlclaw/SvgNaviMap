@@ -37,8 +37,21 @@ function init_custom() {
 
 	G.showButtonsForSvg = false;
 
+	if (typeof svgapp === 'undefined') {
+		G.log("SEVERE! svgapp is undefined. Make sure it is initialized using CustomJavaScriptHandler.");
+		G.log("SEVERE! MainActivity.java should contains lines like:");
+		G.log("SEVERE! CustomJavaScriptHandler js = new CustomJavaScriptHandler(this);"); 
+		G.log("SEVERE! mWebView.getWebView().addJavascriptInterface(js, \"svgapp\");");
+		G.log("SEVERE! Abort...");
+		return;
+	}
+	if(typeof svgapp.getProjectXML !== 'function') {
+		G.log("SEVERE! svgapp is defined but does not contain function getProjectXML().");
+		G.log("SEVERE! Make sure svgapp (CustomJavaScriptHandler) implements and exports this function.");
+		G.log("SEVERE! Abort...");
+		return;
+	}
 	// load data
-	//load_from_server_xml(null);
 	var xml = svgapp.getProjectXML();
 	if (xml) {
 		console.log("importing xml");
