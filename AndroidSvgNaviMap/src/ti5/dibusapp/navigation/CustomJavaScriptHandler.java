@@ -6,12 +6,11 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 
@@ -44,6 +43,7 @@ public class CustomJavaScriptHandler {
 	 * @param s
 	 *            any kind of parameter
 	 */
+	// For API 17+, requires: @JavascriptInterface
 	public final void instruct(final String s) {
 		if (this.instructors.isEmpty()) {
 			Log.i("CustomJavaScriptHandler", "instructors is empty, instruct: "
@@ -70,6 +70,7 @@ public class CustomJavaScriptHandler {
 	 * @param value
 	 *            a value (from javascript)
 	 */
+	// For API 17+, requires: @JavascriptInterface
 	@SuppressWarnings({ "static-method", "unused" })
 	public final void return_value(final String name, final String value) {
 		Log.d("CustomJavaScriptHandler", "Received variable " + name
@@ -170,20 +171,24 @@ public class CustomJavaScriptHandler {
 		public void jsinstruct(final String s);
 	}
 
+	// For API 17+, requires: @JavascriptInterface
 	public File getProjectDir() {
 		return context.getDir("data", Context.MODE_PRIVATE);
 	}
 
+	// For API 17+, requires: @JavascriptInterface
 	public String getProjectDirPath() {
 		Log.d(TAG, "getProjectDirPath() called");
 		return getProjectDir().toURI().toString();
 	}
 
+	// For API 17+, requires: @JavascriptInterface
 	public String getProjectXML() {
 		Log.d(TAG, "getProjectXML() called");
 		
 		File[] xmlFiles = getProjectDir().listFiles(new FilenameFilter() {
-            public boolean accept(File dir, String name) {
+            @SuppressLint("DefaultLocale")
+			public boolean accept(File dir, String name) {
                 return name.toLowerCase().endsWith(".xml");
             }
         });
