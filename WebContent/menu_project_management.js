@@ -123,9 +123,18 @@ function handleFileSelect(evt) {
  
 function save_xml(){
 	"use strict";
-	var file_content=get_xml_data();
+	//set to true to use old format. if set to false, xml file is saved as .xml.new
+	var useRedundantBorderpointFormat = false;
+	
+	var fileExtension = ".xml";
+	if(useRedundantBorderpointFormat == false) {
+		fileExtension = ".xml.new";
+	}
+	
+	var file_content=get_xml_data(useRedundantBorderpointFormat);
 	var project_name = G.getXmlFilename().substr(0, G.getXmlFilename().lastIndexOf('.'));
-	var xml_path_url='/projects/'+project_name+'/upload/'+ project_name +'.xml';
+	
+	var xml_path_url='/projects/'+project_name+'/upload/'+ project_name + fileExtension;
 	jQuery.ajax({
 		url: xml_path_url,
 		type: 'PUT',
