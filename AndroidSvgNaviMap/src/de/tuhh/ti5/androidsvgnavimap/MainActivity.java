@@ -1,6 +1,7 @@
 package de.tuhh.ti5.androidsvgnavimap;
 
 import james.weka.android.LocateService;
+import james.weka.impl.Transformer;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -448,7 +449,8 @@ public class MainActivity extends Activity {
 			return true;
 		case R.id.mapview_menu_reread_data_arff:
 			try {
-				map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
+				map.readFromFile(new File(LocateService.getWorkDir(),
+						"data.arff"));
 				toast("Reading data.arff succeeded.");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -469,15 +471,14 @@ public class MainActivity extends Activity {
 
 	private void uploadArffFileToServer() {
 
-		
 		File srcArff = new File(LocateService.getWorkDir(), "data.arff");
-		
+
 		try {
 			map.saveToFile(srcArff);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
 		String url = preferences.getString("project_url", null);
@@ -489,68 +490,67 @@ public class MainActivity extends Activity {
 		}
 
 		// url == http://192.168.0.100:8888/projects/minimal-data.zip
-		String baseUrl = url.substring(0, url.lastIndexOf("/")+1);
+		String baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+		// baseUrl == http://192.168.0.100:8888/projects/
 
 		String dstArff = baseUrl + getProjectName() + ".arff";
 
+		uploadFile(srcArff, dstArff);
+
+		String dstArffTransformed = baseUrl + getProjectName()
+				+ "_transformed.arff";
+
+		Transformer t = new Transformer();
+		try {
+			t.readFile(srcArff);
+			File transArff = new File(srcArff.getParent()
+					+ "data_transformed.arff");
+			t.transform(transArff);
+			uploadFile(transArff, dstArffTransformed);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private void uploadFile(File srcFileLocal, String dstFileRemote) {
 		try {
 			final HttpClient httpclient = new DefaultHttpClient();
 
-			final HttpPost httppost = new HttpPost(dstArff);
+			final HttpPost httppost = new HttpPost(dstFileRemote);
 
 			InputStreamEntity reqEntity = new InputStreamEntity(
-					new FileInputStream(srcArff), -1);
+					new FileInputStream(srcFileLocal), -1);
 			reqEntity.setContentType("binary/octet-stream");
 			reqEntity.setChunked(true); // Send in multiple parts if needed
 			httppost.setEntity(reqEntity);
-			
-			Thread thread = new Thread(new Runnable(){
-			    @Override
-			    public void run() {
-			        try {
-			        	HttpResponse response = httpclient.execute(httppost);
+
+			Thread thread = new Thread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						HttpResponse response = httpclient.execute(httppost);
 						Log.i(LOGTAG, "Response: " + response.getStatusLine());
 						int code = response.getStatusLine().getStatusCode();
-						if(code != 200) {
+						if (code != 200) {
 							toast("Upload failed. HTTP Code: " + code);
 						} else {
 							toast("Upload succeeded.");
 						}
-			        } catch (Exception e) {
-			        	String msg = "Posting arff file failed.";
-			        	Log.e(LOGTAG, msg, e);
+					} catch (Exception e) {
+						String msg = "Posting arff file failed.";
+						Log.e(LOGTAG, msg, e);
 						toast(msg + " Check logcat output.");
-			        }
-			    }
+					}
+				}
 			});
-			thread.start(); 
+			thread.start();
 
 		} catch (Exception e) {
 			String msg = "Preparing posting arff file failed.";
-        	Log.e(LOGTAG, msg, e);
+			Log.e(LOGTAG, msg, e);
 			toast(msg + " Check logcat output.");
 		}
-
-		// // Create a new HttpClient and Post Header
-		// HttpClient httpclient = new DefaultHttpClient();
-		// HttpPost httppost = new HttpPost(dstArff);
-		//
-		// try {
-		// // Add your data
-		// List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-		// nameValuePairs.add(new BasicNameValuePair("id", "12345"));
-		// nameValuePairs.add(new BasicNameValuePair("stringdata",
-		// "AndDev is Cool!"));
-		// httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-		//
-		// // Execute HTTP Post Request
-		// HttpResponse response = httpclient.execute(httppost);
-		//
-		// } catch (ClientProtocolException e) {
-		// // TODO Auto-generated catch block
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// }
 	}
 
 	private void toggleLearnLocation() {
@@ -778,12 +778,13 @@ public class MainActivity extends Activity {
 	private void toast(final String string) {
 		toast(string, Toast.LENGTH_SHORT);
 	}
+
 	private void toast(final String string, final int length) {
 		final MainActivity that = this;
 		runOnUiThread(new Runnable() {
-		    public void run() {
-		    	Toast.makeText(that, string, length).show();
-		    }
+			public void run() {
+				Toast.makeText(that, string, length).show();
+			}
 		});
 	}
 

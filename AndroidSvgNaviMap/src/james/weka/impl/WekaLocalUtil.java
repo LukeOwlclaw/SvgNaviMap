@@ -56,6 +56,7 @@ public class WekaLocalUtil implements WekaLocalService {
 			throw new WekaFormatException("File " + rowData.getName()
 					+ " can not be parsed.", e);
 		}
+		File out = new File(rowData.getParent(), TRAIN_ARFF);
 		try {
 			BSSIDList.addAll(t.getBSSIDList());
 			Log.i(LOG_TAG,
@@ -64,13 +65,12 @@ public class WekaLocalUtil implements WekaLocalService {
 			if (doGenerate) {
 				Log.i(LOG_TAG,
 						"doGenerate is true, generate new train.arff and struct.arff.");
-				t.transform(new File(rowData.getParent(), TRAIN_ARFF),
-						new File(rowData.getParent(), STRUCTURE));
+				t.transform(out, new File(rowData.getParent(), STRUCTURE));
 			}
 		} catch (Exception e) {
 			throw new WekaFormatException("New file can't be generated.", e);
 		}
-		return new File(rowData.getParent(), TRAIN_ARFF);
+		return out;
 	}
 
 	@Override
