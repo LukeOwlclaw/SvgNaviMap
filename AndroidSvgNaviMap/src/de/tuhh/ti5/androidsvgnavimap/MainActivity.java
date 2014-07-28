@@ -503,7 +503,7 @@ public class MainActivity extends Activity {
 		Transformer t = new Transformer();
 		try {
 			t.readFile(srcArff);
-			File transArff = new File(srcArff.getParent()
+			File transArff = new File(srcArff.getParent() + File.separator
 					+ "data_transformed.arff");
 			t.transform(transArff);
 			uploadFile(transArff, dstArffTransformed);
