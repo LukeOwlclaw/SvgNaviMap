@@ -18126,6 +18126,7 @@
 			<x-pos>260.6701382612196</x-pos>
 			<y-pos>210.6534116248077</y-pos>
 			<poi>true</poi>
+			<shortDescription>TrpHaus1</shortDescription>
 			<borderpoint>
 				<id>4000</id>
 				<x-pos>206.2379411866065</x-pos>
@@ -18239,6 +18240,8 @@
 			<x-pos>347.37764208970356</x-pos>
 			<y-pos>454.8034881944861</y-pos>
 			<poi>true</poi>
+			<shortDescription>Siegemun</shortDescription>
+			<longDescription>Siegemund</longDescription>
 			<borderpoint>
 				<id>4027</id>
 				<x-pos>289.27226444166536</x-pos>
@@ -18266,6 +18269,8 @@
 			<x-pos>379.3225119212503</x-pos>
 			<y-pos>530.1021099402748</y-pos>
 			<poi>true</poi>
+			<shortDescription>kl%20Bib</shortDescription>
+			<longDescription>Bibliothek</longDescription>
 			<borderpoint>
 				<id>4030</id>
 				<x-pos>327.4608787692323</x-pos>
@@ -18293,6 +18298,7 @@
 			<x-pos>408.9856053362579</x-pos>
 			<y-pos>598.5554024364462</y-pos>
 			<poi>true</poi>
+			<shortDescription>Ohrt</shortDescription>
 			<borderpoint>
 				<id>4036</id>
 				<x-pos>352.9199535759128</x-pos>
@@ -18320,6 +18326,7 @@
 			<x-pos>427.2398166685703</x-pos>
 			<y-pos>646.4727071837664</y-pos>
 			<poi>true</poi>
+			<shortDescription>Klimek</shortDescription>
 			<borderpoint>
 				<id>4040</id>
 				<x-pos>380.2649095184949</x-pos>

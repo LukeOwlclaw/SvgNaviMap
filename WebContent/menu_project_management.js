@@ -116,14 +116,20 @@ function handleFileSelect(evt) {
     }
     document.getElementById("display_svg").innerHTML = '<ul>' + output.join('') + '</ul>';
   }
- 
- 
+
 function save_xml(){
+	//save using old format which can be loaded.
+	save_xml_internal(false, true);
+	//additionally save in new format which BlissSvgNaviMap expects.
+	save_xml_internal(true, true);
+}  
+ 
+/**
+useRedundantBorderpointFormat: set to true to use old format. if set to false, xml file is saved as .xml.new
+useLongXmlTags: using short XML tags reduces file size to ~1/3
+*/ 
+function save_xml_internal(useRedundantBorderpointFormat, useLongXmlTags){
 	"use strict";
-	//set to true to use old format. if set to false, xml file is saved as .xml.new
-	var useRedundantBorderpointFormat = true;
-	//using short XML tags reduces file size to ~1/3
-	var useLongXmlTags = true;
 	
 	var fileExtension = ".xml";
 	if(useRedundantBorderpointFormat == false) {

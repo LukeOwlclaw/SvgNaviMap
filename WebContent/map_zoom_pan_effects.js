@@ -658,6 +658,7 @@ MZP.init = function(id) {
 		G.svg_element[id].setAttribute("height", "100%");
 
 	} else {
+		// in case viewBox is defined within SVG:
 		G.svg_element[id].widthUnzoomed = G.svg_element[id].getBoundingClientRect().width;
 		G.svg_element[id].heightUnzoomed = G.svg_element[id].getBoundingClientRect().height;
 	}
