@@ -228,7 +228,7 @@ MZP.calcZoomLevel = function(id) {
 	
 	var zoomLevelA = zoom / zoom2;
 	
-	MZP.zoomLevel[id] = zoom / zoom2;
+	MZP.zoomLevel[id] = zoomLevelA;
 	
 	
 //	 G.log('zoom: ' + zoom + ' zoom2: ' + zoom2 + ' zoomLevelA: ' + zoomLevelA);
@@ -651,13 +651,18 @@ MZP.init = function(id) {
 		 * G.svg_parent.getClientRects()["0"].height /
 		 * MZP.SVGRoot.getAttribute('height');
 		 */
-
+		
 		G.svg_element[id].heightUnzoomed = G.svg_element[id].getAttribute("height");
 		G.svg_element[id].widthUnzoomed = G.svg_element[id].getAttribute("width");
 		G.svg_element[id].setAttribute("width", "100%");
 		G.svg_element[id].setAttribute("height", "100%");
 
+	} else {
+		G.svg_element[id].widthUnzoomed = G.svg_element[id].getBoundingClientRect().width;
+		G.svg_element[id].heightUnzoomed = G.svg_element[id].getBoundingClientRect().height;
 	}
+	
+		
 	var viewBoxValues = viewBox.split(' '); // Create an array and insert each
 	// individual view box attribute
 	// value (assume they're seperated
