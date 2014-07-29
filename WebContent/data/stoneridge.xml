@@ -3,12 +3,14 @@
 <levels>
 <level>
 <id>0</id>
+<name>Erdgeschoss</name>
 <svgpath>stoneridge_gif0.svg</svgpath>
 <min_altitude>0</min_altitude>
 <max_altitude>5</max_altitude>
 </level>
 <level>
 <id>1</id>
+<name>1. Stock</name>
 <svgpath>stoneridge_gif1.svg</svgpath>
 <min_altitude>5</min_altitude>
 <max_altitude>10</max_altitude>

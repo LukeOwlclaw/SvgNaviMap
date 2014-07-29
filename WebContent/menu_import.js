@@ -164,6 +164,7 @@ function import_xml(xmlDom, callback, loadSvg) {
 	// reset all levels
 	G.Level_min_altitude = new Array();
 	G.Level_max_altitude = new Array();
+	G.Level_name = new Array();
 	if (loadSvg == true) {
 		G.loadMapsCompleted = false;
 		G.Level_svgpath = new Array();
@@ -328,6 +329,7 @@ function import_xml_level(xmlDom) {
 	"use strict";
 	var id = null;
 	var svgpath = null;
+	var levelname = null;
 	var min_altitude = null;
 	var max_altitude = null;
 
@@ -343,6 +345,9 @@ function import_xml_level(xmlDom) {
 			break;
 		case 'svgpath':
 			svgpath = c.childNodes[0].nodeValue;
+			break;
+		case 'name':
+			levelname = c.childNodes[0].nodeValue;
 			break;
 		case 'min_altitude':
 			min_altitude = parseFloat(c.childNodes[0].nodeValue);
@@ -389,6 +394,11 @@ function import_xml_level(xmlDom) {
 		G.log('level ' + id + ': svgpath is not defined.');
 		return;
 	}
+	
+	if (levelname == null) {
+		G.log('level ' + id + ': name is not defined.');
+		return;
+	}
 
 	for ( var j = 0; j < G.svg_element.length; j++) {
 		if (j == id)
@@ -411,6 +421,7 @@ function import_xml_level(xmlDom) {
 	G.Level_min_altitude[id] = min_altitude;
 	G.Level_max_altitude[id] = max_altitude;
 	G.Level_svgpath[id] = svgpath;
+	G.Level_name[id] = levelname;
 }
 
 function import_xml_gpsmarkers(xmlDom) {

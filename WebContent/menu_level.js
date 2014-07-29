@@ -20,6 +20,8 @@ function level_save() {
 				.getElementById('G.Level_min_altitude_' + i).value, 10);
 		G.Level_max_altitude[i] = parseInt(document
 				.getElementById('G.Level_max_altitude_' + i).value, 10);
+		G.Level_name[i] = document
+				.getElementById('G.Level_name_' + i).value;
 	}
 
 	var check = level_check();
@@ -36,11 +38,14 @@ function level_display() {
 	for ( var i = 0; i < G.svg_element.length; i++) {
 		var min = G.Level_min_altitude[i];
 		var max = G.Level_max_altitude[i];
+		var levelname = G.Level_name[i];
 		htmlstring += 'Level ' + i
 				+ ':<br>Bottom <input id=\'G.Level_min_altitude_' + i
 				+ '\' maxlength=\'4\' size=\'4\' value=\'' + min
 				+ '\'><br>Top     <input id=\'G.Level_max_altitude_' + i
 				+ '\' maxlength=\'4\' size=\'4\' value=\'' + max
+				+ '\'><br>Name     <input id=\'G.Level_name_' + i
+				+ '\' value=\'' + levelname
 				+ '\'><br><br>';
 	}
 

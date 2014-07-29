@@ -3,18 +3,21 @@
 	<levels>
 		<level>
 			<id>0</id>
+			<name>Erdgeschoss</name>
 			<svgpath>minimal0.svg</svgpath>
 			<min_altitude>0</min_altitude>
 			<max_altitude>5</max_altitude>
 		</level>
 		<level>
 			<id>1</id>
+			<name>Erster Stock</name>
 			<svgpath>minimal1.svg</svgpath>
 			<min_altitude>5</min_altitude>
 			<max_altitude>10</max_altitude>
 		</level>
 		<level>
 			<id>2</id>
+			<name>2. Stock</name>
 			<svgpath>minimal2.svg</svgpath>
 			<min_altitude>10</min_altitude>
 			<max_altitude>15</max_altitude>

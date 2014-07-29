@@ -109,9 +109,11 @@ function get_xml_data(useRedundantBorderpointFormat, useLongXmlTags) {
 			var min = G.Level_min_altitude[i];
 			var max = G.Level_max_altitude[i];
 			var svgpath = G.Level_svgpath[i];
+			var levelname = G.Level_name[i];
 
 			file_content = file_content.concat(TAB + TAB + '<level>' + NL);
 			file_content = file_content.concat(TAB + TAB + TAB + '<id>' + i + '</id>' + NL);
+			file_content = file_content.concat(TAB + TAB + TAB + '<name>' + levelname + '</name>' + NL);
 			file_content = file_content.concat(TAB + TAB + TAB + '<svgpath>' + svgpath + '</svgpath>' + NL);
 			file_content = file_content.concat(TAB + TAB + TAB + '<min_altitude>' + min + '</min_altitude>' + NL);
 			file_content = file_content.concat(TAB + TAB + TAB + '<max_altitude>' + max + '</max_altitude>' + NL);
