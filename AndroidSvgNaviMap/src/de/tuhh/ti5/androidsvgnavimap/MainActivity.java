@@ -61,7 +61,7 @@ import de.tuhh.ti5.androidsvgnavimap.util.FileUtils;
 
 public class MainActivity extends Activity {
 
-	private static final String LOGTAG = "MainActivity";
+	private static final String TAG = "MainActivity";
 
 	private static final int ZBAR_SCANNER_REQUEST = 1;
 
@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
 			String msg = "At least API 16 is required!";
 			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
 					.show();
-			Log.w(LOGTAG, msg);
+			Log.w(TAG, msg);
 		}
 
 		mWebView.getWebView().setWebChromeClient(new WebChromeClient());
@@ -139,12 +139,12 @@ public class MainActivity extends Activity {
 		try {
 			map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
 			toast("Loaded data.arff");
+			toggleWekaService();
 		} catch (IOException e) {
-			e.printStackTrace();
-			toast("Loading data.arff failed. Check logcat output.");
+			String msg = "Loading data.arff failed. Check logcat output.";
+			Log.w(TAG, msg, e);
+			toast(msg);
 		}
-
-		toggleWekaService();
 
 		// mWebView.loadUrl("file:///android_asset/svgnavimap/android.html");
 		// mWebView.loadUrl("http://10.0.0.110:8888/android.html");
@@ -194,7 +194,7 @@ public class MainActivity extends Activity {
 
 		selectedNode = nodeid;
 
-		Log.i(LOGTAG, String.format("selected id: %d", selectedNode));
+		Log.i(TAG, String.format("selected id: %d", selectedNode));
 
 		wifiLearnScan(nodeid);
 	}
@@ -203,20 +203,20 @@ public class MainActivity extends Activity {
 
 	private void wifiLearnScan(final int nodeid) {
 		if (wifiLearningInProgress) {
-			Log.i(LOGTAG, "wifiLearningInProgress. Abort.");
+			Log.i(TAG, "wifiLearningInProgress. Abort.");
 			return;
 		}
 		wifiLearningInProgress = true;
-		Log.i(LOGTAG, "Preparing Wifi scan");
+		Log.i(TAG, "Preparing Wifi scan");
 		final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
-		Log.i(LOGTAG, "Checking Wifi status");
+		Log.i(TAG, "Checking Wifi status");
 		if (!wifiManager.isWifiEnabled()) {
-			Log.i(LOGTAG, "Enabling Wifi");
+			Log.i(TAG, "Enabling Wifi");
 			wifiManager.setWifiEnabled(true);
 
 			while (!wifiManager.isWifiEnabled()) {
-				Log.i(LOGTAG, "Waiting for Wifi...");
+				Log.i(TAG, "Waiting for Wifi...");
 				try {
 					Thread.sleep(50);
 				} catch (InterruptedException ignored) {
@@ -224,7 +224,7 @@ public class MainActivity extends Activity {
 				}
 			}
 		} else {
-			Log.i(LOGTAG, "Wifi already enabled");
+			Log.i(TAG, "Wifi already enabled");
 		}
 
 		IntentFilter intentFilter = new IntentFilter();
@@ -233,7 +233,7 @@ public class MainActivity extends Activity {
 		final BroadcastReceiver receiver = new BroadcastReceiver() {
 			@Override
 			public void onReceive(Context context, Intent intent) {
-				Log.i(LOGTAG, "Received scan result");
+				Log.i(TAG, "Received scan result");
 				List<ScanResult> scanResults = wifiManager.getScanResults();
 
 				CompleteScanResult completeScanResult = new CompleteScanResult(
@@ -249,13 +249,13 @@ public class MainActivity extends Activity {
 		};
 
 		if (nodeid >= 0) {
-			Log.i(LOGTAG, "Registering result handler");
+			Log.i(TAG, "Registering result handler");
 			registerReceiver(receiver, intentFilter);
 		}
 
-		Log.i(LOGTAG, "Starting Wifi scan");
+		Log.i(TAG, "Starting Wifi scan");
 		boolean success = wifiManager.startScan();
-		Log.i(LOGTAG, String.format("%s", success));
+		Log.i(TAG, String.format("%s", success));
 	}
 
 	public void launchQRScanner() {
@@ -392,7 +392,7 @@ public class MainActivity extends Activity {
 
 			try {
 				map.saveToFile(new File(LocateService.getWorkDir(), "data.arff"));
-				Log.i(LOGTAG, "data.arff created");
+				Log.i(TAG, "data.arff created");
 			} catch (IOException e) {
 				e.printStackTrace();
 				toast("writing data.arff failed. abort.");
@@ -413,9 +413,11 @@ public class MainActivity extends Activity {
 
 			return true;
 		case R.id.mapview_menu_learning_mode:
-			// stop locate service, if enabled, to avoid disturbing learing
-			// process.
-			locateService.stopScan();
+			if (locateService != null) {
+				// stop locate service, if enabled, to avoid disturbing learing
+				// process.
+				locateService.stopScan();
+			}
 			toggleLearnLocation();
 			return true;
 		case R.id.mapview_menu_levelup:
@@ -483,7 +485,7 @@ public class MainActivity extends Activity {
 				.getDefaultSharedPreferences(this);
 		String url = preferences.getString("project_url", null);
 		if (url == null) {
-			Log.e(LOGTAG,
+			Log.e(TAG,
 					"preferences.getString(project_url) returned null. abort.");
 			toast("Error occurred. Please backup arff, then re-download SvgNaviMap data.");
 			return;
@@ -530,7 +532,7 @@ public class MainActivity extends Activity {
 				public void run() {
 					try {
 						HttpResponse response = httpclient.execute(httppost);
-						Log.i(LOGTAG, "Response: " + response.getStatusLine());
+						Log.i(TAG, "Response: " + response.getStatusLine());
 						int code = response.getStatusLine().getStatusCode();
 						if (code != 200) {
 							toast("Upload failed. HTTP Code: " + code);
@@ -539,7 +541,7 @@ public class MainActivity extends Activity {
 						}
 					} catch (Exception e) {
 						String msg = "Posting arff file failed.";
-						Log.e(LOGTAG, msg, e);
+						Log.e(TAG, msg, e);
 						toast(msg + " Check logcat output.");
 					}
 				}
@@ -548,7 +550,7 @@ public class MainActivity extends Activity {
 
 		} catch (Exception e) {
 			String msg = "Preparing posting arff file failed.";
-			Log.e(LOGTAG, msg, e);
+			Log.e(TAG, msg, e);
 			toast(msg + " Check logcat output.");
 		}
 	}
@@ -588,7 +590,7 @@ public class MainActivity extends Activity {
 				FileUtils.unzip(file, htmlDir);
 				file.delete();
 			} catch (IOException e) {
-				Log.e(LOGTAG, e.getMessage());
+				Log.e(TAG, e.getMessage());
 				Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
 			}
 
@@ -625,7 +627,7 @@ public class MainActivity extends Activity {
 					toast("Loaded map data does not contain arff file. collect wifi data and upload!");
 
 			} catch (IOException e) {
-				Log.e(LOGTAG, e.getMessage());
+				Log.e(TAG, e.getMessage());
 				Toast.makeText(this, "Unzip error", Toast.LENGTH_SHORT).show();
 			}
 
@@ -644,7 +646,7 @@ public class MainActivity extends Activity {
 		public void onServiceConnected(ComponentName className, IBinder service) {
 			locateService = ((LocateService.LocateServiceBinder) service)
 					.getService();
-			Log.i(LOGTAG, "bound");
+			Log.i(TAG, "bound");
 			mIsBound = true;
 
 			locateService.scan();
@@ -674,47 +676,46 @@ public class MainActivity extends Activity {
 
 	public void wekaServiceOn() {
 		if (wekaRegistered == true) {
-			Log.w(LOGTAG, "Cannot enable wekaService because already on.");
+			Log.w(TAG, "Cannot enable wekaService because already on.");
 			return;
 		}
 
-		Log.i(LOGTAG,
+		Log.i(TAG,
 				"weka service broadcast receiver is not registered, try to register it.");
 		registerReceiver(wekaReceiver, new IntentFilter(
 				LocateService.WEKA_LOCALIZARION_BROADCAST_INTENT));
 		wekaRegistered = true;
 
 		if (!mIsBound) {
-			Log.i(LOGTAG,
-					"binding service and try to get classification result.");
+			Log.i(TAG, "binding service and try to get classification result.");
 			doBindService();
 		} else {
-			Log.i(LOGTAG,
+			Log.i(TAG,
 					"service already bound, do nothing but wait for classification result from service.");
 		}
 	}
 
 	public void wekaServiceOff() {
 		if (wekaRegistered == false) {
-			Log.w(LOGTAG, "Cannot disable wekaService because already off.");
+			Log.w(TAG, "Cannot disable wekaService because already off.");
 			return;
 		}
 
-		Log.i(LOGTAG,
+		Log.i(TAG,
 				"Weka service broadcast receiver is registered, so try unregister it.");
 		unregisterReceiver(wekaReceiver);
 		wekaRegistered = false;
 
 		if (locateService != null) {
-			Log.i(LOGTAG, "unbinding service.");
+			Log.i(TAG, "unbinding service.");
 			doUnbindService();
 		} else {
-			Log.i(LOGTAG, "service not bound.");
+			Log.i(TAG, "service not bound.");
 		}
 	}
 
 	public void toggleWekaService() {
-		Log.i(LOGTAG, "toggleWeka pressed");
+		Log.i(TAG, "toggleWeka pressed");
 		if (!wekaRegistered) {
 			wekaServiceOn();
 		} else {
