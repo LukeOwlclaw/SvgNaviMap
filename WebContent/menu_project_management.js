@@ -21,22 +21,19 @@ function create_project(){
 	var project_name = document.getElementById('fname').value;
 	
 	if(!isAlphanumeric(project_name)){
-		alert("Invalide project name! Use only 0-9 a-z A-Z");
+		alert("Invalid project name! Use only 0-9 a-z A-Z");
 		return;
 	}
 	
 ;	var level = new Array();
 	var minHeight = new Array();
 	var maxHeight = new Array()
+	var levelName = new Array()
 	
 	for(var i =0;  document.getElementById("level"+i)!=null; i++){
-		
-		var tmp=document.getElementById("level"+i).value;
-		if(!isNumeric(tmp)){
-			alert("Invalid level! Numeric entry only!")
-			return;
-		}
-		level.push(tmp);
+		level.push(i);
+		tmp=document.getElementById("levelname"+i).value;
+		levelName.push(tmp);
 		tmp=document.getElementById("min"+i).value;
 		if(!isNumeric(tmp)){
 			alert("Invalid minHeight! Numeric entry only!")
@@ -49,10 +46,9 @@ function create_project(){
 			return;
 		}
 		maxHeight.push(tmp);
-		
 	}
 	
-	var xml_file = generate_xml_base(project_name.concat(".xml"),files,level,minHeight,maxHeight);
+	var xml_file = generate_xml_base(project_name.concat(".xml"),files,level,levelName,minHeight,maxHeight);
 	// G.log("level:"+level + " min:" +minHeight +" max:" +maxHeight);
 	
 	jQuery.ajax({
@@ -104,18 +100,19 @@ function handleFileSelect(evt) {
 	}
 	
     // files is a FileList of File objects. List some properties.
-    var output = [];		
+    var output = [];
 	
 
     for (var i = 0, f; f = files[i]; i++) {
 
-		output.push('Level: ','<input type="number" id="level',i,'" size="2">',
-					' Min height: ','<input type="number" id="min',i,'" size="2">',
-					' Max height: ','<input type="number" id="max',i,'" size="2">',	
-					'<br><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+		output.push('Level: ','<b>',i,'</b><br>',
+					'LevelName: ','<input id="levelname',i,'"><br>',
+					' Min height: ','<input type="number" id="min',i,'" size="2"><br>',
+					' Max height: ','<input type="number" id="max',i,'" size="2"><br>',	
+					'<strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
 					f.size, ' bytes, last modified: ',
 					f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-					'<br>');
+					'<br><br>');
     }
     document.getElementById("display_svg").innerHTML = '<ul>' + output.join('') + '</ul>';
   }
@@ -124,7 +121,7 @@ function handleFileSelect(evt) {
 function save_xml(){
 	"use strict";
 	//set to true to use old format. if set to false, xml file is saved as .xml.new
-	var useRedundantBorderpointFormat = false;
+	var useRedundantBorderpointFormat = true;
 	//using short XML tags reduces file size to ~1/3
 	var useLongXmlTags = true;
 	
@@ -151,7 +148,7 @@ function save_xml(){
 	});
 }
 
-function generate_xml_base(file_name,files,level,minheight,maxheight){
+function generate_xml_base(file_name,files,level,levelname,minheight,maxheight){
 
 	var file_content="";
 	file_content = file_content.concat('<!-- '+file_name+' -->\r\n');
@@ -167,6 +164,7 @@ function generate_xml_base(file_name,files,level,minheight,maxheight){
 
 		file_content = file_content.concat('\t\t<level>\r\n');
 		file_content = file_content.concat('\t\t\t<id>' + level[i] + '</id>\r\n');
+		file_content = file_content.concat('\t\t\t<name>' + levelname[i] + '</name>\r\n');
 		file_content = file_content.concat('\t\t\t<svgpath>' + svgpath + '</svgpath>\r\n');
 		file_content = file_content.concat('\t\t\t<min_altitude>' + min + '</min_altitude>\r\n');
 		file_content = file_content.concat('\t\t\t<max_altitude>' + max + '</max_altitude>\r\n');
