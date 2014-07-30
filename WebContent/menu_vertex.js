@@ -61,6 +61,23 @@ function vertex_mousemove(evt) {
 			+ '<br>vertex-id: ' + Vertex_hoover);
 }
 
+function vertex_search() {
+	var vertexId = document.getElementById('vertex_id_search').value;
+	var vertex = Vertex_container.get(vertexId);
+	if(vertex == null) {
+		alert("roomId " + vertexId + " does not exist.");
+	}
+	else {
+		for(var i = 0;i<G.getLevelCount();i++) {
+			if(i!=vertex.getSvgid())
+				UIManager.setVisibility("map" + i, "hide");
+		}
+		UIManager.setVisibility("map" + vertex.getSvgid(), "show");
+		vertex_select(vertex);
+		vertex.getShape().setAttribute("stroke-width", 20);
+	}
+}
+
 function vertex_click(evt) {
 	"use strict";
 	var posX = MZP.translateX(evt);

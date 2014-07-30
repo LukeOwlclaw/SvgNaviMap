@@ -90,6 +90,8 @@
         <div id="vertex" style="display: none;">
           <div id="vertex_default" style="display: none;">
             <p>Click into image to add a POI vertex (CTRL for no POI) or select one to edit it.</p>
+			<br> Search for vertex-id: <input id="vertex_id_search" onkeyup="if (event.keyCode == 13) { vertex_search(); return false; }">
+            <button onclick="vertex_search();" id="vertex_search">Search!</button>
           </div>
 
           <div id="vertex_details" style="display: none;">

@@ -31,7 +31,7 @@ UIManager.setVisibility = function(id, action) {
 		visible = true;
 		break;
 	case "hide":
-		visible = true;
+		visible = false;
 		break;
 	case "toggle":
 		visible = (e.style.display == "none") ? true : false;
