@@ -30,9 +30,9 @@ function create_project(){
 	var maxHeight = new Array()
 	var levelName = new Array()
 	
-	for(var i =0;  document.getElementById("level"+i)!=null; i++){
+	for(var i =0;  document.getElementById("levelname"+i)!=null; i++){
 		level.push(i);
-		tmp=document.getElementById("levelname"+i).value;
+		var tmp=document.getElementById("levelname"+i).value;
 		levelName.push(tmp);
 		tmp=document.getElementById("min"+i).value;
 		if(!isNumeric(tmp)){
