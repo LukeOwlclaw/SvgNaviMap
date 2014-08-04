@@ -12,6 +12,8 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
+import de.tuhh.ti5.androidsvgnavimap.Logger;
+
 /**
  * This class transform ARFF files.
  * 
@@ -99,9 +101,9 @@ public class Transformer {
 	private void parseSingleArffFile(File arffFile) throws Exception {
 		List<String> lines = FileUtils.readLines(arffFile);
 		for (String line : lines) {
-			if (line.length() == 0)
+			if (line.trim().length() == 0)
 				continue;
-			if (line.contains("@")) {
+			if (line.trim().startsWith("@")) {
 				if (line.contains("@relation")) {
 					if (relation.equalsIgnoreCase("_"
 							+ line.substring(line.indexOf('n') + 2))) {
@@ -111,17 +113,20 @@ public class Transformer {
 								.substring(line.indexOf('n') + 2));
 					}
 					// logger.debug("The relation has been set to - "+relation);
-				}
-				if (line.contains("BSSID")) {
+				} else if (line.contains("BSSID")) {
+					int posLastComma = line.lastIndexOf(',');
+					if (posLastComma == -1) {
+						Logger.w("Empty BSSID list found in arff file.");
+						continue;
+					}
 					String BSSIDString = line.substring(line.indexOf('{') + 1,
-							line.lastIndexOf(','));
+							posLastComma);
 					String[] BSSIDs = BSSIDString.split(",");
 					for (String BSSID : BSSIDs) {
 						BSSIDSet.add(BSSID);
 						// logger.debug("Found a BSSID - "+BSSID);
 					}
-				}
-				if (line.contains("ROOM")) {
+				} else if (line.contains("ROOM")) {
 					String roomString = line.substring(line.indexOf('{') + 1,
 							line.lastIndexOf('}'));
 					String[] rooms = roomString.split(",");

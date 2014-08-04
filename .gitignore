@@ -25,3 +25,4 @@ gradle
 build
 AndroidSvgNaviMap/target/
 /WebContent/data/*.new
+*flees*

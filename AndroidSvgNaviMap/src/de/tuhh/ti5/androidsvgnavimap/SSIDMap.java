@@ -27,6 +27,7 @@ public class SSIDMap {
 	private String LOGTAG = "SSIDMap";
 	private final static String DEFAULT_RELATION_NAME = "tm450";
 	private final static String DEFAULT_ROOM_PREFIX = "";
+	private final static String DEFAULT_ROOM_PREFIX_OBSOLETE_COMPATIBILITY = "vertex_";
 
 	private void addScanResult(int roomId, List<CompleteScanResult> scanResults) {
 
@@ -90,9 +91,18 @@ public class SSIDMap {
 					roomId = Integer.parseInt(roomName
 							.substring(DEFAULT_ROOM_PREFIX.length()));
 				} catch (NumberFormatException nfe) {
-					Log.e(LOGTAG, "Room/Vertex/Label has unsupported format: "
-							+ roomName + ". Fix arff file.");
-					return;
+
+					try {
+						roomId = Integer
+								.parseInt(roomName
+										.substring(DEFAULT_ROOM_PREFIX_OBSOLETE_COMPATIBILITY
+												.length()));
+					} catch (NumberFormatException nfe2) {
+						Log.e(LOGTAG,
+								"Room/Vertex/Label has unsupported format: "
+										+ roomName + ". Fix arff file.");
+						return;
+					}
 				}
 				// logger.debug("Found one class label - "+classLabel);
 
@@ -202,7 +212,7 @@ public class SSIDMap {
 				}
 
 				writer.print('"');
-				writer.print(", " + DEFAULT_ROOM_PREFIX);
+				writer.print("," + DEFAULT_ROOM_PREFIX);
 				writer.print(entry.getKey());
 				writer.println();
 			}
