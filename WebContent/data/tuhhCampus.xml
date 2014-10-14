@@ -67,6 +67,14 @@
 			<longitude>9.96792</longitude>
 		</gpsmarker>
 		<gpsmarker>
+			<id>7</id>
+			<svgid>0</svgid>
+			<x-pos>135.74084174422126</x-pos>
+			<y-pos>116.13794089287595</y-pos>
+			<latitude>53.463031</latitude>
+			<longitude>9.968833</longitude>
+		</gpsmarker>
+		<gpsmarker>
 			<id>8</id>
 			<svgid>0</svgid>
 			<x-pos>243.0952405822192</x-pos>
@@ -111,8 +119,8 @@
 			<svgid>0</svgid>
 			<x-pos>77.0033825549279</x-pos>
 			<y-pos>81.14880553336324</y-pos>
-			<latitude>53.463618</latitude>
-			<longitude>9.967271</longitude>
+			<latitude>53.463593</latitude>
+			<longitude>9.96732</longitude>
 		</gpsmarker>
 		<gpsmarker>
 			<id>14</id>
@@ -129,6 +137,14 @@
 			<y-pos>124.4259834836181</y-pos>
 			<latitude>53.462737</latitude>
 			<longitude>9.970313</longitude>
+		</gpsmarker>
+		<gpsmarker>
+			<id>16</id>
+			<svgid>0</svgid>
+			<x-pos>141.288833107181</x-pos>
+			<y-pos>87.2883886162132</y-pos>
+			<latitude>53.463466</latitude>
+			<longitude>9.969059</longitude>
 		</gpsmarker>
 	</gpsmarkers>
 </svgmap-data>

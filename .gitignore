@@ -26,3 +26,4 @@ build
 AndroidSvgNaviMap/target/
 /WebContent/data/*.new
 *flees*
+/WebContent/data/sbs95e_before_new_aps.arff
