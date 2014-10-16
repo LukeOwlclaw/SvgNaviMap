@@ -24036,8 +24036,8 @@
 			<vertex2>0</vertex2>
 			<vertex2-reachable>true</vertex2-reachable>
 			<vertex2-stepmarker>
-				<x-pos>472</x-pos>
-				<y-pos>466</y-pos>
+				<x-pos>241.91726888502944</x-pos>
+				<y-pos>239.19299082462257</y-pos>
 			</vertex2-stepmarker>
 			<distanceFactor>50</distanceFactor>
 			<disabledAdapted>true</disabledAdapted>
@@ -24200,8 +24200,8 @@
 			<vertex1>2112</vertex1>
 			<vertex1-reachable>true</vertex1-reachable>
 			<vertex1-stepmarker>
-				<x-pos>1027</x-pos>
-				<y-pos>1996</y-pos>
+				<x-pos>1047.8545953398068</x-pos>
+				<y-pos>1981.8068303257369</y-pos>
 			</vertex1-stepmarker>
 			<vertex2>3112</vertex2>
 			<vertex2-reachable>true</vertex2-reachable>
@@ -24228,6 +24228,70 @@
 			</vertex2-stepmarker>
 			<distanceFactor>50</distanceFactor>
 			<disabledAdapted>false</disabledAdapted>
+		</edge>
+		<edge>
+			<id>189</id>
+			<vertex1>4140</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>1378.3039387635145</x-pos>
+				<y-pos>2770.295851634238</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>3140</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>1381.327459398604</x-pos>
+				<y-pos>2771.9782845013515</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>190</id>
+			<vertex1>2140</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>1436.4123625407287</x-pos>
+				<y-pos>2729.7234605834383</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>3140</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>1438.256940189018</x-pos>
+				<y-pos>2728.1145861874256</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>191</id>
+			<vertex1>1140</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>1373.130815811519</x-pos>
+				<y-pos>2772.4362596267774</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>2140</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>1376.6830712196386</x-pos>
+				<y-pos>2767.9875378360116</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>true</disabledAdapted>
+		</edge>
+		<edge>
+			<id>192</id>
+			<vertex1>140</vertex1>
+			<vertex1-reachable>true</vertex1-reachable>
+			<vertex1-stepmarker>
+				<x-pos>1431.8367122704385</x-pos>
+				<y-pos>2728.224499048893</y-pos>
+			</vertex1-stepmarker>
+			<vertex2>1140</vertex2>
+			<vertex2-reachable>true</vertex2-reachable>
+			<vertex2-stepmarker>
+				<x-pos>1429.1270264250406</x-pos>
+				<y-pos>2731.3723718435276</y-pos>
+			</vertex2-stepmarker>
+			<disabledAdapted>true</disabledAdapted>
 		</edge>
 		<edge>
 			<id>1000</id>
