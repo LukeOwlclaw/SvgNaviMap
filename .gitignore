@@ -27,3 +27,5 @@ AndroidSvgNaviMap/target/
 /WebContent/data/*.new
 *flees*
 /WebContent/data/sbs95e_before_new_aps.arff
+/WebContent/data/ohrt.xml
+/WebContent/data/ohrt_4.svg

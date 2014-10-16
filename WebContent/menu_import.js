@@ -696,7 +696,7 @@ function import_xml_vertex(xmlDom) {
 			break;
 
 		default:
-			G.log('unknown vertex child: ' + c.nodeName);
+			G.log('unknown vertex child: ' + c.nodeName + ' bp_id:' + bp_id);
 			break;
 		}
 	}
