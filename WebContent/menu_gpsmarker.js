@@ -164,8 +164,10 @@ function gpsmarker_hideshowmap() {
 	var map = document.getElementById("mapitems");
 	if (typeof map !== 'undefined') {
 		if (map.style.visibility == "visible") {
+			map.style.position = "relative" //hidden with absolute suddenly just hides overlay icons
 			map.style.visibility = "hidden";
 		} else {
+			map.style.position = "absolute"
 			map.style.visibility = "visible";
 		}
 	} else
