@@ -37,8 +37,18 @@ public class ClassfierUtils {
 	private long buildModelStart = 0l;
 	private long buildModelElapsed = 0l;
 	private List<Filter> filterList = new ArrayList<Filter>();
-	private static ArffSaver saver = new ArffSaver();
+	private static ArffSaver saver;
 
+	public ClassfierUtils() {
+		try{
+		saver = new ArffSaver();
+		} catch (Exception ex) {
+			Log.w(LOG_TAG, "internal weka error", ex);
+		} catch (Throwable ex) {
+			Log.w(LOG_TAG, "internal weka error", ex);
+		}
+	}
+	
 	private final String LOG_TAG = "ClassfierUtils";
 
 	public Evaluation getEvaluation() {
@@ -67,6 +77,9 @@ public class ClassfierUtils {
 		trainSource = new DataSource(inputDataFile.getAbsolutePath());
 		Log.d(LOG_TAG, "Get dataSource from input file.");
 		trainData = trainSource.getDataSet();
+		if(trainData == null) {
+			throw new Exception("Reading train dataset from " + inputDataFile.getAbsolutePath()+ " failed.");			
+		}
 		Log.d(LOG_TAG, "Get dataSet from dataSource.");
 		if (trainData.classIndex() == -1)
 			trainData.setClassIndex(trainData.numAttributes() - 1);

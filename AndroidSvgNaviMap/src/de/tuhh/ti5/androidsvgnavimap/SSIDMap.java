@@ -85,9 +85,10 @@ public class SSIDMap {
 				}
 			} else {
 
-				String roomName = line.substring(line.lastIndexOf(',') + 2);
-				int roomId = 0;
+				String roomName = line.substring(line.lastIndexOf(',') + 1);
+				int roomId = -1;
 				try {
+					roomName = roomName.trim();
 					roomId = Integer.parseInt(roomName
 							.substring(DEFAULT_ROOM_PREFIX.length()));
 				} catch (NumberFormatException nfe) {
@@ -103,6 +104,8 @@ public class SSIDMap {
 										+ roomName + ". Fix arff file.");
 						return;
 					}
+				} catch (Exception e) {
+					Log.e(LOGTAG, "An unexpected error occurred while parsing input file.", e);
 				}
 				// logger.debug("Found one class label - "+classLabel);
 

@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import net.sourceforge.zbar.Symbol;
+
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
@@ -64,6 +66,8 @@ public class MainActivity extends Activity {
 	private static final String TAG = "MainActivity";
 
 	private static final int ZBAR_SCANNER_REQUEST = 1;
+
+	
 
 	private SvgWebView mWebView;
 	private boolean learnLocation = false;
@@ -137,7 +141,9 @@ public class MainActivity extends Activity {
 		});
 
 		try {
-			map.readFromFile(new File(LocateService.getWorkDir(), "data.arff"));
+			File dir = LocateService.getWorkDir();
+			File file = new File(dir, "data.arff");
+			map.readFromFile(file);
 			toast("Loaded data.arff");
 			toggleWekaService();
 		} catch (IOException e) {
@@ -201,13 +207,15 @@ public class MainActivity extends Activity {
 
 	boolean wifiLearningInProgress = false;
 
-	private void wifiLearnScan(final int nodeid) {
-		if (wifiLearningInProgress) {
-			Log.i(TAG, "wifiLearningInProgress. Abort.");
-			return;
-		}
-		wifiLearningInProgress = true;
-		Log.i(TAG, "Preparing Wifi scan");
+	private static final boolean COMBINE_MULTIPLE_SCANS = true;
+	private int NUMER_OF_SCANS_TO_COMBINE = 3;
+	private int combineScanCount = 0;
+	private List<ScanResult> combineWifiScanList = new ArrayList<ScanResult>();
+	
+	private synchronized void wifiLearnScan(final int nodeid) {
+		
+		
+		Log.i(TAG, "Starting Wifi scan " + combineScanCount+1);
 		final WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
 		Log.i(TAG, "Checking Wifi status");
@@ -231,18 +239,42 @@ public class MainActivity extends Activity {
 		intentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 
 		final BroadcastReceiver receiver = new BroadcastReceiver() {
+			
+
 			@Override
 			public void onReceive(Context context, Intent intent) {
+				unregisterReceiver(this);
 				Log.i(TAG, "Received scan result");
-				List<ScanResult> scanResults = wifiManager.getScanResults();
+				List<ScanResult> wifiScan_ = wifiManager.getScanResults();
+				
+				final List<ScanResult> wifiScan;
+				if (COMBINE_MULTIPLE_SCANS) {
+					combineScanCount++;
+					combineWifiScanList = combineScans(combineWifiScanList, wifiScan_);
+					Log.v(TAG,
+							"handleNewScanResult: combined scans. size of combineWifiScanList now: "
+									+ combineWifiScanList.size() + "");
+					if (combineScanCount >= NUMER_OF_SCANS_TO_COMBINE) {
+						wifiScan = combineWifiScanList;
+						combineWifiScanList = new ArrayList<ScanResult>();
+						combineScanCount = 0;
+					} else {
+						wifiLearnScan(nodeid);
+						return;
+					}
+
+				} else {
+					wifiScan = wifiScan_;
+				}
+				
 
 				CompleteScanResult completeScanResult = new CompleteScanResult(
-						scanResults);
+						wifiScan_);
 
 				map.addScanResult(nodeid, completeScanResult);
 				toast("learned wifi fingerprint for room " + nodeid);
 
-				unregisterReceiver(this);
+				
 				wifiLearningInProgress = false;
 			}
 
@@ -256,6 +288,31 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "Starting Wifi scan");
 		boolean success = wifiManager.startScan();
 		Log.i(TAG, String.format("%s", success));
+	}
+	
+	private List<ScanResult> combineScans(List<ScanResult> collect, List<ScanResult> wifiScan_) {
+		if (collect.size() == 0) {
+			collect.addAll(wifiScan_);
+		} else {
+			for (ScanResult scanResult : wifiScan_) {
+				ScanResult exists = null;
+				for (ScanResult c : collect) {
+					if (c.BSSID.equalsIgnoreCase(scanResult.BSSID)) {
+						exists = c;
+						break;
+					}
+				}
+				if (exists == null) {
+					collect.add(scanResult);
+				} else {
+					// Log.v(TAG, "combine " + exists.BSSID + " levels:" + exists.level + " and " + scanResult.level);
+					exists.level = (exists.level + scanResult.level) / 2;
+					// later scan have more weight. that should be okay.
+				}
+			}
+		}
+		// Log.v(TAG, "scan list size: " + collect.size());
+		return collect;
 	}
 
 	public void launchQRScanner() {

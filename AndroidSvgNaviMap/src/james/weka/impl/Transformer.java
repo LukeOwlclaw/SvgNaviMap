@@ -138,7 +138,7 @@ public class Transformer {
 			} else {
 				Map<String, String> instance = new HashMap<String, String>();
 
-				String classLabel = line.substring(line.lastIndexOf(',') + 2);
+				String classLabel = line.substring(line.lastIndexOf(',') + 1).trim();
 				instance.put(CLASS_LABEL, classLabel);
 				// logger.debug("Found one class label - "+classLabel);
 
